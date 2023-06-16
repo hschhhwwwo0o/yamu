@@ -12,20 +12,6 @@ class WatchDevice extends Device {
   }
 
   /**
-   * Set new settings
-   *
-   * @param newSettings Configuration settings
-   * @returns New settings state
-   */
-  private setSettingsState(newSettings: WatchSettings): WatchSettings {
-    this.settings = {
-      ...this.settings,
-      ...newSettings,
-    };
-    return this.settings;
-  }
-
-  /**
    * Set new settings and change the image of the device frame accordingly
    *
    * @claim UF/MOCK-UP/SETTINGS-UP
@@ -44,6 +30,20 @@ class WatchDevice extends Device {
       this.frameImage = this.deviceLibraryItem?.frameImages.withStrap || "";
       return this.settings;
     }
+  }
+
+  /**
+   * Set new settings
+   *
+   * @param newSettings Configuration settings
+   * @returns New settings state
+   */
+  private setSettingsState(newSettings: WatchSettings): WatchSettings {
+    this.settings = {
+      ...this.settings,
+      ...newSettings,
+    };
+    return this.settings;
   }
 
   /**

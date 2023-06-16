@@ -9,6 +9,10 @@ import iPhone13WithSystemBarBase64Image from "../images/iphone-13/iphone-13+syst
 import iPhone14Base64Image from "../images/iphone-14/iphone-14-frame-base64.js";
 import iPhone14WithSystemBarBase64Image from "../images/iphone-14/iphone-14+system-bar-frame-base64.js";
 
+/** iWatch SE */
+import iWatchSEBase64Image from "../images/iwatch-se/iwatch-se-frame-base64.js";
+import iWatchSEWithStrapBase64Image from "../images/iwatch-se/iwatch-se+strap-frame-base64.js";
+
 export const devicesLibrary: DeviceLibraryItem[] = [
   {
     name: "iPhone 13",
@@ -34,8 +38,8 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     name: "iWatch SE",
     type: "watch",
     frameImages: {
-      default: "default",
-      withStrap: "withStrap",
+      default: iWatchSEBase64Image,
+      withStrap: iWatchSEWithStrapBase64Image,
     },
     width: 601,
     height: 940,

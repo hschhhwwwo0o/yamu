@@ -1,11 +1,8 @@
 import { Device } from "./Device.js";
-
-export interface WatchSettings {
-  isStrap?: boolean;
-}
+import { SettingListItem, WatchSettings } from "./types.js";
 
 class WatchDevice extends Device {
-  public type: "watch" = "watch";
+  public readonly type: "watch" = "watch";
   public settings: WatchSettings = {
     isStrap: true,
   };
@@ -47,6 +44,15 @@ class WatchDevice extends Device {
       this.frameImage = this.deviceLibraryItem?.frameImages.withStrap || "";
       return this.settings;
     }
+  }
+
+  /**
+   * Get settings device list item
+   *
+   * @returns Settings list item
+   */
+  public getSettingsList(): SettingListItem[] {
+    return [{ key: "isSystemBar" }];
   }
 }
 

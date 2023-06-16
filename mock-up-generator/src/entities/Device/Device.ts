@@ -7,7 +7,7 @@ class Device {
   public height: number = 0;
   public frameImage: string = "";
 
-  public deviceLibraryItem: DeviceLibraryItem | undefined;
+  protected deviceLibraryItem: DeviceLibraryItem | undefined;
 
   constructor(name: string) {
     this.name = name;
@@ -37,7 +37,7 @@ class Device {
    *
    * @param deviceLibraryItem DeviceLibraryItem
    */
-  private setDeviceState(deviceLibraryItem: DeviceLibraryItem) {
+  private setDeviceState(deviceLibraryItem: DeviceLibraryItem): void {
     this.height = deviceLibraryItem.height;
     this.width = deviceLibraryItem.width;
     this.name = deviceLibraryItem.name;

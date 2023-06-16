@@ -1,11 +1,8 @@
 import { Device } from "./Device.js";
-
-export interface PhoneSettings {
-  isSystemBar?: boolean;
-}
+import { PhoneSettings, SettingListItem } from "./types.js";
 
 class PhoneDevice extends Device {
-  public type: "phone" = "phone";
+  public readonly type: "phone" = "phone";
   public settings: PhoneSettings = {
     isSystemBar: true,
   };
@@ -49,6 +46,15 @@ class PhoneDevice extends Device {
     }
 
     return;
+  }
+
+  /**
+   * Get settings device list item
+   *
+   * @returns Settings list item
+   */
+  public getSettingsList(): SettingListItem[] {
+    return [{ key: "isSystemBar" }];
   }
 }
 

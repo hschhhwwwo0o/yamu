@@ -1,7 +1,7 @@
 {
   "name": "yyamu",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate mock-up data",
   "main": "index.js",
   "scripts": {
     "compile-to-js": "tsc"

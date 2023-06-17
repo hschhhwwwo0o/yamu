@@ -23,6 +23,12 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     },
     width: 345,
     height: 698,
+    paddingsInPercents: {
+      paddingTop: 4.95,
+      paddingBottom: 4.95,
+      paddingLeft: 5.57,
+      paddingRight: 5.57,
+    },
   },
   {
     name: "iPhone 14 Pro",
@@ -33,6 +39,12 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     },
     width: 345,
     height: 703.55,
+    paddingsInPercents: {
+      paddingTop: 4.4,
+      paddingBottom: 4.4,
+      paddingLeft: 5.2,
+      paddingRight: 5,
+    },
   },
   {
     name: "iWatch SE",
@@ -41,7 +53,13 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       default: iWatchSEBase64Image,
       withStrap: iWatchSEWithStrapBase64Image,
     },
-    width: 601,
-    height: 940,
+    width: 438,
+    height: 685,
+    paddingsInPercents: {
+      paddingTop: 36,
+      paddingBottom: 36,
+      paddingLeft: 16,
+      paddingRight: 15.5,
+    },
   },
 ];

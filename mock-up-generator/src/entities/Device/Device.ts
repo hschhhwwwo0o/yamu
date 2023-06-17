@@ -7,7 +7,7 @@ class Device {
   public height: number = 0;
   public frameImage: string = "";
 
-  protected deviceLibraryItem: DeviceLibraryItem | undefined;
+  public deviceLibraryItem: DeviceLibraryItem | undefined;
 
   constructor(name: string) {
     this.name = name;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAMU TEST</title>
+    <script type="module">
+      import { MockUpGenerator } from "./mock-up-generator/dist/index.js";
+      import { MockUpHTMLViewer } from "./mock-up-html-viewer/dist/index.js";
+
+      const mockUpGenerator = new MockUpGenerator();
+      const mockUpHTMLViewer = new MockUpHTMLViewer("mockup");
+
+      mockUpGenerator.selectDevice("phone", "iPhone 14 Pro");
+
+      console.log(mockUpGenerator.mockUp);
+
+      mockUpHTMLViewer.render({
+        frameWidth: mockUpGenerator.mockUp.device.width,
+        frameHeight: mockUpGenerator.mockUp.device.height,
+        frameImage: mockUpGenerator.mockUp.device.frameImage,
+        insertedImage: "",
+        paddingsInPercents:
+          mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents,
+      });
+    </script>
+  </head>
+  <body>
+    <div id="mockup" style="max-width: min-content"></div>
+  </body>
+</html>

@@ -10,4 +10,10 @@ export interface DeviceLibraryItem {
     withSystemBar?: string;
     withStrap?: string;
   };
+  paddingsInPercents: {
+    paddingTop: number;
+    paddingLeft: number;
+    paddingBottom: number;
+    paddingRight: number;
+  };
 }

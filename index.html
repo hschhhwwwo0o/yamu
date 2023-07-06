@@ -6,15 +6,15 @@
     <title>YAMU TEST</title>
     <script defer type="module">
       import { MockUpGenerator } from "./mock-up-generator/dist/index.js";
-      import { MockUpHTMLViewer } from "./mock-up-html-render/dist/index.js";
+      import { MockUpHTMLRenderer } from "./mock-up-html-renderer/dist/index.js";
 
       const mockUpGenerator = new MockUpGenerator();
-      const mockUpHTMLViewer = new MockUpHTMLViewer("mockup");
+      const mockUpHTMLRenderer = new MockUpHTMLRenderer("mockup");
 
       function selectDevicehandler(deviceName = "iPhone 13") {
         mockUpGenerator.selectDevice(deviceName);
 
-        mockUpHTMLViewer.render({
+        mockUpHTMLRenderer.render({
           frameWidth: mockUpGenerator.mockUp.device.width,
           frameHeight: mockUpGenerator.mockUp.device.height,
           frameImage: mockUpGenerator.mockUp.device.frameImage,

@@ -5,7 +5,7 @@
   "main": "client.js",
   "scripts": {
     "build-mock-up-generator-module": "cd ./mock-up-generator && npm run compile-to-js",
-    "build-mock-up-html-viewer-module": "cd ./mock-up-html-viewer && npm run compile-to-js"
+    "build-mock-up-html-renderer-module": "cd ./mock-up-html-renderer && npm run compile-to-js"
   },
   "type": "module",
   "keywords": [],

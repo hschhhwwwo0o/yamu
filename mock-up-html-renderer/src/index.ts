@@ -1,7 +1,7 @@
 import { HTMLRenderer } from "./HTMLRenderer.js";
 import { RenderData } from "./types.js";
 
-class MockUpHTMLViewer {
+class MockUpHTMLRenderer {
   private htmlRenderer: undefined | HTMLRenderer = undefined;
 
   constructor(containerId: string) {
@@ -25,4 +25,4 @@ class MockUpHTMLViewer {
   public download() {}
 }
 
-export { MockUpHTMLViewer };
+export { MockUpHTMLRenderer };

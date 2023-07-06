@@ -2,6 +2,7 @@ import { PhoneDevice } from "../Device/Phone.js";
 import { WatchDevice } from "../Device/Watch.js";
 
 import { DeviceType } from "../../types/DeviceType.js";
+import { devicesLibrary } from "../../assets/data/devices-library.js";
 export interface MockUpInterface {
   device: PhoneDevice | WatchDevice;
   insertedImage: string | undefined;
@@ -23,8 +24,14 @@ class MockUpGenerator {
    *
    * @returns New state of the mockup
    */
-  public selectDevice(type: DeviceType, deviceName: string): MockUpInterface {
+  public selectDevice(deviceName: string): MockUpInterface {
     this.mockUp.insertedImage = undefined;
+
+    const type: DeviceType | undefined = devicesLibrary.find(
+      (deviceLibraryItem) => {
+        return deviceLibraryItem.name === deviceName;
+      }
+    )?.type;
 
     switch (type) {
       case "phone":

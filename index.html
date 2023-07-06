@@ -4,28 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YAMU TEST</title>
-    <script type="module">
+    <script defer type="module">
       import { MockUpGenerator } from "./mock-up-generator/dist/index.js";
       import { MockUpHTMLViewer } from "./mock-up-html-viewer/dist/index.js";
 
       const mockUpGenerator = new MockUpGenerator();
       const mockUpHTMLViewer = new MockUpHTMLViewer("mockup");
 
-      mockUpGenerator.selectDevice("phone", "iPhone 14 Pro");
+      function selectDevicehandler(deviceName = "iPhone 13") {
+        mockUpGenerator.selectDevice(deviceName);
 
-      console.log(mockUpGenerator.mockUp);
+        mockUpHTMLViewer.render({
+          frameWidth: mockUpGenerator.mockUp.device.width,
+          frameHeight: mockUpGenerator.mockUp.device.height,
+          frameImage: mockUpGenerator.mockUp.device.frameImage,
+          insertedImage: "",
+          paddingsInPercents:
+            mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents,
+        });
+      }
 
-      mockUpHTMLViewer.render({
-        frameWidth: mockUpGenerator.mockUp.device.width,
-        frameHeight: mockUpGenerator.mockUp.device.height,
-        frameImage: mockUpGenerator.mockUp.device.frameImage,
-        insertedImage: "",
-        paddingsInPercents:
-          mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents,
-      });
+      selectDevicehandler();
+
+      document
+        .querySelector("#select-device")
+        .addEventListener(
+          "change",
+          function onSelectHandler(changedSelectDOMElement) {
+            console.log(
+              "changedSelectDOMElement.target.value: ",
+              changedSelectDOMElement.target.value
+            );
+            selectDevicehandler(changedSelectDOMElement.target.value);
+          }
+        );
     </script>
   </head>
   <body>
     <div id="mockup" style="max-width: min-content"></div>
+    <select name="select-device" id="select-device">
+      <option value="iPhone 13">iPhone 13</option>
+      <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+      <option value="iWatch SE">iWatch SE</option>
+    </select>
   </body>
 </html>

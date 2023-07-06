@@ -22,7 +22,9 @@ class MockUpHTMLRenderer {
    *
    * @claim UF/MOCK-UP/DOWNLOAD
    */
-  public download() {}
+  public download() {
+    /** coming soon */
+  }
 }
 
 export { MockUpHTMLRenderer };

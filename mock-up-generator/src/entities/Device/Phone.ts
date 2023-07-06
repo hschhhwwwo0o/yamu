@@ -2,7 +2,7 @@ import { Device } from "./Device.js";
 import { PhoneSettings, SettingListItem } from "./types.js";
 
 class PhoneDevice extends Device {
-  public readonly type: "phone" = "phone";
+  public readonly type = "phone";
   public settings: PhoneSettings = {
     isSystemBar: true,
   };

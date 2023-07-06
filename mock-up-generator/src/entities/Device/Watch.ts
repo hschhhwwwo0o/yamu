@@ -2,7 +2,7 @@ import { Device } from "./Device.js";
 import { SettingListItem, WatchSettings } from "./types.js";
 
 class WatchDevice extends Device {
-  public readonly type: "watch" = "watch";
+  public readonly type = "watch";
   public settings: WatchSettings = {
     isStrap: true,
   };

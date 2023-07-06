@@ -1,7 +1,7 @@
 import { RenderData } from "./types.js";
 
 export class HTMLRenderer {
-  private containerId: string = "";
+  private containerId = "";
   private container: Element | null = null;
 
   constructor(containerId: string) {

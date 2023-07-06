@@ -2,10 +2,10 @@ import { devicesLibrary } from "../../assets/data/devices-library.js";
 import { DeviceLibraryItem } from "../../types/DeviceType.js";
 
 class Device {
-  public name: string = "";
-  public width: number = 0;
-  public height: number = 0;
-  public frameImage: string = "";
+  public name = "";
+  public width = 0;
+  public height = 0;
+  public frameImage = "";
 
   public deviceLibraryItem: DeviceLibraryItem | undefined;
 

@@ -15,8 +15,6 @@ export class HTMLRenderer {
    * @claim UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
-    console.log("render data: ", renderData);
-
     /** @exception Incorrect containerId */
     if (!this.container) {
       throw "Incorrect containerId";

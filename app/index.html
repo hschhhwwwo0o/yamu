@@ -11,8 +11,14 @@
       const mockUpGenerator = new MockUpGenerator();
       const mockUpHTMLRenderer = new MockUpHTMLRenderer("mockup");
 
-      function selectDevicehandler(deviceName = "iPhone 13") {
+      function selectDeviceHandler(deviceName = "iPhone 13") {
         mockUpGenerator.selectDevice(deviceName);
+
+        if (deviceName === "iPhone 14 Pro") {
+          mockUpGenerator.mockUp.device.changeSettings({
+            isSystemBar: true,
+          });
+        }
 
         mockUpHTMLRenderer.render({
           frameWidth: mockUpGenerator.mockUp.device.width,
@@ -24,14 +30,14 @@
         });
       }
 
-      selectDevicehandler();
+      selectDeviceHandler();
 
       document
         .querySelector("#select-device")
         .addEventListener(
           "change",
           function onSelectHandler(changedSelectDOMElement) {
-            selectDevicehandler(changedSelectDOMElement.target.value);
+            selectDeviceHandler(changedSelectDOMElement.target.value);
           },
         );
     </script>

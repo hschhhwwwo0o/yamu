@@ -22,7 +22,7 @@ class MockUpHTMLRenderer {
    *
    * @claim UF/MOCK-UP/DOWNLOAD
    */
-  public download() {
+  public async download() {
     /** coming soon */
   }
 }

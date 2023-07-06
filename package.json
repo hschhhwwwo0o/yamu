@@ -6,7 +6,7 @@
   "scripts": {
     "build-mock-up-generator-module": "cd ./mock-up-generator && npm run compile-to-js",
     "build-mock-up-html-renderer-module": "cd ./mock-up-html-renderer && npm run compile-to-js",
-    "pre-commit": "npm run prettier && npm run eslint",
+    "pre-commit": "npm run prettier && npm run eslint && git add . ",
     "prettier": "npx prettier . --write",
     "eslint": "npx eslint ."
   },

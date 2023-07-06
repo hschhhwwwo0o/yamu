@@ -21,11 +21,11 @@ class Device {
    * @returns Selected device
    */
   private getDeviceLibraryItem(
-    deviceName: DeviceLibraryItem["name"]
+    deviceName: DeviceLibraryItem["name"],
   ): DeviceLibraryItem | undefined {
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
       devicesLibrary.find(function findSelectedDevice(
-        _device: DeviceLibraryItem
+        _device: DeviceLibraryItem,
       ) {
         return _device.name === deviceName;
       });

@@ -4,11 +4,15 @@
   "description": "",
   "main": "client.js",
   "scripts": {
+    "prettier-format": "npx prettier . --write",
     "build-mock-up-generator-module": "cd ./mock-up-generator && npm run compile-to-js",
     "build-mock-up-html-renderer-module": "cd ./mock-up-html-renderer && npm run compile-to-js"
   },
   "type": "module",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.0.0"
+  }
 }

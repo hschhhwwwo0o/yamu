@@ -30,7 +30,7 @@ class MockUpGenerator {
     const type: DeviceType | undefined = devicesLibrary.find(
       (deviceLibraryItem) => {
         return deviceLibraryItem.name === deviceName;
-      }
+      },
     )?.type;
 
     switch (type) {

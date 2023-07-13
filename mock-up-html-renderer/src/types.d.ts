@@ -10,3 +10,5 @@ export interface RenderData {
     paddingRight: number;
   };
 }
+
+export type SupportedImageFormat = "png" | "svg" | "jpg";

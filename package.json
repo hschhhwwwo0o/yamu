@@ -2,28 +2,23 @@
   "name": "yamu",
   "version": "1.0.0",
   "description": "",
-  "main": "client.js",
   "scripts": {
-    "build-mock-up-generator-module": "cd ./mock-up-generator && tsc",
-    "build-mock-up-html-renderer-module": "cd ./mock-up-html-renderer && tsc",
-    "pre-commit": "npm run prettier && npm run eslint && git add . ",
-    "prettier": "npx prettier . --write",
-    "eslint": "npx eslint ."
+    "pre-commit": "npm run lint-modules",
+
+    "re-build-modules": "npm run build-mock-up-generator-module && npm run build-mock-up-html-renderer-module",
+    "lint-modules": "npm run lint-mock-up-generator-module && npm run lint-mock-up-html-renderer-module",
+  
+    "build-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run compile",
+    "lint-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run linting",
+    
+    "build-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run compile",
+    "lint-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run linting"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/dom-to-image": "^2.6.4",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "^8.44.0",
-    "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.3",
-    "prettier": "3.0.0"
-  },
-  "dependencies": {
-    "dom-to-image": "^2.6.0"
+    "husky": "^8.0.3"
   }
 }

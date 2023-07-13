@@ -1,0 +1,23 @@
+{
+  "name": "mock-up-html-renderer",
+  "version": "1.0.0",
+  "description": "A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "linting": "npx eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/dom-to-image": "^2.6.4",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "prettier": "3.0.0"
+  }
+}

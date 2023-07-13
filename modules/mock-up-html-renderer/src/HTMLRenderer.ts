@@ -35,7 +35,7 @@ export class HTMLRenderer {
     {
       insertedImageWrapper.style.width = `${renderData.frameWidth}px`;
       insertedImageWrapper.style.height = `${renderData.frameHeight}px`;
-      insertedImageWrapper.style.boxSizing = `border-box`;
+      insertedImageWrapper.style.boxSizing = "border-box";
 
       insertedImageWrapper.style.paddingTop = `${renderData.paddingsInPercents.paddingTop}%`;
       insertedImageWrapper.style.paddingBottom = `${renderData.paddingsInPercents.paddingBottom}%`;
@@ -45,10 +45,10 @@ export class HTMLRenderer {
 
     const insertedImage: HTMLDivElement = document.createElement("div");
     {
-      insertedImage.style.width = `100%`;
-      insertedImage.style.height = `100%`;
-      insertedImage.style.backgroundColor = `gray`;
-      insertedImage.style.borderRadius = `5%`;
+      insertedImage.style.width = "100%";
+      insertedImage.style.height = "100%";
+      insertedImage.style.backgroundColor = "gray";
+      insertedImage.style.borderRadius = "5%";
     }
 
     const frame: HTMLImageElement = document.createElement("img");
@@ -57,7 +57,7 @@ export class HTMLRenderer {
       frame.style.height = `${renderData.frameHeight}px`;
       frame.src = renderData.frameImage;
       frame.style.objectFit = "cover";
-      frame.style.position = `absolute`;
+      frame.style.position = "absolute";
     }
 
     wrapper.appendChild(insertedImageWrapper);

@@ -20,7 +20,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@module/mock-up-generator": ["../../modules/mock-up-generator/dist/index.js"],
+      "@module/mock-up-html-renderer": ["../../modules/mock-up-html-renderer/dist/index.js"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,6 +1,6 @@
 ### Development
 
-The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus the application (framework) is responsible only for UI/UX display, while the module contains all business logic.
+The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus the application (NextJS framework in this case) is responsible only for UI/UX display, while the module contains all business logic.
 
 Why? To separate business logic from fickle and windy frameworks and libraries that are not related to business logic in any way. Modules are designed so that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be very easy to implement
 

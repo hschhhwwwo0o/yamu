@@ -4,15 +4,12 @@
   "description": "",
   "scripts": {
     "pre-commit": "npm run lint-modules",
-
     "re-build-modules": "npm run build-mock-up-generator-module && npm run build-mock-up-html-renderer-module",
     "lint-modules": "npm run lint-mock-up-generator-module && npm run lint-mock-up-html-renderer-module",
-  
     "build-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run compile",
-    "lint-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run linting",
-    
+    "lint-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run lint",
     "build-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run compile",
-    "lint-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run linting"
+    "lint-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run lint"
   },
   "type": "module",
   "keywords": [],

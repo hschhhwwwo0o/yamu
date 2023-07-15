@@ -5,9 +5,15 @@
   "main": "src/index.ts",
   "scripts": {
     "compile": "tsc",
-    "linting": "npx eslint ."
+    "lint": "npx eslint ."
   },
-  "author": "",
+  "keywords": [
+    "mock-up",
+    "render",
+    "html",
+    "download"
+  ],
+  "author": "@hschhhwwwo0o",
   "license": "ISC",
   "type": "module",
   "dependencies": {

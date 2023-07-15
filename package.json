@@ -1,7 +1,7 @@
 {
   "name": "yamu",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web application for mock-up creation",
   "scripts": {
     "pre-commit": "npm run lint-modules",
     "re-build-modules": "npm run build-mock-up-generator-module && npm run build-mock-up-html-renderer-module",
@@ -12,8 +12,11 @@
     "lint-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run lint"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web application",
+    "mock-up create"
+  ],
+  "author": "@hschhhwwwo0o",
   "license": "ISC",
   "devDependencies": {
     "husky": "^8.0.3"

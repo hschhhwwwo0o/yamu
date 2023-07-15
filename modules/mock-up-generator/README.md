@@ -1,4 +1,11 @@
-The module is intended for mock-up state management. Includes device selection, image insertion, device settings
+The module is intended for mock-up state management. Includes device selection, image insertion, device settings.
+
+The module implements the claims:
+
+- UF/MOCK-UP/SETTINGS-UP
+- UF/MOCK-UP/DEVICE-SELECT
+- UF/MOCK-UP/INSERT-SCREEN
+- UF/MOCK-UP/CLEAR
 
 The module has 3 methods:
 

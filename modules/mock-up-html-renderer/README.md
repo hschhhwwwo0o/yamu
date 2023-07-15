@@ -1,4 +1,9 @@
-A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image
+A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image.
+
+The module implements the claims:
+
+- UF/MOCK-UP/VIEW
+- UF/MOCK-UP/DOWNLOAD
 
 The module has 2 methods:
 

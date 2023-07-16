@@ -16,16 +16,16 @@ Example:
 const mockUpHTMLRenderer = new MockUpHTMLRenderer("#domContainerId");
 
 mockUpHTMLRenderer.render({
-  frameWidth: number;
-  frameHeight: number;
-  frameImage: string;
-  insertedImage: string;
+  frameWidth: number,
+  frameHeight: number,
+  frameImage: string,
+  insertedImage: string,
   paddingsInPercents: {
-    paddingTop: number;
-    paddingLeft: number;
-    paddingBottom: number;
-    paddingRight: number;
-  };
+    paddingTop: number,
+    paddingLeft: number,
+    paddingBottom: number,
+    paddingRight: number,
+  },
 });
 mockUpHTMLRenderer.download();
 ```

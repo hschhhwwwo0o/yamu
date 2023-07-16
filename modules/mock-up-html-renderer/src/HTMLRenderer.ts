@@ -1,12 +1,12 @@
 import { RenderData } from "./types.js";
 
 export class HTMLRenderer {
-  private containerId = "";
   private container: Element | null = null;
 
   constructor(containerId: string) {
-    this.containerId = containerId;
-    this.container = document.querySelector(`#${this.containerId}`);
+    console.log("1");
+    this.container = document.querySelector(`#${containerId}`);
+    console.log("2");
   }
 
   /**

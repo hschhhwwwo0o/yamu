@@ -4,12 +4,12 @@ import { DeviceLibraryItem } from "../../types/DeviceType.js";
 /** iPhone 13 */
 import iPhone13Base64Image from "../images/iphone-13/iphone-13-frame-base64.js";
 import iPhone13WithSystemBarLightThemeBase64Image from "../images/iphone-13/iphone-13+system-bar+light-theme-frame-base64.js";
-import iPhone13WithSystemBarDarkThemeBase64Image from "../images/iphone-13/iphone-13+system-bar+dark-theme-frame-base64";
+import iPhone13WithSystemBarDarkThemeBase64Image from "../images/iphone-13/iphone-13+system-bar+dark-theme-frame-base64.js";
 
 /** iPhone 14 */
 import iPhone14Base64Image from "../images/iphone-14/iphone-14-frame-base64.js";
 import iPhone14WithSystemBarLightThemeBase64Image from "../images/iphone-14/iphone-14+system-bar+light-theme-frame-base64.js";
-import iPhone14WithSystemBarDarkThemeBase64Image from "../images/iphone-14/iphone-14+system-bar+light-theme-frame-base64.js";
+import iPhone14WithSystemBarDarkThemeBase64Image from "../images/iphone-14/iphone-14+system-bar+dark-theme-frame-base64.js";
 
 /** iWatch SE */
 import iWatchSEBase64Image from "../images/iwatch-se/iwatch-se-frame-base64.js";

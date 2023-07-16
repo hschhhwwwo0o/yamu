@@ -7,7 +7,8 @@ export interface DeviceLibraryItem {
   type: "phone" | "watch";
   frameImages: {
     default: string;
-    withSystemBar?: string;
+    withSystemBarLightTheme?: string;
+    withSystemBarDarkTheme?: string;
     withStrap?: string;
   };
   paddingsInPercents: {

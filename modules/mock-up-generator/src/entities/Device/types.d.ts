@@ -4,6 +4,7 @@ export interface WatchSettings {
 
 export interface PhoneSettings {
   isSystemBar?: boolean;
+  theme?: "dark" | "light";
 }
 
 export interface SettingListItem {

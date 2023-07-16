@@ -5,6 +5,7 @@ class PhoneDevice extends Device {
   public readonly type = "phone";
   public settings: PhoneSettings = {
     isSystemBar: true,
+    theme: "light",
   };
 
   constructor(name: string) {
@@ -27,8 +28,16 @@ class PhoneDevice extends Device {
       return this.settings;
     }
     if (settings.isSystemBar === true) {
-      this.frameImage = this.deviceLibraryItem?.frameImages.withSystemBar || "";
-      return this.settings;
+      if (settings.theme === "dark") {
+        this.frameImage =
+          this.deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
+        return this.settings;
+      }
+      if (settings.theme === "light") {
+        this.frameImage =
+          this.deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
+        return this.settings;
+      }
     }
 
     return;
@@ -54,7 +63,12 @@ class PhoneDevice extends Device {
    * @returns Settings list item
    */
   public getSettingsList(): SettingListItem[] {
-    return [{ key: "isSystemBar" }];
+    return [
+      { key: "isSystemBar" },
+      {
+        key: "theme",
+      },
+    ];
   }
 }
 

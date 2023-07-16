@@ -7,6 +7,7 @@ import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
 
 export default function IndexScreen() {
   const mockUpGenerator = new MockUpGenerator();
+  const mockUpHTMLRenderer = new MockUpHTMLRenderer("mock-up-container");
 
   useEffect(function () {
     mockUpGenerator.selectDevice("iPhone 14 Pro");
@@ -17,7 +18,6 @@ export default function IndexScreen() {
   }, []);
 
   useEffect(function () {
-    const mockUpHTMLRenderer = new MockUpHTMLRenderer("mock-up-container");
     mockUpHTMLRenderer.render({
       frameWidth: mockUpGenerator.mockUp.device.width,
       frameHeight: mockUpGenerator.mockUp.device.height,
@@ -40,5 +40,9 @@ export default function IndexScreen() {
     });
   }, []);
 
-  return <main id="mock-up-container"></main>;
+  return (
+    <div className="w-[100vw] flex items-center justify-center h-[100vh]">
+      <div id="mock-up-container" />
+    </div>
+  );
 }

@@ -1,12 +1,10 @@
 import { RenderData } from "./types.js";
 
 export class HTMLRenderer {
-  private container: Element | null = null;
+  private containerId: string;
 
   constructor(containerId: string) {
-    console.log("1");
-    this.container = document.querySelector(`#${containerId}`);
-    console.log("2");
+    this.containerId = containerId;
   }
 
   /**
@@ -15,8 +13,10 @@ export class HTMLRenderer {
    * @claim UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
+    const container = document.querySelector(`#${this.containerId}`);
+
     /** @exception Incorrect containerId */
-    if (!this.container) {
+    if (!container) {
       throw "Incorrect containerId";
     }
 
@@ -64,15 +64,19 @@ export class HTMLRenderer {
     insertedImageWrapper.appendChild(insertedImage);
     wrapper.appendChild(frame);
 
-    this.container.appendChild(wrapper);
+    container.appendChild(wrapper);
   }
 
   private clearContainer(): void {
     /** @exception Incorrect containerId */
-    if (!this.container) {
+    if (!this.containerId) {
       throw "Incorrect containerId";
     }
 
-    this.container.innerHTML = "";
+    const container = document.querySelector(`#${this.containerId}`);
+
+    if (container) {
+      container.innerHTML = "";
+    }
   }
 }

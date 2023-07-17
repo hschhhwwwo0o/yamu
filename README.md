@@ -7,7 +7,7 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 #### Installation
 
 ```sh
-cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install
+cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install && cd ../../
 ```
 
 #### Module @mock-up-generator

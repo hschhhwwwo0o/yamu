@@ -20,7 +20,7 @@
     "dom-to-image": "^2.6.0"
   },
   "devDependencies": {
-    "@types/dom-to-image": "^2.6.4",
+    "@types/dom-to-image": "^2.6.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.44.0",

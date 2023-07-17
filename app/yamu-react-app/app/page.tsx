@@ -41,8 +41,17 @@ export default function IndexScreen() {
   }, []);
 
   return (
-    <div className="w-[100vw] flex items-center justify-center h-[100vh]">
+    <div className="w-[100vw] flex flex-col items-center justify-center pt-10">
       <div id="mock-up-container" />
+      <div className="w-[100vw] flex items-center justify-center py-6">
+        <button
+          onClick={() => {
+            mockUpHTMLRenderer.download("png");
+          }}
+        >
+          Download
+        </button>
+      </div>
     </div>
   );
 }

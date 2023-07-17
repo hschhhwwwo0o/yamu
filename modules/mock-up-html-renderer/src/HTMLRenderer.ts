@@ -29,6 +29,7 @@ export class HTMLRenderer {
       wrapper.style.display = "flex";
       wrapper.style.alignItems = "center";
       wrapper.style.justifyContent = "center";
+      wrapper.style.overflow = "hidden";
     }
 
     const insertedImageWrapper: HTMLDivElement = document.createElement("div");
@@ -41,12 +42,30 @@ export class HTMLRenderer {
       insertedImageWrapper.style.paddingBottom = `${renderData.paddingsInPercents.paddingBottom}%`;
       insertedImageWrapper.style.paddingLeft = `${renderData.paddingsInPercents.paddingLeft}%`;
       insertedImageWrapper.style.paddingRight = `${renderData.paddingsInPercents.paddingRight}%`;
+
+      insertedImageWrapper.style.position = "relative";
+      insertedImageWrapper.style.left = "50%";
     }
 
     const insertedImage: HTMLDivElement = document.createElement("div");
     {
-      insertedImage.style.width = "100%";
-      insertedImage.style.height = "100%";
+      const paddingLeftInPX =
+        (renderData.frameWidth / 100) *
+        renderData.paddingsInPercents.paddingLeft;
+      const paddingRightInPX =
+        (renderData.frameWidth / 100) *
+        renderData.paddingsInPercents.paddingRight;
+
+      insertedImage.style.width = `${
+        renderData.frameWidth - (paddingLeftInPX + paddingRightInPX)
+      }px`;
+
+      const paddingBottomInPX =
+        (renderData.frameHeight / 100) *
+        renderData.paddingsInPercents.paddingBottom;
+      insertedImage.style.height = `${
+        renderData.frameHeight - paddingBottomInPX
+      }px`;
       insertedImage.style.backgroundColor = "gray";
       insertedImage.style.borderRadius = "5%";
     }
@@ -57,7 +76,8 @@ export class HTMLRenderer {
       frame.style.height = `${renderData.frameHeight}px`;
       frame.src = renderData.frameImage;
       frame.style.objectFit = "cover";
-      frame.style.position = "absolute";
+      frame.style.position = "relative";
+      frame.style.left = "-50%";
     }
 
     wrapper.appendChild(insertedImageWrapper);

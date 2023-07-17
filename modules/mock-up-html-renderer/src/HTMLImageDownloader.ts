@@ -1,6 +1,6 @@
 import { SupportedImageFormat } from "./types.js";
 
-import { DomToImage } from "dom-to-image";
+import DomToImage from "dom-to-image";
 
 export class HTMLImageDownloader {
   private containerId = "";
@@ -23,14 +23,20 @@ export class HTMLImageDownloader {
 
         if (node) {
           if (format === "png") {
+            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+            @ts-ignore */
             const dataUrl: string = await DomToImage.toPng(node);
             return dataUrl;
           }
           if (format === "jpg") {
+            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+            @ts-ignore */
             const dataUrl: string = await DomToImage.toJpeg(node);
             return dataUrl;
           }
           if (format === "svg") {
+            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
+            @ts-ignore */
             const dataUrl: string = await DomToImage.toSvg(node);
             return dataUrl;
           }

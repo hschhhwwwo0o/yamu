@@ -10,10 +10,9 @@ export default function IndexScreen() {
   const mockUpHTMLRenderer = new MockUpHTMLRenderer("mock-up-container");
 
   useEffect(function () {
-    mockUpGenerator.selectDevice("iPhone 14 Pro");
+    mockUpGenerator.selectDevice("iWatch SE");
     mockUpGenerator.mockUp.device.changeSettings({
-      isSystemBar: true,
-      theme: "dark",
+      isStrap: true,
     });
   }, []);
 
@@ -49,7 +48,7 @@ export default function IndexScreen() {
             mockUpHTMLRenderer.download("png");
           }}
         >
-          Download
+          Download mock-up
         </button>
       </div>
     </div>

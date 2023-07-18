@@ -1,7 +1,5 @@
 import { SupportedImageFormat } from "./types.js";
 
-import DomToImage from "dom-to-image";
-
 export class HTMLImageDownloader {
   private containerId = "";
 
@@ -18,26 +16,16 @@ export class HTMLImageDownloader {
     format: SupportedImageFormat,
   ): Promise<string | undefined> {
     try {
-      const dataUrl = await (async function createDataUrlLink(containerId) {
-        const node = document.getElementById(containerId);
+      const dataUrl = await (async function createDataUrlLink(
+        containerId = "",
+      ) {
+        const canvas = document.querySelector(`#${containerId} > canvas`);
 
-        if (node) {
+        if (canvas) {
           if (format === "png") {
             /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
             @ts-ignore */
-            const dataUrl: string = await DomToImage.toPng(node);
-            return dataUrl;
-          }
-          if (format === "jpg") {
-            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-            @ts-ignore */
-            const dataUrl: string = await DomToImage.toJpeg(node);
-            return dataUrl;
-          }
-          if (format === "svg") {
-            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-            @ts-ignore */
-            const dataUrl: string = await DomToImage.toSvg(node);
+            const dataUrl = canvas?.toDataURL("image/png");
             return dataUrl;
           }
         }

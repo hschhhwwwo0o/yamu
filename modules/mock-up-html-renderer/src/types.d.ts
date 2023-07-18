@@ -11,4 +11,4 @@ export interface RenderData {
   };
 }
 
-export type SupportedImageFormat = "png" | "svg" | "jpg";
+export type SupportedImageFormat = "png";

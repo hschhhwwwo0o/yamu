@@ -19,7 +19,8 @@ export default function IndexScreen() {
         frameWidth: mockUpGenerator.mockUp.device.width,
         frameHeight: mockUpGenerator.mockUp.device.height,
         frameImage: mockUpGenerator.mockUp.device.frameImage,
-        insertedImage: mockUpGenerator.mockUp.insertedImage,
+        insertedImage:
+          "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1729&q=80",
         paddingsInPercents: {
           paddingTop:
             mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents

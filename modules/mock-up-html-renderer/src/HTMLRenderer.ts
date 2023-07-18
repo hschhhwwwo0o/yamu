@@ -13,81 +13,34 @@ export class HTMLRenderer {
    * @claim UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
-    const container = document.querySelector(`#${this.containerId}`);
-
-    /** @exception Incorrect containerId */
-    if (!container) {
-      throw "Incorrect containerId";
-    }
-
-    this.clearContainer();
-
-    const wrapper: HTMLDivElement = document.createElement("div");
     {
-      wrapper.style.width = `${renderData.frameWidth}px`;
-      wrapper.style.height = `${renderData.frameHeight}px`;
-      wrapper.style.display = "flex";
-      wrapper.style.alignItems = "center";
-      wrapper.style.justifyContent = "center";
-      wrapper.style.overflow = "hidden";
+      this.clearContainer();
     }
 
-    const insertedImageWrapper: HTMLDivElement = document.createElement("div");
-    {
-      insertedImageWrapper.style.width = `${renderData.frameWidth}px`;
-      insertedImageWrapper.style.height = `${renderData.frameHeight}px`;
-      insertedImageWrapper.style.boxSizing = "border-box";
+    const canvas = this.createCanvas(renderData);
+    const context = canvas.getContext("2d");
 
-      insertedImageWrapper.style.paddingTop = `${renderData.paddingsInPercents.paddingTop}%`;
-      insertedImageWrapper.style.paddingBottom = `${renderData.paddingsInPercents.paddingBottom}%`;
-      insertedImageWrapper.style.paddingLeft = `${renderData.paddingsInPercents.paddingLeft}%`;
-      insertedImageWrapper.style.paddingRight = `${renderData.paddingsInPercents.paddingRight}%`;
+    const frameImage = this.createFrameImage(renderData);
 
-      insertedImageWrapper.style.position = "relative";
-      insertedImageWrapper.style.left = "50%";
-    }
-
-    const insertedImage: HTMLDivElement = document.createElement("div");
-    {
-      const paddingLeftInPX =
-        (renderData.frameWidth / 100) *
-        renderData.paddingsInPercents.paddingLeft;
-      const paddingRightInPX =
-        (renderData.frameWidth / 100) *
-        renderData.paddingsInPercents.paddingRight;
-
-      insertedImage.style.width = `${
-        renderData.frameWidth - (paddingLeftInPX + paddingRightInPX)
-      }px`;
-
-      const paddingBottomInPX =
-        (renderData.frameHeight / 100) *
-        renderData.paddingsInPercents.paddingBottom;
-      insertedImage.style.height = `${
-        renderData.frameHeight - paddingBottomInPX
-      }px`;
-      insertedImage.style.backgroundColor = "gray";
-      insertedImage.style.borderRadius = "5%";
-    }
-
-    const frame: HTMLImageElement = document.createElement("img");
-    {
-      frame.style.width = `${renderData.frameWidth}px`;
-      frame.style.height = `${renderData.frameHeight}px`;
-      frame.src = renderData.frameImage;
-      frame.style.objectFit = "cover";
-      frame.style.position = "relative";
-      frame.style.left = "-50%";
-    }
-
-    wrapper.appendChild(insertedImageWrapper);
-    insertedImageWrapper.appendChild(insertedImage);
-    wrapper.appendChild(frame);
-
-    container.appendChild(wrapper);
+    frameImage.onload = () => {
+      if (!context) throw "Context error";
+      if (!renderData.insertedImage) {
+        this.renderEmptyScreen(context, renderData);
+        this.renderFrame(context, frameImage, renderData);
+        this.renderCanvas(canvas);
+      }
+      if (renderData.insertedImage) {
+        const screenImage = this.createScreenImage(renderData);
+        screenImage.onload = () => {
+          this.renderScreen(context, screenImage, renderData);
+          this.renderFrame(context, frameImage, renderData);
+          this.renderCanvas(canvas);
+        };
+      }
+    };
   }
 
-  private clearContainer(): void {
+  private clearContainer() {
     /** @exception Incorrect containerId */
     if (!this.containerId) {
       throw "Incorrect containerId";
@@ -98,5 +51,133 @@ export class HTMLRenderer {
     if (container) {
       container.innerHTML = "";
     }
+  }
+
+  private renderEmptyScreen(
+    context: CanvasRenderingContext2D,
+    renderData: RenderData,
+  ) {
+    const paddingLeft =
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.paddingLeft;
+    const paddingRight =
+      (renderData.frameWidth / 100) *
+      renderData.paddingsInPercents.paddingRight;
+    const paddingTop =
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.paddingTop;
+    const paddingBottom =
+      (renderData.frameHeight / 100) *
+      renderData.paddingsInPercents.paddingBottom;
+    const width = renderData.frameWidth - paddingLeft - paddingRight;
+    const height = renderData.frameHeight - paddingTop - paddingBottom;
+
+    context.roundRect(paddingLeft, paddingTop, width, height, 10);
+    context.fillStyle = "#000";
+    context.fill();
+
+    return;
+  }
+
+  private renderScreen(
+    context: CanvasRenderingContext2D,
+    insertedImage: HTMLImageElement,
+    renderData: RenderData,
+  ) {
+    function createRoundedImage(
+      ctx: CanvasRenderingContext2D,
+      x: number,
+      y: number,
+      width: number,
+      height: number,
+      radius: number,
+    ) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(
+        x + width,
+        y + height,
+        x + width - radius,
+        y + height,
+      );
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+    }
+
+    const paddingLeft =
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.paddingLeft;
+    const paddingRight =
+      (renderData.frameWidth / 100) *
+      renderData.paddingsInPercents.paddingRight;
+    const paddingTop =
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.paddingTop;
+    const paddingBottom =
+      (renderData.frameHeight / 100) *
+      renderData.paddingsInPercents.paddingBottom;
+    const width = renderData.frameWidth - paddingLeft - paddingRight;
+    const height = renderData.frameHeight - paddingTop - paddingBottom;
+
+    createRoundedImage(context, paddingLeft, paddingTop, width, height, 10);
+    context.save();
+    context.clip();
+    context.drawImage(insertedImage, paddingLeft, paddingTop, width, height);
+    context.restore();
+    return;
+  }
+
+  private createScreenImage(renderData: RenderData) {
+    const screenImage = new Image();
+    screenImage.setAttribute("crossorigin", "anonymous");
+    {
+      screenImage.width = renderData.frameWidth;
+      screenImage.height = renderData.frameHeight;
+      screenImage.src = renderData.insertedImage;
+    }
+    return screenImage;
+  }
+
+  private createFrameImage(renderData: RenderData) {
+    const frameImage = new Image();
+    {
+      frameImage.width = renderData.frameWidth;
+      frameImage.height = renderData.frameHeight;
+      frameImage.src = renderData.frameImage;
+    }
+    return frameImage;
+  }
+
+  private renderFrame(
+    context: CanvasRenderingContext2D,
+    frameImage: HTMLImageElement,
+    renderData: RenderData,
+  ) {
+    {
+      context.drawImage(
+        frameImage,
+        0,
+        0,
+        renderData.frameWidth,
+        renderData.frameHeight,
+      );
+    }
+  }
+
+  private createCanvas(renderData: RenderData) {
+    const canvas = document.createElement("canvas");
+    {
+      canvas.id = "mock-up-canvas";
+      canvas.width = renderData.frameWidth;
+      canvas.height = renderData.frameHeight;
+    }
+    return canvas;
+  }
+
+  private renderCanvas(canvas: HTMLCanvasElement) {
+    const container = document.querySelector(`#${this.containerId}`);
+    container?.appendChild(canvas);
   }
 }

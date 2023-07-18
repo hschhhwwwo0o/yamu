@@ -19,19 +19,19 @@ export class HTMLImageDownloader {
       const dataUrl = await (async function createDataUrlLink(
         containerId = "",
       ) {
-        const canvas = document.querySelector(`#${containerId} > canvas`);
+        const canvas = document.querySelector<HTMLCanvasElement>(
+          `#${containerId} > canvas`,
+        );
 
         if (canvas) {
           if (format === "png") {
-            /** eslint-disable-next-line @typescript-eslint/ban-ts-comment 
-            @ts-ignore */
             const dataUrl = canvas?.toDataURL("image/png");
             return dataUrl;
           }
         }
       })(this.containerId);
 
-      (function download(dataUrl): void {
+      (function createDownloadLink(dataUrl): void {
         const link = document.createElement("a");
         const filename = `${new Date().getTime()}.${format}`;
 

@@ -52,7 +52,7 @@ class WatchDevice extends Device {
    * @returns Settings list item
    */
   public getSettingsList(): SettingListItem[] {
-    return [{ key: "isStrap" }];
+    return [{ key: "isStrap", type: "switch" }];
   }
 }
 

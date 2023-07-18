@@ -64,9 +64,11 @@ class PhoneDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [
-      { key: "isSystemBar" },
+      { key: "isSystemBar", type: "switch" },
       {
         key: "theme",
+        type: "variants",
+        variants: ["light", "dark"],
       },
     ];
   }

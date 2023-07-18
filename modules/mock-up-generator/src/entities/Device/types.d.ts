@@ -9,4 +9,6 @@ export interface PhoneSettings {
 
 export interface SettingListItem {
   key: string;
+  type: "switch" | "variants";
+  variants?: string[];
 }

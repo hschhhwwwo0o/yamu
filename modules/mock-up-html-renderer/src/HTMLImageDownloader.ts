@@ -25,7 +25,7 @@ export class HTMLImageDownloader {
       }
     })(this.containerId);
 
-    (function createDownloadLink(dataUrl): void {
+    (function createDownloadLink(dataUrl: string): void {
       const link = document.createElement("a");
       const filename = `${new Date().getTime()}.${format}`;
 
@@ -40,7 +40,7 @@ export class HTMLImageDownloader {
         link.click();
         document.body.removeChild(link);
       }
-    })(dataUrl);
+    })(dataUrl || "");
 
     return dataUrl;
   }

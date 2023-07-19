@@ -13,7 +13,7 @@ export default function IndexScreen() {
     useState<string>("iWatch SE");
 
   useEffect(
-    function () {
+    function onSelectDeviceAndRenderEffect() {
       mockUpGenerator.selectDevice(selectedDeviceName);
       mockUpHTMLRenderer.render({
         frameWidth: mockUpGenerator.mockUp.device.width,

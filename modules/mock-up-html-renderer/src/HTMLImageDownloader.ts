@@ -15,38 +15,33 @@ export class HTMLImageDownloader {
   public async download(
     format: SupportedImageFormat,
   ): Promise<string | undefined> {
-    try {
-      const dataUrl = await (async function createDataUrlLink(
-        containerId = "",
-      ) {
-        const canvas = document.querySelector<HTMLCanvasElement>(
-          `#${containerId} > canvas`,
-        );
+    const dataUrl = await (async function createDataUrlLink(containerId = "") {
+      const canvas = document.querySelector<HTMLCanvasElement>(
+        `#${containerId} > canvas`,
+      );
 
-        if (canvas) {
-          if (format === "png") {
-            const dataUrl = canvas?.toDataURL("image/png");
-            return dataUrl;
-          }
-        }
-      })(this.containerId);
+      if (format === "png") {
+        return canvas?.toDataURL("image/png");
+      }
+    })(this.containerId);
 
-      (function createDownloadLink(dataUrl): void {
-        const link = document.createElement("a");
-        const filename = `${new Date().getTime()}.${format}`;
+    (function createDownloadLink(dataUrl): void {
+      const link = document.createElement("a");
+      const filename = `${new Date().getTime()}.${format}`;
 
+      {
         link.setAttribute("href", dataUrl || "");
         link.setAttribute("download", filename);
         link.style.display = "none";
+      }
 
+      {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      })(dataUrl);
+      }
+    })(dataUrl);
 
-      return dataUrl;
-    } catch (error) {
-      console.error(error);
-    }
+    return dataUrl;
   }
 }

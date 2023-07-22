@@ -24,7 +24,7 @@ class MockUpGenerator {
    *
    * @returns New state of the mockup
    */
-  public selectDevice(deviceName: string): MockUpInterface {
+  public selectDevice(deviceName: string = "iPhone 13"): MockUpInterface {
     this.mockUp.insertedImage = undefined;
 
     const type: DeviceType | undefined = devicesLibrary.find(
@@ -56,7 +56,7 @@ class MockUpGenerator {
    *
    * @returns New state of the mockup
    */
-  public insertImage(image: string): MockUpInterface {
+  public insertImage(image: string = ""): MockUpInterface {
     if (!image) {
       throw "Image is not provided";
     }

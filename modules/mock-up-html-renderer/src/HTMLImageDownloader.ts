@@ -1,10 +1,10 @@
 import { SupportedImageFormat } from "./types.js";
 
 export class HTMLImageDownloader {
-  private containerId = "";
+  private _containerId = "";
 
   constructor(containerId: string = "") {
-    this.containerId = containerId;
+    this._containerId = containerId;
   }
 
   /**
@@ -23,7 +23,7 @@ export class HTMLImageDownloader {
       if (format === "png") {
         return canvas?.toDataURL("image/png");
       }
-    })(this.containerId);
+    })(this._containerId);
 
     (function createDownloadLink(dataUrl: string = ""): void {
       const link = document.createElement("a");

@@ -9,7 +9,7 @@ export interface MockUpInterface {
 }
 
 class MockUpGenerator {
-  mockUp: MockUpInterface = {
+  public mockUp: MockUpInterface = {
     device: new PhoneDevice("iPhone 13"),
     insertedImage: undefined,
   };

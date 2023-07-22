@@ -20,30 +20,16 @@ class WatchDevice extends Device {
    * @returns Setted watch settings or undefined
    */
   public changeSettings(settings: WatchSettings): WatchSettings | undefined {
-    this.setSettingsState(settings);
+    this._setSettingsState(settings);
 
     if (settings.isStrap === false) {
-      this.frame.image = this.deviceLibraryItem?.frameImages.default || "";
+      this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
       return this.settings;
     }
     if (settings.isStrap === true) {
-      this.frame.image = this.deviceLibraryItem?.frameImages.withStrap || "";
+      this.frame.image = this._deviceLibraryItem?.frameImages.withStrap || "";
       return this.settings;
     }
-  }
-
-  /**
-   * Set new settings
-   *
-   * @param newSettings Configuration settings
-   * @returns New settings state
-   */
-  private setSettingsState(newSettings: WatchSettings): WatchSettings {
-    this.settings = {
-      ...this.settings,
-      ...newSettings,
-    };
-    return this.settings;
   }
 
   /**
@@ -53,6 +39,20 @@ class WatchDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [{ key: "isStrap", type: "switch" }];
+  }
+
+  /**
+   * Set new settings
+   *
+   * @param newSettings Configuration settings
+   * @returns New settings state
+   */
+  private _setSettingsState(newSettings: WatchSettings): WatchSettings {
+    this.settings = {
+      ...this.settings,
+      ...newSettings,
+    };
+    return this.settings;
   }
 }
 

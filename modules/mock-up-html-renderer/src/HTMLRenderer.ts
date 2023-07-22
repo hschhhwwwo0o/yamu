@@ -1,10 +1,10 @@
 import { RenderData } from "./types.js";
 
 export class HTMLRenderer {
-  private containerId: string;
+  private _containerId: string;
 
   constructor(containerId: string = "") {
-    this.containerId = containerId;
+    this._containerId = containerId;
   }
 
   /**
@@ -13,46 +13,46 @@ export class HTMLRenderer {
    * @claim UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
-    this.clearDOMContainer();
+    this._clearDOMContainer();
 
-    const canvas = this.createCanvasDOMElement(renderData);
+    const canvas = this._createCanvasDOMElement(renderData);
     const context = canvas.getContext("2d");
 
-    const frameImage = this.createFrameImage(renderData);
+    const frameImage = this._createFrameImage(renderData);
 
     frameImage.onload = () => {
       if (!context) throw "Context error";
       const imageIsEmpty = !renderData.insertedImage;
       if (imageIsEmpty) {
-        this.renderEmptyScreen(context, renderData);
-        this.renderFrame(context, frameImage, renderData);
-        this.appendCanvasInDOM(canvas);
+        this._renderEmptyScreen(context, renderData);
+        this._renderFrame(context, frameImage, renderData);
+        this._appendCanvasInDOM(canvas);
       }
       if (!imageIsEmpty) {
-        const screenImage = this.createScreenImage(renderData);
+        const screenImage = this._createScreenImage(renderData);
         screenImage.onload = () => {
-          this.renderScreen(context, screenImage, renderData);
-          this.renderFrame(context, frameImage, renderData);
-          this.appendCanvasInDOM(canvas);
+          this._renderScreen(context, screenImage, renderData);
+          this._renderFrame(context, frameImage, renderData);
+          this._appendCanvasInDOM(canvas);
         };
       }
     };
   }
 
-  private clearDOMContainer() {
+  private _clearDOMContainer() {
     /** @exception Incorrect containerId */
-    if (!this.containerId) {
+    if (!this._containerId) {
       throw "Incorrect containerId";
     }
 
-    const container = document.querySelector(`#${this.containerId}`);
+    const container = document.querySelector(`#${this._containerId}`);
 
     if (container) {
       container.innerHTML = "";
     }
   }
 
-  private renderEmptyScreen(
+  private _renderEmptyScreen(
     context: CanvasRenderingContext2D,
     renderData: RenderData,
   ) {
@@ -74,7 +74,7 @@ export class HTMLRenderer {
     return;
   }
 
-  private renderScreen(
+  private _renderScreen(
     context: CanvasRenderingContext2D,
     insertedImage: HTMLImageElement,
     renderData: RenderData,
@@ -124,7 +124,7 @@ export class HTMLRenderer {
     return;
   }
 
-  private createScreenImage(renderData: RenderData) {
+  private _createScreenImage(renderData: RenderData) {
     const screenImage = new Image();
     screenImage.setAttribute("crossorigin", "anonymous");
     {
@@ -135,7 +135,7 @@ export class HTMLRenderer {
     return screenImage;
   }
 
-  private createFrameImage(renderData: RenderData) {
+  private _createFrameImage(renderData: RenderData) {
     const frameImage = new Image();
     {
       frameImage.width = renderData.frameWidth;
@@ -145,7 +145,7 @@ export class HTMLRenderer {
     return frameImage;
   }
 
-  private renderFrame(
+  private _renderFrame(
     context: CanvasRenderingContext2D,
     frameImage: HTMLImageElement,
     renderData: RenderData,
@@ -161,7 +161,7 @@ export class HTMLRenderer {
     }
   }
 
-  private createCanvasDOMElement(renderData: RenderData) {
+  private _createCanvasDOMElement(renderData: RenderData) {
     const canvas = document.createElement("canvas");
     {
       canvas.id = "mock-up-canvas";
@@ -171,8 +171,8 @@ export class HTMLRenderer {
     return canvas;
   }
 
-  private appendCanvasInDOM(canvas: HTMLCanvasElement) {
-    const container = document.querySelector(`#${this.containerId}`);
+  private _appendCanvasInDOM(canvas: HTMLCanvasElement) {
+    const container = document.querySelector(`#${this._containerId}`);
     container?.appendChild(canvas);
   }
 }

@@ -3,7 +3,6 @@ import { DeviceLibraryItem } from "../../types/DeviceType.js";
 
 class Device {
   public name = "";
-
   public frame = {
     width: 0,
     height: 0,
@@ -16,11 +15,11 @@ class Device {
     },
   };
 
-  protected deviceLibraryItem: DeviceLibraryItem | undefined;
+  protected _deviceLibraryItem: DeviceLibraryItem | undefined;
 
   constructor(name: string) {
     this.name = name;
-    this.selectDevice(name);
+    this._selectDevice(name);
   }
 
   /**
@@ -29,7 +28,7 @@ class Device {
    * @param deviceName The name of the device to select
    * @returns Selected device
    */
-  private getDeviceLibraryItem(
+  private _getDeviceLibraryItem(
     deviceName: DeviceLibraryItem["name"],
   ): DeviceLibraryItem | undefined {
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
@@ -46,7 +45,7 @@ class Device {
    *
    * @param deviceLibraryItem DeviceLibraryItem
    */
-  private setDeviceState(deviceLibraryItem: DeviceLibraryItem): void {
+  private _setDeviceState(deviceLibraryItem: DeviceLibraryItem): void {
     {
       this.frame.height = deviceLibraryItem.height;
       this.frame.width = deviceLibraryItem.width;
@@ -55,7 +54,7 @@ class Device {
     }
     {
       this.name = deviceLibraryItem.name;
-      this.deviceLibraryItem = deviceLibraryItem;
+      this._deviceLibraryItem = deviceLibraryItem;
     }
 
     return;
@@ -67,21 +66,21 @@ class Device {
    * @param deviceName The name of the device to be selected
    * @returns Selected device
    */
-  private selectDevice(deviceName: DeviceLibraryItem["name"]) {
+  private _selectDevice(deviceName: DeviceLibraryItem["name"]) {
     /** @exception Device is not selected */
     if (!deviceName) {
       throw "Device is not selected";
     }
 
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
-      this.getDeviceLibraryItem(deviceName);
+      this._getDeviceLibraryItem(deviceName);
 
     /** @exception The device is not found in the available device library */
     if (!selectedDeviceLibraryItem) {
       throw "Device is not supported";
     }
 
-    this.setDeviceState(selectedDeviceLibraryItem);
+    this._setDeviceState(selectedDeviceLibraryItem);
 
     return {
       name: this.name,

@@ -4,12 +4,12 @@ import { HTMLRenderer } from "./HTMLRenderer.js";
 import { RenderData, SupportedImageFormat } from "./types.js";
 
 class MockUpHTMLRenderer {
-  private htmlRenderer: undefined | HTMLRenderer = undefined;
-  private htmlImageDownloader: undefined | HTMLImageDownloader = undefined;
+  private _htmlRenderer: undefined | HTMLRenderer = undefined;
+  private _htmlImageDownloader: undefined | HTMLImageDownloader = undefined;
 
   constructor(containerId: string = "") {
-    this.htmlRenderer = new HTMLRenderer(containerId);
-    this.htmlImageDownloader = new HTMLImageDownloader(containerId);
+    this._htmlRenderer = new HTMLRenderer(containerId);
+    this._htmlImageDownloader = new HTMLImageDownloader(containerId);
   }
 
   /**
@@ -31,7 +31,7 @@ class MockUpHTMLRenderer {
       frameImage: "",
     },
   ) {
-    this.htmlRenderer?.render(renderData);
+    this._htmlRenderer?.render(renderData);
   }
 
   /**
@@ -42,7 +42,7 @@ class MockUpHTMLRenderer {
   public async download(
     format: SupportedImageFormat = "png",
   ): Promise<string | undefined> {
-    const result = await this.htmlImageDownloader?.download(format);
+    const result = await this._htmlImageDownloader?.download(format);
     return result;
   }
 }

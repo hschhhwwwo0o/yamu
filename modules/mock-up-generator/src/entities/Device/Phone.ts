@@ -21,40 +21,26 @@ class PhoneDevice extends Device {
    * @returns Setted phone settings or undefined
    */
   public changeSettings(settings: PhoneSettings): PhoneSettings | undefined {
-    this.setSettingsState(settings);
+    this._setSettingsState(settings);
 
     if (settings.isSystemBar === false) {
-      this.frame.image = this.deviceLibraryItem?.frameImages.default || "";
+      this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
       return this.settings;
     }
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark") {
         this.frame.image =
-          this.deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
+          this._deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
         return this.settings;
       }
       if (settings.theme === "light") {
         this.frame.image =
-          this.deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
+          this._deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
         return this.settings;
       }
     }
 
     return;
-  }
-
-  /**
-   * Set new settings
-   *
-   * @param newSettings Configuration settings
-   * @returns New settings state
-   */
-  private setSettingsState(newSettings: PhoneSettings): PhoneSettings {
-    this.settings = {
-      ...this.settings,
-      ...newSettings,
-    };
-    return this.settings;
   }
 
   /**
@@ -71,6 +57,20 @@ class PhoneDevice extends Device {
         variants: ["light", "dark"],
       },
     ];
+  }
+
+  /**
+   * Set new settings
+   *
+   * @param newSettings Configuration settings
+   * @returns New settings state
+   */
+  private _setSettingsState(newSettings: PhoneSettings): PhoneSettings {
+    this.settings = {
+      ...this.settings,
+      ...newSettings,
+    };
+    return this.settings;
   }
 }
 

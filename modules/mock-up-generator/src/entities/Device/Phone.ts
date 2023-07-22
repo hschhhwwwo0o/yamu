@@ -28,7 +28,7 @@ class PhoneDevice extends Device {
       return this.settings;
     }
     if (settings.isSystemBar === true) {
-      if (settings.theme === "dark") {
+      if (settings.theme === "dark" || settings.theme === undefined) {
         this.frame.image =
           this._deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
         return this.settings;
@@ -50,9 +50,14 @@ class PhoneDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [
-      { key: "isSystemBar", type: "switch" },
+      {
+        key: "isSystemBar",
+        type: "switch",
+        label: "Availability of the system bar",
+      },
       {
         key: "theme",
+        label: "Theme",
         type: "variants",
         variants: ["light", "dark"],
       },

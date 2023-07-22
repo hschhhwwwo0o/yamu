@@ -68,7 +68,7 @@ export class HTMLRenderer {
     const height = renderData.frameHeight - paddingTop - paddingBottom;
 
     context.roundRect(paddingLeft, paddingTop, width, height, 10);
-    context.fillStyle = "#000";
+    context.fillStyle = "#3C3C3C";
     context.fill();
 
     return;
@@ -172,6 +172,7 @@ export class HTMLRenderer {
   }
 
   private _appendCanvasInDOM(canvas: HTMLCanvasElement) {
+    this._clearDOMContainer();
     const container = document.querySelector(`#${this._containerId}`);
     container?.appendChild(canvas);
   }

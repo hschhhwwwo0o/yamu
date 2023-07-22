@@ -14,18 +14,26 @@ export class HTMLImageDownloader {
    */
   public async download(
     format: SupportedImageFormat = "png",
+    quality: number = 1,
   ): Promise<string | undefined> {
-    const dataUrl = await (async function createDataUrlLink(containerId = "") {
-      const canvas = document.querySelector<HTMLCanvasElement>(
-        `#${containerId} > canvas`,
-      );
+    const dataUrl = await (async function _createDataUrlLink(
+      containerId: string = "",
+    ) {
+      const canvas: HTMLCanvasElement | null =
+        document.querySelector<HTMLCanvasElement>(`#${containerId} > canvas`);
 
       if (format === "png") {
-        return canvas?.toDataURL("image/png");
+        return canvas?.toDataURL("image/png", quality);
+      }
+      if (format === "jpeg") {
+        return canvas?.toDataURL("image/jpeg", quality);
+      }
+      if (format === "webp") {
+        return canvas?.toDataURL("image/webp", quality);
       }
     })(this._containerId);
 
-    (function createDownloadLink(dataUrl: string = ""): void {
+    (function _createDownloadLink(dataUrl: string = ""): void {
       const link = document.createElement("a");
       const filename = `${new Date().getTime()}.${format}`;
 

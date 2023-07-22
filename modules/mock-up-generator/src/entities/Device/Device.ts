@@ -17,7 +17,7 @@ class Device {
 
   protected _deviceLibraryItem: DeviceLibraryItem | undefined;
 
-  constructor(name: string) {
+  constructor(name: string = "") {
     this.name = name;
     this._selectDevice(name);
   }
@@ -66,7 +66,7 @@ class Device {
    * @param deviceName The name of the device to be selected
    * @returns Selected device
    */
-  private _selectDevice(deviceName: DeviceLibraryItem["name"]) {
+  private _selectDevice(deviceName: string = "") {
     /** @exception Device is not selected */
     if (!deviceName) {
       throw "Device is not selected";

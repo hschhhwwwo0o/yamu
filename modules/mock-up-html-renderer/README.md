@@ -8,7 +8,7 @@ The module implements the claims:
 The module has 2 methods:
 
 - _render_ - Render mock-up; The method requires an object argument with a description of the mock-up to be rendered;
-- _download_ - Generates a mock-up image and prompts the user for an image download menu
+- _download_ - Generates a mock-up image and prompts the user for an image download menu. It takes two optional arguments; 1 argument responsible for the image format (png, jpeg, webp); 2 argument - compression coefficient (from 0 to 1, where 1 removes compression and 0 maximally compresses the image)
 
 Example:
 
@@ -27,5 +27,5 @@ mockUpHTMLRenderer.render({
     paddingRight: number,
   },
 });
-mockUpHTMLRenderer.download();
+mockUpHTMLRenderer.download("webp", 1);
 ```

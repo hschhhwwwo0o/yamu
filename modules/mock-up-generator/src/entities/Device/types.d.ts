@@ -11,4 +11,5 @@ export interface SettingListItem {
   key: string;
   type: "switch" | "variants";
   variants?: string[];
+  label: string;
 }

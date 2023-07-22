@@ -7,7 +7,7 @@ class WatchDevice extends Device {
     isStrap: true,
   };
 
-  constructor(name: string) {
+  constructor(name: string = "") {
     super(name);
   }
 
@@ -38,7 +38,9 @@ class WatchDevice extends Device {
    * @returns Settings list item
    */
   public getSettingsList(): SettingListItem[] {
-    return [{ key: "isStrap", type: "switch" }];
+    return [
+      { key: "isStrap", type: "switch", label: "The presence of a strap" },
+    ];
   }
 
   /**

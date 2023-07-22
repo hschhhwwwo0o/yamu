@@ -41,8 +41,9 @@ class MockUpHTMLRenderer {
    */
   public async download(
     format: SupportedImageFormat = "png",
+    quality = 1,
   ): Promise<string | undefined> {
-    const result = await this._htmlImageDownloader?.download(format);
+    const result = await this._htmlImageDownloader?.download(format, quality);
     return result;
   }
 }

@@ -4,12 +4,18 @@ The project has a non-standard structure. The project is divided into modules an
 
 Why? To separate business logic from fickle and windy frameworks and libraries that are not related to business logic in any way. Modules are designed so that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be very easy to implement
 
-#### Installation
+#### Installation && Running a dev server
 
 To install application and module dependencies, copy this command and run it in the project root
 
 ```sh
 cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install && cd ../../ && cd ./modules/mock-up-generator && npm install && cd ../../ && npm install && npm run re-build-modules
+```
+
+Start the dev server using the command in the root of the project
+
+```sh
+npm run dev
 ```
 
 #### Module @mock-up-generator

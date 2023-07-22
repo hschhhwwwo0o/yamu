@@ -4,6 +4,7 @@
   "description": "Web application for mock-up creation",
   "scripts": {
     "pre-commit": "npm run lint-modules",
+    "dev": "cd ./app/yamu-react-app && npm run dev",
     "re-build-modules": "npm run build-mock-up-generator-module && npm run build-mock-up-html-renderer-module",
     "lint-modules": "npm run lint-mock-up-generator-module && npm run lint-mock-up-html-renderer-module",
     "build-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run compile",

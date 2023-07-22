@@ -3,7 +3,7 @@ import { SupportedImageFormat } from "./types.js";
 export class HTMLImageDownloader {
   private containerId = "";
 
-  constructor(containerId: string) {
+  constructor(containerId: string = "") {
     this.containerId = containerId;
   }
 
@@ -13,7 +13,7 @@ export class HTMLImageDownloader {
    * @claim UF/MOCK-UP/DOWNLOAD
    */
   public async download(
-    format: SupportedImageFormat,
+    format: SupportedImageFormat = "png",
   ): Promise<string | undefined> {
     const dataUrl = await (async function createDataUrlLink(containerId = "") {
       const canvas = document.querySelector<HTMLCanvasElement>(
@@ -25,7 +25,7 @@ export class HTMLImageDownloader {
       }
     })(this.containerId);
 
-    (function createDownloadLink(dataUrl: string): void {
+    (function createDownloadLink(dataUrl: string = ""): void {
       const link = document.createElement("a");
       const filename = `${new Date().getTime()}.${format}`;
 

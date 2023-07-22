@@ -7,41 +7,34 @@ import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
 
 export default function IndexScreen() {
   const mockUpGenerator = new MockUpGenerator();
-  const mockUpHTMLRenderer = new MockUpHTMLRenderer("mock-up-container");
+  const mockUpRenderer = new MockUpHTMLRenderer("mock-up-container");
 
   const [selectedDeviceName, setSelectedDeviceName] =
     useState<string>("iWatch SE");
 
   useEffect(
-    function onSelectDeviceAndRenderEffect() {
+    function onSelectDeviceAndRenderEffect(): void {
       mockUpGenerator.selectDevice(selectedDeviceName);
-      mockUpHTMLRenderer.render({
-        frameWidth: mockUpGenerator.mockUp.device.width,
-        frameHeight: mockUpGenerator.mockUp.device.height,
-        frameImage: mockUpGenerator.mockUp.device.frameImage,
-        insertedImage:
-          "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1729&q=80",
+      const mockUp = mockUpGenerator.mockUp;
+      const renderData = {
+        frameWidth: mockUp.device.frame.width,
+        frameHeight: mockUp.device.frame.height,
+        frameImage: mockUp.device.frame.image,
+        insertedImage: mockUp.insertedImage || "",
         paddingsInPercents: {
-          paddingTop:
-            mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents
-              .paddingTop,
-          paddingLeft:
-            mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents
-              .paddingLeft,
-          paddingBottom:
-            mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents
-              .paddingBottom,
-          paddingRight:
-            mockUpGenerator.mockUp.device.deviceLibraryItem.paddingsInPercents
-              .paddingRight,
+          top: mockUp.device.frame.paddingsInPercents.top,
+          left: mockUp.device.frame.paddingsInPercents.left,
+          bottom: mockUp.device.frame.paddingsInPercents.bottom,
+          right: mockUp.device.frame.paddingsInPercents.right,
         },
-      });
+      };
+      mockUpRenderer.render(renderData);
     },
     [selectedDeviceName],
   );
 
   async function downloadMockUp(): Promise<void> {
-    await mockUpHTMLRenderer.download("png");
+    await mockUpRenderer.download("png");
   }
 
   function selectDevice(event: React.ChangeEvent<HTMLSelectElement>): void {

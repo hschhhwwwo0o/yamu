@@ -3,11 +3,20 @@ import { DeviceLibraryItem } from "../../types/DeviceType.js";
 
 class Device {
   public name = "";
-  public width = 0;
-  public height = 0;
-  public frameImage = "";
 
-  public deviceLibraryItem: DeviceLibraryItem | undefined;
+  public frame = {
+    width: 0,
+    height: 0,
+    image: "",
+    paddingsInPercents: {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+    },
+  };
+
+  protected deviceLibraryItem: DeviceLibraryItem | undefined;
 
   constructor(name: string) {
     this.name = name;
@@ -38,11 +47,16 @@ class Device {
    * @param deviceLibraryItem DeviceLibraryItem
    */
   private setDeviceState(deviceLibraryItem: DeviceLibraryItem): void {
-    this.height = deviceLibraryItem.height;
-    this.width = deviceLibraryItem.width;
-    this.name = deviceLibraryItem.name;
-    this.frameImage = deviceLibraryItem.frameImages.default;
-    this.deviceLibraryItem = deviceLibraryItem;
+    {
+      this.frame.height = deviceLibraryItem.height;
+      this.frame.width = deviceLibraryItem.width;
+      this.frame.image = deviceLibraryItem.frameImages.default;
+      this.frame.paddingsInPercents = deviceLibraryItem.paddingsInPercents;
+    }
+    {
+      this.name = deviceLibraryItem.name;
+      this.deviceLibraryItem = deviceLibraryItem;
+    }
 
     return;
   }
@@ -67,16 +81,12 @@ class Device {
       throw "Device is not supported";
     }
 
-    const selectedDevice = {
-      name: selectedDeviceLibraryItem.name,
-      width: selectedDeviceLibraryItem.width,
-      height: selectedDeviceLibraryItem.height,
-      frameImage: selectedDeviceLibraryItem.frameImages.default,
-    };
-
     this.setDeviceState(selectedDeviceLibraryItem);
 
-    return selectedDevice;
+    return {
+      name: this.name,
+      frame: this.frame,
+    };
   }
 }
 

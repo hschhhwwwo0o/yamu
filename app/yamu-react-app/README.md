@@ -1,0 +1,1 @@
+Application on NextJS framework.

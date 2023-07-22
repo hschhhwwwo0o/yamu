@@ -24,17 +24,17 @@ class PhoneDevice extends Device {
     this.setSettingsState(settings);
 
     if (settings.isSystemBar === false) {
-      this.frameImage = this.deviceLibraryItem?.frameImages.default || "";
+      this.frame.image = this.deviceLibraryItem?.frameImages.default || "";
       return this.settings;
     }
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark") {
-        this.frameImage =
+        this.frame.image =
           this.deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
         return this.settings;
       }
       if (settings.theme === "light") {
-        this.frameImage =
+        this.frame.image =
           this.deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
         return this.settings;
       }

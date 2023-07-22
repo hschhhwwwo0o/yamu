@@ -1,4 +1,4 @@
-A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image.
+A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image.
 
 The module implements the claims:
 
@@ -13,7 +13,7 @@ The module has 2 methods:
 Example:
 
 ```js
-const mockUpHTMLRenderer = new MockUpHTMLRenderer("#domContainerId");
+const mockUpHTMLRenderer = new MockUpHTMLRenderer("domContainerId");
 
 mockUpHTMLRenderer.render({
   frameWidth: number,

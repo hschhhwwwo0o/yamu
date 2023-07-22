@@ -4,10 +4,10 @@ export interface RenderData {
   frameImage: string;
   insertedImage: string;
   paddingsInPercents: {
-    paddingTop: number;
-    paddingLeft: number;
-    paddingBottom: number;
-    paddingRight: number;
+    top: number;
+    left: number;
+    bottom: number;
+    right: number;
   };
 }
 

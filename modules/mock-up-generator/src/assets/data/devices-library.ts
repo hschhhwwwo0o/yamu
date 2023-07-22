@@ -27,10 +27,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     width: 345,
     height: 698,
     paddingsInPercents: {
-      paddingTop: 2.45,
-      paddingBottom: 2.45,
-      paddingLeft: 5.57,
-      paddingRight: 5.54,
+      top: 2.45,
+      bottom: 2.45,
+      left: 5.57,
+      right: 5.54,
     },
   },
   {
@@ -44,10 +44,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     width: 345,
     height: 703.55,
     paddingsInPercents: {
-      paddingTop: 2.15,
-      paddingBottom: 2.15,
-      paddingLeft: 5.2,
-      paddingRight: 4.9,
+      top: 2.15,
+      bottom: 2.15,
+      left: 5.2,
+      right: 4.9,
     },
   },
   {
@@ -60,10 +60,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     width: 438,
     height: 685,
     paddingsInPercents: {
-      paddingTop: 23.2,
-      paddingBottom: 23.3,
-      paddingLeft: 16,
-      paddingRight: 15.5,
+      top: 23.2,
+      bottom: 23.3,
+      left: 16,
+      right: 15.5,
     },
   },
 ];

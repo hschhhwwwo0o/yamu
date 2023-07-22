@@ -3,7 +3,7 @@ import { RenderData } from "./types.js";
 export class HTMLRenderer {
   private containerId: string;
 
-  constructor(containerId: string) {
+  constructor(containerId: string = "") {
     this.containerId = containerId;
   }
 
@@ -13,34 +13,33 @@ export class HTMLRenderer {
    * @claim UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
-    {
-      this.clearContainer();
-    }
+    this.clearDOMContainer();
 
-    const canvas = this.createCanvas(renderData);
+    const canvas = this.createCanvasDOMElement(renderData);
     const context = canvas.getContext("2d");
 
     const frameImage = this.createFrameImage(renderData);
 
     frameImage.onload = () => {
       if (!context) throw "Context error";
-      if (!renderData.insertedImage) {
+      const imageIsEmpty = !renderData.insertedImage;
+      if (imageIsEmpty) {
         this.renderEmptyScreen(context, renderData);
         this.renderFrame(context, frameImage, renderData);
-        this.renderCanvas(canvas);
+        this.appendCanvasInDOM(canvas);
       }
-      if (renderData.insertedImage) {
+      if (!imageIsEmpty) {
         const screenImage = this.createScreenImage(renderData);
         screenImage.onload = () => {
           this.renderScreen(context, screenImage, renderData);
           this.renderFrame(context, frameImage, renderData);
-          this.renderCanvas(canvas);
+          this.appendCanvasInDOM(canvas);
         };
       }
     };
   }
 
-  private clearContainer() {
+  private clearDOMContainer() {
     /** @exception Incorrect containerId */
     if (!this.containerId) {
       throw "Incorrect containerId";
@@ -58,15 +57,13 @@ export class HTMLRenderer {
     renderData: RenderData,
   ) {
     const paddingLeft =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.paddingLeft;
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
     const paddingRight =
-      (renderData.frameWidth / 100) *
-      renderData.paddingsInPercents.paddingRight;
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.right;
     const paddingTop =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.paddingTop;
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.top;
     const paddingBottom =
-      (renderData.frameHeight / 100) *
-      renderData.paddingsInPercents.paddingBottom;
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.bottom;
     const width = renderData.frameWidth - paddingLeft - paddingRight;
     const height = renderData.frameHeight - paddingTop - paddingBottom;
 
@@ -109,15 +106,13 @@ export class HTMLRenderer {
     }
 
     const paddingLeft =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.paddingLeft;
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
     const paddingRight =
-      (renderData.frameWidth / 100) *
-      renderData.paddingsInPercents.paddingRight;
+      (renderData.frameWidth / 100) * renderData.paddingsInPercents.right;
     const paddingTop =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.paddingTop;
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.top;
     const paddingBottom =
-      (renderData.frameHeight / 100) *
-      renderData.paddingsInPercents.paddingBottom;
+      (renderData.frameHeight / 100) * renderData.paddingsInPercents.bottom;
     const width = renderData.frameWidth - paddingLeft - paddingRight;
     const height = renderData.frameHeight - paddingTop - paddingBottom;
 
@@ -166,7 +161,7 @@ export class HTMLRenderer {
     }
   }
 
-  private createCanvas(renderData: RenderData) {
+  private createCanvasDOMElement(renderData: RenderData) {
     const canvas = document.createElement("canvas");
     {
       canvas.id = "mock-up-canvas";
@@ -176,7 +171,7 @@ export class HTMLRenderer {
     return canvas;
   }
 
-  private renderCanvas(canvas: HTMLCanvasElement) {
+  private appendCanvasInDOM(canvas: HTMLCanvasElement) {
     const container = document.querySelector(`#${this.containerId}`);
     container?.appendChild(canvas);
   }

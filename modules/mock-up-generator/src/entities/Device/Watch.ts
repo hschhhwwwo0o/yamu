@@ -23,11 +23,11 @@ class WatchDevice extends Device {
     this.setSettingsState(settings);
 
     if (settings.isStrap === false) {
-      this.frameImage = this.deviceLibraryItem?.frameImages.default || "";
+      this.frame.image = this.deviceLibraryItem?.frameImages.default || "";
       return this.settings;
     }
     if (settings.isStrap === true) {
-      this.frameImage = this.deviceLibraryItem?.frameImages.withStrap || "";
+      this.frame.image = this.deviceLibraryItem?.frameImages.withStrap || "";
       return this.settings;
     }
   }

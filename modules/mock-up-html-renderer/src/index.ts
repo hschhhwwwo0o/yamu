@@ -48,4 +48,4 @@ class MockUpHTMLRenderer {
   }
 }
 
-export { MockUpHTMLRenderer };
+export { MockUpHTMLRenderer, RenderData, SupportedImageFormat };

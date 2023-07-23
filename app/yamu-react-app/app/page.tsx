@@ -2,8 +2,8 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-import { MockUpGenerator } from "@module/mock-up-generator";
-import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
+import { MockUpGenerator, SettingListItem } from "@module/mock-up-generator";
+import { MockUpHTMLRenderer, RenderData } from "@module/mock-up-html-renderer";
 
 export default function IndexScreen() {
   const mockUpGenerator = useMemo(() => new MockUpGenerator(), []);
@@ -15,7 +15,7 @@ export default function IndexScreen() {
   const [selectedDeviceName, setSelectedDeviceName] =
     useState<string>("iWatch SE");
 
-  const [settingsList, setSettingsList] = useState<any[]>([]);
+  const [settingsList, setSettingsList] = useState<SettingListItem[]>([]);
   const [settings, setSettings] = useState<any>({});
 
   useEffect(
@@ -25,7 +25,7 @@ export default function IndexScreen() {
       const settingsList = mockUp.device.getSettingsList();
       setSettingsList(settingsList);
       setSettings({});
-      const renderData = {
+      const renderData: RenderData = {
         frameWidth: mockUp.device.frame.width,
         frameHeight: mockUp.device.frame.height,
         frameImage: mockUp.device.frame.image,
@@ -45,7 +45,7 @@ export default function IndexScreen() {
   useEffect(() => {
     const mockUp = mockUpGenerator.mockUp;
     mockUp.device.changeSettings(settings);
-    const renderData = {
+    const renderData: RenderData = {
       frameWidth: mockUp.device.frame.width,
       frameHeight: mockUp.device.frame.height,
       frameImage: mockUp.device.frame.image,

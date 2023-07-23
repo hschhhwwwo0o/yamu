@@ -71,7 +71,7 @@ class MockUpGenerator {
    *
    * @returns New state of the mockup
    */
-  public clear(): MockUpInterface {
+  public clearMockUp(): MockUpInterface {
     this.mockUp.device = new PhoneDevice("iPhone 13");
     this.mockUp.insertedImage = undefined;
 

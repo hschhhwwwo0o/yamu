@@ -1,5 +1,11 @@
 The module is intended for mock-up state management. Includes device selection, image insertion, device settings.
 
+Available devices:
+
+- iPhone 13
+- iPhone 14 Pro
+- iWatch SE
+
 The module implements the claims:
 
 - UF/MOCK-UP/SETTINGS-UP
@@ -20,5 +26,5 @@ const mockUpGenerator = new MockUpGenerator();
 
 mockUpGenerator.selectDevice("iPhone 13");
 mockUpGenerator.insertImage(base64);
-mockUpGenerator.clear();
+mockUpGenerator.clearMockUp();
 ```

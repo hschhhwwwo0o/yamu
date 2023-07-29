@@ -2,6 +2,8 @@ The module is intended for mock-up state management. Includes device selection, 
 
 Available devices:
 
+- iPhone SE
+- iPhone 12
 - iPhone 13
 - iPhone 14 Pro
 - iWatch SE

@@ -6,7 +6,7 @@ import iPhoneSEBase64Image from "../images/iphone-se/iphone-se-frame-base64.js";
 import iPhoneSEWithSystemBarLightThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+light-theme-frame-base64.js";
 import iPhoneSEWithSystemBarDarkThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+dark-theme-frame-base64.js";
 
-/** iPhone 13 */
+/** iPhone 12 */
 import iPhone12Base64Image from "../images/iphone-12/iphone-12-frame-base64.js";
 import iPhone12WithSystemBarLightThemeBase64Image from "../images/iphone-12/iphone-12+system-bar+light-theme-frame-base64.js";
 import iPhone12WithSystemBarDarkThemeBase64Image from "../images/iphone-12/iphone-12+system-bar+dark-theme-frame-base64.js";

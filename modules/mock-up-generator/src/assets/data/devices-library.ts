@@ -1,6 +1,11 @@
 /** Types */
 import { DeviceLibraryItem } from "../../types/DeviceType.js";
 
+/** iPhone SE */
+import iPhoneSEBase64Image from "../images/iphone-se/iphone-se-frame-base64.js";
+import iPhoneSEWithSystemBarLightThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+light-theme-frame-base64.js";
+import iPhoneSEWithSystemBarDarkThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+dark-theme-frame-base64.js";
+
 /** iPhone 13 */
 import iPhone13Base64Image from "../images/iphone-13/iphone-13-frame-base64.js";
 import iPhone13WithSystemBarLightThemeBase64Image from "../images/iphone-13/iphone-13+system-bar+light-theme-frame-base64.js";
@@ -43,6 +48,23 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     },
     width: 345,
     height: 703.55,
+    paddingsInPercents: {
+      top: 2.15,
+      bottom: 2.15,
+      left: 5.2,
+      right: 4.9,
+    },
+  },
+  {
+    name: "iPhone SE",
+    type: "phone",
+    frameImages: {
+      default: iPhoneSEBase64Image,
+      withSystemBarLightTheme: iPhoneSEWithSystemBarLightThemeBase64Image,
+      withSystemBarDarkTheme: iPhoneSEWithSystemBarDarkThemeBase64Image,
+    },
+    width: 345,
+    height: 693.15,
     paddingsInPercents: {
       top: 2.15,
       bottom: 2.15,

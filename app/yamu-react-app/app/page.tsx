@@ -13,7 +13,7 @@ export default function IndexScreen() {
   );
 
   const [selectedDeviceName, setSelectedDeviceName] =
-    useState<string>("iWatch SE");
+    useState<string>("Apple Watch Ultra");
 
   const [settingsList, setSettingsList] = useState<any[]>([]);
   const [settings, setSettings] = useState<any>({});
@@ -76,7 +76,7 @@ export default function IndexScreen() {
           name="select-device-mock-up"
           id="select-device-mock-up"
         >
-          <option value="iWatch SE">iWatch SE</option>
+          <option value="Apple Watch Ultra">Apple Watch Ultra</option>
           <option value="iPhone 13">iPhone 13</option>
           <option value="iPhone 14 Pro">iPhone 14 Pro</option>
           <option value="iPhone SE">iPhone SE</option>

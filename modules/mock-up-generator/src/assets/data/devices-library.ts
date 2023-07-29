@@ -95,7 +95,7 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     },
   },
   {
-    name: "iWatch SE",
+    name: "Apple Watch Ultra",
     type: "watch",
     frameImages: {
       default: iWatchSEBase64Image,

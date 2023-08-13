@@ -39,6 +39,11 @@ class MockUpHTMLRenderer {
    * Download mock-up
    *
    * @claim UF/MOCK-UP/DOWNLOAD
+   *
+   * @param format String. The format of the final image. Accepts: "png", "webp", "jpeg"
+   * @param quality A number from 0 to 1; Displays the compression ratio of the final image
+   *
+   * @returns String. Image link
    */
   public async download(
     format: SupportedImageFormat = "png",

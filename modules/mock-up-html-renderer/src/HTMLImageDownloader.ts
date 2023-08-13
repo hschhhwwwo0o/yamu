@@ -11,27 +11,30 @@ export class HTMLImageDownloader {
    * Download mock-up
    *
    * @claim UF/MOCK-UP/DOWNLOAD
+   *
+   * @param format String. The format of the final image. Accepts: "png", "webp", "jpeg"
+   * @param quality A number from 0 to 1; Displays the compression ratio of the final image
+   *
+   * @returns String. Image link
    */
   public async download(
     format: SupportedImageFormat = "png",
     quality: number = 1,
   ): Promise<string | undefined> {
-    const dataUrl = await (async function _createDataUrlLink(
-      containerId: string = "",
-    ) {
-      const canvas: HTMLCanvasElement | null =
-        document.querySelector<HTMLCanvasElement>(`#${containerId} > canvas`);
+    const dataUrl: string | undefined =
+      await (async function _createDataUrlLink(containerId: string = "") {
+        const canvas: HTMLCanvasElement | null =
+          document.querySelector<HTMLCanvasElement>(`#${containerId} > canvas`);
 
-      if (format === "png") {
-        return canvas?.toDataURL("image/png", quality);
-      }
-      if (format === "jpeg") {
-        return canvas?.toDataURL("image/jpeg", quality);
-      }
-      if (format === "webp") {
-        return canvas?.toDataURL("image/webp", quality);
-      }
-    })(this._containerId);
+        switch (format) {
+          case "png":
+            return canvas?.toDataURL("image/png", quality);
+          case "jpeg":
+            return canvas?.toDataURL("image/jpeg", quality);
+          case "webp":
+            return canvas?.toDataURL("image/webp", quality);
+        }
+      })(this._containerId);
 
     (function _createDownloadLink(dataUrl: string = ""): void {
       const link = document.createElement("a");

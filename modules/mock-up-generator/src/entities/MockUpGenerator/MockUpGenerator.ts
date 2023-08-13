@@ -2,6 +2,7 @@ import { PhoneDevice } from "../Device/Phone.js";
 import { WatchDevice } from "../Device/Watch.js";
 
 import { DeviceType } from "../../types/DeviceType.js";
+
 import { devicesLibrary } from "../../assets/data/devices-library.js";
 export interface MockUpInterface {
   device: PhoneDevice | WatchDevice;
@@ -61,6 +62,7 @@ class MockUpGenerator {
       throw "Image is not provided";
     }
     this.mockUp.insertedImage = image;
+
     return this.mockUp;
   }
 

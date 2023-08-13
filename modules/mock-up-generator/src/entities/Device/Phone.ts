@@ -17,7 +17,11 @@ class PhoneDevice extends Device {
    *
    * @claim UF/MOCK-UP/SETTINGS-UP
    *
+   * @claim UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE
+   * @claim UF/DEVICE/OPTION-THEME-TOGGLE
+   *
    * @param settings  Configuration settings
+   *
    * @returns Setted phone settings or undefined
    */
   public changeSettings(settings: PhoneSettings): PhoneSettings | undefined {
@@ -27,6 +31,7 @@ class PhoneDevice extends Device {
       this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
       return this.settings;
     }
+
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark" || settings.theme === undefined) {
         this.frame.image =

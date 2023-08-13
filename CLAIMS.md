@@ -26,6 +26,7 @@
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
+| Switching the presence of a watch strap  | UF/MOCK-UP/OPTION-STRAP-TOGGLE     |
 
 #### Use cases
 

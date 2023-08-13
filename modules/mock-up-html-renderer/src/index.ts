@@ -28,6 +28,7 @@ class MockUpHTMLRenderer {
         right: 0,
         top: 0,
       },
+      borderRadius: 0,
       frameImage: "",
     },
   ) {

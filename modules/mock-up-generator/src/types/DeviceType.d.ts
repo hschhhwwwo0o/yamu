@@ -17,4 +17,5 @@ export interface DeviceLibraryItem {
     bottom: number;
     right: number;
   };
+  borderRadius?: number;
 }

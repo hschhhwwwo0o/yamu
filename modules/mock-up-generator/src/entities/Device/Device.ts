@@ -13,6 +13,7 @@ class Device {
       left: 0,
       right: 0,
     },
+    borderRadius: 0,
   };
 
   protected _deviceLibraryItem: DeviceLibraryItem | undefined;
@@ -51,6 +52,10 @@ class Device {
       this.frame.width = deviceLibraryItem.width;
       this.frame.image = deviceLibraryItem.frameImages.default;
       this.frame.paddingsInPercents = deviceLibraryItem.paddingsInPercents;
+      this.frame.borderRadius =
+        deviceLibraryItem.borderRadius === undefined
+          ? 10
+          : deviceLibraryItem.borderRadius;
     }
     {
       this.name = deviceLibraryItem.name;

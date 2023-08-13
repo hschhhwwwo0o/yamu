@@ -6,6 +6,11 @@ import iPhoneSEBase64Image from "../images/iphone-se/iphone-se-frame-base64.js";
 import iPhoneSEWithSystemBarLightThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+light-theme-frame-base64.js";
 import iPhoneSEWithSystemBarDarkThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+dark-theme-frame-base64.js";
 
+/** iPhone 11 */
+import iPhone11Base64Image from "../images/iphone-11/iphone-11-frame-base64.js";
+import iPhone11WithSystemBarLightThemeBase64Image from "../images/iphone-11/iphone-11+system-bar+light-theme-frame-base64.js";
+import iPhone11WithSystemBarDarkThemeBase64Image from "../images/iphone-11/iphone-11+system-bar+dark-theme-frame-base64.js";
+
 /** iPhone 12 */
 import iPhone12Base64Image from "../images/iphone-12/iphone-12-frame-base64.js";
 import iPhone12WithSystemBarLightThemeBase64Image from "../images/iphone-12/iphone-12+system-bar+light-theme-frame-base64.js";
@@ -27,6 +32,24 @@ import iWatchSEWithStrapBase64Image from "../images/iwatch-se/iwatch-se+strap-fr
 
 export const devicesLibrary: DeviceLibraryItem[] = [
   {
+    name: "iPhone 11",
+    type: "phone",
+    frameImages: {
+      default: iPhone11Base64Image,
+      withSystemBarLightTheme: iPhone11WithSystemBarLightThemeBase64Image,
+      withSystemBarDarkTheme: iPhone11WithSystemBarDarkThemeBase64Image,
+    },
+    width: 345,
+    height: 689.17,
+    paddingsInPercents: {
+      top: 2.45,
+      bottom: 2.45,
+      left: 5.57,
+      right: 5.54,
+    },
+    borderRadius: 10,
+  },
+  {
     name: "iPhone 12",
     type: "phone",
     frameImages: {
@@ -42,6 +65,7 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 5.57,
       right: 5.54,
     },
+    borderRadius: 10,
   },
   {
     name: "iPhone 13",
@@ -59,6 +83,7 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 5.57,
       right: 5.54,
     },
+    borderRadius: 10,
   },
   {
     name: "iPhone 14 Pro",
@@ -76,6 +101,7 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 5.2,
       right: 4.9,
     },
+    borderRadius: 10,
   },
   {
     name: "iPhone SE",
@@ -88,11 +114,12 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     width: 345,
     height: 693.15,
     paddingsInPercents: {
-      top: 2.15,
-      bottom: 2.15,
-      left: 5.2,
-      right: 4.9,
+      top: 11.9,
+      bottom: 13,
+      left: 7,
+      right: 8,
     },
+    borderRadius: 0,
   },
   {
     name: "Apple Watch Ultra",
@@ -109,5 +136,6 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 16,
       right: 15.5,
     },
+    borderRadius: 10,
   },
 ];

@@ -36,6 +36,7 @@ export default function IndexScreen() {
           bottom: mockUp.device.frame.paddingsInPercents.bottom,
           right: mockUp.device.frame.paddingsInPercents.right,
         },
+        borderRadius: mockUp.device.frame.borderRadius,
       };
       mockUpRenderer.render(renderData);
     },
@@ -56,6 +57,7 @@ export default function IndexScreen() {
         bottom: mockUp.device.frame.paddingsInPercents.bottom,
         right: mockUp.device.frame.paddingsInPercents.right,
       },
+      borderRadius: mockUp.device.frame.borderRadius,
     };
     mockUpRenderer.render(renderData);
   }, [settings]);

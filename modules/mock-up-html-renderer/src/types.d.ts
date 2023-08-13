@@ -9,6 +9,7 @@ export interface RenderData {
     bottom: number;
     right: number;
   };
+  borderRadius?: number;
 }
 
 export type SupportedImageFormat = "png" | "jpeg" | "webp";

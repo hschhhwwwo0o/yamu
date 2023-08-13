@@ -56,6 +56,8 @@ export class HTMLRenderer {
     context: CanvasRenderingContext2D,
     renderData: RenderData,
   ) {
+    const borderRadius =
+      renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
     const paddingLeft =
       (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
     const paddingRight =
@@ -67,8 +69,8 @@ export class HTMLRenderer {
     const width = renderData.frameWidth - paddingLeft - paddingRight;
     const height = renderData.frameHeight - paddingTop - paddingBottom;
 
-    context.roundRect(paddingLeft, paddingTop, width, height, 10);
-    context.fillStyle = "#3C3C3C";
+    context.roundRect(paddingLeft, paddingTop, width, height, borderRadius);
+    context.fillStyle = "#3c3c3c";
     context.fill();
 
     return;

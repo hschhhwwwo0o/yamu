@@ -30,7 +30,7 @@ npm run dev
 
 Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.
 
-_Ian Sommerville и Pete Sawyer, 1997_
+_Ian Sommerville, Pete Sawyer, 1997_
 
 #### Quality Attributes
 

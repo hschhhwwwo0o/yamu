@@ -34,6 +34,10 @@ _Ian Sommerville и Pete Sawyer, 1997_
 
 #### Quality Attributes
 
+Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality
+
+_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
+
 | Attribute                                 | ID                       |
 | :---------------------------------------- | :----------------------- |
 | Separation of the mockup creation process | QA/MOCK-UP/CREATE-STEPS  |
@@ -45,6 +49,10 @@ _Ian Sommerville и Pete Sawyer, 1997_
 | Error output                              | QA/UX/ERRORS-LOG         |
 
 #### Functional claims
+
+Functional requirements can be written in terms of what the system does or what the user does.
+
+_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
@@ -60,6 +68,10 @@ _Ian Sommerville и Pete Sawyer, 1997_
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
 
 #### Use cases
+
+A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information
+
+_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                    |
 | :---------------- | :------------------------------------------------------------------------------------------------------------------- |

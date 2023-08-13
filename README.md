@@ -30,13 +30,13 @@ npm run dev
 
 Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.
 
-_Ian Sommerville, Pete Sawyer, 1997_
+**_Ian Sommerville, Pete Sawyer, 1997_**
 
 #### Quality Attributes
 
 Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality
 
-_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
+**_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_**
 
 | Attribute                                 | ID                       |
 | :---------------------------------------- | :----------------------- |
@@ -52,7 +52,7 @@ _"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
 
 Functional requirements can be written in terms of what the system does or what the user does.
 
-_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
+**_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_**
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
@@ -71,7 +71,7 @@ _"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
 
 A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information
 
-_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_
+**_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_**
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                    |
 | :---------------- | :------------------------------------------------------------------------------------------------------------------- |
@@ -104,7 +104,7 @@ The module implements the claims:
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
 | Switching the presence of a watch strap  | UF/MOCK-UP/OPTION-STRAP-TOGGLE     |
 
-_More documentation about the module is located in the root of the module folder_
+**_More documentation about the module is located in the root of the module folder_**
 
 #### Module @mock-up-html-renderer
 
@@ -117,4 +117,4 @@ The module implements the claims:
 | Downloading a mockup | UF/MOCK-UP/DOWNLOAD |
 | Mockup display       | UF/MOCK-UP/VIEW     |
 
-_More documentation about the module is located in the root of the module folder_
+**_More documentation about the module is located in the root of the module folder_**

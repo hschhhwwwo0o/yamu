@@ -11,6 +11,10 @@ export interface DeviceLibraryItem {
     withSystemBarDarkTheme?: string;
     withStrap?: string;
   };
+  screen: {
+    width: number;
+    height: number;
+  };
   paddingsInPercents: {
     top: number;
     left: number;

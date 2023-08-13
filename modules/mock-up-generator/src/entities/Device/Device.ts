@@ -7,6 +7,10 @@ class Device {
     width: 0,
     height: 0,
     image: "",
+    screen: {
+      width: 0,
+      height: 0,
+    },
     paddingsInPercents: {
       top: 0,
       bottom: 0,
@@ -56,6 +60,7 @@ class Device {
         deviceLibraryItem.borderRadius === undefined
           ? 10
           : deviceLibraryItem.borderRadius;
+      this.frame.screen = deviceLibraryItem.screen;
     }
     {
       this.name = deviceLibraryItem.name;

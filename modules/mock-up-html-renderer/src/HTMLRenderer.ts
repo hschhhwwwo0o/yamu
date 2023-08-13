@@ -107,6 +107,8 @@ export class HTMLRenderer {
       ctx.closePath();
     }
 
+    const borderRadius =
+      renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
     const paddingLeft =
       (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
     const paddingRight =
@@ -118,7 +120,14 @@ export class HTMLRenderer {
     const width = renderData.frameWidth - paddingLeft - paddingRight;
     const height = renderData.frameHeight - paddingTop - paddingBottom;
 
-    createRoundedImage(context, paddingLeft, paddingTop, width, height, 10);
+    createRoundedImage(
+      context,
+      paddingLeft,
+      paddingTop,
+      width,
+      height,
+      borderRadius,
+    );
     context.save();
     context.clip();
     context.drawImage(insertedImage, paddingLeft, paddingTop, width, height);

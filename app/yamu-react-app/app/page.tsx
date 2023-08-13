@@ -15,6 +15,8 @@ export default function IndexScreen() {
   const [selectedDeviceName, setSelectedDeviceName] =
     useState<string>("Apple Watch Ultra");
 
+  const [insertImage, setInsertImage] = useState<string>("");
+
   const [settingsList, setSettingsList] = useState<any[]>([]);
   const [settings, setSettings] = useState<any>({});
 
@@ -43,24 +45,53 @@ export default function IndexScreen() {
     [selectedDeviceName],
   );
 
-  useEffect(() => {
-    const mockUp = mockUpGenerator.mockUp;
-    mockUp.device.changeSettings(settings);
-    const renderData = {
-      frameWidth: mockUp.device.frame.width,
-      frameHeight: mockUp.device.frame.height,
-      frameImage: mockUp.device.frame.image,
-      insertedImage: mockUp.insertedImage || "",
-      paddingsInPercents: {
-        top: mockUp.device.frame.paddingsInPercents.top,
-        left: mockUp.device.frame.paddingsInPercents.left,
-        bottom: mockUp.device.frame.paddingsInPercents.bottom,
-        right: mockUp.device.frame.paddingsInPercents.right,
-      },
-      borderRadius: mockUp.device.frame.borderRadius,
-    };
-    mockUpRenderer.render(renderData);
-  }, [settings]);
+  useEffect(
+    function onChangeSettingsDeviceEffect() {
+      const mockUp = mockUpGenerator.mockUp;
+      mockUp.device.changeSettings(settings);
+      const renderData = {
+        frameWidth: mockUp.device.frame.width,
+        frameHeight: mockUp.device.frame.height,
+        frameImage: mockUp.device.frame.image,
+        insertedImage: mockUp.insertedImage || "",
+        paddingsInPercents: {
+          top: mockUp.device.frame.paddingsInPercents.top,
+          left: mockUp.device.frame.paddingsInPercents.left,
+          bottom: mockUp.device.frame.paddingsInPercents.bottom,
+          right: mockUp.device.frame.paddingsInPercents.right,
+        },
+        borderRadius: mockUp.device.frame.borderRadius,
+      };
+      mockUpRenderer.render(renderData);
+    },
+    [settings],
+  );
+
+  useEffect(
+    function onSelectScreenImageEffect() {
+      if (insertImage) {
+        mockUpGenerator.insertImage(insertImage);
+        const mockUp = mockUpGenerator.mockUp;
+        const renderData = {
+          frameWidth: mockUp.device.frame.width,
+          frameHeight: mockUp.device.frame.height,
+          frameImage: mockUp.device.frame.image,
+          insertedImage: mockUp.insertedImage || "",
+          paddingsInPercents: {
+            top: mockUp.device.frame.paddingsInPercents.top,
+            left: mockUp.device.frame.paddingsInPercents.left,
+            bottom: mockUp.device.frame.paddingsInPercents.bottom,
+            right: mockUp.device.frame.paddingsInPercents.right,
+          },
+          borderRadius: mockUp.device.frame.borderRadius,
+        };
+        mockUpRenderer.render(renderData);
+      }
+
+      return;
+    },
+    [insertImage],
+  );
 
   async function downloadMockUp(): Promise<void> {
     await mockUpRenderer.download("png");
@@ -73,6 +104,18 @@ export default function IndexScreen() {
   return (
     <div className="w-[100vw] flex flex-col items-center justify-center pt-10">
       <div className="py-2">
+        <input
+          type="file"
+          name=""
+          id=""
+          accept="image/png, image/jpeg"
+          onChange={(e) => {
+            if (e.target.files?.length) {
+              const url = URL.createObjectURL(e.target.files[0]);
+              setInsertImage(url);
+            }
+          }}
+        />
         <select
           onChange={selectDevice}
           name="select-device-mock-up"

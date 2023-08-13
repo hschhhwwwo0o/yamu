@@ -47,6 +47,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 5.57,
       right: 5.54,
     },
+    screen: {
+      width: 375,
+      height: 812,
+    },
     borderRadius: 10,
   },
   {
@@ -64,6 +68,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       bottom: 2.45,
       left: 5.57,
       right: 5.54,
+    },
+    screen: {
+      width: 375,
+      height: 812,
     },
     borderRadius: 10,
   },
@@ -83,6 +91,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 5.57,
       right: 5.54,
     },
+    screen: {
+      width: 390,
+      height: 844,
+    },
     borderRadius: 10,
   },
   {
@@ -100,6 +112,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       bottom: 2.15,
       left: 5.2,
       right: 4.9,
+    },
+    screen: {
+      width: 393,
+      height: 852,
     },
     borderRadius: 10,
   },
@@ -119,6 +135,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       left: 7,
       right: 8,
     },
+    screen: {
+      width: 320,
+      height: 568,
+    },
     borderRadius: 0,
   },
   {
@@ -135,6 +155,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
       bottom: 23.3,
       left: 16,
       right: 15.5,
+    },
+    screen: {
+      width: 184,
+      height: 224,
     },
     borderRadius: 10,
   },

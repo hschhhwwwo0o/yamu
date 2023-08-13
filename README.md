@@ -1,4 +1,4 @@
-### Development
+### "Development"
 
 The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus the application (NextJS framework in this case) is responsible only for UI/UX display, while the modules contains all business logic.
 
@@ -10,7 +10,7 @@ Package managment: NPM
 
 <!-- CLAIMS.md -->
 
-### Software claims
+### "Software claims"
 
 #### Quality Attributes
 
@@ -23,21 +23,6 @@ Package managment: NPM
 | WCAG compliance                           | QA/UX/WCAG               |
 | High Lighthouse testing results           | QA/SEO/LIGHTHOUSE        |
 | Error output                              | QA/UX/ERRORS-LOG         |
-
-<table width="100%">
-  <thead>
-    <tr>
-      <th width="50%">Attribute</th>
-      <th width="50%">ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td width="50%">1</td>
-      <td width="50%">1</td>
-    </tr>
-  </tbody>
-</table>
 
 #### Functional claims
 
@@ -64,7 +49,7 @@ Package managment: NPM
 
 <!-- END OF CLAIMS.md -->
 
-#### Installation && Running a dev server
+### "Installation && Running a dev server"
 
 To install application and module dependencies, copy this command and run it in the project root:
 
@@ -77,6 +62,10 @@ Start the dev server using the command in the root of the project:
 ```sh
 npm run dev
 ```
+
+### "Modules"
+
+The project is divided into modules and an application that uses the modules to implement the logic.
 
 #### Module @mock-up-generator
 

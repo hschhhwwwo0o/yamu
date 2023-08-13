@@ -26,6 +26,7 @@ mockUpHTMLRenderer.render({
     paddingBottom: number,
     paddingRight: number,
   },
+  borderRadius: number,
 });
 mockUpHTMLRenderer.download("webp", 1);
 ```

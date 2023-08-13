@@ -8,6 +8,8 @@ To change the logic of module operation and test the result of module operation 
 
 Package managment: NPM
 
+<br />
+
 <!-- CLAIMS.md -->
 
 ### "Software claims"
@@ -49,6 +51,8 @@ Package managment: NPM
 
 <!-- END OF CLAIMS.md -->
 
+<br />
+
 ### "Installation && Running a dev server"
 
 To install application and module dependencies, copy this command and run it in the project root:
@@ -62,6 +66,8 @@ Start the dev server using the command in the root of the project:
 ```sh
 npm run dev
 ```
+
+<br />
 
 ### "Modules"
 

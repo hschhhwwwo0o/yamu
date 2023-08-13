@@ -1,4 +1,4 @@
-The application is designed to create mockups. The application has a choice between different types of devices: phones, watches, tablets
+The application is designed to create mock-ups. The application has a choice between different types of devices: phones, watches, tablets
 
 ## Development
 
@@ -38,15 +38,15 @@ Quality attributes describe the characteristics observed during software executi
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-| Attribute                                 | ID                       |
-| :---------------------------------------- | :----------------------- |
-| Separation of the mockup creation process | QA/MOCK-UP/CREATE-STEPS  |
-| UI is based on HIG                        | QA/UI/HIG                |
-| Localization                              | QA/LOCALIZATION          |
-| Interface adaptation                      | QA/UX/ADAPTIVE-INTERFACE |
-| WCAG compliance                           | QA/UX/WCAG               |
-| High Lighthouse testing results           | QA/SEO/LIGHTHOUSE        |
-| Error output                              | QA/UX/ERRORS-LOG         |
+| Attribute                                  | ID                       |
+| :----------------------------------------- | :----------------------- |
+| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  |
+| UI is based on HIG                         | QA/UI/HIG                |
+| Localization                               | QA/LOCALIZATION          |
+| Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE |
+| WCAG compliance                            | QA/UX/WCAG               |
+| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        |
+| Error output                               | QA/UX/ERRORS-LOG         |
 
 #### Functional claims
 
@@ -57,15 +57,15 @@ Functional requirements can be written in terms of what the system does or what 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
-| Downloading a mockup                     | UF/MOCK-UP/DOWNLOAD                |
-| Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
-| Mockup display                           | UF/MOCK-UP/VIEW                    |
-| Mockup Initialization                    | UF/MOCK-UP/INIT                    |
-| <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
+| Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
+| Mock-up display                          | UF/MOCK-UP/VIEW                    |
+| Mock-up Initialization                   | UF/MOCK-UP/INIT                    |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
-| BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         |
 
 #### Use cases
 
@@ -73,11 +73,11 @@ A use case describes how to use an automated system. It determines what the user
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-| ID                | UC/CREATE-MOCK-UP                                                                                                    |
-| :---------------- | :------------------------------------------------------------------------------------------------------------------- |
-| Acting person     | Designer                                                                                                             |
-| Description       | The user selects the device for which he would like to make a mockup. Configures the mockup with subsequent download |
-| Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                              |
+| ID                | UC/CREATE-MOCK-UP                                                                                                      |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| Acting person     | Designer                                                                                                               |
+| Description       | The user selects the device for which he would like to make a mock-up. Configures the mock-up with subsequent download |
+| Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                                |
 
 <!-- END OF CLAIMS.md -->
 
@@ -94,14 +94,14 @@ The module implements the claims:
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
-| Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
-| Mockup display                           | UF/MOCK-UP/VIEW                    |
-| Mockup Initialization                    | UF/MOCK-UP/INIT                    |
-| <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
+| Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
+| Mock-up display                          | UF/MOCK-UP/VIEW                    |
+| Mock-up Initialization                   | UF/MOCK-UP/INIT                    |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
-| BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         |
 | Switching the presence of a watch strap  | UF/MOCK-UP/OPTION-STRAP-TOGGLE     |
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
@@ -112,9 +112,9 @@ A module designed to display a mock-up on an HTML page. Includes rendering and d
 
 The module implements the claims:
 
-| Function             | ID                  |
-| :------------------- | :------------------ |
-| Downloading a mockup | UF/MOCK-UP/DOWNLOAD |
-| Mockup display       | UF/MOCK-UP/VIEW     |
+| Function              | ID                  |
+| :-------------------- | :------------------ |
+| Downloading a mock-up | UF/MOCK-UP/DOWNLOAD |
+| Mock-up display       | UF/MOCK-UP/VIEW     |
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>

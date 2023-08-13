@@ -1,3 +1,5 @@
+The application is designed to create mockups. The application has a choice between different types of devices: phones, watches, tablets
+
 ## Development
 
 The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus the application (NextJS framework in this case) is responsible only for UI/UX display, while the modules contains all business logic.

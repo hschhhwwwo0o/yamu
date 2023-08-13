@@ -73,10 +73,17 @@ The module is intended for mock-up state management. Includes device selection, 
 
 The module implements the claims:
 
-- UF/MOCK-UP/SETTINGS-UP - Setting up a device
-- UF/MOCK-UP/DEVICE-SELECT - Device selection
-- UF/MOCK-UP/INSERT-SCREEN - Adding an image inside a mock-up
-- UF/MOCK-UP/CLEAR - Clear mock-up state
+| Function                                 | ID                                 |
+| ---------------------------------------- | ---------------------------------- |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
+| Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
+| Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
+| Mockup display                           | UF/MOCK-UP/VIEW                    |
+| Mockup Initialization                    | UF/MOCK-UP/INIT                    |
+| <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
+| BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
 
 _More documentation about the module is located in the root of the module folder_
 
@@ -86,7 +93,9 @@ A module designed to display a mock-up on an HTML page. Includes rendering and d
 
 The module implements the claims:
 
-- UF/MOCK-UP/VIEW - Mock-up rendering
-- UF/MOCK-UP/DOWNLOAD - Download mock-up image
+| Function             | ID                  |
+| -------------------- | ------------------- |
+| Downloading a mockup | UF/MOCK-UP/DOWNLOAD |
+| Mockup display       | UF/MOCK-UP/VIEW     |
 
 _More documentation about the module is located in the root of the module folder_

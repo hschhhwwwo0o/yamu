@@ -24,6 +24,21 @@ Package managment: NPM
 | High Lighthouse testing results           | QA/SEO/LIGHTHOUSE        |
 | Error output                              | QA/UX/ERRORS-LOG         |
 
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="50%">Attribute</th>
+      <th width="50%">ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="50%">1</td>
+      <td width="50%">1</td>
+    </tr>
+  </tbody>
+</table>
+
 #### Functional claims
 
 | Function                                 | ID                                 |

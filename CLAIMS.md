@@ -1,6 +1,6 @@
-# “Software claims“
+### “Software claims“
 
-### Quality Attributes
+#### Quality Attributes
 
 | Attribute                                 | ID                       |
 | ----------------------------------------- | ------------------------ |
@@ -11,9 +11,8 @@
 | WCAG compliance                           | QA/UX/WCAG               |
 | High Lighthouse testing results           | QA/SEO/LIGHTHOUSE        |
 | Error output                              | QA/UX/ERRORS-LOG         |
-|                                           |
 
-### Functional claims
+#### Functional claims
 
 | Function                                 | ID                                 |
 | ---------------------------------------- | ---------------------------------- |
@@ -28,7 +27,7 @@
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
 
-### Use cases
+#### Use cases
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                    |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------- |

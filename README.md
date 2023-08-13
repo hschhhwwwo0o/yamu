@@ -6,6 +6,8 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 
 To change the logic of module operation and test the result of module operation in the application, you must recompile the module.
 
+Package managment: NPM
+
 #### Installation && Running a dev server
 
 To install application and module dependencies, copy this command and run it in the project root:

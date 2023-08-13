@@ -3,7 +3,7 @@ A module designed to display a mock-up on an HTML page using canvas. Includes re
 The module implements the claims:
 
 | Function             | ID                  |
-| -------------------- | ------------------- |
+| :------------------- | :------------------ |
 | Downloading a mockup | UF/MOCK-UP/DOWNLOAD |
 | Mockup display       | UF/MOCK-UP/VIEW     |
 

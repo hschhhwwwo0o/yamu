@@ -11,7 +11,7 @@ Available devices:
 The module implements the claims:
 
 | Function                                 | ID                                 |
-| ---------------------------------------- | ---------------------------------- |
+| :--------------------------------------- | :--------------------------------- |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |

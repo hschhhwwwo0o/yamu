@@ -3,9 +3,9 @@
 #### Quality Attributes
 
 | Attribute                                 | ID                       |
-| ----------------------------------------- | ------------------------ |
+| :---------------------------------------- | :----------------------- |
 | Separation of the mockup creation process | QA/MOCK-UP/CREATE-STEPS  |
-| UI is based on HIGH                       | QA/UI/HIG                |
+| UI is based on HIG                        | QA/UI/HIG                |
 | Localization                              | QA/LOCALIZATION          |
 | Interface adaptation                      | QA/UX/ADAPTIVE-INTERFACE |
 | WCAG compliance                           | QA/UX/WCAG               |
@@ -15,7 +15,7 @@
 #### Functional claims
 
 | Function                                 | ID                                 |
-| ---------------------------------------- | ---------------------------------- |
+| :--------------------------------------- | :--------------------------------- |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
 | Downloading a mockup                     | UF/MOCK-UP/DOWNLOAD                |
@@ -30,7 +30,7 @@
 #### Use cases
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                    |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------- |
 | Acting person     | Designer                                                                                                             |
 | Description       | The user selects the device for which he would like to make a mockup. Configures the mockup with subsequent download |
 | Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                              |

@@ -1,4 +1,4 @@
-### "Development"
+## Development
 
 The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus the application (NextJS framework in this case) is responsible only for UI/UX display, while the modules contains all business logic.
 
@@ -8,11 +8,23 @@ To change the logic of module operation and test the result of module operation 
 
 Package managment: NPM
 
-<br />
+## Installation && Running a dev server
+
+To install application and module dependencies, copy this command and run it in the project root:
+
+```sh
+cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install && cd ../../ && cd ./modules/mock-up-generator && npm install && cd ../../ && npm install && npm run re-build-modules
+```
+
+Start the dev server using the command in the root of the project:
+
+```sh
+npm run dev
+```
 
 <!-- CLAIMS.md -->
 
-### "Software claims"
+## Software claims
 
 #### Quality Attributes
 
@@ -51,25 +63,7 @@ Package managment: NPM
 
 <!-- END OF CLAIMS.md -->
 
-<br />
-
-### "Installation && Running a dev server"
-
-To install application and module dependencies, copy this command and run it in the project root:
-
-```sh
-cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install && cd ../../ && cd ./modules/mock-up-generator && npm install && cd ../../ && npm install && npm run re-build-modules
-```
-
-Start the dev server using the command in the root of the project:
-
-```sh
-npm run dev
-```
-
-<br />
-
-### "Modules"
+## Modules
 
 The project is divided into modules and an application that uses the modules to implement the logic.
 

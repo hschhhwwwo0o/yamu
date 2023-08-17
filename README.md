@@ -45,8 +45,10 @@ Quality attributes describe the characteristics observed during software executi
 | Localization                               | QA/LOCALIZATION          |
 | Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE |
 | WCAG compliance                            | QA/UX/WCAG               |
-| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        |
 | Error output                               | QA/UX/ERRORS-LOG         |
+| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        |
+| Open Graph support                         | QA/SEO/OPEN-GRAPH        |
+| Description of standard meta tags          | QA/SEO/META              |
 
 #### Functional claims
 

@@ -28,13 +28,13 @@ npm run dev
 
 ## Software claims
 
-Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.
+"Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process."
 
 <ins>_Ian Sommerville, Pete Sawyer, 1997_</ins>
 
 #### Quality Attributes
 
-Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality
+"Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality"
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
@@ -52,12 +52,13 @@ Quality attributes describe the characteristics observed during software executi
 
 #### Functional claims
 
-Functional requirements can be written in terms of what the system does or what the user does.
+"Functional requirements can be written in terms of what the system does or what the user does."
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                |
@@ -71,7 +72,7 @@ Functional requirements can be written in terms of what the system does or what 
 
 #### Use cases
 
-A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information
+"A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information"
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
@@ -95,6 +96,7 @@ The module implements the claims:
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |

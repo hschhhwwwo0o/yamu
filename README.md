@@ -1,4 +1,4 @@
-The application is designed to create mock-ups. The application has a choice between different types of devices: phones, watches, tablets
+The application is designed to create mock-ups. The application has a choice between different types of devices: phones, watches, tablets.
 
 ## Development
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 /** Global styles */
 import "../styles/globals/index.css";
@@ -27,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Fragment>{children}</Fragment>
+      </body>
     </html>
   );
 }

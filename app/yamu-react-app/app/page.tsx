@@ -1,5 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-export default function IndexScreen() {
-  return <main className=""></main>;
+export default function IndexScreen(): React.JSX.Element {
+  return (
+    <main>
+      <Fragment />
+    </main>
+  );
 }

@@ -1,5 +1,5 @@
-import { devicesLibrary } from "../../assets/data/devices-library.js";
 import { DeviceLibraryItem } from "../../types/DeviceType.js";
+import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
 
 class Device {
   public name = "";
@@ -33,9 +33,8 @@ class Device {
    * @param deviceName The name of the device to select
    * @returns Selected device
    */
-  private _getDeviceLibraryItem(
-    deviceName: DeviceLibraryItem["name"],
-  ): DeviceLibraryItem | undefined {
+  private _getDeviceLibraryItem(deviceName: DeviceLibraryItem["name"]) {
+    const devicesLibrary = new DevicesLibraryManager().get();
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
       devicesLibrary.find(function findSelectedDevice(
         _device: DeviceLibraryItem,
@@ -76,14 +75,14 @@ class Device {
    * @param deviceName The name of the device to be selected
    * @returns Selected device
    */
-  private _selectDevice(deviceName: string = "") {
+  private async _selectDevice(deviceName: string = "") {
     /** @exception Device is not selected */
     if (!deviceName) {
       throw "Device is not selected";
     }
 
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
-      this._getDeviceLibraryItem(deviceName);
+      await this._getDeviceLibraryItem(deviceName);
 
     /** @exception The device is not found in the available device library */
     if (!selectedDeviceLibraryItem) {

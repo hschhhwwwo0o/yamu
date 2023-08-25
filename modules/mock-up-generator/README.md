@@ -12,6 +12,7 @@ The module implements the claims:
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
@@ -23,16 +24,19 @@ The module implements the claims:
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |
 | Switching the presence of a watch strap  | UF/MOCK-UP/OPTION-STRAP-TOGGLE     |
 
-The module has 3 methods:
+The module has 4 methods:
 
 - _selectDevice_ - Selects the device. Takes the argument - the name of the device;
 - _insertImage_ - Inserts an image into a mock-up. Accepts a base64 string as an argument;
 - _clear_ - Resets the mock-up to default settings. Doesn't accept arguments;
+- _getDevicesLibrary_ - Return affordable devices. Doesn't accept arguments;
 
 Example:
 
 ```js
 const mockUpGenerator = new MockUpGenerator();
+
+const devicesLibrary = mockUpGenerator.getDevicesLibrary();
 
 mockUpGenerator.selectDevice("iPhone 13");
 mockUpGenerator.insertImage(base64);

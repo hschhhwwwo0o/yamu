@@ -2,8 +2,8 @@ import { PhoneDevice } from "../Device/Phone.js";
 import { WatchDevice } from "../Device/Watch.js";
 
 import { DeviceType } from "../../types/DeviceType.js";
+import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
 
-import { devicesLibrary } from "../../assets/data/devices-library.js";
 export interface MockUpInterface {
   device: PhoneDevice | WatchDevice;
   insertedImage: string | undefined;
@@ -14,6 +14,18 @@ class MockUpGenerator {
     device: new PhoneDevice("iPhone 13"),
     insertedImage: undefined,
   };
+
+  /**
+   * Getting affordable devices
+   *
+   * @claim UF/DEVICES-LIBRARY/GET
+   *
+   * @returns Affordable devices library
+   */
+  public getDevicesLibrary() {
+    const DevicesLibrary = new DevicesLibraryManager();
+    return DevicesLibrary.get();
+  }
 
   /**
    * Selecting a device from the library
@@ -28,9 +40,10 @@ class MockUpGenerator {
   public selectDevice(deviceName: string = "iPhone 13"): MockUpInterface {
     this.mockUp.insertedImage = undefined;
 
+    const devicesLibrary = new DevicesLibraryManager().get();
     const type: DeviceType | undefined = devicesLibrary.find(
-      (deviceLibraryItem) => {
-        return deviceLibraryItem.name === deviceName;
+      function _findDeviceByName(_deviceLibraryItem) {
+        return _deviceLibraryItem.name === deviceName;
       },
     )?.type;
 

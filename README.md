@@ -121,6 +121,23 @@ The module implements the claims:
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
 
+## Dictionary of Terms
+
+| Term                  | Meaning                                                                                                              |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------- |
+| Export                | The process of saving a layout to a file or to another format that can be used in further development or use.        |
+| Devices Library       | A collection of devices available for creating mockups                                                               |
+| Mock-up wizard        | Mockup settings panel consisting of several steps                                                                    |
+| Mock-up preview       | Mockup display                                                                                                       |
+| Mock-up preview scene | The scene in which the mockup is displayed                                                                           |
+| Selected device       | The device selected for the mockup                                                                                   |
+| System bar            | The system panel, usually located on top and displaying network data, time, and so on                                |
+| Inserted screen       | An image of the application design intended to be inserted into the layout                                           |
+| Frame                 | Imitation of the device case. Within the framework of the tool, the frame is used as an application design container |
+| Device type           | Watch, Phone, Tablet                                                                                                 |
+| Device                | Real device; phone/tablet. With a refined model                                                                      |
+| Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
+
 ## Other
 
 The design is developed in Figma.

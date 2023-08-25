@@ -8,7 +8,7 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 
 To change the logic of module operation and test the result of module operation in the application, you must recompile the module.
 
-Package managment: NPM
+In the code base in the comments to the code the identifiers of the developed requirements to the software are marked, which makes it easy to track the implementation of this or that requirement.
 
 ## Installation && Running a dev server
 
@@ -141,6 +141,8 @@ The module implements the claims:
 | Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
 
 ## Other
+
+Package managment: NPM
 
 The design is developed in Figma.
 

@@ -8,7 +8,7 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 
 To change the logic of module operation and test the result of module operation in the application, you must recompile the module.
 
-In the code base in the comments to the code the identifiers of the developed requirements to the software are marked, which makes it easy to track the implementation of this or that requirement. Just search for the requirement identifier in your text editor
+In the code base in the comments to the code the identifiers of the developed requirements to the software are marked, which makes it easy to track the implementation of this or that requirement. Just search for the requirement identifier in your text editor.
 
 ## Installation && Running a dev server
 
@@ -34,7 +34,7 @@ npm run dev
 
 #### Quality Attributes
 
-"Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality"
+"Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality."
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
@@ -72,7 +72,7 @@ npm run dev
 
 #### Use cases
 
-"A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information"
+"A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information."
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
@@ -112,7 +112,7 @@ The module implements the claims:
 
 #### Module @mock-up-html-renderer
 
-A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image
+A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image.
 
 The module implements the claims:
 
@@ -142,7 +142,7 @@ The module implements the claims:
 
 ## Other
 
-Package managment: NPM
+Package managment: NPM.
 
 The design is developed in Figma.
 

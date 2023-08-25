@@ -120,3 +120,9 @@ The module implements the claims:
 | Mock-up display       | UF/MOCK-UP/VIEW     |
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
+
+## Other
+
+The design is developed in Figma.
+
+Task management was performed using GitHub Projects

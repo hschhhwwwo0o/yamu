@@ -1,7 +1,7 @@
 import { PhoneDevice } from "../Device/Phone.js";
 import { WatchDevice } from "../Device/Watch.js";
 
-import { DeviceType } from "../../types/DeviceType.js";
+import { DeviceLibraryItem, DeviceType } from "../../types/DeviceType.js";
 import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
 
 export interface MockUpInterface {
@@ -22,7 +22,7 @@ class MockUpGenerator {
    *
    * @returns Affordable devices library
    */
-  public getDevicesLibrary() {
+  public getDevicesLibrary(): DeviceLibraryItem[] {
     const DevicesLibrary = new DevicesLibraryManager();
     return DevicesLibrary.get();
   }

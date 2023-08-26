@@ -2,7 +2,7 @@ import { DeviceLibraryItem } from "../../types/DeviceType.js";
 import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
 
 class Device {
-  public name = "";
+  public name: string = "";
   public frame = {
     width: 0,
     height: 0,
@@ -33,7 +33,7 @@ class Device {
    * @param deviceName The name of the device to select
    * @returns Selected device
    */
-  private _getDeviceLibraryItem(deviceName: DeviceLibraryItem["name"]) {
+  private _getDeviceLibraryItem(deviceName: DeviceLibraryItem["name"] = "") {
     const devicesLibrary = new DevicesLibraryManager().get();
     const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
       devicesLibrary.find(function findSelectedDevice(

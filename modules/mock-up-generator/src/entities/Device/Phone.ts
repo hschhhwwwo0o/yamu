@@ -8,7 +8,7 @@ class PhoneDevice extends Device {
     theme: "light",
   };
 
-  constructor(name: string) {
+  constructor(name: string = "") {
     super(name);
   }
 

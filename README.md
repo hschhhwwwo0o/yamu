@@ -1,4 +1,4 @@
-The application is designed to create mock-ups. The application has a choice between different types of devices: phones, watches, tablets.
+The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.
 
 ## Development
 
@@ -134,7 +134,7 @@ The module implements the claims:
 | Mock-up preview scene | The scene in which the mockup is displayed                                                                           |
 | Selected device       | The device selected for the mockup                                                                                   |
 | System bar            | The system panel, usually located on top and displaying network data, time, and so on                                |
-| Inserted screen       | An image of the application design intended to be inserted into the layout                                           |
+| Inserted design       | An image of the application design intended to be inserted into the layout                                           |
 | Frame                 | Imitation of the device case. Within the framework of the tool, the frame is used as an application design container |
 | Device type           | Watch, Phone, Tablet                                                                                                 |
 | Device                | Real device; phone/tablet. With a refined model                                                                      |

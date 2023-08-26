@@ -64,7 +64,7 @@ class MockUpGenerator {
   /**
    * Adding an image inside a mockup
    *
-   * @claim UF/MOCK-UP/INSERT-SCREEN
+   * @claim UF/MOCK-UP/INSERT-DESIGN
    *
    * @param image Image to insert into a mockup
    *

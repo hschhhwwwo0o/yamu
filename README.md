@@ -60,7 +60,7 @@ npm run dev
 | :--------------------------------------- | :--------------------------------- |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                |
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
 | Mock-up display                          | UF/MOCK-UP/VIEW                    |
@@ -98,7 +98,7 @@ The module implements the claims:
 | :--------------------------------------- | :--------------------------------- |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an image inside a mock-up         | UF/MOCK-UP/INSERT-SCREEN           |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           |
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
 | Mock-up display                          | UF/MOCK-UP/VIEW                    |
 | Mock-up Initialization                   | UF/MOCK-UP/INIT                    |

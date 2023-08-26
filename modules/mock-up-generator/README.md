@@ -14,7 +14,7 @@ The module implements the claims:
 | :--------------------------------------- | :--------------------------------- |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an image inside a mockup          | UF/MOCK-UP/INSERT-SCREEN           |
+| Adding an design inside a mockup         | UF/MOCK-UP/INSERT-DESIGN           |
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
 | Mockup display                           | UF/MOCK-UP/VIEW                    |
 | Mockup Initialization                    | UF/MOCK-UP/INIT                    |

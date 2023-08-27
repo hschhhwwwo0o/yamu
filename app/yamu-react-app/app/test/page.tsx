@@ -125,6 +125,7 @@ export default function TestScreen() {
           <option value="iPhone 13">iPhone 13</option>
           <option value="iPhone 14 Pro">iPhone 14 Pro</option>
           <option value="iPhone SE">iPhone SE</option>
+          <option value="iPad 10">iPad 10</option>
           <option value="iPhone 12">iPhone 12</option>
         </select>
         <div>

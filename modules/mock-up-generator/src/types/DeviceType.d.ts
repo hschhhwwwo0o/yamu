@@ -1,10 +1,10 @@
-export type DeviceType = "phone" | "watch";
+export type DeviceType = "phone" | "watch" | "tablet";
 
 export interface DeviceLibraryItem {
   name: string;
   width: number;
   height: number;
-  type: "phone" | "watch";
+  type: DeviceType;
   frameImages: {
     default: string;
     withSystemBarLightTheme?: string;

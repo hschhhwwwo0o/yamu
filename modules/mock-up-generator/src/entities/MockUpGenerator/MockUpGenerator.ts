@@ -3,9 +3,10 @@ import { WatchDevice } from "../Device/Watch.js";
 
 import { DeviceLibraryItem, DeviceType } from "../../types/DeviceType.js";
 import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
+import { TabletDevice } from "../Device/Tablet.js";
 
 export interface MockUpInterface {
-  device: PhoneDevice | WatchDevice;
+  device: PhoneDevice | WatchDevice | TabletDevice;
   insertedImage: string | undefined;
 }
 
@@ -54,6 +55,10 @@ class MockUpGenerator {
 
       case "watch":
         this.mockUp.device = new WatchDevice(deviceName);
+        return this.mockUp;
+
+      case "tablet":
+        this.mockUp.device = new TabletDevice(deviceName);
         return this.mockUp;
 
       default:

@@ -7,6 +7,11 @@ export interface PhoneSettings {
   theme?: "dark" | "light";
 }
 
+export interface TabletSettings {
+  isSystemBar?: boolean;
+  theme?: "dark" | "light";
+}
+
 export interface SettingListItem {
   key: string;
   type: "switch" | "variants";

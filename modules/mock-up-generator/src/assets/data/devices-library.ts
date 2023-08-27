@@ -2,6 +2,11 @@
 import { DeviceLibraryItem } from "../../types/DeviceType.js";
 
 /** iPhone SE */
+import iPad10Base64Image from "../images/ipad-10/ipad-10-frame-base64.js";
+import iPad10WithSystemBarLightThemeBase64Image from "../images/ipad-10/ipad-10+system-bar+light-theme-frame-base64.js";
+import iPad10WithSystemBarDarkThemeBase64Image from "../images/ipad-10/ipad-10+system-bar+dark-theme-frame-base64.js";
+
+/** iPhone SE */
 import iPhoneSEBase64Image from "../images/iphone-se/iphone-se-frame-base64.js";
 import iPhoneSEWithSystemBarLightThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+light-theme-frame-base64.js";
 import iPhoneSEWithSystemBarDarkThemeBase64Image from "../images/iphone-se/iphone-se+system-bar+dark-theme-frame-base64.js";
@@ -31,6 +36,28 @@ import iWatchSEBase64Image from "../images/iwatch-se/iwatch-se-frame-base64.js";
 import iWatchSEWithStrapBase64Image from "../images/iwatch-se/iwatch-se+strap-frame-base64.js";
 
 export const devicesLibrary: DeviceLibraryItem[] = [
+  {
+    name: "iPad 10",
+    type: "tablet",
+    frameImages: {
+      default: iPad10Base64Image,
+      withSystemBarLightTheme: iPad10WithSystemBarLightThemeBase64Image,
+      withSystemBarDarkTheme: iPad10WithSystemBarDarkThemeBase64Image,
+    },
+    width: 682,
+    height: 492,
+    paddingsInPercents: {
+      top: 2.45,
+      bottom: 2.45,
+      left: 5.57,
+      right: 5.54,
+    },
+    screen: {
+      width: 1194,
+      height: 834,
+    },
+    borderRadius: 10,
+  },
   {
     name: "iPhone 11",
     type: "phone",

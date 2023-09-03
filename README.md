@@ -173,6 +173,8 @@ The module implements the claims:
 | Device                | Real device; phone/tablet. With a refined model                                                                      |
 | Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
 
+<br />
+
 ## Other
 
 The development process was strongly influenced by the books:

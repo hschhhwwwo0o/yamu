@@ -5,7 +5,7 @@ The application is designed for creating mock-ups. Create product mock-ups with 
 
 ## Development
 
-Tracking of tasks was done using GitHub Projects.
+Tracking of tasks was done using GitHub Projects (I didn't like GitHub Projects).
 
 The development of the project was divided into several stages:
 

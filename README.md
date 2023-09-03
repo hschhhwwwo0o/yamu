@@ -41,10 +41,12 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 
 At the moment there are 2 modules implemented in the project:
 
-| Module name            | Meaning of the module                                                                                                    |
-| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
-| @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
+| Module name                                                                                                              | Meaning of the module                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://github.com/hschhhwwwo0o/yamu/tree/main/modules/mock-up-html-renderer#readme">@mock-up-html-renderer</a> | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
+| <a href="https://github.com/hschhhwwwo0o/yamu/tree/main/modules/mock-up-generator#readme">@mock-up-generator</a>         | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
+
+Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.
 
 To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in package.json.
 

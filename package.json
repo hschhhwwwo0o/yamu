@@ -1,7 +1,7 @@
 {
   "name": "yamu",
-  "version": "1.0.0",
-  "description": "Web application for mock-up creation",
+  "version": "2.0.0",
+  "description": "The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
   "scripts": {
     "pre-commit": "npm run lint-modules",
     "dev": "cd ./app/yamu-react-app && npm run dev",
@@ -20,6 +20,8 @@
     "mock-up create"
   ],
   "author": "@hschhhwwwo0o",
+  "publisher": "@hschhhwwwo0o",
+  "homepage": "https://github.com/hschhhwwwo0o/yamu",
   "license": "ISC",
   "devDependencies": {
     "husky": "^8.0.3"

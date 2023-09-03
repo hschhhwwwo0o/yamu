@@ -15,11 +15,11 @@ The development of the project was divided into several stages:
 
 Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a glossary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
 
-I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_
+I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_.
 
 ### Design development
 
-I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image frames from the Internet and edited them in Photoshop
+I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image frames from the Internet and edited them in Photoshop.
 
 ### Module development
 
@@ -33,7 +33,7 @@ To change the logic of the module and test the result of its work in the applica
 
 ### Application development
 
-By this I mean the layout of the application and the use of already created modules in it
+By this I mean the layout of the application and the use of already created modules in it.
 
 ### Installation
 

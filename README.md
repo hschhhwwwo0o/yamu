@@ -46,6 +46,12 @@ By this I mean the layout of the application and the use of already created modu
 
 ### Installation
 
+To install the repository, paste this command into your terminal:
+
+```sh
+git clone https://github.com/hschhhwwwo0o/yamu.git
+```
+
 To install application and module dependencies, copy this command and run it in the project root:
 
 ```sh

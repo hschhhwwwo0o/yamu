@@ -166,7 +166,7 @@ The module implements the claims:
 | Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           |
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
 | Mock-up display                          | UF/MOCK-UP/VIEW                    |
-| Mock-up Initialization                   | UF/MOCK-UP/INIT                    |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    |
 | <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |

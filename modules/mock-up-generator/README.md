@@ -18,7 +18,7 @@ The module implements the claims:
 | Adding an design inside a mockup         | UF/MOCK-UP/INSERT-DESIGN           |
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
 | Mockup display                           | UF/MOCK-UP/VIEW                    |
-| Mockup Initialization                    | UF/MOCK-UP/INIT                    |
+| Mockup initialization                    | UF/MOCK-UP/INIT                    |
 | <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |

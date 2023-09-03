@@ -169,8 +169,6 @@ The module implements the claims:
 
 The development process was strongly influenced by the books:
 
-"Development of software requirements," Carl Vigers, Jay Beatty;
-
-"Clean Architecture" by Robert Martin;
-
-"Envisioning Information," Edward R. Tufte.
+1. "Development of software requirements," Carl Vigers, Jay Beatty;
+2. "Clean Architecture" by Robert Martin;
+3. "Envisioning Information," Edward R. Tufte.

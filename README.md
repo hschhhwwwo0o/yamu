@@ -147,7 +147,7 @@ In this table, I display the description of a specific functional requirement, i
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |
 | Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |
-| Mock-up Initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |
 | <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |

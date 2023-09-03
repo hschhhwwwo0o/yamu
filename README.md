@@ -2,6 +2,8 @@
 
 The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.
 
+<br />
+
 ## Development
 
 The development of the project was divided into several stages:
@@ -50,6 +52,8 @@ npm run dev
 ```
 
 <!-- CLAIMS.md -->
+
+<br />
 
 ## Software claims
 
@@ -109,6 +113,8 @@ npm run dev
 
 <!-- END OF CLAIMS.md -->
 
+<br />
+
 ## Description of developed modules
 
 The project is divided into modules and an application that uses the modules to implement the logic.
@@ -147,6 +153,8 @@ The module implements the claims:
 | Mock-up display       | UF/MOCK-UP/VIEW     |
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
+
+<br />
 
 ## Dictionary of Terms
 

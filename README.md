@@ -22,23 +22,23 @@ The development of the project was divided into several stages:
 
 ### 1. Development of software requirements
 
-Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a glossary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
+Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a dictionary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
 
 I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_.
 
 ### 2. Design development
 
-I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image frames from the Internet and edited them in Photoshop.
+I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image devices frames from the Internet and edited them in Photoshop.
 
 ### 3. Module development
 
 I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book "Clean Architecture". In the end, I decided to separate the business logic into modules.
 
-The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus, the application (in this case the NextJS framework) is responsible only for displaying UI/UX, while the modules contain all the business logic.
+The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus, the application (in this case the NextJS framework) is responsible only for displaying UI, while the modules contain all the business logic.
 
 Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
 
-To change the logic of the module and test the result of its work in the application, you need to recompile the module.
+To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in package.json.
 
 ### 4. Application development
 
@@ -71,6 +71,8 @@ npm run dev
 "A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification"
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+
+The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 
 | Term                  | Meaning                                                                                                              |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------- |

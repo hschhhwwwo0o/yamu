@@ -57,7 +57,7 @@ npm run dev
 
 <ins>_Ian Sommerville, Pete Sawyer, 1997_</ins>
 
-#### Quality Attributes
+### Quality Attributes
 
 "Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality."
 
@@ -75,7 +75,7 @@ npm run dev
 | Open Graph support                         | QA/SEO/OPEN-GRAPH        |
 | Description of standard meta tags          | QA/SEO/META              |
 
-#### Functional claims
+### Functional claims
 
 "Functional requirements can be written in terms of what the system does or what the user does."
 
@@ -95,7 +95,7 @@ npm run dev
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
 | BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         |
 
-#### Use cases
+### Use cases
 
 "A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information."
 

@@ -72,6 +72,10 @@ npm run dev
 | Device type           | Watch, Phone, Tablet                                                                                                 |
 | Device                | Real device; phone/tablet. With a refined model                                                                      |
 | Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
+| HIG                   | A set of guidelines for designers                                                                                    |
+| WCAG                  | A set of guidelines on how to create an interface and how to check its accessibility for users with disabilities.    |
+| Open Graph            | Micro markup for SEO                                                                                                 |
+| Lighthouse            | Automated tool for measuring the quality of web pages                                                                |
 
 <!-- CLAIMS.md -->
 

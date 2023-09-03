@@ -7,13 +7,6 @@ The application is designed for creating mock-ups. Create product mock-ups with 
 
 Tracking of tasks was done using GitHub Projects.
 
-The development process was strongly influenced by the books:
-
-- "Development of software requirements," Carl Vigers, Jay Beatty;
-- "Clean Architecture" by Robert Martin;
-- "Envisioning Information" Edward R. Tufte;
-- "A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System" Glenn E. Krasner and Stephen T. Pope;
-
 The development of the project was divided into several stages:
 
 1. Requirements development
@@ -172,3 +165,12 @@ In this table, I display the description of a specific functional requirement, i
 | Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                                |
 
 <!-- END OF CLAIMS.md -->
+
+## Literature
+
+The development process was strongly influenced by the books:
+
+- "Development of software requirements," Carl Vigers, Jay Beatty;
+- "Clean Architecture" by Robert Martin;
+- "Envisioning Information" Edward R. Tufte;
+- "A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System" Glenn E. Krasner and Stephen T. Pope;

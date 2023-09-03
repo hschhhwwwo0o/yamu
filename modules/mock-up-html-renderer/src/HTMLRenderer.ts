@@ -58,18 +58,29 @@ export class HTMLRenderer {
   ) {
     const borderRadius =
       renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
-    const paddingLeft =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
-    const paddingRight =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.right;
-    const paddingTop =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.top;
-    const paddingBottom =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.bottom;
-    const width = renderData.frameWidth - paddingLeft - paddingRight;
-    const height = renderData.frameHeight - paddingTop - paddingBottom;
 
-    context.roundRect(paddingLeft, paddingTop, width, height, borderRadius);
+    const frameWidth = this._calculateLayoutWidth(renderData);
+    const frameHeight = this._calculateLayoutHeight(renderData);
+
+    const paddingLeftInPX =
+      (frameWidth / 100) * renderData.paddingsInPercents.left;
+    const paddingRightInPX =
+      (frameWidth / 100) * renderData.paddingsInPercents.right;
+    const paddingTopInPX =
+      (frameHeight / 100) * renderData.paddingsInPercents.top;
+    const paddingBottomInPX =
+      (frameHeight / 100) * renderData.paddingsInPercents.bottom;
+
+    const screenWidth = frameWidth - paddingLeftInPX - paddingRightInPX;
+    const screenHeight = frameHeight - paddingTopInPX - paddingBottomInPX;
+
+    context.roundRect(
+      paddingLeftInPX,
+      paddingTopInPX,
+      screenWidth,
+      screenHeight,
+      borderRadius,
+    );
     context.fillStyle = "#3c3c3c";
     context.fill();
 
@@ -109,38 +120,50 @@ export class HTMLRenderer {
 
     const borderRadius =
       renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
-    const paddingLeft =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.left;
-    const paddingRight =
-      (renderData.frameWidth / 100) * renderData.paddingsInPercents.right;
-    const paddingTop =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.top;
-    const paddingBottom =
-      (renderData.frameHeight / 100) * renderData.paddingsInPercents.bottom;
-    const width = renderData.frameWidth - paddingLeft - paddingRight;
-    const height = renderData.frameHeight - paddingTop - paddingBottom;
+
+    const frameWidth = this._calculateLayoutWidth(renderData);
+    const frameHeight = this._calculateLayoutHeight(renderData);
+
+    const paddingLeftInPX =
+      (frameWidth / 100) * renderData.paddingsInPercents.left;
+    const paddingRightInPX =
+      (frameWidth / 100) * renderData.paddingsInPercents.right;
+    const paddingTopInPX =
+      (frameHeight / 100) * renderData.paddingsInPercents.top;
+    const paddingBottomInPX =
+      (frameHeight / 100) * renderData.paddingsInPercents.bottom;
+
+    const screenWidth = frameWidth - paddingLeftInPX - paddingRightInPX;
+    const screenHeight = frameHeight - paddingTopInPX - paddingBottomInPX;
 
     createRoundedImage(
       context,
-      paddingLeft,
-      paddingTop,
-      width,
-      height,
+      paddingLeftInPX,
+      paddingTopInPX,
+      screenWidth,
+      screenHeight,
       borderRadius,
     );
     context.save();
     context.clip();
-    context.drawImage(insertedImage, paddingLeft, paddingTop, width, height);
+    context.drawImage(
+      insertedImage,
+      paddingLeftInPX,
+      paddingTopInPX,
+      screenWidth,
+      screenHeight,
+    );
     context.restore();
+
     return;
   }
 
   private _createScreenImage(renderData: RenderData) {
-    const screenImage = new Image();
+    const screenImage: HTMLImageElement = new Image();
     screenImage.setAttribute("crossorigin", "anonymous");
     {
-      screenImage.width = renderData.frameWidth;
-      screenImage.height = renderData.frameHeight;
+      screenImage.width = this._calculateLayoutWidth(renderData);
+      screenImage.height = this._calculateLayoutHeight(renderData);
       screenImage.src = renderData.insertedImage;
     }
     return screenImage;
@@ -149,8 +172,8 @@ export class HTMLRenderer {
   private _createFrameImage(renderData: RenderData) {
     const frameImage = new Image();
     {
-      frameImage.width = renderData.frameWidth;
-      frameImage.height = renderData.frameHeight;
+      frameImage.width = this._calculateLayoutWidth(renderData);
+      frameImage.height = this._calculateLayoutHeight(renderData);
       frameImage.src = renderData.frameImage;
     }
     return frameImage;
@@ -161,14 +184,11 @@ export class HTMLRenderer {
     frameImage: HTMLImageElement,
     renderData: RenderData,
   ) {
+    const frameWidth = this._calculateLayoutWidth(renderData);
+    const frameHeight = this._calculateLayoutHeight(renderData);
+
     {
-      context.drawImage(
-        frameImage,
-        0,
-        0,
-        renderData.frameWidth,
-        renderData.frameHeight,
-      );
+      context.drawImage(frameImage, 0, 0, frameWidth, frameHeight);
     }
   }
 
@@ -176,8 +196,8 @@ export class HTMLRenderer {
     const canvas = document.createElement("canvas");
     {
       canvas.id = "mock-up-canvas";
-      canvas.width = renderData.frameWidth;
-      canvas.height = renderData.frameHeight;
+      canvas.width = this._calculateLayoutWidth(renderData);
+      canvas.height = this._calculateLayoutHeight(renderData);
     }
     return canvas;
   }
@@ -186,5 +206,23 @@ export class HTMLRenderer {
     this._clearDOMContainer();
     const container = document.querySelector(`#${this._containerId}`);
     container?.appendChild(canvas);
+  }
+
+  private _calculateLayoutWidth(renderData: RenderData) {
+    if (window.innerWidth < renderData.frameWidth) {
+      return window.innerWidth - 60;
+    } else {
+      return renderData.frameWidth;
+    }
+  }
+  private _calculateLayoutHeight(renderData: RenderData) {
+    if (window.innerWidth < renderData.frameWidth) {
+      const coof = renderData.frameHeight / renderData.frameWidth;
+      const newWidth = this._calculateLayoutWidth(renderData);
+      const newHeight = newWidth * coof;
+      return newHeight;
+    } else {
+      return renderData.frameHeight;
+    }
   }
 }

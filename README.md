@@ -48,7 +48,13 @@ At the moment there are 2 modules implemented in the project:
 
 Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.
 
-To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in package.json.
+To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in <a href="https://github.com/hschhhwwwo0o/yamu/blob/main/package.json">package.json<a/>.
+
+For example, to compile the @mock-up-generator module, run the following command:
+
+```sh
+npm run build-mock-up-generator-module
+```
 
 ### 4. Application development
 
@@ -84,24 +90,24 @@ npm run dev
 
 The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 
-| Term                  | Meaning                                                                                                              |
-| :-------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| Export                | The process of saving a layout to a file or to another format that can be used in further development or use.        |
-| Devices Library       | A collection of devices available for creating mockups                                                               |
-| Mock-up wizard        | Mockup settings panel consisting of several steps                                                                    |
-| Mock-up preview       | Mockup display                                                                                                       |
-| Mock-up preview scene | The scene in which the mockup is displayed                                                                           |
-| Selected device       | The device selected for the mockup                                                                                   |
-| System bar            | The system panel, usually located on top and displaying network data, time, and so on                                |
-| Inserted design       | An image of the application design intended to be inserted into the layout                                           |
-| Frame                 | Imitation of the device case. Within the framework of the tool, the frame is used as an application design container |
-| Device type           | Watch, Phone, Tablet                                                                                                 |
-| Device                | Real device; phone/tablet. With a refined model                                                                      |
-| Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
-| HIG                   | A set of guidelines for designers                                                                                    |
-| WCAG                  | A set of guidelines on how to create an interface and how to check its accessibility for users with disabilities.    |
-| Open Graph            | Micro markup for SEO                                                                                                 |
-| Lighthouse            | Automated tool for measuring the quality of web pages                                                                |
+| Term                  | Meaning                                                                                                               |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| Export                | The process of saving a layout to a file or to another format that can be used in further development or use.         |
+| Devices Library       | A collection of devices available for creating mockups.                                                               |
+| Mock-up wizard        | Mockup settings panel consisting of several steps.                                                                    |
+| Mock-up preview       | Mockup display.                                                                                                       |
+| Mock-up preview scene | The scene in which the mockup is displayed.                                                                           |
+| Selected device       | The device selected for the mockup.                                                                                   |
+| System bar            | The system panel, usually located on top and displaying network data, time, and so on.                                |
+| Inserted design       | An image of the application design intended to be inserted into the layout.                                           |
+| Frame                 | Imitation of the device case. Within the framework of the tool, the frame is used as an application design container. |
+| Device type           | Watch, Phone, Tablet.                                                                                                 |
+| Device                | Real device; phone/tablet. With a refined model.                                                                      |
+| Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.      |
+| HIG                   | A set of guidelines for designers.                                                                                    |
+| WCAG                  | A set of guidelines on how to create an interface and how to check its accessibility for users with disabilities.     |
+| Open Graph            | Micro markup for SEO.                                                                                                 |
+| Lighthouse            | Automated tool for measuring the quality of web pages.                                                                |
 
 <!-- CLAIMS.md -->
 

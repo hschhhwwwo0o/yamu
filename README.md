@@ -54,6 +54,10 @@ npm run dev
 
 ## Dictionary of Terms
 
+"A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification"
+
+<ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+
 | Term                  | Meaning                                                                                                              |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------- |
 | Export                | The process of saving a layout to a file or to another format that can be used in further development or use.        |

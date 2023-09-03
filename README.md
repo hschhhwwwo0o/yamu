@@ -109,11 +109,11 @@ npm run dev
 
 <!-- END OF CLAIMS.md -->
 
-## Modules
+## Description of developed modules
 
 The project is divided into modules and an application that uses the modules to implement the logic.
 
-#### Module @mock-up-generator
+### Module "@mock-up-generator"
 
 The module is intended for mock-up state management. Includes device selection, image insertion, device settings.
 
@@ -135,7 +135,7 @@ The module implements the claims:
 
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
 
-#### Module @mock-up-html-renderer
+### Module "@mock-up-html-renderer"
 
 A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image.
 

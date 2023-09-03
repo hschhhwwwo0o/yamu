@@ -73,8 +73,6 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
-<br />
-
 ## Dictionary of Terms
 
 "A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification"
@@ -103,8 +101,6 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Lighthouse            | Automated tool for measuring the quality of web pages.                                                                |
 
 <!-- CLAIMS.md -->
-
-<br />
 
 ## Software claims
 

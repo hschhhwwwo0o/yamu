@@ -47,10 +47,10 @@ export const devicesLibrary: DeviceLibraryItem[] = [
     width: 682,
     height: 492,
     paddingsInPercents: {
-      top: 2.45,
-      bottom: 2.45,
-      left: 5.57,
-      right: 5.54,
+      top: 5.35,
+      bottom: 5.05,
+      left: 3.9,
+      right: 3.85,
     },
     screen: {
       width: 1194,

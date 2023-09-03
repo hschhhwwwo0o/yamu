@@ -11,8 +11,8 @@ The development process was strongly influenced by the books:
 
 - "Development of software requirements," Carl Vigers, Jay Beatty;
 - "Clean Architecture" by Robert Martin;
-- "Envisioning Information," Edward R. Tufte.
-- "A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System" Glenn E. Krasner and Stephen T. Pope
+- "Envisioning Information" Edward R. Tufte;
+- "A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System" Glenn E. Krasner and Stephen T. Pope;
 
 The development of the project was divided into several stages:
 

@@ -7,6 +7,7 @@ Available devices:
 - iPhone 13
 - iPhone 14 Pro
 - iWatch SE
+- iPad 10
 
 The module implements the claims:
 

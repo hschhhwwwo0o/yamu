@@ -5,6 +5,14 @@ The application is designed for creating mock-ups. Create product mock-ups with 
 
 ## Development
 
+Tracking of tasks was done using GitHub Projects.
+
+The development process was strongly influenced by the books:
+
+- "Development of software requirements," Carl Vigers, Jay Beatty;
+- "Clean Architecture" by Robert Martin;
+- "Envisioning Information," Edward R. Tufte.
+
 The development of the project was divided into several stages:
 
 1. Requirements development
@@ -12,17 +20,17 @@ The development of the project was divided into several stages:
 3. Module development
 4. Application development
 
-### Development of software requirements
+### 1. Development of software requirements
 
 Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a glossary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
 
 I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_.
 
-### Design development
+### 2. Design development
 
 I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image frames from the Internet and edited them in Photoshop.
 
-### Module development
+### 3. Module development
 
 I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book "Clean Architecture". In the end, I decided to separate the business logic into modules.
 
@@ -32,7 +40,7 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 
 To change the logic of the module and test the result of its work in the application, you need to recompile the module.
 
-### Application development
+### 4. Application development
 
 By this I mean the layout of the application and the use of already created modules in it.
 
@@ -181,11 +189,3 @@ The module implements the claims:
 <ins>_More documentation about the module is located in the root of the module folder_</ins>
 
 <br />
-
-## Other
-
-The development process was strongly influenced by the books:
-
-1. "Development of software requirements," Carl Vigers, Jay Beatty;
-2. "Clean Architecture" by Robert Martin;
-3. "Envisioning Information," Edward R. Tufte.

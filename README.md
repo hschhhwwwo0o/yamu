@@ -47,17 +47,9 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
-<!-- CLAIMS.md -->
-
 <br />
 
-## Software claims
-
-"Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process."
-
-<ins>_Ian Sommerville, Pete Sawyer, 1997_</ins>
-
-### Dictionary of Terms
+## Dictionary of Terms
 
 | Term                  | Meaning                                                                                                              |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------- |
@@ -73,6 +65,16 @@ npm run dev
 | Device type           | Watch, Phone, Tablet                                                                                                 |
 | Device                | Real device; phone/tablet. With a refined model                                                                      |
 | Mock-up               | An application design placed inside a frame and displaying how the application design will look on real devices.     |
+
+<!-- CLAIMS.md -->
+
+<br />
+
+## Software claims
+
+"Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process."
+
+<ins>_Ian Sommerville, Pete Sawyer, 1997_</ins>
 
 ### Quality Attributes
 

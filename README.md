@@ -38,6 +38,13 @@ The project has a non-standard structure. The project is divided into modules an
 
 Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
 
+At the moment there are 2 modules implemented in the project:
+
+| Module name            | Meaning of the module                                                                                                    |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
+| @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
+| @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
+
 To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in package.json.
 
 ### 4. Application development

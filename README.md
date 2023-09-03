@@ -15,7 +15,7 @@ The development of the project was divided into several stages:
 
 Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a glossary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
 
-I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base
+I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_
 
 ### Design development
 
@@ -35,7 +35,7 @@ To change the logic of the module and test the result of its work in the applica
 
 By this I mean the layout of the application and the use of already created modules in it
 
-## Installation
+### Installation
 
 To install application and module dependencies, copy this command and run it in the project root:
 

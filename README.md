@@ -127,19 +127,19 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-| Function                                 | ID                                 |
-| :--------------------------------------- | :--------------------------------- |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
-| Mock-up display                          | UF/MOCK-UP/VIEW                    |
-| Mock-up Initialization                   | UF/MOCK-UP/INIT                    |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         |
+| Function                                 | ID                                 | Responsible module     |
+| :--------------------------------------- | :--------------------------------- | :--------------------- |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
+| Mock-up display                          | UF/MOCK-UP/VIEW                    | @mock-up-html-renderer |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |
+| Mock-up Initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |
 
 ### Use cases
 
@@ -154,46 +154,3 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                                |
 
 <!-- END OF CLAIMS.md -->
-
-<br />
-
-## Description of developed modules
-
-The project is divided into modules and an application that uses the modules to implement the logic.
-
-### Module "@mock-up-generator"
-
-The module is intended for mock-up state management. Includes device selection, image insertion, device settings.
-
-The module implements the claims:
-
-| Function                                 | ID                                 |
-| :--------------------------------------- | :--------------------------------- |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   |
-| Mock-up display                          | UF/MOCK-UP/VIEW                    |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         |
-| Switching the presence of a watch strap  | UF/MOCK-UP/OPTION-STRAP-TOGGLE     |
-
-<ins>_More documentation about the module is located in the root of the module folder_</ins>
-
-### Module "@mock-up-html-renderer"
-
-A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image.
-
-The module implements the claims:
-
-| Function              | ID                  |
-| :-------------------- | :------------------ |
-| Downloading a mock-up | UF/MOCK-UP/DOWNLOAD |
-| Mock-up display       | UF/MOCK-UP/VIEW     |
-
-<ins>_More documentation about the module is located in the root of the module folder_</ins>
-
-<br />

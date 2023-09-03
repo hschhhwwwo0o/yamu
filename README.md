@@ -1,5 +1,5 @@
-![GitHub Light](./md/GitHubCover.light.png#gh-light-mode-only)
-![GitHub Dark](./md/GitHubCover.dark.png#gh-dark-mode-only)
+![GitHub Light](./md/GitHubCover.light2.png#gh-light-mode-only)
+![GitHub Dark](./md/GitHubCover.dark2.png#gh-dark-mode-only)
 
 The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.
 

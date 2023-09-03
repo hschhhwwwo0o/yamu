@@ -110,7 +110,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 | Attribute                                  | ID                       | Description / Why it's necessary                                                |
-| :----------------------------------------- | :----------------------- | ------------------------------------------------------------------------------- |
+| :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ |
 | Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  |
 | UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                |
 | Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      |

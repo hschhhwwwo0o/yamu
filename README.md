@@ -127,6 +127,8 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 <ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
 
+In this table, I display the description of a specific functional requirement, its unique identifier and its belonging to a specific module.
+
 | Function                                 | ID                                 | Responsible module     |
 | :--------------------------------------- | :--------------------------------- | :--------------------- |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
@@ -149,7 +151,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                      |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------- |
-| Acting person     | Designer                                                                                                               |
+| Acting person     | User                                                                                                                   |
 | Description       | The user selects the device for which he would like to make a mock-up. Configures the mock-up with subsequent download |
 | Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                                |
 

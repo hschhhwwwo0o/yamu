@@ -6,7 +6,7 @@ case $1 in
     cd ../../
     cd ./modules/mock-up-html-renderer && npm run compile
     cd ../../
-    echo "All modules have been successfully compiled ✅ 🌿"
+    echo "All modules have been successfully compiled ✅ 🌿 "
     exit 0
   ;;
 esac

@@ -162,13 +162,16 @@ read modulename
   npm install --save-dev --save-exact prettier
 } || {
   echo "Dependency installation error ❌"
+  exit 1
 }
 
 cd ../../
 
-echo ""
-echo "The module has been successfully created! ✅ 🌿"
-echo ""
-echo "⚠️ Don't forget to add support for the new module to third-party scripts; for example, the linting script and the module compilation script"
+{
+  echo ""
+  echo "The module has been successfully created! ✅ 🌿"
+  echo ""
+  echo "⚠️ Don't forget to add support for the new module to third-party scripts; for example, the linting script and the module compilation script"
+}
 
 exit 0 

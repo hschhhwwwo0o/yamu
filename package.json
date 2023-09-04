@@ -3,16 +3,13 @@
   "version": "2.0.0",
   "description": "The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
   "scripts": {
-    "pre-commit": "npm run _lint-modules",
+    "pre-commit": "npm run lint-modules",
     "dev": "cd ./app/yamu-react-app && npm run dev",
-    "build": "npm run re-build-modules && cd ./app/yamu-react-app && npm run build",
+    "build": "npm run build-modules && cd ./app/yamu-react-app && npm run build",
     "start": "cd ./app/yamu-react-app && npm run start",
-    "re-build-modules": "npm run _build-mock-up-generator-module && npm run _build-mock-up-html-renderer-module",
-    "_lint-modules": "npm run _lint-mock-up-generator-module && npm run _lint-mock-up-html-renderer-module",
-    "_build-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run compile",
-    "_lint-mock-up-generator-module": "cd ./modules/mock-up-generator && npm run lint",
-    "_build-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run compile",
-    "_lint-mock-up-html-renderer-module": "cd ./modules/mock-up-html-renderer && npm run lint"
+    "build-modules": "bash ./scripts/build_modules.bash",
+    "lint-modules": "bash ./scripts/lint_modules.bash",
+    "create-module": "bash ./scripts/create_module.bash"
   },
   "type": "module",
   "keywords": [

@@ -117,6 +117,9 @@ npm i --save-dev @typescript-eslint/parser
 npm i --save-dev eslint
 npm install --save-dev --save-exact prettier
 
+cd ../../
+
+echo ""
 echo "The module has been successfully created ✅"
 
 exit 0 

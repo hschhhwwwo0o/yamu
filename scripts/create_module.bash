@@ -5,7 +5,7 @@ echo "Enter the name of the new module: "
 
 read modulename
 
-cd ../modules 
+cd ./modules 
 
 mkdir $modulename
 
@@ -13,7 +13,21 @@ cd ./$modulename
 
 mkdir src && cd ./src/ && echo "" > index.ts && cd ../
 
-npm init -y
+echo '
+{
+  "name": "module",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "lint": "npx eslint ."
+  },
+  "keywords": [],
+  "author": "@hschhhwwwo0o",
+  "license": "ISC",
+  "devDependencies": {}
+}
+' > package.json
 
 echo '
 {

@@ -32,7 +32,7 @@ The project has a non-standard structure. The project is divided into modules an
 
 Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
 
-To quickly create and configure a new module, a tool was created: module-creator - using this tool you can quickly create a new module; to run the tool you need to run the command:
+If you are using macOS or Linux (I really hope you're not a Windows user 👎) you can use the "module-creator" tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
 
 ```sh
 npm run create-module
@@ -65,7 +65,7 @@ To install the repository, paste this command into your terminal:
 git clone https://github.com/hschhhwwwo0o/yamu.git
 ```
 
-If you are a macOS or Linux user, (I really hope you're not a Windows user 👎) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
+If you are a macOS or Linux user, (I REALLY HOPE YOU'RE NOT A WINDOWS USER 👎) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
 bash instruments/project_installer.bash

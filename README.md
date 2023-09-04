@@ -41,13 +41,7 @@ At the moment there are 2 modules implemented in the project:
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 
-To change the logic of the module and test the result of its work in the application, you need to recompile the module. The necessary command to recompile an individual module can be found in <a href="https://github.com/hschhhwwwo0o/yamu/blob/main/package.json">package.json<a/>.
-
-For example, to compile the @mock-up-generator module, run the following command:
-
-```sh
-npm run build-mock-up-generator-module
-```
+To change the logic of the module and test the result of its work in the application, you need to recompile the module.
 
 ### 4. Application development
 

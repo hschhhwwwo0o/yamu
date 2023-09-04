@@ -1,7 +1,9 @@
 #!/bin/bash 
 
-echo ""
-echo "Linting of modules... 💚"
+{
+  echo ""
+  echo "Linting of modules... 💚"
+}
 
 {
   cd ./modules/mock-up-generator && npm run lint
@@ -11,7 +13,9 @@ echo "Linting of modules... 💚"
   cd ../../
 }
 
-echo ""
-echo "All modules have been successfully tested ✅ 🌿 "
+{
+  echo ""
+  echo "All modules have been successfully tested ✅ 🌿 "
+}
 
 exit 0

@@ -18,7 +18,9 @@
   npm run build
 }
 
-echo ""
-echo "The application is ready for deployment ✅ 🌿"
+{
+  echo ""
+  echo "The application is ready for deployment ✅ 🌿"
+}
 
 exit 0

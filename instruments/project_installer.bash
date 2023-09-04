@@ -4,6 +4,7 @@
   npx husky install
   npm install
   npx husky add .husky/pre-commit "npm run lint-modules"
+
   echo ""
   echo "Husky has been successfully installed ✅ 🌿"
 } || {
@@ -13,6 +14,7 @@
 {
   cd ./app/yamu-react-app 
   npm install 
+
   echo ""
   echo "Application dependencies successfully installed ✅ 🌿"
 } || {
@@ -22,6 +24,7 @@
 {
   cd ../../ && cd ./modules/mock-up-html-renderer
   npm install
+
   echo ""
   echo "@mock-up-html-renderer dependencies successfully installed ✅ 🌿"
 } || {
@@ -31,6 +34,7 @@
 {
   cd ../../ && cd ./modules/mock-up-generator
   npm install
+  
   echo ""
   echo "@mock-up-generator dependencies successfully installed ✅ 🌿"
 } || {

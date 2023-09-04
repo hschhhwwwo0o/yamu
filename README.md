@@ -55,10 +55,10 @@ To install the repository, paste this command into your terminal:
 git clone https://github.com/hschhhwwwo0o/yamu.git
 ```
 
-To install application and module dependencies, copy this command and run it in the project root:
+If you are a macOS or Linux user, the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
-cd ./app/yamu-react-app && npm install && cd ../../ && cd ./modules/mock-up-html-renderer && npm install && cd ../../ && cd ./modules/mock-up-generator && npm install && cd ../../ && npm install && npm run re-build-modules
+bash instruments/project_installer.bash
 ```
 
 Start the dev server using the command in the root of the project:

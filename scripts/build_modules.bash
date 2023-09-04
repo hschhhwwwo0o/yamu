@@ -2,10 +2,14 @@
 
 case $1 in
   "--all") 
+    echo ""
+    echo "Building of modules... 💚"
+
     cd ./modules/mock-up-generator && npm run compile
     cd ../../
     cd ./modules/mock-up-html-renderer && npm run compile
     cd ../../
+
     echo "All modules have been successfully compiled ✅ 🌿 "
     exit 0
   ;;
@@ -25,16 +29,19 @@ case $n in
     cd ../../
     cd ./modules/mock-up-html-renderer && npm run compile
     cd ../../
+
     echo "All modules have been successfully compiled ✅ 🌿"
   ;;
   2) 
     cd ./modules/mock-up-generator && npm run compile
     cd ../../
+
     echo "@mock-up-generator module successfully compiled ✅ 🌿"
   ;;
   3) 
     cd ./modules/mock-up-html-renderer && npm run compile
     cd ../../
+    
     echo "@mock-up-html-renderer module successfully compiled ✅ 🌿"
   ;;
   4) 

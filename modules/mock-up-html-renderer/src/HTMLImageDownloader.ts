@@ -3,7 +3,7 @@ import { SupportedImageFormat } from "./types.js";
 export class HTMLImageDownloader {
   private _containerId = "";
 
-  constructor(containerId = "") {
+  constructor(containerId: string = "") {
     this._containerId = containerId;
   }
 

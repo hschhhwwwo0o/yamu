@@ -17,7 +17,5 @@
   ],
   "author": "@hschhhwwwo0o",
   "license": "ISC",
-  "devDependencies": {
-    "husky": "^8.0.3"
-  }
+  "devDependencies": {}
 }

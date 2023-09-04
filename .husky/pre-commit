@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "ooh"
+echo "ooh2"
 
 npm run pre-commit

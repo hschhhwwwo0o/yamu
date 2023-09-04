@@ -65,7 +65,7 @@ To install the repository, paste this command into your terminal:
 git clone https://github.com/hschhhwwwo0o/yamu.git
 ```
 
-If you are a macOS or Linux user, the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
+If you are a macOS or Linux user, (I really hope you're not a Windows user) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
 bash instruments/project_installer.bash

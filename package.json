@@ -8,7 +8,8 @@
     "start": "cd ./app/yamu-react-app && npm run start",
     "build-modules": "bash ./scripts/build_modules.bash",
     "lint-modules": "bash ./scripts/lint_modules.bash",
-    "create-module": "bash ./scripts/create_module.bash"
+    "create-module": "bash ./instruments/module_creator.bash",
+    "prepare": "husky install"
   },
   "type": "module",
   "keywords": [
@@ -18,6 +19,6 @@
   "author": "@hschhhwwwo0o",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.0"
+    "husky": "^8.0.3"
   }
 }

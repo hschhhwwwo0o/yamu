@@ -9,7 +9,8 @@
     "start": "cd ./app/yamu-react-app && npm run start",
     "build-modules": "bash ./scripts/build_modules.bash",
     "lint-modules": "bash ./scripts/lint_modules.bash",
-    "create-module": "bash ./scripts/create_module.bash"
+    "create-module": "bash ./scripts/create_module.bash",
+    "prepare": "husky install"
   },
   "type": "module",
   "keywords": [
@@ -17,10 +18,8 @@
     "mock-up create"
   ],
   "author": "@hschhhwwwo0o",
-  "publisher": "@hschhhwwwo0o",
-  "homepage": "https://github.com/hschhhwwwo0o/yamu",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.0"
   }
 }

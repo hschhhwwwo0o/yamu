@@ -4,7 +4,7 @@
   case $1 in
     "--all") 
       echo ""
-      echo "Building of modules... 💚"
+      echo "Compiling of modules... 💚"
 
       cd ./modules/mock-up-generator && npm run compile
       cd ../../

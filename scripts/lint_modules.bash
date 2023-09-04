@@ -6,4 +6,4 @@ cd ./modules/mock-up-html-renderer && npm run lint
 cd ../../
 
 echo ""
-echo "All modules have been successfully tested ✅ 🌿"
+echo "All modules have been successfully tested ✅ 🌿 "

@@ -8,10 +8,9 @@
   echo "Enter the name of the new module: "
 }
 
-read modulename
-
 # Create module dir
 {
+  read modulename
   cd ./modules 
   mkdir $modulename
   cd ./$modulename

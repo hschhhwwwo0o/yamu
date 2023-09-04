@@ -32,6 +32,12 @@ The project has a non-standard structure. The project is divided into modules an
 
 Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
 
+To quickly create and configure a new module, a tool was created: module-creator - using this tool you can quickly create a new module; to run the tool you need to run the command:
+
+```sh
+npm run create-module
+```
+
 At the moment there are 2 modules implemented in the project:
 
 | Module name                                                                                                              | Meaning of the module                                                                                                    |
@@ -41,7 +47,11 @@ At the moment there are 2 modules implemented in the project:
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 
-To change the logic of the module and test the result of its work in the application, you need to recompile the module.
+To change the logic of module operation and check the result of its work in the application, you need to recompile the module. This can be done using the build_modules script; execute this command in the root of the project:
+
+```sh
+npm run build-modules
+```
 
 ### 4. Application development
 

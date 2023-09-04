@@ -5,7 +5,7 @@
   "scripts": {
     "pre-commit": "npm run lint-modules",
     "dev": "cd ./app/yamu-react-app && npm run dev",
-    "build": "npm run build-modules && cd ./app/yamu-react-app && npm run build",
+    "build": "bash ./scripts/build_modules.bash --all && cd ./app/yamu-react-app && npm run build",
     "start": "cd ./app/yamu-react-app && npm run start",
     "build-modules": "bash ./scripts/build_modules.bash",
     "lint-modules": "bash ./scripts/lint_modules.bash",

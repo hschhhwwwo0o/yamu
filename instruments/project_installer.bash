@@ -7,7 +7,7 @@
   echo ""
   echo "Husky has been successfully installed ✅ 🌿"
 } || {
-  echo "Error #1 ❌"
+  echo "Error installing husky ❌"
 }
 
 {
@@ -16,7 +16,7 @@
   echo ""
   echo "Application dependencies successfully installed ✅ 🌿"
 } || {
-  echo "Error #2 ❌"
+  echo "Error installing application dependencies ❌"
 }
 
 {
@@ -25,7 +25,7 @@
   echo ""
   echo "@mock-up-html-renderer dependencies successfully installed ✅ 🌿"
 } || {
-  echo "Error #3 ❌"
+  echo "Dependency installation error @mock-up-html-renderer ❌"
 }
 
 {
@@ -34,7 +34,7 @@
   echo ""
   echo "@mock-up-generator dependencies successfully installed ✅ 🌿"
 } || {
-  echo "Error #4 ❌"
+  echo "Dependency installation error @mock-up-generator ❌"
 }
 
 {
@@ -42,5 +42,7 @@
   npm install
   bash ./scripts/build_modules.bash --all
 } || {
-  echo "Error #5 ❌"
+  echo "Error compiling modules ❌"
 }
+
+exit 0

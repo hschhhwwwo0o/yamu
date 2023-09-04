@@ -1,121 +1,168 @@
 #!/bin/bash 
 
-echo ""
-echo "Enter the name of the new module: "
+{
+  echo ""
+  echo 'The "module-creator" developer tool has been launched. The tool is designed for quick creation and customization of modules.'
+
+  echo ""
+  echo "Enter the name of the new module: "
+}
 
 read modulename
 
-cd ./modules 
-
-mkdir $modulename
-
-cd ./$modulename
-
-mkdir src && cd ./src/ && echo "" > index.ts && cd ../
-
-echo '
+# Create module dir
 {
-  "name": "module",
-  "version": "1.0.0",
-  "main": "src/index.ts",
-  "scripts": {
-    "compile": "tsc",
-    "lint": "npx eslint ."
-  },
-  "keywords": [],
-  "author": "@hschhhwwwo0o",
-  "license": "ISC",
-  "devDependencies": {}
+  cd ./modules 
+  mkdir $modulename
+  cd ./$modulename
+} || {
+  echo "Error creating a directory ❌"
+  exit 1
 }
-' > package.json
 
-echo '
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2020",
-    "moduleResolution": "classic",
-    "allowArbitraryExtensions": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "outDir": "dist",
-    "rootDir": "src"
+  mkdir src && cd ./src/ && echo "" > index.ts && cd ../
+} || {
+  echo "Error creating a src directory ❌"
+  exit 1
+}
+
+{
+  echo '
+  {
+    "name": "module",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "scripts": {
+      "compile": "tsc",
+      "lint": "npx eslint ."
+    },
+    "keywords": [],
+    "author": "@hschhhwwwo0o",
+    "license": "ISC",
+    "devDependencies": {}
   }
+  ' > package.json
+} || {
+  echo "Error creating a package.json ❌"
+  exit 1
 }
 
-' > tsconfig.json
-
-echo "
-dist
-node_modules
-images
-" > .eslintignore
-
-echo "
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+  echo '
+  {
+    "compilerOptions": {
+      "target": "ES2022",
+      "module": "ES2020",
+      "moduleResolution": "classic",
+      "allowArbitraryExtensions": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "outDir": "dist",
+      "rootDir": "src"
     }
+  }
+  ' > tsconfig.json
+} || {
+  echo "Error creating a tsconfig.json ❌"
+  exit 1
 }
-" > .eslintrc.json
 
-echo "
-# Ignore artifacts:
-build
-coverage
-dist
-" > .prettierignore
+{
+  echo "
+  dist
+  node_modules
+  images
+  " > .eslintignore
+} || {
+  echo "Error creating a .eslintignore ❌"
+  exit 1
+}
 
-echo "{}" > .prettierrc.json
+{
+  echo '
+  {
+      "env": {
+          "browser": true,
+          "es2021": true,
+          "node": true
+      },
+      "extends": [
+          "eslint:recommended",
+          "plugin:@typescript-eslint/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+          "ecmaVersion": "latest",
+          "sourceType": "module"
+      },
+      "plugins": [
+          "@typescript-eslint"
+      ],
+      "rules": {
+          "semi": ["error", "always"],
+          "quotes": ["error", "double"]
+      }
+  }
+  ' > .eslintrc.json
+} || {
+  echo "Error creating a .eslintrc.json ❌"
+  exit 1
+}
 
-echo '
-MIT License
+{
+  echo "
+  # Ignore artifacts:
+  build
+  coverage
+  dist
+  " > .prettierignore
+  echo "{}" > .prettierrc.json
+} || {
+  echo "Error creating a .prettierignore/.prettierrc.json ❌"
+  exit 1
+}
 
-Copyright (c) 2023 Saveliy Andronov
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+{
+  echo '
+  MIT License
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+  Copyright (c) 2023 Saveliy Andronov
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-' > LICENSE
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
 
-npm i --save-dev @typescript-eslint/eslint-plugin
-npm i --save-dev @typescript-eslint/parser
-npm i --save-dev eslint
-npm install --save-dev --save-exact prettier
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  ' > LICENSE
+} || {
+  echo "Error creating a LICENSE file ❌"
+  exit 1
+}
+
+{
+  npm i --save-dev @typescript-eslint/eslint-plugin
+  npm i --save-dev @typescript-eslint/parser
+  npm i --save-dev eslint
+  npm install --save-dev --save-exact prettier
+} || {
+  echo "Dependency installation error ❌"
+}
 
 cd ../../
 

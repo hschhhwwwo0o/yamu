@@ -15,7 +15,7 @@
   mkdir $modulename
   cd ./$modulename
 } || {
-  echo "Error creating a directory ❌"
+  echo "Error creating a module directory ❌"
   exit 1
 }
 

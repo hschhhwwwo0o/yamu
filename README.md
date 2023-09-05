@@ -32,7 +32,7 @@ The project is separated into modules and application; modules are responsible f
 
 The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 
-If you are using macOS or Linux (I really hope you're not a Windows user¹ 👎) you can use the «module-creator» tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
+If you're using macOS or Linux (I really hope you're not a Windows user¹ 👎), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
 bash ./instruments/module_creator.bash

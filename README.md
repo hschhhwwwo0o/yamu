@@ -5,7 +5,7 @@ The application is designed for creating mock-ups. Create product mock-ups with 
 
 ## Development
 
-Tracking of tasks was done using GitHub Projects (I didn't like GitHub Projects 👎).
+Tracking of tasks was done using GitHub Projects (👎).
 
 The development of the project was divided into several stages:
 
@@ -28,9 +28,9 @@ I did the design development on my own. The design of the application was develo
 
 I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book «Clean Architecture». In the end, I decided to separate the business logic into modules.
 
-The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus, the application (in this case the NextJS framework) is responsible only for displaying UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact in any way with other modules_.
+The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact with other modules in any way_.
 
-Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
+What is the purpose of this separation? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 
 If you are using macOS or Linux (I really hope you're not a Windows user 👎) you can use the «module-creator» tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
 

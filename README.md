@@ -26,7 +26,7 @@ I did the design development on my own. The design of the application was develo
 
 ### 3. Module development
 
-I didn't start development with code. The first thing I started thinking about was the architecture of the project and how to conveniently separate the business logic from the user interface. At this stage, I tried to be guided by Robert Martin's book «Pure Architecture». In the end, I decided to separate the business logic into modules.
+I didn't start development with code. The first thing I started thinking about was the architecture of the project and how to conveniently separate the business logic from the user interface. At this stage, I tried to be guided by Robert Martin's book «Clean Architecture». In the end, I decided to separate the business logic into modules.
 
 The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact with other modules in any way_.
 

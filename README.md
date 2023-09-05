@@ -142,9 +142,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 <ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-In this table, I display the description of a specific functional requirement, its unique identifier and its belonging to a specific module.
-
-| Function                                 | ID                                 | Responsible module     |
+| Functional requirement                   | ID                                 | Responsible module     |
 | :--------------------------------------- | :--------------------------------- | :--------------------- |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
 | Mock-up display                          | UF/MOCK-UP/VIEW                    | @mock-up-html-renderer |

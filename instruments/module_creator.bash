@@ -19,13 +19,18 @@
   exit 1
 }
 
+# Create src dir and index.ts file
 {
-  mkdir src && cd ./src/ && echo "" > index.ts && cd ../
+  mkdir src
+  cd ./src/
+  echo "" > index.ts
+  cd ../
 } || {
   echo "Error creating a src directory ❌"
   exit 1
 }
 
+# Create package.json file
 {
   echo '
   {
@@ -47,6 +52,7 @@
   exit 1
 }
 
+# Create tsconfig file
 {
   echo '
   {
@@ -69,6 +75,7 @@
   exit 1
 }
 
+# Initialize eslints files
 {
   echo "
   dist
@@ -80,6 +87,7 @@
   exit 1
 }
 
+# Initialize eslints files
 {
   echo '
   {
@@ -111,6 +119,7 @@
   exit 1
 }
 
+# Initialize prettier files
 {
   echo "
   # Ignore artifacts:
@@ -124,7 +133,7 @@
   exit 1
 }
 
-
+# Create license file
 {
   echo '
   MIT License
@@ -154,6 +163,7 @@
   exit 1
 }
 
+# Install deps
 {
   npm i --save-dev @typescript-eslint/eslint-plugin
   npm i --save-dev @typescript-eslint/parser

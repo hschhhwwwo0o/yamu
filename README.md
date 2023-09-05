@@ -18,7 +18,7 @@ The development of the project was divided into several stages:
 
 Before starting to develop the code base, I tried to carefully think through all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; compiled a data dictionary and a dictionary of terms. At this stage of development I tried to be guided by the book «Software Requirements Development» by Carl Wiegers, Jay Beatty.
 
-I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. In the book it is called _requirements tracking_.
+I have created a unique ID for each requirement. At the stage of code writing, I marked in comments the ID of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. In the book it is called _requirements tracking_.
 
 ### 2. Design development
 

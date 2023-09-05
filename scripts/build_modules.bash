@@ -1,5 +1,6 @@
 #!/bin/bash 
 
+# Handling the --all parameter
 {
   case $1 in
     "--all") 
@@ -8,6 +9,7 @@
 
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
+
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
 
@@ -17,6 +19,7 @@
   esac
 }
 
+# Handling a script called without parameters
 {
   echo ""
   echo "Select the module to compile: "
@@ -30,6 +33,7 @@
     1) 
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
+
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
 

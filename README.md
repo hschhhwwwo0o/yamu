@@ -16,7 +16,7 @@ The development of the project was divided into several stages:
 
 ### 1. Development of software requirements
 
-Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a dictionary of terms. At this stage of development I was guided by the book «Development of software requirements» Carl Vigers, Jay Beatty.
+Before starting to develop the code base, I tried to carefully think through all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; compiled a data dictionary and a dictionary of terms. At this stage of development I tried to be guided by the book «Software Requirements Development» by Carl Wiegers, Jay Beatty.
 
 I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_.
 
@@ -26,11 +26,11 @@ I did the design development on my own. The design of the application was develo
 
 ### 3. Module development
 
-I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book «Clean Architecture». In the end, I decided to separate the business logic into modules.
+I didn't start development with code. The first thing I started thinking about was the architecture of the project and how to conveniently separate the business logic from the user interface. At this stage, I tried to be guided by Robert Martin's book «Pure Architecture». In the end, I decided to separate the business logic into modules.
 
 The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact with other modules in any way_.
 
-What is the purpose of this separation? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
+The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 
 If you are using macOS or Linux (I really hope you're not a Windows user¹ 👎) you can use the «module-creator» tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
 

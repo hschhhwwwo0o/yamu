@@ -1,3 +1,6 @@
+#!/bin/bash 
+
+# Husky install
 {
   rm -rf .husky
   npm install husky --save-dev
@@ -11,6 +14,7 @@
   echo "Error installing husky ❌"
 }
 
+# Application dependencies install
 {
   cd ./app/yamu-react-app 
   npm install 
@@ -21,6 +25,7 @@
   echo "Error installing application dependencies ❌"
 }
 
+# @mock-up-html-renderer dependencies install
 {
   cd ../../ && cd ./modules/mock-up-html-renderer
   npm install
@@ -31,6 +36,7 @@
   echo "Dependency installation error @mock-up-html-renderer ❌"
 }
 
+# @mock-up-generator dependencies install
 {
   cd ../../ && cd ./modules/mock-up-generator
   npm install
@@ -41,6 +47,7 @@
   echo "Dependency installation error @mock-up-generator ❌"
 }
 
+# Compile all modules
 {
   cd ../../
   npm install

@@ -35,7 +35,7 @@ Why? To separate business logic from fickle and windy frameworks and libraries t
 If you are using macOS or Linux (I really hope you're not a Windows user 👎) you can use the "module-creator" tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
 
 ```sh
-npm run create-module
+bash ./instruments/module_creator.bash
 ```
 
 At the moment there are 2 modules implemented in the project:
@@ -51,6 +51,12 @@ To change the logic of module operation and check the result of its work in the 
 
 ```sh
 npm run build-modules
+```
+
+To compile the module yourself, go to the module folder and execute the compile command:
+
+```sh
+npm run compile
 ```
 
 ### 4. Application development
@@ -70,6 +76,8 @@ If you are a macOS or Linux user, (I REALLY HOPE YOU'RE NOT A WINDOWS USER 👎)
 ```sh
 bash instruments/project_installer.bash
 ```
+
+If the install script gives an error (OR IF YOU ARE A WINDOWS USER 👎), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it.
 
 Start the dev server using the command in the root of the project:
 

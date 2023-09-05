@@ -16,7 +16,7 @@ The development of the project was divided into several stages:
 
 ### 1. Development of software requirements
 
-Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a dictionary of terms. At this stage of development I was guided by the book "Development of software requirements," Carl Vigers, Jay Beatty.
+Before starting to develop the code base I tried to think thoroughly about all the requirements for the future software product. I formulated functional requirements, user requirements, quality attributes; I compiled a data dictionary and a dictionary of terms. At this stage of development I was guided by the book «Development of software requirements» Carl Vigers, Jay Beatty.
 
 I have created a unique identifier for each requirement. At the stage of code writing, I marked in comments the identifier of the requirement that I will implement; thanks to this it will be easy to find the implementation of a certain requirement in the code base. You can read more about it in the book. In the book it is called _requirements tracking_.
 
@@ -26,13 +26,13 @@ I did the design development on my own. The design of the application was develo
 
 ### 3. Module development
 
-I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book "Clean Architecture". In the end, I decided to separate the business logic into modules.
+I didn't start the program development with code. The first thing I started to think about was the architecture of the project and how to conveniently separate the business logic from the UI. At this stage I tried to be guided by Robert Martin's book «Clean Architecture». In the end, I decided to separate the business logic into modules.
 
 The project has a non-standard structure. The project is divided into modules and an application that uses the modules to implement the logic. Thus, the application (in this case the NextJS framework) is responsible only for displaying UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact in any way with other modules_.
 
 Why? To separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. Modules are designed in such a way that they can be used independently of the framework; thanks to this, for example, migration from ReactJS to VueJS will be realized very easily.
 
-If you are using macOS or Linux (I really hope you're not a Windows user 👎) you can use the "module-creator" tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
+If you are using macOS or Linux (I really hope you're not a Windows user 👎) you can use the «module-creator» tool to quickly create and customize a new module - it can be used to quickly create a new module; you need to run the command to start the tool:
 
 ```sh
 bash ./instruments/module_creator.bash
@@ -87,9 +87,9 @@ npm run dev
 
 ## Dictionary of Terms
 
-"A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification"
+«A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»
 
-<ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+<ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 
@@ -116,15 +116,15 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 ## Software claims
 
-"Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process."
+«Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»
 
 <ins>_Ian Sommerville, Pete Sawyer, 1997_</ins>
 
 ### Quality Attributes
 
-"Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality."
+«Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality.»
 
-<ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+<ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 | Attribute                                  | ID                       | Description / Why it's necessary                                                |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ |
@@ -140,9 +140,9 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 ### Functional claims
 
-"Functional requirements can be written in terms of what the system does or what the user does."
+«Functional requirements can be written in terms of what the system does or what the user does.»
 
-<ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+<ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 In this table, I display the description of a specific functional requirement, its unique identifier and its belonging to a specific module.
 
@@ -162,9 +162,9 @@ In this table, I display the description of a specific functional requirement, i
 
 ### Use cases
 
-"A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information."
+«A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information.»
 
-<ins>_"Development of software requirements", Third Edition. Carl Vigers, Jay Beatty_</ins>
+<ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                      |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------- |
@@ -178,7 +178,7 @@ In this table, I display the description of a specific functional requirement, i
 
 The development process was strongly influenced by the books:
 
-- "Development of software requirements," Carl Vigers, Jay Beatty;
-- "Clean Architecture" by Robert Martin;
-- "Envisioning Information" Edward R. Tufte;
-- "A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System" Glenn E. Krasner and Stephen T. Pope;
+- «Development of software requirements» Carl Vigers, Jay Beatty;
+- «Clean Architecture» Robert Martin;
+- «Envisioning Information» Edward R. Tufte;
+- «A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope;

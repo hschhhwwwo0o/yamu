@@ -22,7 +22,7 @@ I have created a unique identifier for each requirement. At the stage of code wr
 
 ### 2. Design development
 
-I did the design development on my own. The design of the application was developed in Figma. The design was developed in accordance with the previously developed software requirements. I downloaded image devices frames from the Internet and edited them in Photoshop.
+I did the design development on my own. The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
 
 ### 3. Module development
 

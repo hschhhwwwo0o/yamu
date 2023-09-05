@@ -9,7 +9,7 @@ Tracking of tasks was done using GitHub Projects (👎).
 
 The development of the project was divided into several stages:
 
-1. Requirements development
+1. Development of software requirements
 2. Design development
 3. Module development
 4. Application development

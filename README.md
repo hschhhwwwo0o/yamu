@@ -53,7 +53,7 @@ To change the logic of module operation and check the result of its work in the 
 npm run build-modules
 ```
 
-To compile the module yourself, go to the module folder and execute the compile command:
+If something went wrong, you can compile the modules yourself. To compile a module yourself, go to the module folder and execute the compile command:
 
 ```sh
 npm run compile
@@ -77,7 +77,7 @@ If you are a macOS or Linux user, (I REALLY HOPE YOU'RE NOT A WINDOWS USER 👎)
 bash instruments/project_installer.bash
 ```
 
-If the install script gives an error (OR IF YOU ARE A WINDOWS USER 👎), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it.
+_If the install script gives an error (OR IF YOU ARE A WINDOWS USER 👎), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
 
 Start the dev server using the command in the root of the project:
 

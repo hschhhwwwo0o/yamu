@@ -6,7 +6,7 @@
   npm install husky --save-dev
   npx husky install
   npm install
-  npx husky add .husky/pre-commit "npm run lint-modules"
+  npx husky add .husky/pre-commit "npm run lint"
 
   echo ""
   echo "Husky has been successfully installed ✅ 🌿"

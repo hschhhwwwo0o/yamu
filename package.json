@@ -7,7 +7,7 @@
     "build": "bash ./scripts/build_app.bash",
     "start": "cd ./app/yamu-react-app && npm run start",
     "build-modules": "bash ./scripts/build_modules.bash",
-    "lint-modules": "bash ./scripts/lint_modules.bash",
+    "lint": "bash ./scripts/lint.bash",
     "prepare": "husky install"
   },
   "type": "module",

@@ -1,8 +1,8 @@
 #!/bin/bash 
 
-# Linting of modules
+# Linting
 {
-  npm run lint-modules
+  npm run lint
 }
 
 # Building modules

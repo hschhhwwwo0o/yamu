@@ -2,9 +2,10 @@
 
 {
   echo ""
-  echo "Linting of modules... 💚"
+  echo "Linting... 💚"
 }
 
+# Lint modules
 {
   cd ./modules/mock-up-generator && npm run lint
   cd ../../
@@ -13,9 +14,17 @@
   cd ../../
 }
 
+# Lint app
+{
+  cd ./app/yamu-react-app && npm run lint
+  cd ../../
+} || {
+  exit 1
+}
+
 {
   echo ""
-  echo "All modules have been successfully tested ✅ 🌿 "
+  echo "Successfully linted ✅ 🌿 "
 }
 
 exit 0

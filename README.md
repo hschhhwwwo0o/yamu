@@ -112,9 +112,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Open Graph            | Micro markup for SEO.                                                                                                 |
 | Lighthouse            | Automated tool for measuring the quality of web pages.                                                                |
 
-<!-- CLAIMS.md -->
-
-## Software claims
+## Software requirements
 
 «Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»
 
@@ -138,7 +136,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     |
 | Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     |
 
-### Functional claims
+### Functional requirements
 
 «Functional requirements can be written in terms of what the system does or what the user does.»
 

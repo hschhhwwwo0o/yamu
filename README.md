@@ -63,7 +63,7 @@ npm run compile
 
 By this I mean the layout of the application and the use of already created modules in it.
 
-### Installation
+### Installation and start dev server
 
 To install the repository, paste this command into your terminal:
 

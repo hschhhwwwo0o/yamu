@@ -59,7 +59,7 @@ npm run compile
 
 ### 4. Application development
 
-By this I mean the layout of the application and the use of already created modules in it.
+Creating an application UI and using already developed modules in it.
 
 ### Installation and start dev server
 

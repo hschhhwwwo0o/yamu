@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
 /** Global styles */
+import "../styles/globals/reset.css";
 import "../styles/globals/index.css";
 
 /** Initialize google font */

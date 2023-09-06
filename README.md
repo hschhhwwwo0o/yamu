@@ -18,7 +18,7 @@ The development of the project was divided into several stages:
 
 Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled.
 
-A unique ID is created for each requirement. At the stage the code writing phase, the ID of the requirement to be implemented is marked in the comment; this makes it easy to find the implementation of a particular requirement in the code base. In the book, this is called _requirement tracking_.
+A unique ID is created for each requirement. At the stage the code writing phase, the ID of the requirement to be implemented is marked in the comment; this makes it easy to find the implementation of a particular requirement in the code base. In the book «Development of software requirements» by Carl Vigers & Jay Beatty, this approach is called _requirements tracking_.
 
 ### 2. Design development
 
@@ -26,9 +26,7 @@ The design of the application was developed in Figma/Photoshop. The design was d
 
 ### 3. Module development
 
-I didn't start development with code. The first thing I started thinking about was the architecture of the project and how to conveniently separate the business logic from the user interface. At this stage, I tried to be guided by Robert Martin's book «Clean Architecture». In the end, I decided to separate the business logic into modules.
-
-The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. For myself, I decided that _each module performs only one task and should not interact with other modules in any way_.
+The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. _Each module performs only one task and should not interact with other modules in any way_.
 
 The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 

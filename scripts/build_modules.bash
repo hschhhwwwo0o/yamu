@@ -37,19 +37,19 @@
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
 
-      echo "All modules have been successfully compiled ✅ 🌿"
+      echo "✅ All modules have been successfully compiled"
     ;;
     2) 
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
 
-      echo "@mock-up-generator module successfully compiled ✅ 🌿"
+      echo "✅ @mock-up-generator module successfully compiled"
     ;;
     3) 
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
       
-      echo "@mock-up-html-renderer module successfully compiled ✅ 🌿"
+      echo "✅ @mock-up-html-renderer module successfully compiled"
     ;;
     4) 
       exit 0

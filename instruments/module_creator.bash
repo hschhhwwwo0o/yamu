@@ -178,7 +178,7 @@ cd ../../
 
 {
   echo ""
-  echo "The module has been successfully created! ✅ 🌿"
+  echo "✅ The module has been successfully created!"
   echo ""
   echo "⚠️ Don't forget to add support for the new module to third-party scripts; for example, the linting script and the module compilation script"
 }

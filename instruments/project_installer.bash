@@ -9,7 +9,7 @@
   npx husky add .husky/pre-commit "npm run lint"
 
   echo ""
-  echo "Husky has been successfully installed ✅ 🌿"
+  echo "✅ Husky has been successfully installed"
 } || {
   echo "Error installing husky ❌"
 }
@@ -20,7 +20,7 @@
   npm install 
 
   echo ""
-  echo "Application dependencies successfully installed ✅ 🌿"
+  echo "✅ Application dependencies successfully installed"
 } || {
   echo "Error installing application dependencies ❌"
 }
@@ -31,7 +31,7 @@
   npm install
 
   echo ""
-  echo "@mock-up-html-renderer dependencies successfully installed ✅ 🌿"
+  echo "✅ @mock-up-html-renderer dependencies successfully installed"
 } || {
   echo "Dependency installation error @mock-up-html-renderer ❌"
 }
@@ -42,7 +42,7 @@
   npm install
   
   echo ""
-  echo "@mock-up-generator dependencies successfully installed ✅ 🌿"
+  echo "✅ @mock-up-generator dependencies successfully installed"
 } || {
   echo "Dependency installation error @mock-up-generator ❌"
 }

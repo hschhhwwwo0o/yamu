@@ -2,7 +2,7 @@
 
 {
   echo ""
-  echo "Linting... 💚"
+  echo "⚡️ Linting..."
 }
 
 # Lint modules
@@ -24,7 +24,7 @@
 
 {
   echo ""
-  echo "Successfully linted ✅ 🌿 "
+  echo "✅ Successfully linted"
 }
 
 exit 0

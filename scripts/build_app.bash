@@ -8,7 +8,7 @@
 # Building modules
 {
   echo ""
-  echo "Building of app... 💚"
+  echo "⚡️ Building of app..."
   bash ./scripts/build_modules.bash --all 
 }
 
@@ -20,7 +20,7 @@
 
 {
   echo ""
-  echo "The application is ready for deployment ✅ 🌿"
+  echo "✅ The application is ready for deployment"
 }
 
 exit 0

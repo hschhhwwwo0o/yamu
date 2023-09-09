@@ -7,7 +7,7 @@ interface LabelInterface {
 export function Label({ children }: LabelInterface) {
   return (
     <Fragment>
-      <div className="text-[#181818] opacity-60 dark:text-white dark:opacity-60">
+      <div className="text-sm text-[#181818] opacity-60 dark:text-white dark:opacity-60">
         {children}
       </div>
     </Fragment>

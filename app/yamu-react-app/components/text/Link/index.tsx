@@ -11,7 +11,7 @@ export function LinkCustom({
   children,
   href = "/",
   withLabel = false,
-}: LinkCustomInterface) {
+}: LinkCustomInterface): ReactNode {
   return (
     <Fragment>
       <Link

@@ -57,38 +57,38 @@ export function TheTopNavigation(): ReactNode {
           /** Center of the navigation laptop */
           <div className="flex flex-row items-center justify-center gap-12 w-[80%]">
             <Link
-              href="/"
+              href="/create-mock-up"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               Create mock-up
             </Link>
             <Link
-              href="/"
+              href="https://github.com/hschhhwwwo0o/yamu"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               GitHub
             </Link>
             <Link
-              href="/"
+              href="/about"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               About
             </Link>
             <Logo />
             <Link
-              href="/"
+              href="/development"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               Development
             </Link>
             <Link
-              href="/"
+              href="/license"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               License
             </Link>
             <Link
-              href="/"
+              href="/feedback"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               Feedback
@@ -110,37 +110,37 @@ export function TheTopNavigation(): ReactNode {
           className="bg-black transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-14 gap-10"
         >
           <Link
-            href="/"
+            href="/create-mock-up"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             Create mock-up
           </Link>
           <Link
-            href="/"
+            href="https://github.com/hschhhwwwo0o/yamu"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             GitHub
           </Link>
           <Link
-            href="/"
+            href="/about"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             About
           </Link>
           <Link
-            href="/"
+            href="/development"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             Development
           </Link>
           <Link
-            href="/"
+            href="/license"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             License
           </Link>
           <Link
-            href="/"
+            href="/feedback"
             className="text-white hover:opacity-70 transition-opacity duration-200"
           >
             Feedback

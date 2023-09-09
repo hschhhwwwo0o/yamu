@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         "brand-blue": "#007AFF",
       },
+      spacing: {
+        "mobile-padding": "16px",
+      },
     },
   },
   plugins: [],

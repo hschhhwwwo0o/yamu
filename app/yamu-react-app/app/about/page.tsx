@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 
 /** Initialize metadata */
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
   title: "YAMU. About",
   description:

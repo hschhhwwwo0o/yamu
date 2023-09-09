@@ -14,7 +14,6 @@ const inter: NextFont = Inter({
 
 /** Initialize metadata */
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
   title: "YAMU",
   description:

@@ -30,7 +30,7 @@ export function TheTopNavigation(): ReactNode {
                     style={{
                       rotate: isOpenMobileNavigation ? "45deg" : "0deg",
                       transform: isOpenMobileNavigation
-                        ? "translate(5px, 3.2px)"
+                        ? "translate(5px, 3.165px)"
                         : "",
                     }}
                     className="block transform w-full h-[1px] transition-all duration-300 bg-white"
@@ -45,7 +45,7 @@ export function TheTopNavigation(): ReactNode {
                     style={{
                       rotate: isOpenMobileNavigation ? "-45deg" : "0deg",
                       transform: isOpenMobileNavigation
-                        ? "translate(5px, -3.2px)"
+                        ? "translate(4.8px, -3.165px)"
                         : "",
                     }}
                     className="block transform w-full h-[1px] transition-all duration-300 bg-white"

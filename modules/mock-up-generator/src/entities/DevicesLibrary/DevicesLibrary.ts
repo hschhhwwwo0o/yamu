@@ -7,7 +7,7 @@ export class DevicesLibraryManager {
   /**
    * Getting affordable devices
    *
-   * @claim UF/DEVICES-LIBRARY/GET
+   * @requirement UF/DEVICES-LIBRARY/GET
    *
    * @returns Affordable devices library
    */

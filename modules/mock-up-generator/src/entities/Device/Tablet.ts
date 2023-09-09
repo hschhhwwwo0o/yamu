@@ -15,10 +15,10 @@ class TabletDevice extends Device {
   /**
    * Set new settings and change the image of the device frame accordingly
    *
-   * @claim UF/MOCK-UP/SETTINGS-UP
+   * @requirement UF/MOCK-UP/SETTINGS-UP
    *
-   * @claim UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE
-   * @claim UF/DEVICE/OPTION-THEME-TOGGLE
+   * @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE
+   * @requirement UF/DEVICE/OPTION-THEME-TOGGLE
    *
    * @param settings  Configuration settings
    *

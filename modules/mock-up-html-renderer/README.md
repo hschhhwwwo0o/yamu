@@ -1,6 +1,6 @@
 A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image.
 
-The module implements the claims:
+The module implements the requirements:
 
 | Function             | ID                  |
 | :------------------- | :------------------ |

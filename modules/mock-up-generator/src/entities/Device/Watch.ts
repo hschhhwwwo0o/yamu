@@ -14,9 +14,9 @@ class WatchDevice extends Device {
   /**
    * Set new settings and change the image of the device frame accordingly
    *
-   * @claim UF/MOCK-UP/SETTINGS-UP
+   * @requirement UF/MOCK-UP/SETTINGS-UP
    *
-   * @claim UF/MOCK-UP/OPTION-STRAP-TOGGLE
+   * @requirement UF/MOCK-UP/OPTION-STRAP-TOGGLE
    *
    * @param settings Configuration settings
    * @returns Setted watch settings or undefined

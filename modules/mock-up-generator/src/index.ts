@@ -19,7 +19,7 @@ class MockUpGenerator {
   /**
    * Getting affordable devices
    *
-   * @claim UF/DEVICES-LIBRARY/GET
+   * @requirement UF/DEVICES-LIBRARY/GET
    *
    * @returns Affordable devices library
    */
@@ -31,7 +31,7 @@ class MockUpGenerator {
   /**
    * Selecting a device from the library
    *
-   * @claim UF/MOCK-UP/DEVICE-SELECT
+   * @requirement UF/MOCK-UP/DEVICE-SELECT
    *
    * @param type Type of Device to be selected
    * @param deviceName Name of device to choose from
@@ -69,7 +69,7 @@ class MockUpGenerator {
   /**
    * Adding an image inside a mockup
    *
-   * @claim UF/MOCK-UP/INSERT-DESIGN
+   * @requirement UF/MOCK-UP/INSERT-DESIGN
    *
    * @param image Image to insert into a mockup
    *
@@ -87,7 +87,7 @@ class MockUpGenerator {
   /**
    * Resetting a mockup
    *
-   * @claim UF/MOCK-UP/CLEAR
+   * @requirement UF/MOCK-UP/CLEAR
    *
    * @returns New state of the mockup
    */

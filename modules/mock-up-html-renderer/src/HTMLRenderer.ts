@@ -10,7 +10,7 @@ export class HTMLRenderer {
   /**
    * Render mock-up
    *
-   * @claim UF/MOCK-UP/VIEW
+   * @requirement UF/MOCK-UP/VIEW
    */
   public render(renderData: RenderData): void {
     this._clearDOMContainer();

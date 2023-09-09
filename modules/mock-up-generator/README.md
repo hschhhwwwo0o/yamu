@@ -9,7 +9,7 @@ Available devices:
 - iWatch SE
 - iPad 10
 
-The module implements the claims:
+The module implements the requirements:
 
 | Function                                 | ID                                 |
 | :--------------------------------------- | :--------------------------------- |

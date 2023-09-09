@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
   publisher: "@hschhhwwwo0o",
   creator: "@hschhhwwwo0o",
+
+  /** @requirement QA/SEO/OPEN-GRAPH */
   openGraph: {
     title: "YAMU",
     description:

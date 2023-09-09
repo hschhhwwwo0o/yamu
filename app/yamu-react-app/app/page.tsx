@@ -2,14 +2,14 @@ import React, { Fragment } from "react";
 
 /** Components */
 import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
-import { LinkCustom } from "@/components/text/Link";
+import { Button } from "@/components/form/Button";
 
 export default function IndexScreen(): React.JSX.Element {
   return (
     <Fragment>
       <main>
         <TheTopNavigation />
-        <LinkCustom href="/">Hi</LinkCustom>
+        <Button>Create</Button>
       </main>
     </Fragment>
   );

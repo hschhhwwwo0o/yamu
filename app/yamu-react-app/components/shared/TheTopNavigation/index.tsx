@@ -23,32 +23,34 @@ export function TheTopNavigation(): ReactNode {
               /** Burger menu */
               <button
                 onClick={toggleMobileNavigation}
-                className="flex flex-col justify-between w-5 h-3 cursor-pointer md:hidden"
+                className="w-8 h-8 flex items-center"
               >
-                <span
-                  style={{
-                    rotate: isOpenMobileNavigation ? "45deg" : "0deg",
-                    transform: isOpenMobileNavigation
-                      ? "translate(0px, 7.7px)"
-                      : "",
-                  }}
-                  className="block transform w-full h-[1px] transition-all duration-300 bg-white"
-                />
-                <span
-                  style={{
-                    opacity: isOpenMobileNavigation ? "0%" : "100%",
-                  }}
-                  className="block w-full h-[1px] transition-opacity duration-300 bg-white"
-                ></span>
-                <span
-                  style={{
-                    rotate: isOpenMobileNavigation ? "-45deg" : "0deg",
-                    transform: isOpenMobileNavigation
-                      ? "translate(0px, -7.7px)"
-                      : "",
-                  }}
-                  className="block transform w-full h-[1px] transition-all duration-300 bg-white"
-                />
+                <span className="flex flex-col justify-between w-5 h-3 cursor-pointer md:hidden">
+                  <span
+                    style={{
+                      rotate: isOpenMobileNavigation ? "45deg" : "0deg",
+                      transform: isOpenMobileNavigation
+                        ? "translate(5px, 3.2px)"
+                        : "",
+                    }}
+                    className="block transform w-full h-[1px] transition-all duration-300 bg-white"
+                  />
+                  <span
+                    style={{
+                      opacity: isOpenMobileNavigation ? "0%" : "100%",
+                    }}
+                    className="block w-full h-[1px] transition-opacity duration-300 bg-white"
+                  ></span>
+                  <span
+                    style={{
+                      rotate: isOpenMobileNavigation ? "-45deg" : "0deg",
+                      transform: isOpenMobileNavigation
+                        ? "translate(5px, -3.2px)"
+                        : "",
+                    }}
+                    className="block transform w-full h-[1px] transition-all duration-300 bg-white"
+                  />
+                </span>
               </button>
             }
           </div>

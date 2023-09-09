@@ -109,41 +109,41 @@ export function TheTopNavigation(): ReactNode {
             pointerEvents: isOpenMobileNavigation ? "auto" : "none",
             opacity: isOpenMobileNavigation ? "100%" : "0%",
           }}
-          className="bg-black transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-14 gap-10"
+          className="bg-black transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-8"
         >
           <Link
             href="/create-mock-up"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5  px-8"
           >
             Create mock-up
           </Link>
           <Link
             href="https://github.com/hschhhwwwo0o/yamu"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             GitHub
           </Link>
           <Link
             href="/about"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             About
           </Link>
           <Link
             href="/development"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             Development
           </Link>
           <Link
             href="/license"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             License
           </Link>
           <Link
             href="/feedback"
-            className="text-white hover:opacity-70 transition-opacity duration-200"
+            className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             Feedback
           </Link>

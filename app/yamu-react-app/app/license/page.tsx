@@ -1,0 +1,9 @@
+import React, { Fragment } from "react";
+
+export default function LicenseScreen(): React.JSX.Element {
+  return (
+    <main>
+      <Fragment />
+    </main>
+  );
+}

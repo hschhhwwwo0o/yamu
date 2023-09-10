@@ -35,9 +35,7 @@ export function FeedbackForm() {
   return (
     <Fragment>
       <span className="block">
-        <span className="block">
-          <Textarea {...feedbackTextarea.props} title="Enter feedback" />
-        </span>
+        <Textarea {...feedbackTextarea.props} title="Enter feedback" />
         <span className="block mt-3">
           <Button
             {...createFeedbackButton.props}

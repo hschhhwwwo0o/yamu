@@ -4,6 +4,9 @@ import { DevicesLibraryManager } from "../DevicesLibrary/DevicesLibrary.js";
 class Device {
   public name: string = "";
   public frame = {
+    filters: {
+      bw: false,
+    },
     width: 0,
     height: 0,
     image: "",

@@ -10,6 +10,7 @@ export interface RenderData {
     right: number;
   };
   borderRadius?: number;
+  isBW?: boolean;
 }
 
 export type SupportedImageFormat = "png" | "jpeg" | "webp";

@@ -16,6 +16,13 @@ export class HTMLRenderer {
     this._clearDOMContainer();
 
     const canvas = this._createCanvasDOMElement(renderData);
+
+    if (renderData.isBW === true) {
+      canvas.style.cssText = "filter: grayscale(100%);";
+    } else {
+      canvas.style.cssText = "filter: grayscale(0%);";
+    }
+
     const context = canvas.getContext("2d");
 
     const frameImage = this._createFrameImage(renderData);

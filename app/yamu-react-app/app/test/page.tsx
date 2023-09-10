@@ -41,6 +41,7 @@ export default function TestScreen() {
           right: mockUp.device.frame.paddingsInPercents.right,
         },
         borderRadius: mockUp.device.frame.borderRadius,
+        isBW: mockUp.device.frame.filters.bw,
       };
       mockUpRenderer.render(renderData);
     },
@@ -63,6 +64,7 @@ export default function TestScreen() {
           right: mockUp.device.frame.paddingsInPercents.right,
         },
         borderRadius: mockUp.device.frame.borderRadius,
+        isBW: mockUp.device.frame.filters.bw,
       };
       mockUpRenderer.render(renderData);
     },
@@ -86,6 +88,7 @@ export default function TestScreen() {
             right: mockUp.device.frame.paddingsInPercents.right,
           },
           borderRadius: mockUp.device.frame.borderRadius,
+          isBW: mockUp.device.frame.filters.bw,
         };
         mockUpRenderer.render(renderData);
       }

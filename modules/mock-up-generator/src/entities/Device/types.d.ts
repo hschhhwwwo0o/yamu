@@ -1,13 +1,16 @@
 export interface WatchSettings {
+  isBW?: boolean;
   isStrap?: boolean;
 }
 
 export interface PhoneSettings {
+  isBW?: boolean;
   isSystemBar?: boolean;
   theme?: "dark" | "light";
 }
 
 export interface TabletSettings {
+  isBW?: boolean;
   isSystemBar?: boolean;
   theme?: "dark" | "light";
 }

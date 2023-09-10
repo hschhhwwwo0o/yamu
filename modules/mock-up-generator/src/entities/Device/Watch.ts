@@ -4,6 +4,7 @@ import { SettingListItem, WatchSettings } from "./types.js";
 class WatchDevice extends Device {
   public readonly type = "watch";
   public settings: WatchSettings = {
+    isBW: false,
     isStrap: true,
   };
 
@@ -24,6 +25,8 @@ class WatchDevice extends Device {
   public changeSettings(settings: WatchSettings): WatchSettings | undefined {
     this._setSettingsState(settings);
 
+    this.frame.filters.bw = settings.isBW || false;
+
     if (settings.isStrap === false) {
       this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
       return this.settings;
@@ -41,6 +44,11 @@ class WatchDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [
+      {
+        key: "isBW",
+        type: "switch",
+        label: "BW filter",
+      },
       { key: "isStrap", type: "switch", label: "The presence of a strap" },
     ];
   }

@@ -4,6 +4,7 @@ import { TabletSettings, SettingListItem } from "./types.js";
 class TabletDevice extends Device {
   public readonly type = "tablet";
   public settings: TabletSettings = {
+    isBW: false,
     isSystemBar: true,
     theme: "light",
   };
@@ -32,6 +33,8 @@ class TabletDevice extends Device {
       return this.settings;
     }
 
+    this.frame.filters.bw = settings.isBW || false;
+
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark" || settings.theme === undefined) {
         this.frame.image =
@@ -55,6 +58,11 @@ class TabletDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [
+      {
+        key: "isBW",
+        type: "switch",
+        label: "BW filter",
+      },
       {
         key: "isSystemBar",
         type: "switch",

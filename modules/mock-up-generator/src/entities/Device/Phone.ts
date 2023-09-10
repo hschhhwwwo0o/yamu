@@ -4,6 +4,7 @@ import { PhoneSettings, SettingListItem } from "./types.js";
 class PhoneDevice extends Device {
   public readonly type = "phone";
   public settings: PhoneSettings = {
+    isBW: false,
     isSystemBar: true,
     theme: "light",
   };
@@ -32,6 +33,8 @@ class PhoneDevice extends Device {
       return this.settings;
     }
 
+    this.frame.filters.bw = settings.isBW || false;
+
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark" || settings.theme === undefined) {
         this.frame.image =
@@ -55,6 +58,11 @@ class PhoneDevice extends Device {
    */
   public getSettingsList(): SettingListItem[] {
     return [
+      {
+        key: "isBW",
+        type: "switch",
+        label: "BW filter",
+      },
       {
         key: "isSystemBar",
         type: "switch",

@@ -30,6 +30,7 @@ class MockUpHTMLRenderer {
       },
       borderRadius: 0,
       frameImage: "",
+      isBW: false,
     },
   ) {
     this._htmlRenderer?.render(renderData);

@@ -14,9 +14,11 @@ export function useSwitch({
   const [value, setValue] = useState<boolean>(defaultValue);
 
   return {
-    value,
-    setValue,
-    title,
-    label,
+    props: {
+      value,
+      setValue,
+      title,
+      label,
+    },
   };
 }

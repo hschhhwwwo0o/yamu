@@ -13,8 +13,10 @@ export function useSelect({ options }: useSelectInterface) {
   const [value, setValue] = useState<SelectOption | undefined>(undefined);
 
   return {
-    value,
-    setValue,
-    options,
+    props: {
+      value,
+      setValue,
+      options,
+    },
   };
 }

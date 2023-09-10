@@ -13,7 +13,7 @@ export function FeedbackForm() {
 
   const createFeedbackButton = useButton({
     loadingText: "Creating feedback...",
-    isDisabled: feedbackTextarea.value.length < 1,
+    isDisabled: feedbackTextarea.props.value.length < 1,
     onClick() {
       createFeedbackButton.utils.startLoading();
       setTimeout(() => {
@@ -26,7 +26,7 @@ export function FeedbackForm() {
     <Fragment>
       <span className="block">
         <span className="block">
-          <Textarea {...feedbackTextarea} />
+          <Textarea {...feedbackTextarea.props} />
         </span>
         <span className="block mt-3">
           <Button

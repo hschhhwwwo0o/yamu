@@ -12,9 +12,11 @@ export function useTextarea({
   const [value, setValue] = useState<string>("");
 
   return {
-    value,
-    setValue,
-    title,
-    placeholder,
+    props: {
+      value,
+      setValue,
+      title,
+      placeholder,
+    },
   };
 }

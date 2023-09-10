@@ -30,10 +30,10 @@ export default function AboutScreen(): React.JSX.Element {
       <DefaultLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">
-            <H1>About</H1>
+            <H1>About.</H1>
           </span>
           <span className="block mt-10">
-            <Text>Copyright (c) 2023 Saveliy Andronov</Text>
+            <Text>Copyright (c) 2023 Saveliy Andronov.</Text>
           </span>
           <span className="block mt-6">
             <Text>

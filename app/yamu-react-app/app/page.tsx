@@ -19,7 +19,7 @@ export default function IndexScreen(): React.JSX.Element {
             <div className="mt-10 md:mt-20 pb-10">
               <div className="max-w-[490px]">
                 <span>
-                  <H1>Make mock-up easy</H1>
+                  <H1>Make mock-up easy.</H1>
                 </span>
                 <span className="block mt-6">
                   <Text>
@@ -37,7 +37,7 @@ export default function IndexScreen(): React.JSX.Element {
                 </span>
               </div>
               <div className="mt-10">
-                <H2>Links</H2>
+                <H2>Links.</H2>
                 <div>
                   <span className="block mt-4">
                     <LinkCustom withLabel href="/">

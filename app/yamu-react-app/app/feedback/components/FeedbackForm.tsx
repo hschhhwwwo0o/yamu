@@ -41,7 +41,7 @@ export function FeedbackForm() {
         <span className="block mt-3">
           <Button
             {...createFeedbackButton.props}
-            label="By submitting feedback you will help make the product better"
+            label="By submitting feedback you will help make the product better."
           >
             Create feedback
           </Button>

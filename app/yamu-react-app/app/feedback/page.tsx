@@ -31,7 +31,7 @@ export default function FeedbackScreen(): React.JSX.Element {
       <DefaultLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">
-            <H1>Leave feedback to improve the service</H1>
+            <H1>Leave feedback to improve the service.</H1>
           </span>
           <span className="block mt-6">
             <FeedbackForm />

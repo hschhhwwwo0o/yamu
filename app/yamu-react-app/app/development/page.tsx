@@ -32,10 +32,10 @@ export default function DevelopmentScreen(): React.JSX.Element {
       <DefaultLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">
-            <H1>Development</H1>
+            <H1>Development.</H1>
           </span>
           <span className="block mt-10">
-            <Text>Copyright (c) 2023 Saveliy Andronov</Text>
+            <Text>Copyright (c) 2023 Saveliy Andronov.</Text>
           </span>
           <span className="block mt-6">
             <Text>
@@ -49,7 +49,7 @@ export default function DevelopmentScreen(): React.JSX.Element {
             </Text>
           </span>
           <span className="block mt-10">
-            <H2>1. Development of software requirements</H2>
+            <H2>1. Development of software requirements.</H2>
           </span>
           <span className="block mt-6">
             <Text>
@@ -70,7 +70,7 @@ export default function DevelopmentScreen(): React.JSX.Element {
             </Text>
           </span>
           <span className="block mt-10">
-            <H2>2. Design development</H2>
+            <H2>2. Design development.</H2>
           </span>
           <span className="block mt-6">
             <Text>
@@ -80,7 +80,7 @@ export default function DevelopmentScreen(): React.JSX.Element {
             </Text>
           </span>
           <span className="block mt-10">
-            <H2>3. Module development</H2>
+            <H2>3. Module development.</H2>
           </span>
           <span className="block mt-6">
             <Text>
@@ -104,7 +104,7 @@ export default function DevelopmentScreen(): React.JSX.Element {
             </Text>
           </span>
           <span className="block mt-10">
-            <H2>4. Application development</H2>
+            <H2>4. Application development.</H2>
           </span>
           <span className="block mt-6">
             <Text>

@@ -42,7 +42,7 @@ At the moment there are 3 modules implemented in the project:
 | :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 | @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
 | @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
-| @feedback-creator      | The module is intended for sending feedback by the user                                                                  |
+| @feedback-creator      | The module is intended for sending feedback by the user.                                                                 |
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 

@@ -12,6 +12,9 @@
 
   cd ./modules/mock-up-html-renderer && npm run lint
   cd ../../
+
+  cd ./modules/feedback-creator && npm run lint
+  cd ../../
 }
 
 # Lint app

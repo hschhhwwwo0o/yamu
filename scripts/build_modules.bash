@@ -13,6 +13,9 @@
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
 
+      cd ./modules/feedback-creator && npm run compile
+      cd ../../
+
       echo "All modules have been successfully compiled ✅ 🌿 "
       exit 0
     ;;
@@ -26,7 +29,8 @@
   echo "  1) All"
   echo "  2) @mock-up-generator"
   echo "  3) @mock-up-html-renderer"
-  echo "  4) Quit"
+  echo "  4) @feedback-creator"
+  echo "  5) Quit"
 
   read n
   case $n in
@@ -35,6 +39,9 @@
       cd ../../
 
       cd ./modules/mock-up-html-renderer && npm run compile
+      cd ../../
+
+      cd ./modules/feedback-creator && npm run compile
       cd ../../
 
       echo "✅ All modules have been successfully compiled"
@@ -52,6 +59,12 @@
       echo "✅ @mock-up-html-renderer module successfully compiled"
     ;;
     4) 
+      cd ./modules/feedback-creator && npm run compile
+      cd ../../
+      
+      echo "✅ @feedback-creator module successfully compiled"
+    ;;
+    5) 
       exit 0
     ;;
     *) echo "Invalid option";;

@@ -2,6 +2,9 @@
 
 import React, { Fragment } from "react";
 
+/** Modules */
+import { FeedbackCreator } from "@feedback-creator";
+
 /** Components */
 import { Textarea, useTextarea } from "@/components/form/Textarea";
 import { Button, useButton } from "@/components/form/Button";
@@ -13,10 +16,14 @@ export function FeedbackForm() {
     loadingText: "Creating feedback...",
     isDisabled: feedbackTextarea.props.value.length < 5,
     onClick: async function createFeedback() {
-      createFeedbackButton.utils.startLoading();
-      setTimeout(() => {
+      try {
+        createFeedbackButton.utils.startLoading();
+        await new FeedbackCreator().createFeedback();
+      } catch (error) {
+        console.error(error);
+      } finally {
         createFeedbackButton.utils.toDefaultStatus();
-      }, 2000);
+      }
     },
   });
 

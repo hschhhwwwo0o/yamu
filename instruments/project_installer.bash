@@ -47,6 +47,17 @@
   echo "Dependency installation error @mock-up-generator ❌"
 }
 
+# @feedback-creator dependencies install
+{
+  cd ../../ && cd ./modules/feedback-creator
+  npm install
+  
+  echo ""
+  echo "✅ @feedback-creator dependencies successfully installed"
+} || {
+  echo "Dependency installation error @feedback-creator ❌"
+}
+
 # Compile all modules
 {
   cd ../../

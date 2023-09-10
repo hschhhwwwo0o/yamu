@@ -23,7 +23,9 @@ export function FeedbackForm() {
     onClick: async function createFeedback() {
       createFeedbackButton.utils.startLoading();
       try {
-        await new FeedbackCreator().createFeedback();
+        await new FeedbackCreator().createFeedback(
+          feedbackTextarea.props.value,
+        );
       } catch (error) {
         console.error(error);
       } finally {

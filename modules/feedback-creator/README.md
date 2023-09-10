@@ -15,5 +15,5 @@ Example:
 ```js
 const feedbackCreator = new FeedbackCreator();
 
-feedbackCreator.createFeedback();
+feedbackCreator.createFeedback("Some text");
 ```

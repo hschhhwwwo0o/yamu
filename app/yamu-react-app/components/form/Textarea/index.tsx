@@ -35,7 +35,7 @@ function Textarea({
       <textarea
         value={value}
         onChange={_onChange}
-        className="placeholder-[#5a5a5a] w-full max-w-2xl text-black dark:text-white bg-[#F9F9F9] dark:bg-[#171717] px-2 text-sm py-2 border-solid border border-[#E5E5EA] dark:border-[#262626] rounded-[10px]"
+        className="placeholder-[#5a5a5a] w-full max-w-xl text-black dark:text-white bg-[#F9F9F9] dark:bg-[#171717] px-2 text-sm py-2 border-solid border border-[#E5E5EA] dark:border-[#262626] rounded-[10px]"
         cols={30}
         rows={7}
         placeholder={placeholder}

@@ -109,7 +109,7 @@ export function TheTopNavigation(): ReactNode {
             pointerEvents: isOpenMobileNavigation ? "auto" : "none",
             opacity: isOpenMobileNavigation ? "100%" : "0%",
           }}
-          className="bg-black transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-8"
+          className="bg-black z-50 transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-8"
         >
           <Link
             href="/create-mock-up"

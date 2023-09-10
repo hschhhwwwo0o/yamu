@@ -36,12 +36,13 @@ If you're using macOS or Linux (I really hope you're not a Windows user¹ 👎),
 bash ./instruments/module_creator.bash
 ```
 
-At the moment there are 2 modules implemented in the project:
+At the moment there are 3 modules implemented in the project:
 
-| Module name                                                                                                              | Meaning of the module                                                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/hschhhwwwo0o/yamu/tree/main/modules/mock-up-html-renderer#readme">@mock-up-html-renderer</a> | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
-| <a href="https://github.com/hschhhwwwo0o/yamu/tree/main/modules/mock-up-generator#readme">@mock-up-generator</a>         | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
+| Module name            | Meaning of the module                                                                                                    |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
+| @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
+| @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
+| @feedback-creator      | The module is intended for sending feedback by the user                                                                  |
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 
@@ -142,6 +143,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 | Functional requirement                   | ID                                 | Responsible module     |
 | :--------------------------------------- | :--------------------------------- | :--------------------- |
+| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
 | Mock-up display                          | UF/MOCK-UP/VIEW                    | @mock-up-html-renderer |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |
@@ -164,7 +166,12 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------- |
 | Acting person     | User                                                                                                                   |
 | Description       | The user selects the device for which he would like to make a mock-up. Configures the mock-up with subsequent download |
-| Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks you to evaluate your work                                                |
+| Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks for feedback                                                             |
+
+| ID            | UC/CREATE-MOCK-UP/POST-1                                                                |
+| :------------ | :-------------------------------------------------------------------------------------- |
+| Acting person | User                                                                                    |
+| Description   | The user enters their feedback in the text box and submits it by clicking on the button |
 
 ## Remarks
 

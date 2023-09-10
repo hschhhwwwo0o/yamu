@@ -12,7 +12,7 @@ export function FeedbackForm() {
   const createFeedbackButton = useButton({
     loadingText: "Creating feedback...",
     isDisabled: feedbackTextarea.props.value.length < 5,
-    onClick() {
+    onClick: async function createFeedback() {
       createFeedbackButton.utils.startLoading();
       setTimeout(() => {
         createFeedbackButton.utils.toDefaultStatus();

@@ -2,6 +2,9 @@
 
 import React, { Dispatch, Fragment, SetStateAction } from "react";
 
+/** Hook for working with the component */
+import { useSelect } from "./hook";
+
 /** Components */
 import { Text } from "@/components/text/Text";
 
@@ -13,11 +16,7 @@ interface SelectPropsInterface {
   >;
 }
 
-export function Select({
-  options = [],
-  value,
-  setValue,
-}: SelectPropsInterface) {
+function Select({ options = [], value, setValue }: SelectPropsInterface) {
   function onChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setValue(
       options.find(function findSelectedOption(_option) {
@@ -70,3 +69,5 @@ export function Select({
     </Fragment>
   );
 }
+
+export { Select, useSelect };

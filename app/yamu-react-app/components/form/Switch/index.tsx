@@ -1,7 +1,5 @@
 "use client";
 
-import { Label } from "@/components/text/Label";
-import { Text } from "@/components/text/Text";
 import React, {
   Dispatch,
   Fragment,
@@ -10,6 +8,13 @@ import React, {
   useState,
 } from "react";
 
+/** Hook for working with the component */
+import { useSwitch } from "./hook";
+
+/** Components */
+import { Label } from "@/components/text/Label";
+import { Text } from "@/components/text/Text";
+
 interface SwitchPropsInterface {
   value?: boolean;
   setValue?: Dispatch<SetStateAction<boolean>>;
@@ -17,7 +22,7 @@ interface SwitchPropsInterface {
   label?: string;
 }
 
-export function Switch({
+function Switch({
   value = false,
   setValue = () => undefined,
   title = undefined,
@@ -79,3 +84,5 @@ export function Switch({
     </Fragment>
   );
 }
+
+export { Switch, useSwitch };

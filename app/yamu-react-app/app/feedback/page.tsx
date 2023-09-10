@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 /** Components */
 import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { Textarea } from "@/components/form/Textarea";
 
 /** Initialize metadata */
 import type { Metadata } from "next";
@@ -26,7 +27,7 @@ export default function FeedbackScreen(): React.JSX.Element {
     <main>
       <TheTopNavigation />
       <DefaultLayout>
-        <Fragment />
+        <Textarea />
       </DefaultLayout>
     </main>
   );

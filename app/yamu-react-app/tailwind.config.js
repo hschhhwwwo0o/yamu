@@ -12,6 +12,7 @@ module.exports = {
       },
       spacing: {
         "mobile-padding": "16px",
+        "laptop-padding": "86px",
       },
     },
   },

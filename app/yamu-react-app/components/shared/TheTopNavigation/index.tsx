@@ -60,12 +60,6 @@ export function TheTopNavigation(): ReactNode {
           /** Center of the navigation laptop */
           <div className="flex flex-row items-center justify-center gap-12 w-[80%]">
             <Link
-              href="/create-mock-up"
-              className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
-            >
-              Create mock-up
-            </Link>
-            <Link
               href="https://github.com/hschhhwwwo0o/yamu"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
@@ -76,6 +70,12 @@ export function TheTopNavigation(): ReactNode {
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
               About
+            </Link>
+            <Link
+              href="/create-mock-up"
+              className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
+            >
+              Create mock-up
             </Link>
             <Logo />
             <Link

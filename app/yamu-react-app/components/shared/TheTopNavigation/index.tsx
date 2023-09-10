@@ -16,7 +16,7 @@ export function TheTopNavigation(): ReactNode {
   return (
     <Fragment>
       <span className="block w-full h-[57px]"></span>
-      <nav className="bg-black w-full h-[57px] fixed left-0 top-0 dark:border-solid dark:border-b-[1px] dark:border-b-[#1F1F1F] flex flex-row justify-between items-center px-mobile-padding">
+      <nav className="bg-black w-full h-[57px] z-50 fixed left-0 top-0 dark:border-solid dark:border-b-[1px] dark:border-b-[#1F1F1F] flex flex-row justify-between items-center px-mobile-padding">
         {
           /** Left side of the navigation laptop */
           <div className="w-10">

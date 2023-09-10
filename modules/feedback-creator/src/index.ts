@@ -6,10 +6,15 @@ class FeedbackCreator {
    * @requirement UF/FEEDBACK/CREATE
    */
   public async createFeedback(feedback: string = ""): Promise<void> {
-    if (feedback) {
-      console.log("Send feedback");
-    }
-    return;
+    return new Promise(function (resolve, reject) {
+      setTimeout(() => {
+        if (feedback) {
+          resolve();
+        } else {
+          reject();
+        }
+      }, 1758);
+    });
   }
 }
 

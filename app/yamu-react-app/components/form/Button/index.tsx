@@ -67,7 +67,7 @@ function Button({
       >
         <button
           onClick={_onClick}
-          className="rounded-xl bg-brand-blue w-full py-[10px] md:max-w-[360px] font-semibold flex items-center justify-center text-white"
+          className="rounded-xl bg-brand-blue transition-all hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[360px] font-semibold flex items-center justify-center text-white"
         >
           {status === "loading" && (loadingText || children)}
           {status === "disabled" && (disabledText || children)}

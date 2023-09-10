@@ -7,7 +7,7 @@ interface LabelInterface {
 export function Label({ children }: LabelInterface): ReactNode {
   return (
     <Fragment>
-      <span className="block text-sm text-[#181818] opacity-60 dark:text-white dark:opacity-60">
+      <span className="block text-sm cursor-default text-[#181818] opacity-60 dark:text-white dark:opacity-60">
         {children}
       </span>
     </Fragment>

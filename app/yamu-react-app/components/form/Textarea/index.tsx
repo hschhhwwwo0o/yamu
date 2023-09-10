@@ -28,7 +28,7 @@ function Textarea({
   return (
     <Fragment>
       {title !== undefined && (
-        <span className="block pb-2">
+        <span className="block pb-2 cursor-default">
           <Text>{title}</Text>
         </span>
       )}

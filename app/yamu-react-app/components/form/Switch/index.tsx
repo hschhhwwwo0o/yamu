@@ -23,7 +23,7 @@ export function Switch({
   title = undefined,
   label = undefined,
 }: SwitchPropsInterface) {
-  const [isActive, setIsActive] = useState<boolean>(true);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   useEffect(function setDefaultValueEffect(): void {
     setIsActive(value);

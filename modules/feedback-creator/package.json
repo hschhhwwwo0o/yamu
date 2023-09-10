@@ -1,18 +1,18 @@
 {
-    "name": "module",
-    "version": "1.0.0",
-    "main": "src/index.ts",
-    "scripts": {
-        "compile": "tsc",
-        "lint": "npx eslint ."
-    },
-    "keywords": [],
-    "author": "@hschhhwwwo0o",
-    "license": "ISC",
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.6.0",
-        "@typescript-eslint/parser": "^6.6.0",
-        "eslint": "^8.49.0",
-        "prettier": "3.0.3"
-    }
+  "name": "feedback-creator",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "lint": "npx eslint ."
+  },
+  "keywords": [],
+  "author": "@hschhhwwwo0o",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.49.0",
+    "prettier": "3.0.3"
+  }
 }

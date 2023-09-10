@@ -21,8 +21,8 @@ export function FeedbackForm() {
      * @requirement UF/FEEDBACK/CREATE
      */
     onClick: async function createFeedback() {
+      createFeedbackButton.utils.startLoading();
       try {
-        createFeedbackButton.utils.startLoading();
         await new FeedbackCreator().createFeedback();
       } catch (error) {
         console.error(error);

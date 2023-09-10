@@ -7,15 +7,17 @@ import { H1 } from "@/components/text/H1";
 import { LinkCustom } from "@/components/text/Link";
 import { FeedbackForm } from "./components/FeedbackForm";
 
-/** Initialize metadata */
+/**
+ * Initialize metadata
+ *
+ * @requirement QA/SEO/META
+ * @requirement QA/SEO/OPEN-GRAPH
+ */
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  /** @requirement QA/SEO/META */
   title: "YAMU. Feedback",
   description:
     "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-
-  /** @requirement QA/SEO/OPEN-GRAPH */
   openGraph: {
     title: "YAMU. Feedback",
     description:

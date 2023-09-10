@@ -4,15 +4,17 @@ import React, { Fragment } from "react";
 import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 
-/** Initialize metadata */
+/**
+ * Initialize metadata
+ *
+ * @requirement QA/SEO/META
+ * @requirement QA/SEO/OPEN-GRAPH
+ */
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  /** @requirement QA/SEO/META */
   title: "YAMU. Development",
   description:
     "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-
-  /** @requirement QA/SEO/OPEN-GRAPH */
   openGraph: {
     title: "YAMU. Development",
     description:

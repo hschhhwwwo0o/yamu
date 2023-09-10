@@ -6,15 +6,17 @@ import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { H1 } from "@/components/text/H1";
 import { Text } from "@/components/text/Text";
 
-/** Initialize metadata */
+/**
+ * Initialize metadata
+ *
+ * @requirement QA/SEO/META
+ * @requirement QA/SEO/OPEN-GRAPH
+ */
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  /** @requirement QA/SEO/META */
   title: "YAMU. About",
   description:
     "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-
-  /** @requirement QA/SEO/OPEN-GRAPH */
   openGraph: {
     title: "YAMU. About",
     description:

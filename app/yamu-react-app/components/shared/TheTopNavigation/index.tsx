@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Fragment, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 /** Components */
 import Link from "next/link";
@@ -12,6 +13,8 @@ import { useIsOpenMobileNavigation } from "./hooks/useIsOpenMobileNavigation";
 export function TheTopNavigation(): ReactNode {
   const { toggleMobileNavigation, isOpenMobileNavigation } =
     useIsOpenMobileNavigation();
+
+  const path = usePathname();
 
   return (
     <Fragment>
@@ -69,12 +72,24 @@ export function TheTopNavigation(): ReactNode {
               href="/about"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
+              <span
+                className="transition-opacity duration-700"
+                style={{ opacity: path === "/about" ? "100%" : "0%" }}
+              >
+                •{" "}
+              </span>
               About
             </Link>
             <Link
               href="/create-mock-up"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
+              <span
+                className="transition-opacity duration-700"
+                style={{ opacity: path === "/create-mock-up" ? "100%" : "0%" }}
+              >
+                •{" "}
+              </span>
               Create mock-up
             </Link>
             <Logo />
@@ -82,18 +97,36 @@ export function TheTopNavigation(): ReactNode {
               href="/development"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
+              <span
+                className="transition-opacity duration-700"
+                style={{ opacity: path === "/development" ? "100%" : "0%" }}
+              >
+                •{" "}
+              </span>
               Development
             </Link>
             <Link
               href="/license"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
+              <span
+                className="transition-opacity duration-700"
+                style={{ opacity: path === "/license" ? "100%" : "0%" }}
+              >
+                •{" "}
+              </span>
               License
             </Link>
             <Link
               href="/feedback"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"
             >
+              <span
+                className="transition-opacity duration-700"
+                style={{ opacity: path === "/feedback" ? "100%" : "0%" }}
+              >
+                •{" "}
+              </span>
               Feedback
             </Link>
           </div>

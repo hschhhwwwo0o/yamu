@@ -1,7 +1,6 @@
 import React from "react";
 
 /** Components */
-import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { H1 } from "@/components/text/H1";
 import { LinkCustom } from "@/components/text/Link";
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
 export default function FeedbackScreen(): React.JSX.Element {
   return (
     <main>
-      <TheTopNavigation />
       <DefaultLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">

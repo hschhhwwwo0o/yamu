@@ -8,6 +8,9 @@ import "../styles/globals/index.css";
 import { Inter } from "next/font/google";
 import type { NextFont } from "next/dist/compiled/@next/font";
 
+/** Global components */
+import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
+
 const inter: NextFont = Inter({
   subsets: ["latin"],
 });
@@ -44,6 +47,7 @@ export default function RootLayout({
     <html lang="en" className="bg-white dark:bg-black">
       <body className={inter.className}>
         <div>
+          <TheTopNavigation />
           <Fragment>{children}</Fragment>
         </div>
       </body>

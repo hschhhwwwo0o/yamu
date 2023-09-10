@@ -3,7 +3,6 @@
 import React, { Fragment } from "react";
 
 /** Components */
-import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { H1 } from "@/components/text/H1";
 import { Text } from "@/components/text/Text";
@@ -15,7 +14,6 @@ export default function IndexScreen(): React.JSX.Element {
   return (
     <Fragment>
       <main>
-        <TheTopNavigation />
         <DefaultLayout>
           <div className="w-full h-full flex flex-row justify-center px-mobile-padding md:px-laptop-padding">
             <div className="mt-10 md:mt-20 pb-10">

@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 /** Components */
-import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 
 /**
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
 export default function CreateMockUpScreen(): React.JSX.Element {
   return (
     <main>
-      <TheTopNavigation />
       <DefaultLayout>
         <Fragment />
       </DefaultLayout>

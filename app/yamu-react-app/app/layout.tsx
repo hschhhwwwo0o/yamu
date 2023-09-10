@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-white dark:bg-black">
+    <html lang="en" className="bg-[#FDFDFD] dark:bg-black">
       <body className={inter.className}>
         <div>
           <TheTopNavigation />

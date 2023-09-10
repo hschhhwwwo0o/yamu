@@ -30,7 +30,10 @@ export default function IndexScreen(): React.JSX.Element {
                   </Text>
                 </span>
                 <span className="block mt-8">
-                  <Button label="Simply select a mock-up, upload your design and download a watermark-free image.">
+                  <Button
+                    navigatePath="/create-mock-up"
+                    label="Simply select a mock-up, upload your design and download a watermark-free image."
+                  >
                     Create mock-up
                   </Button>
                 </span>

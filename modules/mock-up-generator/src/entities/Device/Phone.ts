@@ -17,6 +17,7 @@ class PhoneDevice extends Device {
    * Set new settings and change the image of the device frame accordingly
    *
    * @requirement UF/MOCK-UP/SETTINGS-UP
+   * @requirement UF/MOCK-UP/OPTION-BW-STYLE
    *
    * @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE
    * @requirement UF/DEVICE/OPTION-THEME-TOGGLE

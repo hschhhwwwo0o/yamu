@@ -12,7 +12,7 @@ import type { NextFont } from "next/dist/compiled/@next/font";
 import { TheTopNavigation } from "@/components/shared/TheTopNavigation";
 
 const inter: NextFont = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 /**

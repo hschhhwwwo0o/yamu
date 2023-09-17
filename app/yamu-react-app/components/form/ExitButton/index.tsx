@@ -17,6 +17,9 @@ export function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
   return (
     <Fragment>
       <button
+        role={"button"}
+        name={children}
+        title={children}
         onClick={_onClick}
         className="py-[10px] w-full md:max-w-[360px] gap-2 bg-transparent text-[#FF3B30] flex flex-row items-center justify-center"
       >

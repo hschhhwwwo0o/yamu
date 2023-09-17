@@ -61,6 +61,9 @@ function Switch({
             </Fragment>
           )}
           <button
+            role={"button"}
+            name={title || label}
+            title={title || label}
             onClick={toggle}
             style={{
               backgroundColor: isActive ? "#34C759" : "#E9E9EB",

@@ -13,6 +13,10 @@ export function useTextarea({
 }: useTextareaArgsInterface) {
   const [value, setValue] = useState<string>("");
 
+  function clear(): void {
+    setValue("");
+  }
+
   return {
     props: {
       value,
@@ -20,6 +24,9 @@ export function useTextarea({
       title,
       placeholder,
       isAutofocus,
+    },
+    utils: {
+      clear,
     },
   };
 }

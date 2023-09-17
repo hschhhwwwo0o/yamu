@@ -23,10 +23,13 @@ export function FeedbackForm() {
     onClick: async function _createFeedback(): Promise<void> {
       try {
         createFeedbackButton.utils.startLoading();
-        const _feedbackCreatorModule = new FeedbackCreator();
-        await _feedbackCreatorModule.createFeedback(
-          feedbackTextarea.props.value,
-        );
+        {
+          const _feedbackCreatorModule = new FeedbackCreator();
+          await _feedbackCreatorModule.createFeedback(
+            feedbackTextarea.props.value,
+          );
+        }
+        feedbackTextarea.utils.clear();
       } catch (_error) {
         console.error(_error);
       } finally {

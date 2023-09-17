@@ -40,17 +40,29 @@ export default function IndexScreen(): React.JSX.Element {
                 <H2>Links.</H2>
                 <div>
                   <span className="block mt-4">
-                    <LinkCustom withLabel href="/">
+                    <LinkCustom
+                      target="_blank"
+                      withLabel
+                      href="https://github.com/hschhhwwwo0o/yamu"
+                    >
                       Go to code
                     </LinkCustom>
                   </span>
                   <span className="block mt-2">
-                    <LinkCustom withLabel href="/">
+                    <LinkCustom
+                      target="_blank"
+                      withLabel
+                      href="https://github.com/hschhhwwwo0o"
+                    >
                       Author
                     </LinkCustom>
                   </span>
                   <span className="block mt-2">
-                    <LinkCustom withLabel href="/">
+                    <LinkCustom
+                      target="_blank"
+                      withLabel
+                      href="https://github.com/hschhhwwwo0o/yamu#development"
+                    >
                       Documentation
                     </LinkCustom>
                   </span>

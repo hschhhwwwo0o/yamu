@@ -5,16 +5,19 @@ interface LinkCustomInterface {
   children: ReactNode;
   href: string;
   withLabel?: boolean;
+  target?: undefined | "_blank";
 }
 
 export function LinkCustom({
   children,
   href = "/",
   withLabel = false,
+  target = undefined,
 }: LinkCustomInterface): ReactNode {
   return (
     <Fragment>
       <Link
+        target={target}
         href={href}
         className="underline text-brand-blue flex flex-row items-center gap-1"
       >

@@ -92,7 +92,9 @@ export function TheTopNavigation(): ReactNode {
               </span>
               Create mock-up
             </Link>
-            <Logo />
+            <span className="block relative left-2">
+              <Logo />
+            </span>
             <Link
               href="/development"
               className="text-white text-sm hover:opacity-70 transition-opacity duration-200 hidden md:block"

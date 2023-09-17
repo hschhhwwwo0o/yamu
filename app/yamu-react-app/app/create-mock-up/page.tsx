@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-/** Components */
+/** Layouts */
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 
 /**

@@ -1,7 +1,9 @@
 import React from "react";
 
-/** Components */
+/** Layouts */
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+
+/** Components */
 import { H1 } from "@/components/text/H1";
 import { Text } from "@/components/text/Text";
 

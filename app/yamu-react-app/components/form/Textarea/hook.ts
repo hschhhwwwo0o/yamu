@@ -3,11 +3,13 @@ import { useState } from "react";
 interface useTextareaArgsInterface {
   title?: string;
   placeholder?: string;
+  isAutofocus?: boolean;
 }
 
 export function useTextarea({
   title = undefined,
   placeholder = undefined,
+  isAutofocus = false,
 }: useTextareaArgsInterface) {
   const [value, setValue] = useState<string>("");
 
@@ -17,6 +19,7 @@ export function useTextarea({
       setValue,
       title,
       placeholder,
+      isAutofocus,
     },
   };
 }

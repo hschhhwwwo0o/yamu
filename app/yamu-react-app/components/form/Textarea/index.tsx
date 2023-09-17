@@ -12,6 +12,7 @@ interface TextareaPropsInterface {
   title?: string;
   placeholder?: string;
   value?: string;
+  isAutofocus?: boolean;
   setValue?: Dispatch<SetStateAction<string>>;
 }
 
@@ -20,6 +21,7 @@ function Textarea({
   placeholder = "Enter text...",
   value = "",
   setValue = () => undefined,
+  isAutofocus = false,
 }: TextareaPropsInterface) {
   function _onChange(event: React.ChangeEvent<HTMLTextAreaElement>): void {
     setValue(event.target.value);
@@ -33,6 +35,7 @@ function Textarea({
         </span>
       )}
       <textarea
+        autoFocus={isAutofocus}
         value={value}
         onChange={_onChange}
         className="placeholder-[#5a5a5a] w-full max-w-xl text-black dark:text-white bg-[#F9F9F9] dark:bg-[#171717] px-2 text-sm py-2 border-solid border border-[#E5E5EA] dark:border-[#262626] rounded-[10px]"

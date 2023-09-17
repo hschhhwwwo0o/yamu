@@ -37,7 +37,12 @@ export function FeedbackForm() {
   return (
     <Fragment>
       <span className="block">
-        <Textarea {...feedbackTextarea.props} title="Enter feedback" />
+        <Textarea
+          {...feedbackTextarea.props}
+          title="Enter your feedback:"
+          placeholder="Enter your feedback about the service. The minimum number of characters is 5."
+          isAutofocus
+        />
         <span className="block mt-3">
           <Button
             {...createFeedbackButton.props}

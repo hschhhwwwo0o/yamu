@@ -1,5 +1,7 @@
-import Link from "next/link";
 import React, { Fragment, ReactNode } from "react";
+
+/** Components */
+import Link from "next/link";
 
 export function Logo(): ReactNode {
   return (

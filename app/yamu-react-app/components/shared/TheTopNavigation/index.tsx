@@ -1,13 +1,13 @@
 "use client";
 
 import React, { Fragment, ReactNode } from "react";
-import { usePathname } from "next/navigation";
 
 /** Components */
 import Link from "next/link";
 import { Logo } from "../Logo";
 
 /** Hooks */
+import { usePathname } from "next/navigation";
 import { useIsOpenMobileNavigation } from "./hooks/useIsOpenMobileNavigation";
 
 export function TheTopNavigation(): ReactNode {

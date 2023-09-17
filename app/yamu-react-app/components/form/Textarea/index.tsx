@@ -13,6 +13,7 @@ interface TextareaPropsInterface {
   placeholder?: string;
   value?: string;
   isAutofocus?: boolean;
+  isDisabled?: boolean;
   setValue?: Dispatch<SetStateAction<string>>;
 }
 
@@ -22,6 +23,7 @@ function Textarea({
   value = "",
   setValue = () => undefined,
   isAutofocus = false,
+  isDisabled = false,
 }: TextareaPropsInterface) {
   function _onChange(event: React.ChangeEvent<HTMLTextAreaElement>): void {
     setValue(event.target.value);
@@ -35,6 +37,7 @@ function Textarea({
         </span>
       )}
       <textarea
+        disabled={isDisabled}
         autoFocus={isAutofocus}
         value={value}
         onChange={_onChange}

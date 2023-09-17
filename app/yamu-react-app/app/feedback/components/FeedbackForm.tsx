@@ -23,6 +23,7 @@ export function FeedbackForm() {
     onClick: async function _createFeedback(): Promise<void> {
       try {
         createFeedbackButtonUI.utils.startLoading();
+        feedbackTextareaUI.utils.disableInput();
         {
           const _feedbackCreatorModule = new FeedbackCreator();
           await _feedbackCreatorModule.createFeedback(
@@ -34,6 +35,7 @@ export function FeedbackForm() {
         console.error(_error);
       } finally {
         createFeedbackButtonUI.utils.toDefaultStatus();
+        feedbackTextareaUI.utils.undisableInput();
       }
     },
   });

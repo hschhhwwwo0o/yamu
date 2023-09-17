@@ -12,9 +12,18 @@ export function useTextarea({
   isAutofocus = false,
 }: useTextareaArgsInterface) {
   const [value, setValue] = useState<string>("");
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   function clear(): void {
     setValue("");
+  }
+
+  function disableInput(): void {
+    setIsDisabled(true);
+  }
+
+  function undisableInput(): void {
+    setIsDisabled(false);
   }
 
   return {
@@ -24,9 +33,12 @@ export function useTextarea({
       title,
       placeholder,
       isAutofocus,
+      isDisabled,
     },
     utils: {
       clear,
+      disableInput,
+      undisableInput,
     },
   };
 }

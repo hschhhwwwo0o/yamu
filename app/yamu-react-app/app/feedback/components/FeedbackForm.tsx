@@ -20,14 +20,15 @@ export function FeedbackForm() {
      * Sending feedback
      * @requirement UF/FEEDBACK/CREATE
      */
-    onClick: async function createFeedback() {
-      createFeedbackButton.utils.startLoading();
+    onClick: async function _createFeedback(): Promise<void> {
       try {
-        await new FeedbackCreator().createFeedback(
+        createFeedbackButton.utils.startLoading();
+        const _feedbackCreatorModule = new FeedbackCreator();
+        await _feedbackCreatorModule.createFeedback(
           feedbackTextarea.props.value,
         );
-      } catch (error) {
-        console.error(error);
+      } catch (_error) {
+        console.error(_error);
       } finally {
         createFeedbackButton.utils.toDefaultStatus();
       }
@@ -39,9 +40,9 @@ export function FeedbackForm() {
       <span className="block">
         <Textarea
           {...feedbackTextarea.props}
+          isAutofocus
           title="Enter your feedback:"
           placeholder="Enter your feedback about the service. The minimum number of characters is 5."
-          isAutofocus
         />
         <span className="block mt-3">
           <Button

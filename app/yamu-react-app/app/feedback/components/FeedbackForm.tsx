@@ -10,11 +10,11 @@ import { Textarea, useTextarea } from "@/components/form/Textarea";
 import { Button, useButton } from "@/components/form/Button";
 
 export function FeedbackForm() {
-  const feedbackTextarea = useTextarea({});
+  const feedbackTextareaUI = useTextarea({});
 
-  const createFeedbackButton = useButton({
+  const createFeedbackButtonUI = useButton({
     loadingText: "Creating feedback...",
-    isDisabled: feedbackTextarea.props.value.length < 5,
+    isDisabled: feedbackTextareaUI.props.value.length < 5,
 
     /**
      * Sending feedback
@@ -22,18 +22,18 @@ export function FeedbackForm() {
      */
     onClick: async function _createFeedback(): Promise<void> {
       try {
-        createFeedbackButton.utils.startLoading();
+        createFeedbackButtonUI.utils.startLoading();
         {
           const _feedbackCreatorModule = new FeedbackCreator();
           await _feedbackCreatorModule.createFeedback(
-            feedbackTextarea.props.value,
+            feedbackTextareaUI.props.value,
           );
         }
-        feedbackTextarea.utils.clear();
+        feedbackTextareaUI.utils.clear();
       } catch (_error) {
         console.error(_error);
       } finally {
-        createFeedbackButton.utils.toDefaultStatus();
+        createFeedbackButtonUI.utils.toDefaultStatus();
       }
     },
   });
@@ -42,14 +42,14 @@ export function FeedbackForm() {
     <Fragment>
       <span className="block">
         <Textarea
-          {...feedbackTextarea.props}
+          {...feedbackTextareaUI.props}
           isAutofocus
           title="Enter your feedback:"
           placeholder="Enter your feedback about the service. The minimum number of characters is 5."
         />
         <span className="block mt-3">
           <Button
-            {...createFeedbackButton.props}
+            {...createFeedbackButtonUI.props}
             label="By submitting feedback you will help make the product better."
           >
             Create feedback

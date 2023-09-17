@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 /** Layouts */
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function DevelopmentScreen(): React.JSX.Element {
+  const currentYear: number = useMemo(function _getCurrentYear(): number {
+    return new Date().getFullYear();
+  }, undefined);
+
   return (
     <main>
       <DefaultLayout>
@@ -37,7 +41,7 @@ export default function DevelopmentScreen(): React.JSX.Element {
             <H1>Development.</H1>
           </span>
           <span className="block mt-10">
-            <Text>Copyright (c) 2023 Saveliy Andronov.</Text>
+            <Text>Copyright (c) {currentYear} Saveliy Andronov.</Text>
           </span>
           <span className="block mt-6">
             <Text>

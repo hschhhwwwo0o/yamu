@@ -22,15 +22,19 @@ export function FeedbackForm() {
      */
     onClick: async function _createFeedback(): Promise<void> {
       try {
-        createFeedbackButtonUI.utils.startLoading();
-        feedbackTextareaUI.utils.disableInput();
+        {
+          createFeedbackButtonUI.utils.startLoading();
+          feedbackTextareaUI.utils.disableInput();
+        }
         {
           const _feedbackCreatorModule = new FeedbackCreator();
           await _feedbackCreatorModule.createFeedback(
             feedbackTextareaUI.props.value,
           );
         }
-        feedbackTextareaUI.utils.clear();
+        {
+          feedbackTextareaUI.utils.clear();
+        }
       } catch (_error) {
         console.error(_error);
       } finally {

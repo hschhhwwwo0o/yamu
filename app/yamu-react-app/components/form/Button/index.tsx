@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, ReactNode } from "react";
+import React, { Fragment } from "react";
 
 /** Hook for working with the component */
 import { useButton } from "./hook";
@@ -12,7 +12,7 @@ import { Label } from "@/components/text/Label";
 import { useRouter } from "next/navigation";
 
 interface ButtonInterface {
-  children: ReactNode;
+  children: string;
   label?: string;
   onClick?: () => void;
   navigatePath?: string;
@@ -66,6 +66,9 @@ function Button({
         className="block w-full md:max-w-[360px] transition-all duration-300"
       >
         <button
+          role={"button"}
+          name={children}
+          title={children}
           onClick={_onClick}
           className="rounded-xl bg-brand-blue transition-all hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[360px] font-semibold flex items-center justify-center text-white"
         >

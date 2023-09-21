@@ -2,12 +2,15 @@
 
 import React, { Fragment } from "react";
 
+/** Hook for working with the component */
+import { useExitButton } from "./hook";
+
 interface ExitButtonPropsInterface {
   children: string;
   onClick?: () => void;
 }
 
-export function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
+function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
   function _onClick() {
     if (onClick) {
       onClick();
@@ -40,3 +43,5 @@ export function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
     </Fragment>
   );
 }
+
+export { ExitButton, useExitButton };

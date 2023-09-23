@@ -15,6 +15,8 @@ export class HTMLRenderer {
   public render(renderData: RenderData): void {
     this._clearDOMContainer();
 
+    console.log("Rendering...", renderData);
+
     const canvas = this._createCanvasDOMElement(renderData);
 
     if (renderData.isBW === true) {
@@ -27,7 +29,7 @@ export class HTMLRenderer {
 
     const frameImage = this._createFrameImage(renderData);
 
-    frameImage.onload = () => {
+    if (frameImage.complete) {
       if (!context) throw "Context error";
       const imageIsEmpty = !renderData.insertedImage;
       if (imageIsEmpty) {
@@ -43,7 +45,7 @@ export class HTMLRenderer {
           this._appendCanvasInDOM(canvas);
         };
       }
-    };
+    }
   }
 
   private _clearDOMContainer() {

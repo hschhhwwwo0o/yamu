@@ -23,9 +23,10 @@ class MockUpGenerator {
    *
    * @returns Affordable devices library
    */
-  public getDevicesLibrary(): DeviceLibraryItem[] {
+  public async getDevicesLibrary(): Promise<DeviceLibraryItem[]> {
     const DevicesLibrary = new DevicesLibraryManager();
-    return DevicesLibrary.get();
+    const devicesLibrary = await DevicesLibrary.get();
+    return devicesLibrary;
   }
 
   /**
@@ -33,15 +34,16 @@ class MockUpGenerator {
    *
    * @requirement UF/MOCK-UP/DEVICE-SELECT
    *
-   * @param type Type of Device to be selected
    * @param deviceName Name of device to choose from
    *
    * @returns New state of the mockup
    */
-  public selectDevice(deviceName: string = "iPhone 13"): MockUpInterface {
+  public async selectDevice(
+    deviceName: string = "iPhone 13",
+  ): Promise<MockUpInterface> {
     this.mockUp.insertedImage = undefined;
 
-    const devicesLibrary = new DevicesLibraryManager().get();
+    const devicesLibrary = await this.getDevicesLibrary();
     const type: DeviceType | undefined = devicesLibrary.find(
       function _findDeviceByName(_deviceLibraryItem) {
         return _deviceLibraryItem.name === deviceName;
@@ -96,6 +98,30 @@ class MockUpGenerator {
     this.mockUp.insertedImage = undefined;
 
     return this.mockUp;
+  }
+
+  /**
+   * Generates an object for rendering
+   *
+   * @returns Render data object
+   */
+  public generateRenderData() {
+    const _mockUp = this.mockUp;
+    const renderData = {
+      frameWidth: _mockUp.device.frame.width,
+      frameHeight: _mockUp.device.frame.height,
+      frameImage: _mockUp.device.frame.image,
+      insertedImage: _mockUp.insertedImage || "",
+      paddingsInPercents: {
+        top: _mockUp.device.frame.paddingsInPercents.top,
+        left: _mockUp.device.frame.paddingsInPercents.left,
+        bottom: _mockUp.device.frame.paddingsInPercents.bottom,
+        right: _mockUp.device.frame.paddingsInPercents.right,
+      },
+      borderRadius: _mockUp.device.frame.borderRadius,
+      isBW: _mockUp.device.frame.filters.bw,
+    };
+    return renderData;
   }
 }
 

@@ -27,7 +27,7 @@
 
 {
   echo ""
-  echo "✅ Successfully linted"
+  echo "✅ Successfully linted."
 }
 
 exit 0

@@ -50,23 +50,23 @@
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
 
-      echo "✅ @mock-up-generator module successfully compiled"
+      echo "✅ @mock-up-generator module successfully compiled."
     ;;
     3) 
       cd ./modules/mock-up-html-renderer && npm run compile
       cd ../../
       
-      echo "✅ @mock-up-html-renderer module successfully compiled"
+      echo "✅ @mock-up-html-renderer module successfully compiled."
     ;;
     4) 
       cd ./modules/feedback-creator && npm run compile
       cd ../../
       
-      echo "✅ @feedback-creator module successfully compiled"
+      echo "✅ @feedback-creator module successfully compiled."
     ;;
     5) 
       exit 0
     ;;
-    *) echo "Invalid option";;
+    *) echo "Invalid option.";;
   esac
 }

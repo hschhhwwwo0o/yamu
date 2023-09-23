@@ -15,7 +15,7 @@
   mkdir $modulename
   cd ./$modulename
 } || {
-  echo "Error creating a module directory ❌"
+  echo "Error creating a module directory. ❌"
   exit 1
 }
 
@@ -26,7 +26,7 @@
   echo "" > index.ts
   cd ../
 } || {
-  echo "Error creating a src directory ❌"
+  echo "Error creating a src directory. ❌"
   exit 1
 }
 
@@ -48,7 +48,7 @@
   }
   ' > package.json
 } || {
-  echo "Error creating a package.json ❌"
+  echo "Error creating a package.json. ❌"
   exit 1
 }
 
@@ -71,7 +71,7 @@
   }
   ' > tsconfig.json
 } || {
-  echo "Error creating a tsconfig.json ❌"
+  echo "Error creating a tsconfig.json. ❌"
   exit 1
 }
 
@@ -83,7 +83,7 @@
   images
   " > .eslintignore
 } || {
-  echo "Error creating a .eslintignore ❌"
+  echo "Error creating a .eslintignore. ❌"
   exit 1
 }
 
@@ -115,7 +115,7 @@
   }
   ' > .eslintrc.json
 } || {
-  echo "Error creating a .eslintrc.json ❌"
+  echo "Error creating a .eslintrc.json. ❌"
   exit 1
 }
 
@@ -129,7 +129,7 @@
   " > .prettierignore
   echo "{}" > .prettierrc.json
 } || {
-  echo "Error creating a .prettierignore/.prettierrc.json ❌"
+  echo "Error creating a .prettierignore/.prettierrc.json. ❌"
   exit 1
 }
 
@@ -170,7 +170,7 @@
   npm i --save-dev eslint
   npm install --save-dev --save-exact prettier
 } || {
-  echo "Dependency installation error ❌"
+  echo "Dependency installation error. ❌"
   exit 1
 }
 
@@ -180,7 +180,7 @@ cd ../../
   echo ""
   echo "✅ The module has been successfully created!"
   echo ""
-  echo "⚠️ Don't forget to add support for the new module to third-party scripts; for example, the linting script and the module compilation script"
+  echo "⚠️ Don't forget to add support for the new module to third-party scripts; for example, the linting script and the module compilation script."
 }
 
 exit 0 

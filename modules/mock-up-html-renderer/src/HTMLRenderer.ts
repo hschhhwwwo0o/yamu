@@ -115,7 +115,7 @@ export class HTMLRenderer {
       screenHeight,
       borderRadius,
     );
-    context.fillStyle = "#3c3c3c";
+    context.fillStyle = "#000";
     context.fill();
 
     return;

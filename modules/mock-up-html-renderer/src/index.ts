@@ -1,14 +1,14 @@
 import { HTMLImageDownloader } from "./HTMLImageDownloader.js";
 import { HTMLRenderer } from "./HTMLRenderer.js";
 
-import { RenderData, SupportedImageFormat } from "./types.js";
+import { Options, RenderData, SupportedImageFormat } from "./types.js";
 
 class MockUpHTMLRenderer {
   private _htmlRenderer: undefined | HTMLRenderer = undefined;
   private _htmlImageDownloader: undefined | HTMLImageDownloader = undefined;
 
-  constructor(containerId: string = "") {
-    this._htmlRenderer = new HTMLRenderer(containerId);
+  constructor(containerId: string = "", options: Options) {
+    this._htmlRenderer = new HTMLRenderer(containerId, options);
     this._htmlImageDownloader = new HTMLImageDownloader(containerId);
   }
 

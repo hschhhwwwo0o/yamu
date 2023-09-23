@@ -13,4 +13,8 @@ export interface RenderData {
   isBW?: boolean;
 }
 
+export interface Options {
+  heightInaccuracy: number;
+}
+
 export type SupportedImageFormat = "png" | "jpeg" | "webp";

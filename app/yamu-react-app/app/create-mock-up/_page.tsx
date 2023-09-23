@@ -18,7 +18,10 @@ import { H2 } from "@/components/text/H2";
 export default function Page(): React.JSX.Element {
   const mockUpGenerator = useMemo(() => new MockUpGenerator(), []);
   const mockUpRenderer = useMemo(
-    () => new MockUpHTMLRenderer("mock-up-container"),
+    () =>
+      new MockUpHTMLRenderer("mock-up-container", {
+        heightInaccuracy: 70,
+      }),
     [],
   );
 

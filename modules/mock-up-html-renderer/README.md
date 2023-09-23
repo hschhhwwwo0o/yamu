@@ -15,7 +15,9 @@ The module has 2 methods:
 Example:
 
 ```js
-const mockUpHTMLRenderer = new MockUpHTMLRenderer("domContainerId");
+const mockUpHTMLRenderer = new MockUpHTMLRenderer("domContainerId", {
+  heightInaccuracy: 0,
+});
 
 mockUpHTMLRenderer.render({
   frameWidth: number,

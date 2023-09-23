@@ -1,10 +1,17 @@
-import { RenderData } from "./types.js";
+import { Options, RenderData } from "./types.js";
 
 export class HTMLRenderer {
   private _containerId: string;
+  private _options: Options;
 
-  constructor(containerId: string = "") {
+  constructor(
+    containerId: string = "",
+    options: Options = {
+      heightInaccuracy: 0,
+    },
+  ) {
     this._containerId = containerId;
+    this._options = options;
   }
 
   /**
@@ -218,20 +225,54 @@ export class HTMLRenderer {
   }
 
   private _calculateLayoutWidth(renderData: RenderData) {
-    if (window.innerWidth < renderData.frameWidth) {
-      return window.innerWidth - 60;
-    } else {
-      return renderData.frameWidth;
+    const windowInnerWidth = window.innerWidth;
+    const windowInnerHeight =
+      window.innerHeight - this._options.heightInaccuracy;
+
+    if (window.innerHeight < 580) {
+      return windowInnerWidth - 155;
     }
+
+    if (windowInnerWidth < renderData.frameWidth) {
+      return windowInnerWidth - 60;
+    }
+    if (
+      windowInnerHeight < renderData.frameHeight &&
+      windowInnerWidth > renderData.frameWidth
+    ) {
+      return renderData.frameWidth - 100;
+    }
+
+    return renderData.frameWidth;
   }
   private _calculateLayoutHeight(renderData: RenderData) {
-    if (window.innerWidth < renderData.frameWidth) {
+    const windowInnerWidth = window.innerWidth;
+    const windowInnerHeight =
+      window.innerHeight - this._options.heightInaccuracy;
+
+    if (window.innerHeight < 580) {
       const coof = renderData.frameHeight / renderData.frameWidth;
       const newWidth = this._calculateLayoutWidth(renderData);
       const newHeight = newWidth * coof;
       return newHeight;
-    } else {
-      return renderData.frameHeight;
     }
+
+    if (windowInnerWidth < renderData.frameWidth) {
+      const coof = renderData.frameHeight / renderData.frameWidth;
+      const newWidth = this._calculateLayoutWidth(renderData);
+      const newHeight = newWidth * coof;
+      return newHeight;
+    }
+    if (
+      windowInnerHeight < renderData.frameHeight &&
+      windowInnerWidth > renderData.frameWidth
+    ) {
+      const coof = renderData.frameHeight / renderData.frameWidth;
+      const newWidth = this._calculateLayoutWidth(renderData);
+      const newHeight = newWidth * coof;
+      return newHeight;
+    }
+
+    return renderData.frameHeight;
   }
 }

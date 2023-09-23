@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         "brand-blue": "#007AFF",
+        "dark-default-border": "#1F1F1F",
+        "light-default-border": "#1F1F1F",
       },
       spacing: {
         "mobile-padding": "16px",

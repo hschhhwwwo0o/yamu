@@ -3,7 +3,7 @@
 import React, { Fragment } from "react";
 
 /** Layouts */
-import { DefaultLayout } from "@/components/layouts/DefaultWrapperLayout";
+import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";
 
 /** Components */
 import { H1 } from "@/components/text/H1";
@@ -16,7 +16,7 @@ export default function IndexScreen(): React.JSX.Element {
   return (
     <Fragment>
       <main>
-        <DefaultLayout>
+        <DefaultWrapperLayout>
           <div className="w-full h-full flex flex-row justify-center px-mobile-padding md:px-laptop-padding">
             <div className="mt-10 md:mt-20 pb-10">
               <div className="max-w-[490px]">
@@ -73,7 +73,7 @@ export default function IndexScreen(): React.JSX.Element {
             </div>
             <div className="w-[0%] bg-green-300 h-full"></div>
           </div>
-        </DefaultLayout>
+        </DefaultWrapperLayout>
       </main>
     </Fragment>
   );

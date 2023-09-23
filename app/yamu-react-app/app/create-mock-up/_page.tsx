@@ -16,7 +16,10 @@ import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
 import { H2 } from "@/components/text/H2";
 
 export default function Page(): React.JSX.Element {
+  /** Initialize mock-up generator module */
   const mockUpGenerator = useMemo(() => new MockUpGenerator(), []);
+
+  /** Initialize mock-up renderer module */
   const mockUpRenderer = useMemo(
     () =>
       new MockUpHTMLRenderer("mock-up-container", {
@@ -25,10 +28,15 @@ export default function Page(): React.JSX.Element {
     [],
   );
 
-  useLayoutEffect(function onSelectDeviceAndRenderEffect(): void {
+  useLayoutEffect(function onInitializeRenderMockUp(): void {
     (async function () {
-      await mockUpGenerator.selectDevice("iPhone 13");
+      /** Select default device */
+      await mockUpGenerator.selectDevice("Apple Watch Ultra");
+
+      /** Generate render data */
       const renderData = mockUpGenerator.generateRenderData();
+
+      /** Rendering */
       mockUpRenderer.render(renderData);
     })();
   }, []);

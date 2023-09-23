@@ -15,6 +15,10 @@ module.exports = {
       spacing: {
         "mobile-padding": "16px",
         "laptop-padding": "86px",
+        "top-navbar-height": "57px",
+        "min-top-navbar-height": "56px",
+        "screen-without-top-navbar-height": "calc(100vh - 57px)",
+        "min-screen-without-top-navbar-height": "calc(100vh - 56px)",
       },
     },
   },

@@ -18,8 +18,8 @@ export function TheTopNavigation(): ReactNode {
 
   return (
     <Fragment>
-      <span className="block w-full h-[57px]"></span>
-      <nav className="bg-black w-full h-[57px] z-50 fixed left-0 top-0 dark:border-solid dark:border-b-[1px] border-light-default-border dark:border-b-dark-default-border flex flex-row justify-between items-center px-mobile-padding">
+      <span className="block w-full h-top-navbar-height"></span>
+      <nav className="bg-black w-full h-top-navbar-height z-50 fixed left-0 top-0 dark:border-solid dark:border-b-[1px] border-light-default-border dark:border-b-dark-default-border flex flex-row justify-between items-center px-mobile-padding">
         {
           /** Left side of the navigation laptop */
           <div className="w-10">
@@ -146,7 +146,7 @@ export function TheTopNavigation(): ReactNode {
             pointerEvents: isOpenMobileNavigation ? "auto" : "none",
             opacity: isOpenMobileNavigation ? "100%" : "0%",
           }}
-          className="bg-black z-50 transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-[56px] h-[calc(100%-56px)] pt-8"
+          className="bg-black z-50 transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-min-top-navbar-height h-min-screen-without-top-navbar-height pt-8"
         >
           <Link
             href="/create-mock-up"

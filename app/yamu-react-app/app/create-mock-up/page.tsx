@@ -14,10 +14,10 @@ export default function CreateMockUpScreen(): React.JSX.Element {
   return (
     <main>
       <WideWrapperLayout>
-        <div className="flex flex-col lg:flex-row lg:justify-between w-full h-[calc(100vh-57px)] 2xl:border-l 2xl:border-r border-light-default-border dark:border-dark-default-border 2xl:border-solid">
+        <div className="flex flex-col lg:flex-row lg:justify-between w-full h-screen-without-top-navbar-height 2xl:border-l 2xl:border-r border-light-default-border dark:border-dark-default-border 2xl:border-solid">
           {
             /** Mock-up preview scene */
-            <div className="w-full h-[80vh] lg:h-full border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-solid border-light-default-border dark:border-dark-default-border flex items-center justify-center">
+            <div className="w-full h-[80vh] lg:h-full border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-solid  dark:border-dark-default-border flex items-center justify-center">
               <Text>Mock-up preview scene</Text>
             </div>
           }

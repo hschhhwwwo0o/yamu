@@ -50,8 +50,8 @@ class MockUpHTMLRenderer {
     format: SupportedImageFormat = "png",
     quality = 1,
   ): Promise<string | undefined> {
-    const result = await this._htmlImageDownloader?.download(format, quality);
-    return result;
+    const _result = await this._htmlImageDownloader?.download(format, quality);
+    return _result;
   }
 }
 

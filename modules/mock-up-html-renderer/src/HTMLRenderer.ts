@@ -24,52 +24,41 @@ export class HTMLRenderer {
 
     console.log("Rendering...", renderData);
 
-    const canvas = this._createCanvasDOMElement(renderData);
+    const _canvas = this._createCanvasDOMElement(renderData);
 
     if (renderData.isBW === true) {
-      canvas.style.cssText = "filter: grayscale(100%);";
+      _canvas.style.cssText = "filter: grayscale(100%);";
     } else {
-      canvas.style.cssText = "filter: grayscale(0%);";
+      _canvas.style.cssText = "filter: grayscale(0%);";
     }
 
-    const context = canvas.getContext("2d");
+    const _context = _canvas.getContext("2d");
 
-    const frameImage = this._createFrameImage(renderData);
+    const _frameImage = this._createFrameImage(renderData);
 
-    if (frameImage.complete) {
-      if (!context) throw "Context error";
-      const imageIsEmpty = !renderData.insertedImage;
-      if (imageIsEmpty) {
-        this._renderEmptyScreen(context, renderData);
-        this._renderFrame(context, frameImage, renderData);
-        this._appendCanvasInDOM(canvas);
+    const _render = () => {
+      if (!_context) throw "Context error";
+      const _imageIsEmpty = !renderData.insertedImage;
+      if (_imageIsEmpty) {
+        this._renderEmptyScreen(_context, renderData);
+        this._renderFrame(_context, _frameImage, renderData);
+        this._appendCanvasInDOM(_canvas);
       }
-      if (!imageIsEmpty) {
+      if (!_imageIsEmpty) {
         const screenImage = this._createScreenImage(renderData);
         screenImage.onload = () => {
-          this._renderScreen(context, screenImage, renderData);
-          this._renderFrame(context, frameImage, renderData);
-          this._appendCanvasInDOM(canvas);
+          this._renderScreen(_context, screenImage, renderData);
+          this._renderFrame(_context, _frameImage, renderData);
+          this._appendCanvasInDOM(_canvas);
         };
       }
+    };
+
+    if (_frameImage.complete) {
+      _render();
     }
-
-    frameImage.onload = () => {
-      if (!context) throw "Context error";
-      const imageIsEmpty = !renderData.insertedImage;
-      if (imageIsEmpty) {
-        this._renderEmptyScreen(context, renderData);
-        this._renderFrame(context, frameImage, renderData);
-        this._appendCanvasInDOM(canvas);
-      }
-      if (!imageIsEmpty) {
-        const screenImage = this._createScreenImage(renderData);
-        screenImage.onload = () => {
-          this._renderScreen(context, screenImage, renderData);
-          this._renderFrame(context, frameImage, renderData);
-          this._appendCanvasInDOM(canvas);
-        };
-      }
+    _frameImage.onload = () => {
+      _render();
     };
   }
 
@@ -79,10 +68,10 @@ export class HTMLRenderer {
       throw "Incorrect containerId";
     }
 
-    const container = document.querySelector(`#${this._containerId}`);
+    const _container = document.querySelector(`#${this._containerId}`);
 
-    if (container) {
-      container.innerHTML = "";
+    if (_container) {
+      _container.innerHTML = "";
     }
   }
 
@@ -90,30 +79,30 @@ export class HTMLRenderer {
     context: CanvasRenderingContext2D,
     renderData: RenderData,
   ) {
-    const borderRadius =
+    const _borderRadius =
       renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
 
-    const frameWidth = this._calculateLayoutWidth(renderData);
-    const frameHeight = this._calculateLayoutHeight(renderData);
+    const _frameWidth = this._calculateLayoutWidth(renderData);
+    const _frameHeight = this._calculateLayoutHeight(renderData);
 
-    const paddingLeftInPX =
-      (frameWidth / 100) * renderData.paddingsInPercents.left;
-    const paddingRightInPX =
-      (frameWidth / 100) * renderData.paddingsInPercents.right;
-    const paddingTopInPX =
-      (frameHeight / 100) * renderData.paddingsInPercents.top;
-    const paddingBottomInPX =
-      (frameHeight / 100) * renderData.paddingsInPercents.bottom;
+    const _paddingLeftInPX =
+      (_frameWidth / 100) * renderData.paddingsInPercents.left;
+    const _paddingRightInPX =
+      (_frameWidth / 100) * renderData.paddingsInPercents.right;
+    const _paddingTopInPX =
+      (_frameHeight / 100) * renderData.paddingsInPercents.top;
+    const _paddingBottomInPX =
+      (_frameHeight / 100) * renderData.paddingsInPercents.bottom;
 
-    const screenWidth = frameWidth - paddingLeftInPX - paddingRightInPX;
-    const screenHeight = frameHeight - paddingTopInPX - paddingBottomInPX;
+    const _screenWidth = _frameWidth - _paddingLeftInPX - _paddingRightInPX;
+    const _screenHeight = _frameHeight - _paddingTopInPX - _paddingBottomInPX;
 
     context.roundRect(
-      paddingLeftInPX,
-      paddingTopInPX,
-      screenWidth,
-      screenHeight,
-      borderRadius,
+      _paddingLeftInPX,
+      _paddingTopInPX,
+      _screenWidth,
+      _screenHeight,
+      _borderRadius,
     );
     context.fillStyle = "#000";
     context.fill();
@@ -126,7 +115,7 @@ export class HTMLRenderer {
     insertedImage: HTMLImageElement,
     renderData: RenderData,
   ) {
-    function createRoundedImage(
+    function _createRoundedImage(
       ctx: CanvasRenderingContext2D,
       x: number,
       y: number,
@@ -152,40 +141,40 @@ export class HTMLRenderer {
       ctx.closePath();
     }
 
-    const borderRadius =
+    const _borderRadius =
       renderData.borderRadius === undefined ? 10 : renderData.borderRadius;
 
-    const frameWidth = this._calculateLayoutWidth(renderData);
-    const frameHeight = this._calculateLayoutHeight(renderData);
+    const _frameWidth = this._calculateLayoutWidth(renderData);
+    const _frameHeight = this._calculateLayoutHeight(renderData);
 
-    const paddingLeftInPX =
-      (frameWidth / 100) * renderData.paddingsInPercents.left;
-    const paddingRightInPX =
-      (frameWidth / 100) * renderData.paddingsInPercents.right;
-    const paddingTopInPX =
-      (frameHeight / 100) * renderData.paddingsInPercents.top;
-    const paddingBottomInPX =
-      (frameHeight / 100) * renderData.paddingsInPercents.bottom;
+    const _paddingLeftInPX =
+      (_frameWidth / 100) * renderData.paddingsInPercents.left;
+    const _paddingRightInPX =
+      (_frameWidth / 100) * renderData.paddingsInPercents.right;
+    const _paddingTopInPX =
+      (_frameHeight / 100) * renderData.paddingsInPercents.top;
+    const _paddingBottomInPX =
+      (_frameHeight / 100) * renderData.paddingsInPercents.bottom;
 
-    const screenWidth = frameWidth - paddingLeftInPX - paddingRightInPX;
-    const screenHeight = frameHeight - paddingTopInPX - paddingBottomInPX;
+    const _screenWidth = _frameWidth - _paddingLeftInPX - _paddingRightInPX;
+    const _screenHeight = _frameHeight - _paddingTopInPX - _paddingBottomInPX;
 
-    createRoundedImage(
+    _createRoundedImage(
       context,
-      paddingLeftInPX,
-      paddingTopInPX,
-      screenWidth,
-      screenHeight,
-      borderRadius,
+      _paddingLeftInPX,
+      _paddingTopInPX,
+      _screenWidth,
+      _screenHeight,
+      _borderRadius,
     );
     context.save();
     context.clip();
     context.drawImage(
       insertedImage,
-      paddingLeftInPX,
-      paddingTopInPX,
-      screenWidth,
-      screenHeight,
+      _paddingLeftInPX,
+      _paddingTopInPX,
+      _screenWidth,
+      _screenHeight,
     );
     context.restore();
 
@@ -193,24 +182,24 @@ export class HTMLRenderer {
   }
 
   private _createScreenImage(renderData: RenderData) {
-    const screenImage: HTMLImageElement = new Image();
-    screenImage.setAttribute("crossorigin", "anonymous");
+    const _screenImage: HTMLImageElement = new Image();
+    _screenImage.setAttribute("crossorigin", "anonymous");
     {
-      screenImage.width = this._calculateLayoutWidth(renderData);
-      screenImage.height = this._calculateLayoutHeight(renderData);
-      screenImage.src = renderData.insertedImage;
+      _screenImage.width = this._calculateLayoutWidth(renderData);
+      _screenImage.height = this._calculateLayoutHeight(renderData);
+      _screenImage.src = renderData.insertedImage;
     }
-    return screenImage;
+    return _screenImage;
   }
 
   private _createFrameImage(renderData: RenderData) {
-    const frameImage = new Image();
+    const _frameImage = new Image();
     {
-      frameImage.width = this._calculateLayoutWidth(renderData);
-      frameImage.height = this._calculateLayoutHeight(renderData);
-      frameImage.src = renderData.frameImage;
+      _frameImage.width = this._calculateLayoutWidth(renderData);
+      _frameImage.height = this._calculateLayoutHeight(renderData);
+      _frameImage.src = renderData.frameImage;
     }
-    return frameImage;
+    return _frameImage;
   }
 
   private _renderFrame(
@@ -218,45 +207,45 @@ export class HTMLRenderer {
     frameImage: HTMLImageElement,
     renderData: RenderData,
   ) {
-    const frameWidth = this._calculateLayoutWidth(renderData);
-    const frameHeight = this._calculateLayoutHeight(renderData);
+    const _frameWidth = this._calculateLayoutWidth(renderData);
+    const _frameHeight = this._calculateLayoutHeight(renderData);
 
     {
-      context.drawImage(frameImage, 0, 0, frameWidth, frameHeight);
+      context.drawImage(frameImage, 0, 0, _frameWidth, _frameHeight);
     }
   }
 
   private _createCanvasDOMElement(renderData: RenderData) {
-    const canvas = document.createElement("canvas");
+    const _canvas = document.createElement("canvas");
     {
-      canvas.id = "mock-up-canvas";
-      canvas.width = this._calculateLayoutWidth(renderData);
-      canvas.height = this._calculateLayoutHeight(renderData);
+      _canvas.id = "mock-up-canvas";
+      _canvas.width = this._calculateLayoutWidth(renderData);
+      _canvas.height = this._calculateLayoutHeight(renderData);
     }
-    return canvas;
+    return _canvas;
   }
 
   private _appendCanvasInDOM(canvas: HTMLCanvasElement) {
     this._clearDOMContainer();
-    const container = document.querySelector(`#${this._containerId}`);
-    container?.appendChild(canvas);
+    const _container = document.querySelector(`#${this._containerId}`);
+    _container?.appendChild(canvas);
   }
 
   private _calculateLayoutWidth(renderData: RenderData) {
-    const windowInnerWidth = window.innerWidth;
-    const windowInnerHeight =
+    const _windowInnerWidth = window.innerWidth;
+    const _windowInnerHeight =
       window.innerHeight - this._options.heightInaccuracy;
 
     if (window.innerHeight < 580) {
-      return windowInnerWidth - 155;
+      return _windowInnerWidth - 155;
     }
 
-    if (windowInnerWidth < renderData.frameWidth) {
-      return windowInnerWidth - 60;
+    if (_windowInnerWidth < renderData.frameWidth) {
+      return _windowInnerWidth - 60;
     }
     if (
-      windowInnerHeight < renderData.frameHeight &&
-      windowInnerWidth > renderData.frameWidth
+      _windowInnerHeight < renderData.frameHeight &&
+      _windowInnerWidth > renderData.frameWidth
     ) {
       return renderData.frameWidth - 100;
     }
@@ -264,31 +253,31 @@ export class HTMLRenderer {
     return renderData.frameWidth;
   }
   private _calculateLayoutHeight(renderData: RenderData) {
-    const windowInnerWidth = window.innerWidth;
-    const windowInnerHeight =
+    const _windowInnerWidth = window.innerWidth;
+    const _windowInnerHeight =
       window.innerHeight - this._options.heightInaccuracy;
 
     if (window.innerHeight < 580) {
-      const coof = renderData.frameHeight / renderData.frameWidth;
-      const newWidth = this._calculateLayoutWidth(renderData);
-      const newHeight = newWidth * coof;
-      return newHeight;
+      const _coof = renderData.frameHeight / renderData.frameWidth;
+      const _newWidth = this._calculateLayoutWidth(renderData);
+      const _newHeight = _newWidth * _coof;
+      return _newHeight;
     }
 
-    if (windowInnerWidth < renderData.frameWidth) {
-      const coof = renderData.frameHeight / renderData.frameWidth;
-      const newWidth = this._calculateLayoutWidth(renderData);
-      const newHeight = newWidth * coof;
-      return newHeight;
+    if (_windowInnerWidth < renderData.frameWidth) {
+      const _coof = renderData.frameHeight / renderData.frameWidth;
+      const _newWidth = this._calculateLayoutWidth(renderData);
+      const _newHeight = _newWidth * _coof;
+      return _newHeight;
     }
     if (
-      windowInnerHeight < renderData.frameHeight &&
-      windowInnerWidth > renderData.frameWidth
+      _windowInnerHeight < renderData.frameHeight &&
+      _windowInnerWidth > renderData.frameWidth
     ) {
-      const coof = renderData.frameHeight / renderData.frameWidth;
-      const newWidth = this._calculateLayoutWidth(renderData);
-      const newHeight = newWidth * coof;
-      return newHeight;
+      const _coof = renderData.frameHeight / renderData.frameWidth;
+      const _newWidth = this._calculateLayoutWidth(renderData);
+      const _newHeight = _newWidth * _coof;
+      return _newHeight;
     }
 
     return renderData.frameHeight;

@@ -1,7 +1,7 @@
 import { SupportedImageFormat } from "./types.js";
 
 export class HTMLImageDownloader {
-  private _containerId = "";
+  private _containerId: string = "";
 
   constructor(containerId: string = "") {
     this._containerId = containerId;
@@ -21,38 +21,40 @@ export class HTMLImageDownloader {
     format: SupportedImageFormat = "png",
     quality: number = 1,
   ): Promise<string | undefined> {
-    const dataUrl: string | undefined =
-      await (async function _createDataUrlLink(containerId: string = "") {
-        const canvas: HTMLCanvasElement | null =
-          document.querySelector<HTMLCanvasElement>(`#${containerId} > canvas`);
+    const _dataUrl: string | undefined =
+      await (async function _createDataUrlLink(_containerId: string = "") {
+        const _canvas: HTMLCanvasElement | null =
+          document.querySelector<HTMLCanvasElement>(
+            `#${_containerId} > canvas`,
+          );
 
         switch (format) {
           case "png":
-            return canvas?.toDataURL("image/png", quality);
+            return _canvas?.toDataURL("image/png", quality);
           case "jpeg":
-            return canvas?.toDataURL("image/jpeg", quality);
+            return _canvas?.toDataURL("image/jpeg", quality);
           case "webp":
-            return canvas?.toDataURL("image/webp", quality);
+            return _canvas?.toDataURL("image/webp", quality);
         }
       })(this._containerId);
 
-    (function _createDownloadLink(dataUrl: string = ""): void {
-      const link = document.createElement("a");
-      const filename = `${new Date().getTime()}.${format}`;
+    (function _createDownloadLink(_dataUrl: string = ""): void {
+      const _link = document.createElement("a");
+      const _filename = `${new Date().getTime()}.${format}`;
 
       {
-        link.setAttribute("href", dataUrl || "");
-        link.setAttribute("download", filename);
-        link.style.display = "none";
+        _link.setAttribute("href", _dataUrl || "");
+        _link.setAttribute("download", _filename);
+        _link.style.display = "none";
       }
 
       {
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        document.body.appendChild(_link);
+        _link.click();
+        document.body.removeChild(_link);
       }
-    })(dataUrl || "");
+    })(_dataUrl || "");
 
-    return dataUrl;
+    return _dataUrl;
   }
 }

@@ -43,14 +43,14 @@ class MockUpGenerator {
   ): Promise<MockUpInterface> {
     this.mockUp.insertedImage = undefined;
 
-    const devicesLibrary = await this.getDevicesLibrary();
-    const type: DeviceType | undefined = devicesLibrary.find(
+    const _devicesLibrary = await this.getDevicesLibrary();
+    const _type: DeviceType | undefined = _devicesLibrary.find(
       function _findDeviceByName(_deviceLibraryItem) {
         return _deviceLibraryItem.name === deviceName;
       },
     )?.type;
 
-    switch (type) {
+    switch (_type) {
       case "phone":
         this.mockUp.device = new PhoneDevice(deviceName);
         return this.mockUp;
@@ -107,7 +107,7 @@ class MockUpGenerator {
    */
   public generateRenderData() {
     const _mockUp = this.mockUp;
-    const renderData = {
+    const _renderData = {
       frameWidth: _mockUp.device.frame.width,
       frameHeight: _mockUp.device.frame.height,
       frameImage: _mockUp.device.frame.image,
@@ -121,7 +121,7 @@ class MockUpGenerator {
       borderRadius: _mockUp.device.frame.borderRadius,
       isBW: _mockUp.device.frame.filters.bw,
     };
-    return renderData;
+    return _renderData;
   }
 }
 

@@ -37,14 +37,14 @@ class Device {
    * @returns Selected device
    */
   private _getDeviceLibraryItem(deviceName: DeviceLibraryItem["name"] = "") {
-    const devicesLibrary = new DevicesLibraryManager().get();
-    const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
-      devicesLibrary.find(function findSelectedDevice(
+    const _devicesLibrary = new DevicesLibraryManager().get();
+    const _selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
+      _devicesLibrary.find(function findSelectedDevice(
         _device: DeviceLibraryItem,
       ) {
         return _device.name === deviceName;
       });
-    return selectedDeviceLibraryItem;
+    return _selectedDeviceLibraryItem;
   }
 
   /**
@@ -84,15 +84,15 @@ class Device {
       throw "Device is not selected";
     }
 
-    const selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
+    const _selectedDeviceLibraryItem: DeviceLibraryItem | undefined =
       await this._getDeviceLibraryItem(deviceName);
 
     /** @exception The device is not found in the available device library */
-    if (!selectedDeviceLibraryItem) {
+    if (!_selectedDeviceLibraryItem) {
       throw "Device is not supported";
     }
 
-    this._setDeviceState(selectedDeviceLibraryItem);
+    this._setDeviceState(_selectedDeviceLibraryItem);
 
     return {
       name: this.name,

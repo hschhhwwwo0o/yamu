@@ -19,6 +19,7 @@ interface ButtonInterface {
   loadingText?: string;
   disabledText?: string;
   status?: "disabled" | "loading" | "basic";
+  className?: string;
 }
 
 function Button({
@@ -29,6 +30,7 @@ function Button({
   status = "basic",
   loadingText = undefined,
   disabledText = undefined,
+  className = "",
 }: ButtonInterface) {
   const { push } = useRouter();
 
@@ -59,28 +61,42 @@ function Button({
     return {};
   }
 
+  function setTitle() {
+    if (status === "basic") {
+      return children;
+    }
+    if (status === "disabled") {
+      return disabledText;
+    }
+    if (status === "loading") {
+      return loadingText;
+    }
+  }
+
   return (
     <Fragment>
-      <span
-        style={styleButtonByStatus()}
-        className="block w-full md:max-w-[360px] transition-all duration-300"
-      >
-        <button
-          role={"button"}
-          name={children}
-          title={children}
-          onClick={_onClick}
-          className="rounded-xl bg-brand-blue transition-all hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[360px] font-semibold flex items-center justify-center text-white"
+      <span title={setTitle()} className={`block ${className}`}>
+        <span
+          style={styleButtonByStatus()}
+          className="block w-full md:max-w-[400px] transition-all duration-300"
         >
-          {status === "loading" && (loadingText || children)}
-          {status === "disabled" && (disabledText || children)}
-          {status === "basic" && children}
-        </button>
-        {label !== undefined && (
-          <span className="block px-4 pt-2">
-            <Label>{label}</Label>
-          </span>
-        )}
+          <button
+            role={"button"}
+            name={children}
+            title={setTitle()}
+            onClick={_onClick}
+            className="rounded-xl bg-brand-blue transition-all hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[400px] font-semibold flex items-center justify-center text-white"
+          >
+            {status === "loading" && (loadingText || children)}
+            {status === "disabled" && (disabledText || children)}
+            {status === "basic" && children}
+          </button>
+          {label !== undefined && (
+            <span className="block px-4 pt-2">
+              <Label>{label}</Label>
+            </span>
+          )}
+        </span>
       </span>
     </Fragment>
   );

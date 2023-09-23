@@ -7,7 +7,7 @@ interface H2Interface {
 export function H2({ children }: H2Interface): ReactNode {
   return (
     <Fragment>
-      <h2 className="text-2xl lg:text-3xl font-bold text-black dark:text-white">
+      <h2 className="text-2xl lg:text-3xl font-bold text-black dark:text-white mt-2">
         {children}
       </h2>
     </Fragment>

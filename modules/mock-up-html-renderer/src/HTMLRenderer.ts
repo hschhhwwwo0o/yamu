@@ -53,6 +53,24 @@ export class HTMLRenderer {
         };
       }
     }
+
+    frameImage.onload = () => {
+      if (!context) throw "Context error";
+      const imageIsEmpty = !renderData.insertedImage;
+      if (imageIsEmpty) {
+        this._renderEmptyScreen(context, renderData);
+        this._renderFrame(context, frameImage, renderData);
+        this._appendCanvasInDOM(canvas);
+      }
+      if (!imageIsEmpty) {
+        const screenImage = this._createScreenImage(renderData);
+        screenImage.onload = () => {
+          this._renderScreen(context, screenImage, renderData);
+          this._renderFrame(context, frameImage, renderData);
+          this._appendCanvasInDOM(canvas);
+        };
+      }
+    };
   }
 
   private _clearDOMContainer() {

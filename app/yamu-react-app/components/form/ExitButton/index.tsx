@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Fragment } from "react";
+import { useRouter } from "next/navigation";
 
 /** Hook for working with the component */
 import { useExitButton } from "./hook";
@@ -8,12 +9,25 @@ import { useExitButton } from "./hook";
 interface ExitButtonPropsInterface {
   children: string;
   onClick?: () => void;
+  className?: string;
+  navigatePath?: string;
 }
 
-function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
-  function _onClick() {
-    if (onClick) {
-      onClick();
+function ExitButton({
+  children,
+  onClick,
+  className = "",
+  navigatePath = "",
+}: ExitButtonPropsInterface) {
+  const { push } = useRouter();
+
+  function _onClick(): void {
+    if (navigatePath === undefined) {
+      if (onClick) {
+        onClick();
+      }
+    } else {
+      push(navigatePath);
     }
   }
 
@@ -24,7 +38,7 @@ function ExitButton({ children, onClick }: ExitButtonPropsInterface) {
         name={children}
         title={children}
         onClick={_onClick}
-        className="py-[10px] w-full md:max-w-[360px] gap-2 bg-transparent text-[#FF3B30] flex flex-row items-center justify-center"
+        className={`py-[10px] w-full md:max-w-[360px] gap-2 bg-transparent text-[#FF3B30] flex flex-row items-center justify-center ${className}`}
       >
         <svg
           width="21"

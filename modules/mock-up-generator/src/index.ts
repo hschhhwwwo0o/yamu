@@ -23,9 +23,9 @@ class MockUpGenerator {
    *
    * @returns Affordable devices library
    */
-  public async getDevicesLibrary(): Promise<DeviceLibraryItem[]> {
+  public getDevicesLibrary(): DeviceLibraryItem[] {
     const DevicesLibrary = new DevicesLibraryManager();
-    const devicesLibrary = await DevicesLibrary.get();
+    const devicesLibrary = DevicesLibrary.get();
     return devicesLibrary;
   }
 

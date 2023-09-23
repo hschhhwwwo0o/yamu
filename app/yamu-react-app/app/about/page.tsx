@@ -19,19 +19,15 @@ export default function AboutScreen(): React.JSX.Element {
     <main>
       <DefaultWrapperLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
-          <span className="block mt-10 md:mt-20">
-            <H1>About.</H1>
-          </span>
-          <span className="block mt-10">
-            <Text>Copyright (c) {currentYear} Saveliy Andronov.</Text>
-          </span>
-          <span className="block mt-6">
-            <Text>
-              The application is designed for creating mock-ups. Create product
-              mock-ups with the online mock-up generator. Simply select a
-              mock-up, upload your design and download a watermark-free image.
-            </Text>
-          </span>
+          <H1 className="mt-10 md:mt-20">About.</H1>
+          <Text className="mt-10">
+            Copyright (c) {currentYear} Saveliy Andronov.
+          </Text>
+          <Text className="mt-6">
+            The application is designed for creating mock-ups. Create product
+            mock-ups with the online mock-up generator. Simply select a mock-up,
+            upload your design and download a watermark-free image.
+          </Text>
         </div>
       </DefaultWrapperLayout>
     </main>

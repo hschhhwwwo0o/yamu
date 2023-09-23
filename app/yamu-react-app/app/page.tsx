@@ -20,55 +20,45 @@ export default function IndexScreen(): React.JSX.Element {
           <div className="w-full h-full flex flex-row justify-center px-mobile-padding md:px-laptop-padding">
             <div className="mt-10 md:mt-20 pb-10">
               <div className="max-w-[490px]">
-                <span>
-                  <H1>Make mock-up easy.</H1>
-                </span>
-                <span className="block mt-6">
-                  <Text>
-                    The application is designed for creating mock-ups. Create
-                    product mock-ups with the online mock-up generator.
-                  </Text>
-                </span>
-                <span className="block mt-8">
-                  <Button
-                    navigatePath="/create-mock-up"
-                    label="Simply select a mock-up, upload your design and download a watermark-free image."
-                  >
-                    Create mock-up
-                  </Button>
-                </span>
+                <H1>Make mock-up easy.</H1>
+                <Text className="mt-6">
+                  The application is designed for creating mock-ups. Create
+                  product mock-ups with the online mock-up generator.
+                </Text>
+                <Button
+                  navigatePath="/create-mock-up"
+                  label="Simply select a mock-up, upload your design and download a watermark-free image."
+                  className="mt-8"
+                >
+                  Create mock-up
+                </Button>
               </div>
               <div className="mt-10">
                 <H2>Links.</H2>
-                <div>
-                  <span className="block mt-4">
-                    <LinkCustom
-                      target="_blank"
-                      withLabel
-                      href="https://github.com/hschhhwwwo0o/yamu"
-                    >
-                      Go to code
-                    </LinkCustom>
-                  </span>
-                  <span className="block mt-2">
-                    <LinkCustom
-                      target="_blank"
-                      withLabel
-                      href="https://github.com/hschhhwwwo0o"
-                    >
-                      Author
-                    </LinkCustom>
-                  </span>
-                  <span className="block mt-2">
-                    <LinkCustom
-                      target="_blank"
-                      withLabel
-                      href="https://github.com/hschhhwwwo0o/yamu#development"
-                    >
-                      Documentation
-                    </LinkCustom>
-                  </span>
-                </div>
+                <LinkCustom
+                  target="_blank"
+                  withLabel
+                  className="mt-4"
+                  href="https://github.com/hschhhwwwo0o/yamu"
+                >
+                  Go to code
+                </LinkCustom>
+                <LinkCustom
+                  target="_blank"
+                  withLabel
+                  className="mt-2"
+                  href="https://github.com/hschhhwwwo0o"
+                >
+                  Author
+                </LinkCustom>
+                <LinkCustom
+                  target="_blank"
+                  withLabel
+                  className="mt-2"
+                  href="https://github.com/hschhhwwwo0o/yamu#development"
+                >
+                  Documentation
+                </LinkCustom>
               </div>
             </div>
             <div className="w-[0%] bg-green-300 h-full"></div>

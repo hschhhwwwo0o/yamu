@@ -2,6 +2,7 @@ import React, { Fragment, ReactNode } from "react";
 
 interface H2Interface {
   children: string;
+  className?: string;
 }
 
 export function H2({ children }: H2Interface): ReactNode {

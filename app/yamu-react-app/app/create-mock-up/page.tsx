@@ -38,10 +38,10 @@ export default function CreateMockUpScreen(): React.JSX.Element {
             </div>
           }
           {
-            /** Mock-up wizard */
+            /** Mock-up settings wizard */
             <div className="p-mobile-padding lg:p-laptop-padding">
               <div className="lg:w-[375px]">
-                <H1>Mock-up wizard</H1>
+                <H1>Mock-up settings wizard</H1>
               </div>
             </div>
           }

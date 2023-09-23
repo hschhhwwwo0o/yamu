@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 /** Layouts */
-import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";
+import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
 
 /**
  * Initialize metadata
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 export default function CreateMockUpScreen(): React.JSX.Element {
   return (
     <main>
-      <DefaultWrapperLayout>
+      <WideWrapperLayout>
         <Fragment />
-      </DefaultWrapperLayout>
+      </WideWrapperLayout>
     </main>
   );
 }

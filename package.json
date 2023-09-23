@@ -1,6 +1,6 @@
 {
   "name": "yamu",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
   "scripts": {
     "dev": "cd ./app/yamu-react-app && npm run dev",

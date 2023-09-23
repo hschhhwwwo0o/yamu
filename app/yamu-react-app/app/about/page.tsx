@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 /** Layouts */
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";
 
 /** Components */
 import { H1 } from "@/components/text/H1";
@@ -33,7 +33,7 @@ export default function AboutScreen(): React.JSX.Element {
 
   return (
     <main>
-      <DefaultLayout>
+      <DefaultWrapperLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">
             <H1>About.</H1>
@@ -49,7 +49,7 @@ export default function AboutScreen(): React.JSX.Element {
             </Text>
           </span>
         </div>
-      </DefaultLayout>
+      </DefaultWrapperLayout>
     </main>
   );
 }

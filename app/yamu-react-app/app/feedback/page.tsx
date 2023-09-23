@@ -1,7 +1,7 @@
 import React from "react";
 
 /** Layouts */
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";
 
 /** Components */
 import { H1 } from "@/components/text/H1";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function FeedbackScreen(): React.JSX.Element {
   return (
     <main>
-      <DefaultLayout>
+      <DefaultWrapperLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
           <span className="block mt-10 md:mt-20">
             <H1>Leave feedback to improve the service.</H1>
@@ -56,7 +56,7 @@ export default function FeedbackScreen(): React.JSX.Element {
             </span>
           </div>
         </div>
-      </DefaultLayout>
+      </DefaultWrapperLayout>
     </main>
   );
 }

@@ -1,10 +1,12 @@
 import React, { Fragment, ReactNode } from "react";
 
-interface DefaultLayoutPropsInterface {
+interface DefaultWrapperLayoutPropsInterface {
   children: ReactNode;
 }
 
-export function DefaultLayout({ children }: DefaultLayoutPropsInterface) {
+export function DefaultWrapperLayout({
+  children,
+}: DefaultWrapperLayoutPropsInterface) {
   return (
     <Fragment>
       <div className="w-screen flex flex-row justify-center pt-2">

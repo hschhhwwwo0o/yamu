@@ -3,7 +3,7 @@
 import React, { Fragment } from "react";
 
 /** Layouts */
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { DefaultLayout } from "@/components/layouts/DefaultWrapperLayout";
 
 /** Components */
 import { H1 } from "@/components/text/H1";

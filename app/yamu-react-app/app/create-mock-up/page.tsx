@@ -4,7 +4,7 @@ import React from "react";
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
 
 /** Components */
-import { H1 } from "@/components/text/H1";
+import { H2 } from "@/components/text/H2";
 import { Text } from "@/components/text/Text";
 
 /**
@@ -33,15 +33,17 @@ export default function CreateMockUpScreen(): React.JSX.Element {
         <div className="flex flex-col lg:flex-row lg:justify-between w-full h-[calc(100vh-57px)] 2xl:border-l 2xl:border-r 2xl:border-dark-default-border 2xl:border-solid">
           {
             /** Mock-up preview scene */
-            <div className="w-full border border-r-[1px] border-solid dark:border-r-dark-default-border flex items-center justify-center">
+            <div className="w-full h-[80vh] lg:h-full border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-solid dark:border-dark-default-border flex items-center justify-center">
               <Text>Mock-up preview scene</Text>
             </div>
           }
           {
             /** Mock-up settings wizard */
-            <div className="p-mobile-padding lg:p-laptop-padding">
+            <div className="p-mobile-padding mt-2 lg:mt-0 lg:h-full lg:p-laptop-padding">
               <div className="lg:w-[375px]">
-                <H1>Mock-up settings wizard</H1>
+                <span className="block w-[80%]">
+                  <H2>Mock-up settings wizard</H2>
+                </span>
               </div>
             </div>
           }

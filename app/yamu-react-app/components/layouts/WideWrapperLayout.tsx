@@ -9,8 +9,8 @@ export function WideWrapperLayout({
 }: WideWrapperLayoutPropsInterface) {
   return (
     <Fragment>
-      <div className="w-screen flex flex-row justify-center">
-        <div className="max-w-[1440px] w-full">{children}</div>
+      <div className="w-screen flex flex-row justify-center items-center h-full">
+        <div className="max-w-[1540px] w-full">{children}</div>
       </div>
     </Fragment>
   );

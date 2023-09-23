@@ -20,7 +20,7 @@ export default function Page(): React.JSX.Element {
   const mockUpGenerator = useMemo(() => new MockUpGenerator(), []);
 
   /** Initialize mock-up renderer module */
-  const mockUpRenderer = useMemo(
+  const mockUpHTMLRenderer = useMemo(
     () =>
       new MockUpHTMLRenderer("mock-up-container", {
         heightInaccuracy: 70,
@@ -37,7 +37,7 @@ export default function Page(): React.JSX.Element {
       const renderData = mockUpGenerator.generateRenderData();
 
       /** Rendering */
-      mockUpRenderer.render(renderData);
+      mockUpHTMLRenderer.render(renderData);
     })();
   }, []);
 

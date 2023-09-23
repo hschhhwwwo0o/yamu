@@ -20,30 +20,21 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton } from "@/components/form/ExitButton";
 
 export default function Page(): React.JSX.Element {
-  /** Initialize mock-up generator module */
-  const mockUpGenerator = useMemo(function () {
+  const mockUpGenerator = useMemo(function _initializeMockUpGenerator() {
     return new MockUpGenerator();
   }, []);
 
-  /** Initialize mock-up renderer module */
-  const mockUpHTMLRenderer = useMemo(function () {
+  const mockUpHTMLRenderer = useMemo(function _initializeMockUpRenderer() {
     return new MockUpHTMLRenderer("mock-up-container", {
-      /** Approximate height of the navbar */
       heightInaccuracy: 70,
     });
   }, []);
 
-  /** Initialize mock-up state and first render */
-  useLayoutEffect(function firstRenderMockUp(): void {
+  useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      /** Select default device */
       await mockUpGenerator.selectDevice("Apple Watch Ultra");
-
-      /** Generate render data */
-      const renderData = mockUpGenerator.generateRenderData();
-
-      /** Rendering */
-      mockUpHTMLRenderer.render(renderData);
+      const _renderData = mockUpGenerator.generateRenderData();
+      mockUpHTMLRenderer.render(_renderData);
     })();
   }, []);
 
@@ -62,10 +53,10 @@ export default function Page(): React.JSX.Element {
   const devicesModelsSelectUI = useSelect({
     options: mockUpGenerator
       .getDevicesLibrary()
-      .filter(function filterByType(_device) {
+      .filter(function _filterByType(_device) {
         return _device.type === deviceTypeSelectUI.props.value?.value;
       })
-      .map(function reformatToOption(_device) {
+      .map(function _reformatToOption(_device) {
         return {
           label: _device.name,
           value: _device.name,
@@ -73,15 +64,10 @@ export default function Page(): React.JSX.Element {
       }),
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
-      (async function () {
-        /** Select device by name */
+      (async function _selectDeviceAndRender() {
         await mockUpGenerator.selectDevice(_option?.label);
-
-        /** Generate render data */
-        const renderData = mockUpGenerator.generateRenderData();
-
-        /** Rendering */
-        mockUpHTMLRenderer.render(renderData);
+        const _renderData = mockUpGenerator.generateRenderData();
+        mockUpHTMLRenderer.render(_renderData);
       })();
     },
   });

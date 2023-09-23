@@ -7,24 +7,8 @@ import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
 import { H2 } from "@/components/text/H2";
 import { Text } from "@/components/text/Text";
 
-/**
- * Initialize metadata
- *
- * @requirement QA/SEO/META
- * @requirement QA/SEO/OPEN-GRAPH
- */
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "YAMU",
-  description:
-    "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-  openGraph: {
-    title: "YAMU",
-    description:
-      "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-    type: "website",
-  },
-};
+import { metadata } from "./metadata";
+export { metadata };
 
 export default function CreateMockUpScreen(): React.JSX.Element {
   return (

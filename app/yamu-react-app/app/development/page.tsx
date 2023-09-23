@@ -9,24 +9,8 @@ import { Text } from "@/components/text/Text";
 import { H2 } from "@/components/text/H2";
 import { LinkCustom } from "@/components/text/Link";
 
-/**
- * Initialize metadata
- *
- * @requirement QA/SEO/META
- * @requirement QA/SEO/OPEN-GRAPH
- */
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "YAMU. Development",
-  description:
-    "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-  openGraph: {
-    title: "YAMU. Development",
-    description:
-      "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-    type: "article",
-  },
-};
+import { metadata } from "./metadata";
+export { metadata };
 
 export default function DevelopmentScreen(): React.JSX.Element {
   const currentYear: number = useMemo(function _getCurrentYear(): number {

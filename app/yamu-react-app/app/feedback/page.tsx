@@ -8,24 +8,8 @@ import { H1 } from "@/components/text/H1";
 import { LinkCustom } from "@/components/text/Link";
 import { FeedbackForm } from "./components/FeedbackForm";
 
-/**
- * Initialize metadata
- *
- * @requirement QA/SEO/META
- * @requirement QA/SEO/OPEN-GRAPH
- */
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "YAMU. Feedback",
-  description:
-    "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-  openGraph: {
-    title: "YAMU. Feedback",
-    description:
-      "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
-    type: "website",
-  },
-};
+import { metadata } from "./metadata";
+export { metadata };
 
 export default function FeedbackScreen(): React.JSX.Element {
   return (

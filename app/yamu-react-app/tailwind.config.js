@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         "brand-blue": "#007AFF",
         "dark-default-border": "#1F1F1F",
-        "light-default-border": "#1F1F1F",
+        "light-default-border": "#F3F3F3",
       },
       spacing: {
         "mobile-padding": "16px",

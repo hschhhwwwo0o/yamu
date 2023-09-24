@@ -26,7 +26,7 @@ A unique identifier is created for each requirement. At the stage of code writin
 
 The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
 
-![Example](./md/FigmaPreview3.png)
+![Example](./md/FigmaPreview4.png)
 
 ### 3. Module development
 

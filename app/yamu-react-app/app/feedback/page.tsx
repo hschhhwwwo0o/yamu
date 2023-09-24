@@ -23,13 +23,28 @@ export default function FeedbackScreen(): React.JSX.Element {
             <FeedbackForm />
           </span>
           <div className="mt-6">
-            <LinkCustom className="mt-4" withLabel href="/">
+            <LinkCustom
+              target="_blank"
+              withLabel
+              className="mt-4"
+              href="https://github.com/hschhhwwwo0o/yamu"
+            >
               Go to code
             </LinkCustom>
-            <LinkCustom className="mt-2" withLabel href="/">
+            <LinkCustom
+              target="_blank"
+              withLabel
+              className="mt-2"
+              href="https://github.com/hschhhwwwo0o"
+            >
               Author
             </LinkCustom>
-            <LinkCustom className="mt-2" withLabel href="/">
+            <LinkCustom
+              target="_blank"
+              withLabel
+              className="mt-2"
+              href="https://github.com/hschhhwwwo0o/yamu#development"
+            >
               Documentation
             </LinkCustom>
           </div>

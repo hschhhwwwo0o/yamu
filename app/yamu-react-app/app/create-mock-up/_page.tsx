@@ -1,10 +1,10 @@
 "use client";
 
-import React, { Fragment, useLayoutEffect, useMemo } from "react";
+import React, { useLayoutEffect, useMemo } from "react";
 
-/** Modules */
-import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
-import { MockUpGenerator } from "@module/mock-up-generator";
+/** Connect to store */
+import { observer } from "mobx-react-lite";
+import { CreateMockUpScreenStore } from "./_store";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -13,73 +13,29 @@ import { MockUpSettingsWizardLayout } from "./layouts/MockUpSettingsWizardLayout
 import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
 
 /** Components */
-import { H2 } from "@/components/text/H2";
-import { Label } from "@/components/text/Label";
-import { Select, useSelect } from "@/components/form/Select";
-import { Button, useButton } from "@/components/form/Button";
-import { ExitButton } from "@/components/form/ExitButton";
+import { CreateMockUpFirstStepWizard } from "./components/CreateMockUpFirstStepWizard";
 
-export default function Page(): React.JSX.Element {
-  const mockUpGenerator = useMemo(function _initializeMockUpGenerator() {
-    return new MockUpGenerator();
+export default observer(function Page(): React.JSX.Element {
+  useMemo(function _initializeMockUpGeneratorModule() {
+    return CreateMockUpScreenStore.initializeMockUpGenerator();
   }, []);
 
-  const mockUpHTMLRenderer = useMemo(function _initializeMockUpRenderer() {
-    return new MockUpHTMLRenderer("mock-up-container", {
-      heightInaccuracy: 70,
-    });
+  useMemo(function _initializeMockUpRendererModule() {
+    return CreateMockUpScreenStore.initializeMockUpHTMLRenderer(
+      "mock-up-container",
+    );
   }, []);
 
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      await mockUpGenerator.selectDevice("Apple Watch Ultra");
-      const _renderData = mockUpGenerator.generateRenderData();
-      mockUpHTMLRenderer.render(_renderData);
+      await CreateMockUpScreenStore?.mockUpGenerator?.selectDevice(
+        "Apple Watch Ultra",
+      );
+      const _renderData =
+        CreateMockUpScreenStore?.mockUpGenerator?.generateRenderData();
+      CreateMockUpScreenStore?.mockUpHTMLRenderer?.render(_renderData);
     })();
   }, []);
-
-  const deviceTypeSelectUI = useSelect({
-    options: [
-      { label: "Phone", value: "phone" },
-      { label: "Watch", value: "watch" },
-      { label: "Tablet", value: "tablet" },
-    ],
-    onSelect() {
-      /** Clearing the device model when changing the device type */
-      devicesModelsSelectUI.utils.clear();
-    },
-  });
-
-  const devicesModelsSelectUI = useSelect({
-    options: mockUpGenerator
-      .getDevicesLibrary()
-      .filter(function _filterByType(_device) {
-        return _device.type === deviceTypeSelectUI.props.value?.value;
-      })
-      .map(function _reformatToOption(_device) {
-        return {
-          label: _device.name,
-          value: _device.name,
-        };
-      }),
-    isDisabled: deviceTypeSelectUI.props.value === undefined,
-    onSelect(_option) {
-      (async function _selectDeviceAndRender() {
-        await mockUpGenerator.selectDevice(_option?.label);
-        const _renderData = mockUpGenerator.generateRenderData();
-        mockUpHTMLRenderer.render(_renderData);
-      })();
-    },
-  });
-
-  const firstStepNextButtonUI = useButton({
-    disabledText: "Select the device to continue",
-    isDisabled: devicesModelsSelectUI.props.value === undefined,
-  });
-
-  const exitButtonUI = useButton({
-    navigatePath: "/",
-  });
 
   return (
     <main>
@@ -96,32 +52,7 @@ export default function Page(): React.JSX.Element {
             <MockUpSettingsWizardLayout>
               {
                 /** First step */
-                <Fragment>
-                  <Label>First step</Label>
-                  <H2>Choose device</H2>
-                  <Select
-                    {...deviceTypeSelectUI.props}
-                    className="mt-10"
-                    placeholder="Type of device..."
-                    label="Select the type of device you want"
-                  />
-                  <Select
-                    {...devicesModelsSelectUI.props}
-                    className="mt-8"
-                    placeholder="Device model..."
-                    label="Select the model of device you want"
-                  />
-                  <Button
-                    {...firstStepNextButtonUI.props}
-                    className="mt-8"
-                    label="Don't be afraid to move on to the next step - you can always come back to this step"
-                  >
-                    Next
-                  </Button>
-                  <ExitButton {...exitButtonUI.props} className="mt-4">
-                    Exit
-                  </ExitButton>
-                </Fragment>
+                <CreateMockUpFirstStepWizard />
               }
             </MockUpSettingsWizardLayout>
           }
@@ -129,4 +60,4 @@ export default function Page(): React.JSX.Element {
       </WideWrapperLayout>
     </main>
   );
-}
+});

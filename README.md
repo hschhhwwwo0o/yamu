@@ -26,6 +26,8 @@ A unique identifier is created for each requirement. At the stage of code writin
 
 The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
 
+![Example](./md/FigmaPreview2.png)
+
 ### 3. Module development
 
 The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. _Each module performs only one task and should not interact with other modules in any way_.

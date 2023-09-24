@@ -8,12 +8,40 @@ import { TabletDevice } from "./entities/Device/Tablet.js";
 export interface MockUpInterface {
   device: PhoneDevice | WatchDevice | TabletDevice;
   insertedImage: string | undefined;
+  renderData: {
+    frameWidth: number;
+    frameHeight: number;
+    frameImage: string;
+    insertedImage: string;
+    paddingsInPercents: {
+      top: number;
+      left: number;
+      bottom: number;
+      right: number;
+    };
+    borderRadius: number;
+    isBW: boolean;
+  };
 }
 
 class MockUpGenerator {
   public mockUp: MockUpInterface = {
     device: new PhoneDevice("iPhone 13"),
     insertedImage: undefined,
+    renderData: {
+      frameWidth: 0,
+      frameHeight: 0,
+      frameImage: "",
+      borderRadius: 0,
+      insertedImage: "",
+      isBW: false,
+      paddingsInPercents: {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        top: 0,
+      },
+    },
   };
 
   /**
@@ -52,15 +80,18 @@ class MockUpGenerator {
 
     switch (_type) {
       case "phone":
-        this.mockUp.device = new PhoneDevice(deviceName);
+        this.mockUp.device = await new PhoneDevice(deviceName);
+        this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
       case "watch":
-        this.mockUp.device = new WatchDevice(deviceName);
+        this.mockUp.device = await new WatchDevice(deviceName);
+        this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
       case "tablet":
-        this.mockUp.device = new TabletDevice(deviceName);
+        this.mockUp.device = await new TabletDevice(deviceName);
+        this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
       default:
@@ -82,6 +113,7 @@ class MockUpGenerator {
       throw "Image is not provided";
     }
     this.mockUp.insertedImage = image;
+    this.mockUp.renderData = this._generateRenderData();
 
     return this.mockUp;
   }
@@ -96,16 +128,16 @@ class MockUpGenerator {
   public clearMockUp(): MockUpInterface {
     this.mockUp.device = new PhoneDevice("iPhone 13");
     this.mockUp.insertedImage = undefined;
+    this.mockUp.renderData = this._generateRenderData();
 
     return this.mockUp;
   }
 
   /**
    * Generates an object for rendering
-   *
    * @returns Render data object
    */
-  public generateRenderData() {
+  private _generateRenderData() {
     const _mockUp = this.mockUp;
     const _renderData = {
       frameWidth: _mockUp.device.frame.width,

@@ -26,14 +26,13 @@ export default observer(function Page(): React.JSX.Element {
     );
   }, []);
 
+  const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
+  const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      await CreateMockUpScreenStore?.mockUpGenerator?.selectDevice(
-        "Apple Watch Ultra",
-      );
-      const _renderData =
-        CreateMockUpScreenStore?.mockUpGenerator?.generateRenderData();
-      CreateMockUpScreenStore?.mockUpHTMLRenderer?.render(_renderData);
+      await mockUpGenerator?.selectDevice("Apple Watch Ultra");
+      mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
     })();
   }, []);
 

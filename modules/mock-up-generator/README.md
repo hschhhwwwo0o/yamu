@@ -31,7 +31,6 @@ The module has 4 methods:
 - _insertImage_ - Inserts an image into a mock-up. Accepts a base64 string as an argument;
 - _clear_ - Resets the mock-up to default settings. Doesn't accept arguments;
 - _getDevicesLibrary_ - Return affordable devices. Doesn't accept arguments;
-- _generateRenderData_ - Generates an object for rendering;
 
 Example:
 
@@ -41,7 +40,6 @@ const mockUpGenerator = new MockUpGenerator();
 const devicesLibrary = await mockUpGenerator.getDevicesLibrary();
 
 await mockUpGenerator.selectDevice("iPhone 13");
-const renderData = mockUpGenerator.generateRenderData();
 mockUpGenerator.insertImage(base64);
 mockUpGenerator.clearMockUp();
 ```

@@ -12,6 +12,9 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpFirstStepWizard() {
+  const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
+  const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+
   const deviceTypeSelectUI = useSelect({
     options: [
       { label: "Phone", value: "phone" },
@@ -26,7 +29,7 @@ export function _CreateMockUpFirstStepWizard() {
 
   const devicesModelsSelectUI = useSelect({
     options:
-      CreateMockUpScreenStore?.mockUpGenerator
+      mockUpGenerator
         ?.getDevicesLibrary()
         .filter(function _filterByType(_device) {
           return _device.type === deviceTypeSelectUI.props.value?.value;
@@ -40,12 +43,8 @@ export function _CreateMockUpFirstStepWizard() {
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
       (async function _selectDeviceAndRender() {
-        await CreateMockUpScreenStore?.mockUpGenerator?.selectDevice(
-          _option?.label,
-        );
-        const _renderData =
-          CreateMockUpScreenStore?.mockUpGenerator?.generateRenderData();
-        CreateMockUpScreenStore?.mockUpHTMLRenderer?.render(_renderData);
+        await mockUpGenerator?.selectDevice(_option?.label);
+        mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
       })();
     },
   });

@@ -22,6 +22,14 @@ export class HTMLRenderer {
   public render(renderData: RenderData): void {
     this._clearDOMContainer();
 
+    if (renderData.frameWidth === 0 && renderData.frameHeight === 0) {
+      console.warn(
+        "No rendering has been done. `renderData` is specified incorrectly",
+        renderData,
+      );
+      return;
+    }
+
     console.log("Rendering...", renderData);
 
     const _canvas = this._createCanvasDOMElement(renderData);

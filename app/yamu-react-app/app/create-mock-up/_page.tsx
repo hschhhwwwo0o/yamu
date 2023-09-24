@@ -31,7 +31,7 @@ export default observer(function Page(): React.JSX.Element {
 
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      await mockUpGenerator?.selectDevice("Apple Watch Ultra");
+      await mockUpGenerator?.selectDevice("");
       mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
     })();
   }, []);

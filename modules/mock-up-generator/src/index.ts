@@ -1,7 +1,7 @@
 import { PhoneDevice } from "./entities/Device/Phone.js";
 import { WatchDevice } from "./entities/Device/Watch.js";
 
-import { DeviceLibraryItem, DeviceType } from "./types/DeviceType.js";
+import { DeviceLibraryItem } from "./types/DeviceType.js";
 import { DevicesLibraryManager } from "./entities/DevicesLibrary/DevicesLibrary.js";
 import { TabletDevice } from "./entities/Device/Tablet.js";
 
@@ -67,18 +67,23 @@ class MockUpGenerator {
    * @returns New state of the mockup
    */
   public async selectDevice(
-    deviceName: string = "iPhone 13",
-  ): Promise<MockUpInterface> {
+    deviceName: string = "",
+  ): Promise<MockUpInterface | undefined> {
+    /** Clear inserted image */
     this.mockUp.insertedImage = undefined;
 
     const _devicesLibrary = await this.getDevicesLibrary();
-    const _type: DeviceType | undefined = _devicesLibrary.find(
-      function _findDeviceByName(_deviceLibraryItem) {
+    const _deviceLibraryItem: DeviceLibraryItem | undefined =
+      _devicesLibrary.find(function _findDeviceByName(_deviceLibraryItem) {
         return _deviceLibraryItem.name === deviceName;
-      },
-    )?.type;
+      });
 
-    switch (_type) {
+    if (_deviceLibraryItem === undefined) {
+      console.warn("Device is not selected");
+      return;
+    }
+
+    switch (_deviceLibraryItem?.type) {
       case "phone":
         this.mockUp.device = await new PhoneDevice(deviceName);
         this.mockUp.renderData = this._generateRenderData();

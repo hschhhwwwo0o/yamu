@@ -29,6 +29,10 @@ export default observer(function Page(): React.JSX.Element {
   const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
   const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
 
+  /**
+   * @requirement UF/MOCK-UP/DEVICE-SELECT
+   * @requirement UF/MOCK-UP/VIEW
+   */
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
       await mockUpGenerator?.selectDevice("");

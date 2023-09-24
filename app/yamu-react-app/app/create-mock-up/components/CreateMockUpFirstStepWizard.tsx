@@ -42,6 +42,10 @@ export function _CreateMockUpFirstStepWizard() {
         }) || [],
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
+      /**
+       * @requirement UF/MOCK-UP/DEVICE-SELECT
+       * @requirement UF/MOCK-UP/VIEW
+       */
       (async function _selectDeviceAndRender() {
         await mockUpGenerator?.selectDevice(_option?.label);
         mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);

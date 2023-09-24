@@ -85,7 +85,7 @@ function Button({
             name={children}
             title={setTitle()}
             onClick={_onClick}
-            className="rounded-xl bg-brand-blue transition-all hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[400px] font-semibold flex items-center justify-center text-white"
+            className="rounded-xl hover:opacity-90 bg-brand-blue transition-all duration-300 hover:shadow-md shadow-brand-blue w-full py-[10px] md:max-w-[400px] font-semibold flex items-center justify-center text-white"
           >
             {status === "loading" && (loadingText || children)}
             {status === "disabled" && (disabledText || children)}

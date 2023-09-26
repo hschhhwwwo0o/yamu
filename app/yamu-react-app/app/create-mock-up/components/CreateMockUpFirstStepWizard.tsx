@@ -47,7 +47,7 @@ export function _CreateMockUpFirstStepWizard() {
        */
       (async function _selectDeviceAndRender() {
         const _mockUpData = await mockUpGenerator?.selectDevice(_option?.label);
-        mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
       })();
     },
   });

@@ -39,8 +39,8 @@ export default observer(function Page(): React.JSX.Element {
    */
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      const _mockUpData = await mockUpGenerator?.selectDevice("");
-      mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+      const _mockUpData = await mockUpGenerator?.selectDevice();
+      await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
     })();
   }, []);
 

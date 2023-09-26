@@ -12,8 +12,8 @@ import { ExitButton } from "@/components/form/ExitButton";
 import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
 
 export function _CreateMockUpSecondStepWizard() {
-  const mockUpGenerator = CMSS?.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
 
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {

@@ -12,8 +12,8 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpFirstStepWizard() {
-  const mockUpGenerator = CMSS?.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
 
   const deviceTypeSelectUI = useSelect({
     options: [

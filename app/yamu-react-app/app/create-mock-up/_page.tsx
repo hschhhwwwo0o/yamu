@@ -26,8 +26,8 @@ export default observer(function Page(): React.JSX.Element {
     return CMSS.initializeMockUpHTMLRenderer("mock-up-container");
   }, []);
 
-  const mockUpGenerator = CMSS?.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
 
   const wizardActiveStep = CMSS?.wizardActiveStep;
 

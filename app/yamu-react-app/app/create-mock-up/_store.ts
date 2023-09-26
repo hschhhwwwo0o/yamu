@@ -5,8 +5,13 @@ import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
 import { MockUpGenerator } from "@module/mock-up-generator";
 
 class _CreateMockUpScreenStore {
-  public mockUpGenerator: MockUpGenerator | undefined;
-  public mockUpHTMLRenderer: MockUpHTMLRenderer | undefined;
+  public modules: {
+    mockUpGenerator: MockUpGenerator | undefined;
+    mockUpHTMLRenderer: MockUpHTMLRenderer | undefined;
+  } = {
+    mockUpGenerator: undefined,
+    mockUpHTMLRenderer: undefined,
+  };
 
   public wizardActiveStep = 1;
 
@@ -16,7 +21,7 @@ class _CreateMockUpScreenStore {
 
   public initializeMockUpGenerator(): MockUpGenerator {
     const _mockUpGenerator = new MockUpGenerator();
-    this.mockUpGenerator = _mockUpGenerator;
+    this.modules.mockUpGenerator = _mockUpGenerator;
     return _mockUpGenerator;
   }
 
@@ -24,7 +29,7 @@ class _CreateMockUpScreenStore {
     const _mockUpHTMLRenderer = new MockUpHTMLRenderer(containerId, {
       heightInaccuracy: 70,
     });
-    this.mockUpHTMLRenderer = _mockUpHTMLRenderer;
+    this.modules.mockUpHTMLRenderer = _mockUpHTMLRenderer;
     return _mockUpHTMLRenderer;
   }
 

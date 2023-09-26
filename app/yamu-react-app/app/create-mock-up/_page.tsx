@@ -39,8 +39,8 @@ export default observer(function Page(): React.JSX.Element {
    */
   useLayoutEffect(function _firstRenderMockUpEffect(): void {
     (async function () {
-      await mockUpGenerator?.selectDevice("");
-      mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
+      const _mockUpData = await mockUpGenerator?.selectDevice("");
+      mockUpHTMLRenderer?.render(_mockUpData?.renderData);
     })();
   }, []);
 
@@ -57,18 +57,9 @@ export default observer(function Page(): React.JSX.Element {
           {
             /** Mock-up settings wizard (Right side) */
             <MockUpSettingsWizardLayout>
-              {
-                /** First step */
-                wizardActiveStep === 1 && <CreateMockUpFirstStepWizard />
-              }
-              {
-                /** First step */
-                wizardActiveStep === 2 && <CreateMockUpSecondStepWizard />
-              }
-              {
-                /** First step */
-                wizardActiveStep === 3 && <CreateMockUpThirdStepWizard />
-              }
+              {wizardActiveStep === 1 && <CreateMockUpFirstStepWizard />}
+              {wizardActiveStep === 2 && <CreateMockUpSecondStepWizard />}
+              {wizardActiveStep === 3 && <CreateMockUpThirdStepWizard />}
             </MockUpSettingsWizardLayout>
           }
         </CreateMockUpScreenLayout>

@@ -18,13 +18,13 @@ export function _CreateMockUpSecondStepWizard() {
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {
       (async function _insertImageAndReRender() {
-        const mockUpData = await mockUpGenerator?.insertImage(value);
-        await mockUpHTMLRenderer?.render(mockUpData?.renderData);
+        const _mockUpData = await mockUpGenerator?.insertImage(value);
+        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
       })();
     },
   });
 
-  const firstStepNextButtonUI = useButton({
+  const nextButtonUI = useButton({
     disabledText: "Select the device to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
@@ -47,7 +47,7 @@ export function _CreateMockUpSecondStepWizard() {
         className="mt-6"
       />
       <Button
-        {...firstStepNextButtonUI.props}
+        {...nextButtonUI.props}
         className="mt-8"
         label="Don't be afraid to move on to the next step - you can always come back to this step"
       >

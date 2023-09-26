@@ -46,13 +46,13 @@ export function _CreateMockUpFirstStepWizard() {
        * @requirement UF/MOCK-UP/VIEW
        */
       (async function _selectDeviceAndRender() {
-        const mockUpData = await mockUpGenerator?.selectDevice(_option?.label);
-        mockUpHTMLRenderer?.render(mockUpData?.renderData);
+        const _mockUpData = await mockUpGenerator?.selectDevice(_option?.label);
+        mockUpHTMLRenderer?.render(_mockUpData?.renderData);
       })();
     },
   });
 
-  const firstStepNextButtonUI = useButton({
+  const nextButtonUI = useButton({
     disabledText: "Select the device to continue",
     isDisabled: devicesModelsSelectUI.props.value === undefined,
     onClick() {
@@ -82,7 +82,7 @@ export function _CreateMockUpFirstStepWizard() {
           label="Select the model of device you want"
         />
         <Button
-          {...firstStepNextButtonUI.props}
+          {...nextButtonUI.props}
           className="mt-8"
           label="Don't be afraid to move on to the next step - you can always come back to this step"
         >

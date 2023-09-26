@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
+import React, { useLayoutEffect, useMemo } from "react";
 
 /** Connect to store */
-import { observer } from "mobx-react-lite";
 import { CreateMockUpScreenStore as CMSS } from "./_store";
 
 /** Layouts */
@@ -13,33 +12,15 @@ import { MockUpSettingsWizardLayout } from "./layouts/MockUpSettingsWizardLayout
 import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
 
 /** Components */
-import { CreateMockUpFirstStepWizard } from "./components/CreateMockUpFirstStepWizard";
-import { CreateMockUpSecondStepWizard } from "./components/CreateMockUpSecondStepWizard";
-import { CreateMockUpThirdStepWizard } from "./components/CreateMockUpThirdStepWizard";
+import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
 
-export default observer(function Page(): React.JSX.Element {
-  useMemo(function _initializeMockUpGeneratorModule() {
-    return CMSS.initializeMockUpGenerator();
+export default function Page(): React.JSX.Element {
+  useMemo(function _initializeModules() {
+    CMSS.initializeMockUpGenerator();
+    CMSS.initializeMockUpHTMLRenderer("mock-up-container");
   }, []);
 
-  useMemo(function _initializeMockUpRendererModule() {
-    return CMSS.initializeMockUpHTMLRenderer("mock-up-container");
-  }, []);
-
-  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
-
-  const wizardActiveStep = CMSS?.wizardActiveStep;
-
-  /**
-   * @requirement UF/MOCK-UP/DEVICE-SELECT
-   * @requirement UF/MOCK-UP/VIEW
-   */
-  useEffect(function _firstRenderMockUpEffect() {
-    (async function () {
-      const _mockUpData = await mockUpGenerator?.selectDevice();
-      await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
-    })();
+  useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose() {
       CMSS.toDefaultWizardStep();
     };
@@ -58,13 +39,11 @@ export default observer(function Page(): React.JSX.Element {
           {
             /** Mock-up settings wizard (Right side) */
             <MockUpSettingsWizardLayout>
-              {wizardActiveStep === 1 && <CreateMockUpFirstStepWizard />}
-              {wizardActiveStep === 2 && <CreateMockUpSecondStepWizard />}
-              {wizardActiveStep === 3 && <CreateMockUpThirdStepWizard />}
+              <MockUpSettingsWizard />
             </MockUpSettingsWizardLayout>
           }
         </CreateMockUpScreenLayout>
       </WideWrapperLayout>
     </main>
   );
-});
+}

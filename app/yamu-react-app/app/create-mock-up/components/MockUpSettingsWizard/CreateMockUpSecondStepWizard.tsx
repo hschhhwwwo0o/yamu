@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../_store";
+import { CreateMockUpScreenStore as CMSS } from "../../_store";
 
 /** Components */
 import { H2 } from "@/components/text/H2";

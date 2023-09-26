@@ -24,7 +24,7 @@ export function UploadImage({
   setValue = () => undefined,
   onChange = () => undefined,
 }: UploadImagePropsInterface) {
-  function _onChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function _onChange(event: React.ChangeEvent<HTMLInputElement>): void {
     if (event?.target?.files?.length) {
       const imageUrl = URL.createObjectURL(event?.target?.files[0]);
       onChange(imageUrl);
@@ -69,7 +69,7 @@ export function UploadImage({
             ) : (
               <Fragment>
                 <img
-                  className="block h-full max-h-[130px]"
+                  className="block h-full max-h-[130px] rounded-sm"
                   src={value}
                   alt=""
                 />

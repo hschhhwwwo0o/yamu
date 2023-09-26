@@ -38,6 +38,9 @@ Example:
 const mockUpGenerator = new MockUpGenerator();
 
 const devicesLibrary = await mockUpGenerator.getDevicesLibrary();
+const devicesLibrary = await mockUpGenerator.getDevicesLibrary({
+  type: "phone",
+});
 
 await mockUpGenerator.selectDevice("iPhone 13");
 mockUpGenerator.insertImage(base64);

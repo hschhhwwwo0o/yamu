@@ -30,9 +30,8 @@ export function _CreateMockUpFirstStepWizard() {
   const devicesModelsSelectUI = useSelect({
     options:
       mockUpGenerator
-        ?.getDevicesLibrary()
-        .filter(function _filterByType(_device) {
-          return _device.type === deviceTypeSelectUI.props.value?.value;
+        ?.getDevicesLibrary({
+          type: deviceTypeSelectUI.props.value?.value,
         })
         .map(function _formatToOption(_device) {
           return {

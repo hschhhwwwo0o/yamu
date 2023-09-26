@@ -43,7 +43,7 @@ export function UploadImage({
           )}
         </span>
         <span className="block transition-opacity duration-300 hover:opacity-80">
-          <span className="flex cursor-pointer w-full max-w-sm h-36 border-dashed border-[1px] dark:border-light-default-border rounded-2xl items-center justify-center">
+          <span className="flex cursor-pointer w-full max-w-sm h-36 border-dashed border-[1px] border-dark-default-border dark:border-light-default-border rounded-2xl items-center justify-center">
             {value === "" || value === undefined ? (
               <Fragment>
                 <svg
@@ -55,7 +55,7 @@ export function UploadImage({
                 >
                   <g clipPath="url(#clip0_586_620)">
                     <path
-                      className="dark:fill-light-default-border"
+                      className="fill-dark-default-border dark:fill-light-default-border"
                       d="M20.4195 0H7.08301C4.73984 0 2.83301 1.90683 2.83301 4.25V34H31.1663V10.7468L20.4195 0ZM21.2497 4.8365L26.3298 9.91667H21.2497V4.8365ZM28.333 31.1667H5.66634V4.25C5.66634 3.46942 6.30242 2.83333 7.08301 2.83333H18.4163V12.75H28.333V31.1667ZM18.9915 16.4064L23.6651 21.08L21.6619 23.0832L18.4163 19.8376V28.3333H15.583V19.822L12.3374 23.0832L10.3343 21.08L15.0064 16.4064C16.1043 15.3099 17.8936 15.3085 18.9901 16.4064H18.9915Z"
                     />
                   </g>

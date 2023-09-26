@@ -8,8 +8,15 @@ class WatchDevice extends Device {
     isStrap: true,
   };
 
-  constructor(name: string = "") {
+  private _onSettingsChange: () => void;
+
+  constructor(name: string = "", onSettingsChange?: () => void) {
     super(name);
+    if (onSettingsChange) {
+      this._onSettingsChange = onSettingsChange;
+    } else {
+      this._onSettingsChange = () => undefined;
+    }
   }
 
   /**
@@ -26,16 +33,22 @@ class WatchDevice extends Device {
   public changeSettings(settings: WatchSettings): WatchSettings | undefined {
     this._setSettingsState(settings);
 
-    this.frame.filters.bw = settings.isBW || false;
+    this.frame.filters.bw = settings.isBW || this.settings.isBW || false;
 
     if (settings.isStrap === false) {
       this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
+      this._onSettingsChange();
       return this.settings;
     }
     if (settings.isStrap === true) {
       this.frame.image = this._deviceLibraryItem?.frameImages.withStrap || "";
+      this._onSettingsChange();
       return this.settings;
     }
+
+    this._onSettingsChange();
+
+    return this.settings;
   }
 
   /**

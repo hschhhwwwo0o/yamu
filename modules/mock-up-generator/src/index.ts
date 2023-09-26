@@ -90,17 +90,23 @@ class MockUpGenerator {
 
     switch (_deviceLibraryItem?.type) {
       case "phone":
-        this.mockUp.device = await new PhoneDevice(deviceName);
+        this.mockUp.device = await new PhoneDevice(deviceName, () => {
+          this.mockUp.renderData = this._generateRenderData();
+        });
         this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
       case "watch":
-        this.mockUp.device = await new WatchDevice(deviceName);
+        this.mockUp.device = await new WatchDevice(deviceName, () => {
+          this.mockUp.renderData = this._generateRenderData();
+        });
         this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
       case "tablet":
-        this.mockUp.device = await new TabletDevice(deviceName);
+        this.mockUp.device = await new TabletDevice(deviceName, () => {
+          this.mockUp.renderData = this._generateRenderData();
+        });
         this.mockUp.renderData = this._generateRenderData();
         return this.mockUp;
 
@@ -136,7 +142,7 @@ class MockUpGenerator {
    * @returns New state of the mockup
    */
   public clearMockUp(): MockUpInterface {
-    this.mockUp.device = new PhoneDevice("iPhone 13");
+    this.mockUp.device = new PhoneDevice("");
     this.mockUp.insertedImage = undefined;
     this.mockUp.renderData = this._generateRenderData();
 

@@ -9,8 +9,15 @@ class TabletDevice extends Device {
     theme: "light",
   };
 
-  constructor(name: string = "") {
+  private _onSettingsChange: () => void;
+
+  constructor(name: string = "", onSettingsChange: () => void) {
     super(name);
+    if (onSettingsChange) {
+      this._onSettingsChange = onSettingsChange;
+    } else {
+      this._onSettingsChange = () => undefined;
+    }
   }
 
   /**
@@ -29,27 +36,32 @@ class TabletDevice extends Device {
   public changeSettings(settings: TabletSettings): TabletSettings | undefined {
     this._setSettingsState(settings);
 
+    this.frame.filters.bw = settings.isBW || this.settings.isBW || false;
+
     if (settings.isSystemBar === false) {
       this.frame.image = this._deviceLibraryItem?.frameImages.default || "";
+      this._onSettingsChange();
       return this.settings;
     }
-
-    this.frame.filters.bw = settings.isBW || false;
 
     if (settings.isSystemBar === true) {
       if (settings.theme === "dark" || settings.theme === undefined) {
         this.frame.image =
           this._deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
+        this._onSettingsChange();
         return this.settings;
       }
       if (settings.theme === "light") {
         this.frame.image =
           this._deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
+        this._onSettingsChange();
         return this.settings;
       }
     }
 
-    return;
+    this._onSettingsChange();
+
+    return this.settings;
   }
 
   /**

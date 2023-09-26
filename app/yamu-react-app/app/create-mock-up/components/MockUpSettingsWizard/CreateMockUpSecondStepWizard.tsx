@@ -25,7 +25,7 @@ export function _CreateMockUpSecondStepWizard() {
   });
 
   const nextButtonUI = useButton({
-    disabledText: "Select the device to continue",
+    disabledText: "Select the image to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
       CMSS.nextWizardStep();

@@ -24,7 +24,7 @@ export function _CreateMockUpSecondStepWizard() {
     },
   });
 
-  const nextButtonUI = useButton({
+  const secondStepNextButton = useButton({
     disabledText: "Select the image to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
@@ -47,7 +47,7 @@ export function _CreateMockUpSecondStepWizard() {
         className="mt-6"
       />
       <Button
-        {...nextButtonUI.props}
+        {...secondStepNextButton.props}
         className="mt-8"
         label="Don't be afraid to move on to the next step - you can always come back to this step"
       >

@@ -56,7 +56,7 @@ export function _CreateMockUpFirstStepWizard() {
     },
   });
 
-  const nextButtonUI = useButton({
+  const firstStepNextButtonUI = useButton({
     disabledText: "Select the device to continue",
     isDisabled: devicesModelsSelectUI.props.value === undefined,
     onClick() {
@@ -86,7 +86,7 @@ export function _CreateMockUpFirstStepWizard() {
           label="Select the model of device you want"
         />
         <Button
-          {...nextButtonUI.props}
+          {...firstStepNextButtonUI.props}
           className="mt-8"
           label="Don't be afraid to move on to the next step - you can always come back to this step"
         >

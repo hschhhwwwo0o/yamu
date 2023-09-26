@@ -11,7 +11,7 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpThirdStepWizard() {
-  const nextButtonUI = useButton({
+  const thirdStepNextButtonUI = useButton({
     onClick() {
       CMSS.nextWizardStep();
     },
@@ -26,7 +26,7 @@ export function _CreateMockUpThirdStepWizard() {
       <Label>Third step</Label>
       <H2>Settings</H2>
       <Button
-        {...nextButtonUI.props}
+        {...thirdStepNextButtonUI.props}
         className="mt-8"
         label="Don't be afraid to move on to the next step - you can always come back to this step"
       >

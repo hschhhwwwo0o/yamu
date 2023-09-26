@@ -10,10 +10,10 @@ import { Label } from "@/components/text/Label";
 import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 
-export function _CreateMockUpThirdStepWizard() {
+export function _CreateMockUpFourStepWizard() {
   const nextButtonUI = useButton({
     onClick() {
-      CMSS.nextWizardStep();
+      CMSS.modules.mockUpHTMLRenderer?.download("png");
     },
   });
 
@@ -23,14 +23,10 @@ export function _CreateMockUpThirdStepWizard() {
 
   return (
     <Fragment>
-      <Label>Third step</Label>
-      <H2>Settings</H2>
-      <Button
-        {...nextButtonUI.props}
-        className="mt-8"
-        label="Don't be afraid to move on to the next step - you can always come back to this step"
-      >
-        Next
+      <Label>Four step</Label>
+      <H2>Download result</H2>
+      <Button {...nextButtonUI.props} className="mt-8">
+        Download
       </Button>
       <ExitButton {...exitButtonUI.props} className="mt-4">
         Exit
@@ -39,6 +35,4 @@ export function _CreateMockUpThirdStepWizard() {
   );
 }
 
-export const CreateMockUpThirdStepWizard = observer(
-  _CreateMockUpThirdStepWizard,
-);
+export const CreateMockUpFourStepWizard = observer(_CreateMockUpFourStepWizard);

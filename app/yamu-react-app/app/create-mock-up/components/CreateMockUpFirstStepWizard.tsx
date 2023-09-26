@@ -46,8 +46,8 @@ export function _CreateMockUpFirstStepWizard() {
        * @requirement UF/MOCK-UP/VIEW
        */
       (async function _selectDeviceAndRender() {
-        await mockUpGenerator?.selectDevice(_option?.label);
-        mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
+        const mockUpData = await mockUpGenerator?.selectDevice(_option?.label);
+        mockUpHTMLRenderer?.render(mockUpData?.renderData);
       })();
     },
   });

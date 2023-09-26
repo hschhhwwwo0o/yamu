@@ -18,8 +18,8 @@ export function _CreateMockUpSecondStepWizard() {
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {
       (async function _insertImageAndReRender() {
-        await mockUpGenerator?.insertImage(value);
-        await mockUpHTMLRenderer?.render(mockUpGenerator?.mockUp.renderData);
+        const mockUpData = await mockUpGenerator?.insertImage(value);
+        await mockUpHTMLRenderer?.render(mockUpData?.renderData);
       })();
     },
   });

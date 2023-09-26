@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useLayoutEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore } from "./_store";
+import { CreateMockUpScreenStore as CMSS } from "./_store";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -19,29 +19,30 @@ import { CreateMockUpThirdStepWizard } from "./components/CreateMockUpThirdStepW
 
 export default observer(function Page(): React.JSX.Element {
   useMemo(function _initializeMockUpGeneratorModule() {
-    return CreateMockUpScreenStore.initializeMockUpGenerator();
+    return CMSS.initializeMockUpGenerator();
   }, []);
 
   useMemo(function _initializeMockUpRendererModule() {
-    return CreateMockUpScreenStore.initializeMockUpHTMLRenderer(
-      "mock-up-container",
-    );
+    return CMSS.initializeMockUpHTMLRenderer("mock-up-container");
   }, []);
 
-  const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
-  const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
 
-  const wizardActiveStep = CreateMockUpScreenStore?.wizardActiveStep;
+  const wizardActiveStep = CMSS?.wizardActiveStep;
 
   /**
    * @requirement UF/MOCK-UP/DEVICE-SELECT
    * @requirement UF/MOCK-UP/VIEW
    */
-  useLayoutEffect(function _firstRenderMockUpEffect(): void {
+  useEffect(function _firstRenderMockUpEffect() {
     (async function () {
       const _mockUpData = await mockUpGenerator?.selectDevice();
       await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
     })();
+    return function _onPageClose() {
+      CMSS.toDefaultWizardStep();
+    };
   }, []);
 
   return (

@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore } from "../_store";
+import { CreateMockUpScreenStore as CMSS } from "../_store";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -12,8 +12,8 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpFirstStepWizard() {
-  const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
-  const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
 
   const deviceTypeSelectUI = useSelect({
     options: [
@@ -56,7 +56,7 @@ export function _CreateMockUpFirstStepWizard() {
     disabledText: "Select the device to continue",
     isDisabled: devicesModelsSelectUI.props.value === undefined,
     onClick() {
-      CreateMockUpScreenStore.nextWizardStep();
+      CMSS.nextWizardStep();
     },
   });
 

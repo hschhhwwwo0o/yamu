@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore } from "../_store";
+import { CreateMockUpScreenStore as CMSS } from "../_store";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -12,8 +12,8 @@ import { ExitButton } from "@/components/form/ExitButton";
 import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
 
 export function _CreateMockUpSecondStepWizard() {
-  const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
-  const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+  const mockUpGenerator = CMSS?.mockUpGenerator;
+  const mockUpHTMLRenderer = CMSS?.mockUpHTMLRenderer;
 
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {
@@ -28,7 +28,7 @@ export function _CreateMockUpSecondStepWizard() {
     disabledText: "Select the device to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
-      CreateMockUpScreenStore.nextWizardStep();
+      CMSS.nextWizardStep();
     },
   });
 

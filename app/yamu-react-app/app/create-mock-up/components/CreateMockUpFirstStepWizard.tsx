@@ -23,7 +23,11 @@ export function _CreateMockUpFirstStepWizard() {
     ],
     onSelect() {
       /** Clearing the device model when changing the device type */
-      devicesModelsSelectUI.utils.clear();
+      (async function _clearingDeviceModel() {
+        devicesModelsSelectUI.utils.clear();
+        const _mockUpData = await mockUpGenerator?.selectDevice();
+        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+      })();
     },
   });
 

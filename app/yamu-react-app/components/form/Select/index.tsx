@@ -56,9 +56,9 @@ function Select({
             opacity: isDisabled === true ? "40%" : "100%",
             pointerEvents: isDisabled === true ? "none" : "auto",
           }}
-          className="block transition-opacity duration-300"
+          className="block transition-opacity duration-300 group"
         >
-          <span className="flex cursor-pointer flex-row justify-between items-center w-full pb-[10px] border-b-[1px] border-solid border-b-[#E5E5EA]">
+          <span className="flex transition-all duration-300 cursor-pointer flex-row justify-between items-center w-full pb-[10px] border-b-[1px] border-solid border-b-[#E5E5EA] border-opacity-80 group-hover:border-opacity-100">
             <span
               className="transition-opacity duration-500"
               style={{
@@ -67,7 +67,7 @@ function Select({
             >
               <Text>{value === undefined ? placeholder : value.label}</Text>
             </span>
-            <span>
+            <span className="block relative -left-1 group-hover:left-0 transition-all duration-300">
               <svg
                 width="14"
                 height="15"

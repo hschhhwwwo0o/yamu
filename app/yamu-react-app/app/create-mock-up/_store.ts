@@ -28,8 +28,12 @@ class _CreateMockUpScreenStore {
     return _mockUpHTMLRenderer;
   }
 
-  public nextStep(): void {
+  public nextWizardStep(): void {
     this.wizardActiveStep = this.wizardActiveStep + 1;
+  }
+
+  public toDefaultWizardStep() {
+    this.wizardActiveStep = 1;
   }
 }
 

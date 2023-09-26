@@ -56,7 +56,7 @@ export function _CreateMockUpFirstStepWizard() {
     disabledText: "Select the device to continue",
     isDisabled: devicesModelsSelectUI.props.value === undefined,
     onClick() {
-      CreateMockUpScreenStore.nextStep();
+      CreateMockUpScreenStore.nextWizardStep();
     },
   });
 

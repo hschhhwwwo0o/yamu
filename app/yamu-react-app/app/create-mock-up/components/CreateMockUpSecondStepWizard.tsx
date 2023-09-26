@@ -28,7 +28,7 @@ export function _CreateMockUpSecondStepWizard() {
     disabledText: "Select the device to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
-      CreateMockUpScreenStore.nextStep();
+      CreateMockUpScreenStore.nextWizardStep();
     },
   });
 

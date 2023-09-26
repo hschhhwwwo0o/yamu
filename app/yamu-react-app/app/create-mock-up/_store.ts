@@ -8,6 +8,8 @@ class _CreateMockUpScreenStore {
   public mockUpGenerator: MockUpGenerator | undefined;
   public mockUpHTMLRenderer: MockUpHTMLRenderer | undefined;
 
+  public wizardActiveStep = 1;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -24,6 +26,10 @@ class _CreateMockUpScreenStore {
     });
     this.mockUpHTMLRenderer = _mockUpHTMLRenderer;
     return _mockUpHTMLRenderer;
+  }
+
+  public nextStep(): void {
+    this.wizardActiveStep = this.wizardActiveStep + 1;
   }
 }
 

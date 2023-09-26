@@ -56,6 +56,9 @@ export function _CreateMockUpFirstStepWizard() {
   const firstStepNextButtonUI = useButton({
     disabledText: "Select the device to continue",
     isDisabled: devicesModelsSelectUI.props.value === undefined,
+    onClick() {
+      CreateMockUpScreenStore.nextStep();
+    },
   });
 
   const exitButtonUI = useButton({

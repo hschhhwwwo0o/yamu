@@ -14,6 +14,7 @@ import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
 
 /** Components */
 import { CreateMockUpFirstStepWizard } from "./components/CreateMockUpFirstStepWizard";
+import { CreateMockUpSecondStepWizard } from "./components/CreateMockUpSecondStepWizard";
 
 export default observer(function Page(): React.JSX.Element {
   useMemo(function _initializeMockUpGeneratorModule() {
@@ -28,6 +29,8 @@ export default observer(function Page(): React.JSX.Element {
 
   const mockUpGenerator = CreateMockUpScreenStore?.mockUpGenerator;
   const mockUpHTMLRenderer = CreateMockUpScreenStore?.mockUpHTMLRenderer;
+
+  const wizardActiveStep = CreateMockUpScreenStore?.wizardActiveStep;
 
   /**
    * @requirement UF/MOCK-UP/DEVICE-SELECT
@@ -55,7 +58,11 @@ export default observer(function Page(): React.JSX.Element {
             <MockUpSettingsWizardLayout>
               {
                 /** First step */
-                <CreateMockUpFirstStepWizard />
+                wizardActiveStep === 1 && <CreateMockUpFirstStepWizard />
+              }
+              {
+                /** First step */
+                wizardActiveStep === 2 && <CreateMockUpSecondStepWizard />
               }
             </MockUpSettingsWizardLayout>
           }

@@ -43,7 +43,7 @@ export function UploadImage({
           )}
         </span>
         <span className="block transition-opacity duration-300 hover:opacity-80">
-          <span className="flex cursor-pointer w-full max-w-sm h-36 border-dashed border-[1px] border-dark-default-border dark:border-light-default-border rounded-2xl items-center justify-center">
+          <span className="flex relative z-10 cursor-pointer w-full max-w-sm h-36 border-dashed border-[1px] border-dark-default-border dark:border-light-default-border rounded-2xl items-center justify-center">
             {value === "" || value === undefined ? (
               <Fragment>
                 <svg
@@ -77,7 +77,7 @@ export function UploadImage({
             )}
           </span>
           <label
-            className="block w-full max-w-sm h-36 -mt-36 cursor-pointer"
+            className="block w-full max-w-sm h-36 -mt-36 cursor-pointer relative z-20"
             htmlFor="select-image"
           >
             <input

@@ -5,7 +5,7 @@ class PhoneDevice extends Device {
   public readonly type = "phone";
   public settings: PhoneSettings = {
     isBW: false,
-    isSystemBar: true,
+    isSystemBar: false,
     theme: "light",
   };
 

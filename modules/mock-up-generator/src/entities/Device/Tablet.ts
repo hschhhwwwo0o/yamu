@@ -5,7 +5,7 @@ class TabletDevice extends Device {
   public readonly type = "tablet";
   public settings: TabletSettings = {
     isBW: false,
-    isSystemBar: true,
+    isSystemBar: false,
     theme: "light",
   };
 

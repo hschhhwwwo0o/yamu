@@ -64,7 +64,14 @@ function Select({
     }
   }, []);
 
-  value;
+  useEffect(
+    function _onValueClearedEffect() {
+      if (value === undefined) {
+        setInnerValue(undefined);
+      }
+    },
+    [value],
+  );
 
   return (
     <Fragment>

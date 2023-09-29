@@ -1,6 +1,12 @@
 "use client";
 
-import React, { Dispatch, Fragment, SetStateAction, useEffect } from "react";
+import React, {
+  Dispatch,
+  Fragment,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 
 /** Hook for working with the component */
 import { useSelect } from "./hook";
@@ -9,16 +15,16 @@ import { useSelect } from "./hook";
 import { Text } from "@/components/text/Text";
 import { Label } from "@/components/text/Label";
 
+export type SelectOption = { value: string; label: string } | undefined;
+
 interface SelectPropsInterface {
-  defaultValue?: { value: string; label: string } | undefined;
+  defaultValue?: SelectOption | undefined;
   placeholder?: string;
   label?: string;
-  options: { value: string; label: string }[];
-  value: { value: string; label: string } | undefined;
-  setValue: Dispatch<
-    SetStateAction<{ value: string; label: string } | undefined>
-  >;
-  onSelect?: (_option: { value: string; label: string } | undefined) => void;
+  options: SelectOption[];
+  value?: SelectOption | undefined;
+  setValue?: Dispatch<SetStateAction<SelectOption | undefined>>;
+  onSelect?: (_option: SelectOption | undefined) => void;
   isDisabled?: boolean;
   className?: string;
 }
@@ -26,7 +32,7 @@ interface SelectPropsInterface {
 function Select({
   options = [],
   value,
-  setValue,
+  setValue = () => undefined,
   placeholder = "Choose option...",
   defaultValue = undefined,
   label = undefined,
@@ -34,19 +40,31 @@ function Select({
   isDisabled = false,
   className = "",
 }: SelectPropsInterface) {
+  const [innerValue, setInnerValue] = useState<
+    | {
+        value: string;
+        label: string;
+      }
+    | undefined
+  >();
+
   function onChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const _option = options.find(function findSelectedOption(_option) {
-      return _option.value === event.target.value;
+      return _option?.value === event.target.value;
     });
     setValue(_option);
+    setInnerValue(_option);
     onSelect(_option);
   }
 
   useEffect(function setDefaultValue() {
     if (defaultValue) {
       setValue(defaultValue);
+      setInnerValue(defaultValue);
     }
   }, []);
+
+  value;
 
   return (
     <Fragment>
@@ -62,10 +80,16 @@ function Select({
             <span
               className="transition-opacity duration-500"
               style={{
-                opacity: value === undefined ? "50%" : "100%",
+                opacity: innerValue === undefined ? "50%" : "100%",
               }}
             >
-              <Text>{value === undefined ? placeholder : value.label}</Text>
+              <Text>
+                {innerValue === undefined
+                  ? placeholder
+                  : `${innerValue.label
+                      .charAt(0)
+                      .toUpperCase()}${innerValue.label.slice(1)}`}
+              </Text>
             </span>
             <span className="block relative -left-1 group-hover:left-0 transition-all duration-300">
               <svg
@@ -89,8 +113,10 @@ function Select({
             <option value={""}>Not selected</option>
             {options.map(function renderOption(_option) {
               return (
-                <option key={_option.value} value={_option.value}>
-                  {_option.label}
+                <option key={_option?.value} value={_option?.value}>
+                  {`${_option?.label
+                    .charAt(0)
+                    .toUpperCase()}${_option?.label.slice(1)}`}
                 </option>
               );
             })}

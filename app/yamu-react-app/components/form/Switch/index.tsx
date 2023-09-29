@@ -18,6 +18,7 @@ import { Text } from "@/components/text/Text";
 interface SwitchPropsInterface {
   value?: boolean;
   setValue?: Dispatch<SetStateAction<boolean>>;
+  onNewValueSet?: (newValue: boolean) => void;
   title?: string;
   label?: string;
 }
@@ -27,6 +28,7 @@ function Switch({
   setValue = () => undefined,
   title = undefined,
   label = undefined,
+  onNewValueSet = () => undefined,
 }: SwitchPropsInterface) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -35,6 +37,12 @@ function Switch({
   }, []);
 
   function toggle(): void {
+    if (isActive === true) {
+      onNewValueSet(false);
+    }
+    if (isActive === false) {
+      onNewValueSet(true);
+    }
     setValue(!isActive);
     setIsActive(!isActive);
   }
@@ -65,10 +73,11 @@ function Switch({
             name={title || label}
             title={title || label}
             onClick={toggle}
-            style={{
-              backgroundColor: isActive ? "#34C759" : "#E9E9EB",
-            }}
-            className="w-[51px] h-[31px] rounded-full p-[2px] transition-all duration-300"
+            className={`w-[51px] h-[31px] rounded-full p-[2px] transition-all duration-300 ${
+              isActive
+                ? "bg-[#34C759]"
+                : "bg-[#E9E9EB] dark:bg-dark-default-border"
+            }`}
           >
             <span
               style={{

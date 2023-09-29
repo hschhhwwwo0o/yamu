@@ -11,13 +11,13 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpFourStepWizard() {
-  const fourStepNextButtonUI = useButton({
-    /** @requirement UF/MOCK-UP/DOWNLOAD */
+  const downloadButtonUI = useButton({
     loadingText: "Downloading...",
-    async onClick() {
-      fourStepNextButtonUI.utils.startLoading();
-      await CMSS.modules.mockUpHTMLRenderer?.download("png");
-      fourStepNextButtonUI.utils.toDefaultStatus();
+    disabledText: "Successfully downloaded",
+    /** @requirement UF/MOCK-UP/DOWNLOAD */
+    onClick() {
+      CMSS.modules.mockUpHTMLRenderer?.download("png");
+      downloadButtonUI.utils.disable();
     },
   });
 
@@ -30,7 +30,7 @@ export function _CreateMockUpFourStepWizard() {
       <Label>Four step</Label>
       <H2>Download result</H2>
       <Button
-        {...fourStepNextButtonUI.props}
+        {...downloadButtonUI.props}
         label="The image will be downloaded in PNG format. Thank you for using our service"
         className="mt-8"
       >

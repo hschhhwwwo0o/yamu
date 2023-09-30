@@ -21,7 +21,7 @@ export default function Page(): React.JSX.Element {
   }, []);
 
   useLayoutEffect(function _onPageCloseEffect() {
-    return function _onPageClose() {
+    return function _onPageClose(): void {
       CMSS.toDefaultWizardStep();
     };
   }, []);

@@ -43,9 +43,11 @@ function Select({
   const [innerValue, setInnerValue] = useState<SelectOption>();
 
   function onChange(event: React.ChangeEvent<HTMLSelectElement>): void {
-    const _option = options.find(function findSelectedOption(_option) {
-      return _option?.value === event.target.value;
-    });
+    const _option: SelectOption = options.find(
+      function findSelectedOption(_option) {
+        return _option?.value === event.target.value;
+      },
+    );
     setValue(_option);
     setInnerValue(_option);
     onSelect(_option);

@@ -16,16 +16,16 @@ export function FeedbackForm() {
     loadingText: "Creating feedback...",
     isDisabled: feedbackTextareaUI.props.value.length < 5,
 
+    /**
+     * Sending feedback
+     * @requirement UF/FEEDBACK/CREATE
+     */
     onClick: async function _createFeedback(): Promise<void> {
       try {
         {
           createFeedbackButtonUI.utils.startLoading();
           feedbackTextareaUI.utils.disableInput();
         }
-        /**
-         * Sending feedback
-         * @requirement UF/FEEDBACK/CREATE
-         */
         {
           const _feedbackCreatorModule = new FeedbackCreator();
           await _feedbackCreatorModule.createFeedback(

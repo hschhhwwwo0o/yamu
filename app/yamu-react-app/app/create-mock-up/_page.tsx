@@ -15,7 +15,7 @@ import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
 import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
 
 export default function Page(): React.JSX.Element {
-  useMemo(function _initializeModules() {
+  useMemo(function _initializeModules(): void {
     CMSS.initializeMockUpGenerator();
     CMSS.initializeMockUpHTMLRenderer("mock-up-container");
   }, []);

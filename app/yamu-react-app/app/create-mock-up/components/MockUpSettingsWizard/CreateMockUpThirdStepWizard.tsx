@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
@@ -16,6 +16,22 @@ export function _CreateMockUpThirdStepWizard() {
   const settingsList =
     CMSS.modules.mockUpGenerator?.mockUp.device.getSettingsList();
 
+  const [isSystemBarSettingActive, setIsSystemBarSettingActive] =
+    useState<boolean>(false);
+  const themeSelectUI = {
+    isActive: isSystemBarSettingActive,
+    setActive(newValue: boolean) {
+      setIsSystemBarSettingActive(newValue);
+    },
+    detectIsDisabledThemeSelect(settingKey: string) {
+      if (settingKey === "theme") {
+        return !this.isActive;
+      } else {
+        return undefined;
+      }
+    },
+  };
+
   /**
    * Change settings with type `switch`
    * @requirement UF/MOCK-UP/SETTINGS-UP
@@ -30,6 +46,11 @@ export function _CreateMockUpThirdStepWizard() {
     CMSS.modules.mockUpHTMLRenderer?.render(
       CMSS.modules.mockUpGenerator?.mockUp.renderData,
     );
+
+    /** @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE */
+    if (settingKey === "isSystemBar") {
+      themeSelectUI.setActive(newValue);
+    }
   }
 
   /**
@@ -79,21 +100,30 @@ export function _CreateMockUpThirdStepWizard() {
                 />
               )}
               {setting.type === "variants" && (
-                <Select
-                  className="pt-4"
-                  placeholder={setting.label}
-                  options={
-                    setting.variants?.map(function _formatToOptions(_variant) {
-                      return {
-                        label: _variant,
-                        value: _variant,
-                      };
-                    }) || []
-                  }
-                  onSelect={function (newValue: SelectOption) {
-                    _changeSelectSettingHandler(setting.key, newValue);
-                  }}
-                />
+                <Fragment>
+                  {setting.key === "theme" && (
+                    <Select
+                      className="pt-4"
+                      isDisabled={themeSelectUI.detectIsDisabledThemeSelect(
+                        setting.key,
+                      )}
+                      placeholder={setting.label}
+                      options={
+                        setting.variants?.map(
+                          function _formatToOptions(_variant) {
+                            return {
+                              label: _variant,
+                              value: _variant,
+                            };
+                          },
+                        ) || []
+                      }
+                      onSelect={function (newValue: SelectOption) {
+                        _changeSelectSettingHandler(setting.key, newValue);
+                      }}
+                    />
+                  )}
+                </Fragment>
               )}
             </Fragment>
           );

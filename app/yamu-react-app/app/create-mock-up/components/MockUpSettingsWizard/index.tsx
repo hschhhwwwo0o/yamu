@@ -10,6 +10,7 @@ import { CreateMockUpSecondStepWizard } from "./SecondStep";
 import { CreateMockUpThirdStepWizard } from "./ThirdStep";
 import { CreateMockUpFourthStepWizard } from "./FourthStep";
 
+/** @requirement QA/MOCK-UP/CREATE-STEPS */
 function _MockUpSettingsWizard() {
   const wizardActiveStep = CMSS?.wizardActiveStep;
 

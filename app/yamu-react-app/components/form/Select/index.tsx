@@ -57,7 +57,7 @@ function Select({
     onSelect(_option);
   }
 
-  useEffect(function setDefaultValue() {
+  useEffect(function setDefaultValue(): void {
     if (defaultValue) {
       setValue(defaultValue);
       setInnerValue(defaultValue);
@@ -65,7 +65,7 @@ function Select({
   }, []);
 
   useEffect(
-    function _onValueClearedEffect() {
+    function _onValueClearedEffect(): void {
       if (value === undefined) {
         setInnerValue(undefined);
       }

@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../_store";
+import { CreateMockUpScreenStore as CMSS } from "../../../_store";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -10,7 +10,7 @@ import { Label } from "@/components/text/Label";
 import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 
-export function _CreateMockUpFourStepWizard() {
+export function _CreateMockUpFourthStepWizard() {
   const downloadButtonUI = useButton({
     loadingText: "Downloading...",
     disabledText: "Successfully downloaded",
@@ -46,4 +46,6 @@ export function _CreateMockUpFourStepWizard() {
   );
 }
 
-export const CreateMockUpFourStepWizard = observer(_CreateMockUpFourStepWizard);
+export const CreateMockUpFourthStepWizard = observer(
+  _CreateMockUpFourthStepWizard,
+);

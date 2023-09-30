@@ -5,10 +5,10 @@ import { observer } from "mobx-react-lite";
 import { CreateMockUpScreenStore as CMSS } from "../../_store";
 
 /** Components */
-import { CreateMockUpFirstStepWizard } from "./CreateMockUpFirstStepWizard";
-import { CreateMockUpSecondStepWizard } from "./CreateMockUpSecondStepWizard";
-import { CreateMockUpThirdStepWizard } from "./CreateMockUpThirdStepWizard";
-import { CreateMockUpFourStepWizard } from "./CreateMockUpFourStepWizard";
+import { CreateMockUpFirstStepWizard } from "./FirstStep";
+import { CreateMockUpSecondStepWizard } from "./SecondStep";
+import { CreateMockUpThirdStepWizard } from "./ThirdStep";
+import { CreateMockUpFourthStepWizard } from "./FourthStep";
 
 function _MockUpSettingsWizard() {
   const wizardActiveStep = CMSS?.wizardActiveStep;
@@ -18,7 +18,7 @@ function _MockUpSettingsWizard() {
       {wizardActiveStep === 1 && <CreateMockUpFirstStepWizard />}
       {wizardActiveStep === 2 && <CreateMockUpSecondStepWizard />}
       {wizardActiveStep === 3 && <CreateMockUpThirdStepWizard />}
-      {wizardActiveStep === 4 && <CreateMockUpFourStepWizard />}
+      {wizardActiveStep === 4 && <CreateMockUpFourthStepWizard />}
     </Fragment>
   );
 }

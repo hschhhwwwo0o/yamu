@@ -18,13 +18,13 @@ import { Label } from "@/components/text/Label";
 export type SelectOption = { value: string; label: string } | undefined;
 
 interface SelectPropsInterface {
-  defaultValue?: SelectOption | undefined;
+  defaultValue?: SelectOption;
   placeholder?: string;
   label?: string;
   options: SelectOption[];
-  value?: SelectOption | undefined;
-  setValue?: Dispatch<SetStateAction<SelectOption | undefined>>;
-  onSelect?: (_option: SelectOption | undefined) => void;
+  value?: SelectOption;
+  setValue?: Dispatch<SetStateAction<SelectOption>>;
+  onSelect?: (_option: SelectOption) => void;
   isDisabled?: boolean;
   className?: string;
 }
@@ -40,15 +40,9 @@ function Select({
   isDisabled = false,
   className = "",
 }: SelectPropsInterface) {
-  const [innerValue, setInnerValue] = useState<
-    | {
-        value: string;
-        label: string;
-      }
-    | undefined
-  >();
+  const [innerValue, setInnerValue] = useState<SelectOption>();
 
-  function onChange(event: React.ChangeEvent<HTMLSelectElement>) {
+  function onChange(event: React.ChangeEvent<HTMLSelectElement>): void {
     const _option = options.find(function findSelectedOption(_option) {
       return _option?.value === event.target.value;
     });

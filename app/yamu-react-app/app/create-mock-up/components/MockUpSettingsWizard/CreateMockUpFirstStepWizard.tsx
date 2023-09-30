@@ -9,7 +9,7 @@ import { H2 } from "@/components/text/H2";
 import { Label } from "@/components/text/Label";
 import { Select, useSelect } from "@/components/form/Select";
 import { Button, useButton } from "@/components/form/Button";
-import { ExitButton } from "@/components/form/ExitButton";
+import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 
 export function _CreateMockUpFirstStepWizard() {
   const mockUpGenerator = CMSS?.modules.mockUpGenerator;
@@ -64,7 +64,7 @@ export function _CreateMockUpFirstStepWizard() {
     },
   });
 
-  const exitButtonUI = useButton({
+  const exitButtonUI = useExitButton({
     navigatePath: "/",
   });
 

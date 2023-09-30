@@ -8,7 +8,7 @@ import { CreateMockUpScreenStore as CMSS } from "../../_store";
 import { H2 } from "@/components/text/H2";
 import { Label } from "@/components/text/Label";
 import { Button, useButton } from "@/components/form/Button";
-import { ExitButton } from "@/components/form/ExitButton";
+import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
 
 export function _CreateMockUpSecondStepWizard() {
@@ -17,7 +17,7 @@ export function _CreateMockUpSecondStepWizard() {
 
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {
-      (async function _insertImageAndReRender() {
+      (async function _insertImageAndReRender(): Promise<void> {
         const _mockUpData = await mockUpGenerator?.insertImage(value);
         await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
       })();
@@ -32,7 +32,7 @@ export function _CreateMockUpSecondStepWizard() {
     },
   });
 
-  const exitButtonUI = useButton({
+  const exitButtonUI = useExitButton({
     navigatePath: "/",
   });
 

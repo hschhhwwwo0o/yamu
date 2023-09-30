@@ -36,6 +36,8 @@ class PhoneDevice extends Device {
   public changeSettings(settings: PhoneSettings): PhoneSettings | undefined {
     this._setSettingsState(settings);
 
+    const _theme = settings.theme || this.settings.theme || undefined;
+
     this.frame.filters.bw = settings.isBW || this.settings.isBW || false;
 
     if (settings.isSystemBar === false) {
@@ -45,13 +47,13 @@ class PhoneDevice extends Device {
     }
 
     if (settings.isSystemBar === true) {
-      if (settings.theme === "dark" || settings.theme === undefined) {
+      if (_theme === "dark" || _theme === undefined) {
         this.frame.image =
           this._deviceLibraryItem?.frameImages.withSystemBarDarkTheme || "";
         this._onSettingsChange();
         return this.settings;
       }
-      if (settings.theme === "light") {
+      if (_theme === "light") {
         this.frame.image =
           this._deviceLibraryItem?.frameImages.withSystemBarLightTheme || "";
         this._onSettingsChange();

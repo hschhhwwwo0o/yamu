@@ -14,7 +14,10 @@ export function _CreateMockUpFourStepWizard() {
   const downloadButtonUI = useButton({
     loadingText: "Downloading...",
     disabledText: "Successfully downloaded",
-    /** @requirement UF/MOCK-UP/DOWNLOAD */
+    /**
+     * Download final image
+     * @requirement UF/MOCK-UP/DOWNLOAD
+     */
     onClick() {
       CMSS.modules.mockUpHTMLRenderer?.download("png");
       downloadButtonUI.utils.disable();

@@ -149,7 +149,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | :--------------------------------------- | :--------------------------------- | :--------------------- |
 | Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
-| Mock-up display                          | UF/MOCK-UP/VIEW                    | @mock-up-html-renderer |
+| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |
 | Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |

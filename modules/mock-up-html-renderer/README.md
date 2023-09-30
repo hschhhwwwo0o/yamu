@@ -5,7 +5,7 @@ The module implements the requirements:
 | Function             | ID                  |
 | :------------------- | :------------------ |
 | Downloading a mockup | UF/MOCK-UP/DOWNLOAD |
-| Mockup display       | UF/MOCK-UP/VIEW     |
+| Mockup display       | UF/MOCK-UP/RENDER   |
 
 The module has 2 methods:
 

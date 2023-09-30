@@ -16,6 +16,10 @@ export function _CreateMockUpThirdStepWizard() {
   const settingsList =
     CMSS.modules.mockUpGenerator?.mockUp.device.getSettingsList();
 
+  /**
+   * Change settings with type `switch`
+   * @requirement UF/MOCK-UP/SETTINGS-UP
+   */
   function _changeSwitchSettingHandler(
     settingKey: string,
     newValue: boolean,
@@ -28,6 +32,12 @@ export function _CreateMockUpThirdStepWizard() {
     );
   }
 
+  /**
+   * Change settings with type `variants`
+   *
+   * @requirement UF/MOCK-UP/RENDER
+   * @requirement UF/MOCK-UP/SETTINGS-UP
+   */
   function _changeSelectSettingHandler(
     settingKey: string,
     newValue: SelectOption,
@@ -37,7 +47,6 @@ export function _CreateMockUpThirdStepWizard() {
         CMSS.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
       [settingKey]: newValue?.value,
     });
-
     CMSS.modules.mockUpHTMLRenderer?.render(
       CMSS.modules.mockUpGenerator?.mockUp.renderData,
     );

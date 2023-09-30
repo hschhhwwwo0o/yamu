@@ -22,7 +22,10 @@ export function _CreateMockUpFirstStepWizard() {
       { label: "Tablet", value: "tablet" },
     ],
     onSelect() {
-      /** Clearing the device model when changing the device type */
+      /**
+       * Clearing the device model when changing the device type
+       * @requirement UF/MOCK-UP/RENDER
+       */
       (async function _clearingDeviceModel() {
         devicesModelsSelectUI.utils.clear();
         const _mockUpData = await mockUpGenerator?.selectDevice();
@@ -46,8 +49,10 @@ export function _CreateMockUpFirstStepWizard() {
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
       /**
+       * Select device and render
+       *
        * @requirement UF/MOCK-UP/DEVICE-SELECT
-       * @requirement UF/MOCK-UP/VIEW
+       * @requirement UF/MOCK-UP/RENDER
        */
       (async function _selectDeviceAndRender() {
         const _mockUpData = await mockUpGenerator?.selectDevice(_option?.label);

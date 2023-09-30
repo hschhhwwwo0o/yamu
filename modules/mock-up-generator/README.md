@@ -17,7 +17,6 @@ The module implements the requirements:
 | Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           |
 | Adding an design inside a mockup         | UF/MOCK-UP/INSERT-DESIGN           |
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
-| Mockup display                           | UF/MOCK-UP/VIEW                    |
 | Mockup initialization                    | UF/MOCK-UP/INIT                    |
 | <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |

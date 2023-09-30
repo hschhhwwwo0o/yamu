@@ -17,6 +17,12 @@ export function _CreateMockUpSecondStepWizard() {
 
   const insertedImageUploadImageUI = useUploadImage({
     onChange(value = "") {
+      /**
+       * Insert image in mock-up and rerender
+       *
+       * @requirement UF/MOCK-UP/RENDER
+       * @requirement UF/MOCK-UP/INSERT-DESIGN
+       */
       (async function _insertImageAndReRender(): Promise<void> {
         const _mockUpData = await mockUpGenerator?.insertImage(value);
         await mockUpHTMLRenderer?.render(_mockUpData?.renderData);

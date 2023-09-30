@@ -15,7 +15,7 @@ class MockUpHTMLRenderer {
   /**
    * Render mock-up
    *
-   * @requirement UF/MOCK-UP/VIEW
+   * @requirement UF/MOCK-UP/RENDER
    */
   public render(
     renderData: RenderData = {

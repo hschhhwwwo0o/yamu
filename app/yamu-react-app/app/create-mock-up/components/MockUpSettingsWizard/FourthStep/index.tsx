@@ -9,6 +9,7 @@ import { H2 } from "@/components/text/H2";
 import { Label } from "@/components/text/Label";
 import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
+import { LinkCustom } from "@/components/text/Link";
 
 export function _CreateMockUpFourthStepWizard() {
   const downloadButtonUI = useButton({
@@ -43,6 +44,11 @@ export function _CreateMockUpFourthStepWizard() {
       >
         Download
       </Button>
+      {downloadButtonUI.props.status === "disabled" && (
+        <LinkCustom className="mt-4" withLabel href="/feedback">
+          Give feedback on the service performance
+        </LinkCustom>
+      )}
       <ExitButton {...exitButtonUI.props} className="mt-4">
         Exit
       </ExitButton>

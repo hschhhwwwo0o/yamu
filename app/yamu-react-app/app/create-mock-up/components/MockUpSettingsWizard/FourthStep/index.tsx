@@ -19,8 +19,12 @@ export function _CreateMockUpFourthStepWizard() {
      * @requirement UF/MOCK-UP/DOWNLOAD
      */
     onClick() {
-      CMSS.modules.mockUpHTMLRenderer?.download("png");
-      downloadButtonUI.utils.disable();
+      try {
+        CMSS.modules.mockUpHTMLRenderer?.download("png");
+        downloadButtonUI.utils.disable();
+      } catch (error) {
+        console.error(error);
+      }
     },
   });
 

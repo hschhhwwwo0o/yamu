@@ -24,8 +24,12 @@ export function _CreateMockUpSecondStepWizard() {
        * @requirement UF/MOCK-UP/INSERT-DESIGN
        */
       (async function _insertImageAndReRender(): Promise<void> {
-        const _mockUpData = await mockUpGenerator?.insertImage(value);
-        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        try {
+          const _mockUpData = await mockUpGenerator?.insertImage(value);
+          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        } catch (error) {
+          console.error(error);
+        }
       })();
     },
   });

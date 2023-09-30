@@ -23,13 +23,17 @@ export function _CreateMockUpFirstStepWizard() {
     ],
     onSelect() {
       /**
-       * Clearing the device model when changing the device type
+       * Clearing the `device model` when changing the `device type`
        * @requirement UF/MOCK-UP/RENDER
        */
       (async function _clearingDeviceModel() {
-        devicesModelsSelectUI.utils.clear();
-        const _mockUpData = await mockUpGenerator?.selectDevice();
-        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        try {
+          devicesModelsSelectUI.utils.clear();
+          const _mockUpData = await mockUpGenerator?.selectDevice();
+          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        } catch (error) {
+          console.error(error);
+        }
       })();
     },
   });
@@ -55,8 +59,14 @@ export function _CreateMockUpFirstStepWizard() {
        * @requirement UF/MOCK-UP/RENDER
        */
       (async function _selectDeviceAndRender() {
-        const _mockUpData = await mockUpGenerator?.selectDevice(_option?.label);
-        await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        try {
+          const _mockUpData = await mockUpGenerator?.selectDevice(
+            _option?.label,
+          );
+          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+        } catch (error) {
+          console.error(error);
+        }
       })();
     },
   });

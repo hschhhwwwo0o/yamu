@@ -29,16 +29,20 @@ export function _CreateMockUpThirdStepWizard() {
     settingKey: string,
     newValue: boolean,
   ): void {
-    CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
-      [settingKey]: newValue,
-    });
-    CMSS.modules.mockUpHTMLRenderer?.render(
-      CMSS.modules.mockUpGenerator?.mockUp.renderData,
-    );
+    try {
+      CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
+        [settingKey]: newValue,
+      });
+      CMSS.modules.mockUpHTMLRenderer?.render(
+        CMSS.modules.mockUpGenerator?.mockUp.renderData,
+      );
 
-    /** @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE */
-    if (settingKey === "isSystemBar") {
-      themeSelectUI.setActive(newValue);
+      /** @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE */
+      if (settingKey === "isSystemBar") {
+        themeSelectUI.setActive(newValue);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -52,14 +56,18 @@ export function _CreateMockUpThirdStepWizard() {
     settingKey: string,
     newValue: SelectOption,
   ): void {
-    CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
-      isSystemBar:
-        CMSS.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
-      [settingKey]: newValue?.value,
-    });
-    CMSS.modules.mockUpHTMLRenderer?.render(
-      CMSS.modules.mockUpGenerator?.mockUp.renderData,
-    );
+    try {
+      CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
+        isSystemBar:
+          CMSS.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
+        [settingKey]: newValue?.value,
+      });
+      CMSS.modules.mockUpHTMLRenderer?.render(
+        CMSS.modules.mockUpGenerator?.mockUp.renderData,
+      );
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const thirdStepNextButtonUI = useButton({

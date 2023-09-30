@@ -37,7 +37,7 @@ class _CreateMockUpScreenStore {
     this.wizardActiveStep = this.wizardActiveStep + 1;
   }
 
-  public toDefaultWizardStep() {
+  public toDefaultWizardStep(): void {
     this.wizardActiveStep = 1;
   }
 }

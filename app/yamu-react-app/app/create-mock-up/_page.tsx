@@ -7,9 +7,9 @@ import { CreateMockUpScreenStore as CMSS } from "./_store";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
-import { CreateMockUpScreenLayout } from "./layouts/CreateMockUpScreenLayout";
-import { MockUpSettingsWizardLayout } from "./layouts/MockUpSettingsWizardLayout";
-import { MockUpPreviewSceneLayout } from "./layouts/MockUpPreviewSceneLayout";
+import { CreateMockUpScreenLayout } from "./layouts/Screen";
+import { MockUpSettingsWizardLayout } from "./layouts/Wizard";
+import { MockUpPreviewSceneLayout } from "./layouts/PreviewScene";
 
 /** Components */
 import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";

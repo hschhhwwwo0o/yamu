@@ -10,6 +10,7 @@ import { Label } from "@/components/text/Label";
 import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
+import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpSecondStepWizard() {
   const mockUpGenerator = CMSS?.modules.mockUpGenerator;
@@ -48,24 +49,32 @@ export function _CreateMockUpSecondStepWizard() {
 
   return (
     <Fragment>
-      <Label>Second step</Label>
-      <H2>Add image</H2>
-      <UploadImage
-        {...insertedImageUploadImageUI.props}
-        title="Select image: "
-        label="Select the image to be placed inside the device frame"
-        className="mt-6"
-      />
-      <Button
-        {...secondStepNextButton.props}
-        className="mt-8"
-        label="Don't be afraid to move on to the next step - you can always come back to this step"
-      >
-        Next
-      </Button>
-      <ExitButton {...exitButtonUI.props} className="mt-4">
-        Exit
-      </ExitButton>
+      <MotionBlock delay={0.1}>
+        <Label>Second step</Label>
+      </MotionBlock>
+      <MotionBlock delay={0.2}>
+        <H2>Add image</H2>
+      </MotionBlock>
+      <MotionBlock delay={0.3}>
+        <UploadImage
+          {...insertedImageUploadImageUI.props}
+          title="Select image: "
+          label="Select the image to be placed inside the device frame"
+          className="mt-6"
+        />
+      </MotionBlock>
+      <MotionBlock delay={0.4}>
+        <Button
+          {...secondStepNextButton.props}
+          className="mt-8"
+          label="Don't be afraid to move on to the next step - you can always come back to this step"
+        >
+          Next
+        </Button>
+        <ExitButton {...exitButtonUI.props} className="mt-4">
+          Exit
+        </ExitButton>
+      </MotionBlock>
     </Fragment>
   );
 }

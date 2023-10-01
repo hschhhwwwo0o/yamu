@@ -7,6 +7,7 @@ import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout"
 import { H1 } from "@/components/text/H1";
 import { LinkCustom } from "@/components/text/Link";
 import { FeedbackForm } from "./components/FeedbackForm";
+import { MotionBlock } from "@/components/shared/MotionBlock";
 
 import { metadata } from "./metadata";
 export { metadata };
@@ -16,37 +17,47 @@ export default function FeedbackScreen(): React.JSX.Element {
     <main>
       <DefaultWrapperLayout>
         <div className="px-mobile-padding md:px-laptop-padding pb-10">
-          <H1 className="mt-10 md:mt-20">
-            Leave feedback to improve the service.
-          </H1>
-          <span className="block mt-6">
-            <FeedbackForm />
-          </span>
+          <MotionBlock delay={0.1}>
+            <H1 className="mt-10 md:mt-20">
+              Leave feedback to improve the service.
+            </H1>
+          </MotionBlock>
+          <MotionBlock delay={0.2}>
+            <span className="block mt-6">
+              <FeedbackForm />
+            </span>
+          </MotionBlock>
           <div className="mt-6">
-            <LinkCustom
-              target="_blank"
-              withLabel
-              className="mt-4"
-              href="https://github.com/hschhhwwwo0o/yamu"
-            >
-              Go to code
-            </LinkCustom>
-            <LinkCustom
-              target="_blank"
-              withLabel
-              className="mt-2"
-              href="https://github.com/hschhhwwwo0o"
-            >
-              Author
-            </LinkCustom>
-            <LinkCustom
-              target="_blank"
-              withLabel
-              className="mt-2"
-              href="https://github.com/hschhhwwwo0o/yamu#development"
-            >
-              Documentation
-            </LinkCustom>
+            <MotionBlock delay={0.3}>
+              <LinkCustom
+                target="_blank"
+                withLabel
+                className="mt-4"
+                href="https://github.com/hschhhwwwo0o/yamu"
+              >
+                Go to code
+              </LinkCustom>
+            </MotionBlock>
+            <MotionBlock delay={0.4}>
+              <LinkCustom
+                target="_blank"
+                withLabel
+                className="mt-2"
+                href="https://github.com/hschhhwwwo0o"
+              >
+                Author
+              </LinkCustom>
+            </MotionBlock>
+            <MotionBlock delay={0.5}>
+              <LinkCustom
+                target="_blank"
+                withLabel
+                className="mt-2"
+                href="https://github.com/hschhhwwwo0o/yamu#development"
+              >
+                Documentation
+              </LinkCustom>
+            </MotionBlock>
           </div>
         </div>
       </DefaultWrapperLayout>

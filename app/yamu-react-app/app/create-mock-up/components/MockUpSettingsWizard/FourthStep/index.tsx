@@ -36,13 +36,13 @@ export function _CreateMockUpFourthStepWizard() {
 
   return (
     <Fragment>
-      <MotionBlock delay={0.2}>
+      <MotionBlock delay={0.1}>
         <Label>Four step</Label>
       </MotionBlock>
-      <MotionBlock delay={0.4}>
+      <MotionBlock delay={0.2}>
         <H2>Download result</H2>
       </MotionBlock>
-      <MotionBlock delay={0.6}>
+      <MotionBlock delay={0.3}>
         <Button
           {...downloadButtonUI.props}
           label="The image will be downloaded in PNG format. Thank you for using our service"
@@ -58,7 +58,7 @@ export function _CreateMockUpFourthStepWizard() {
           </LinkCustom>
         </MotionBlock>
       )}
-      <MotionBlock delay={0.8}>
+      <MotionBlock delay={0.4}>
         <ExitButton {...exitButtonUI.props} className="mt-4">
           Exit
         </ExitButton>

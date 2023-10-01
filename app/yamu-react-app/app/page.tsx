@@ -76,7 +76,7 @@ export default function IndexScreen(): React.JSX.Element {
                 </MotionBlock>
               </div>
             </div>
-            <div className="w-[0%] bg-green-300 h-full"></div>
+            <div className="w-[0%] bg-green-300 h-full" />
           </div>
         </DefaultWrapperLayout>
       </main>

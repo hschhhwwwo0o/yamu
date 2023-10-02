@@ -6,7 +6,7 @@ Available devices:
 - iPhone 12
 - iPhone 13
 - iPhone 14 Pro
-- iWatch SE
+- Apple Watch Ultra
 - iPad 10
 
 The module implements the requirements:

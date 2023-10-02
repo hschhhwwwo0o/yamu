@@ -24,7 +24,9 @@ export function _CreateMockUpThirdStepWizard() {
 
   /**
    * Change settings with type `switch`
+   *
    * @requirement UF/MOCK-UP/SETTINGS-UP
+   * @requirement UF/MOCK-UP/RENDER
    */
   function _changeSwitchSettingHandler(
     settingKey: string,

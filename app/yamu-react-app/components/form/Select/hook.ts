@@ -8,7 +8,7 @@ interface SelectOption {
 interface useSelectInterface {
   label?: string;
   placeholder?: string;
-  options: SelectOption[];
+  options: SelectOption[] | undefined;
   defaultValue?: SelectOption;
   onSelect?: (_option: SelectOption | undefined) => void;
   isDisabled?: boolean;
@@ -32,7 +32,7 @@ export function useSelect({
     props: {
       value,
       setValue,
-      options,
+      options: options || [],
       placeholder,
       label,
       defaultValue,

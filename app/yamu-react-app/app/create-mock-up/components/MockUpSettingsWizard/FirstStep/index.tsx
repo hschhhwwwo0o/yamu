@@ -27,9 +27,9 @@ export function _CreateMockUpFirstStepWizard() {
        * Clearing the `device model` when changing the `device type`
        * @requirement UF/MOCK-UP/RENDER
        */
-      (async function _clearingDeviceModel() {
+      (async function _clearingDeviceAndRender() {
         try {
-          devicesModelsSelectUI.utils.clear();
+          deviceSelectUI.utils.clear();
           const _mockUpData = await mockUpGenerator?.selectDevice();
           await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
         } catch (error) {
@@ -39,18 +39,17 @@ export function _CreateMockUpFirstStepWizard() {
     },
   });
 
-  const devicesModelsSelectUI = useSelect({
-    options:
-      mockUpGenerator
-        ?.getDevicesLibrary({
-          type: deviceTypeSelectUI.props.value?.value,
-        })
-        .map(function _formatToOption(_device) {
-          return {
-            label: _device.name,
-            value: _device.name,
-          };
-        }) || [],
+  const deviceSelectUI = useSelect({
+    options: mockUpGenerator
+      ?.getDevicesLibrary({
+        type: deviceTypeSelectUI.props.value?.value,
+      })
+      .map(function _formatToOption(_device) {
+        return {
+          label: _device.name,
+          value: _device.name,
+        };
+      }),
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
       /**
@@ -74,7 +73,7 @@ export function _CreateMockUpFirstStepWizard() {
 
   const firstStepNextButtonUI = useButton({
     disabledText: "Select the device to continue",
-    isDisabled: devicesModelsSelectUI.props.value === undefined,
+    isDisabled: deviceSelectUI.props.value === undefined,
     onClick() {
       CMSS.nextWizardStep();
     },
@@ -103,7 +102,7 @@ export function _CreateMockUpFirstStepWizard() {
         </MotionBlock>
         <MotionBlock delay={0.4}>
           <Select
-            {...devicesModelsSelectUI.props}
+            {...deviceSelectUI.props}
             className="mt-8"
             placeholder="Device model..."
             label="Select the model of device you want"

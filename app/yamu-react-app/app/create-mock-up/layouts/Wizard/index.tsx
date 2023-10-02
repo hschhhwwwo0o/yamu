@@ -6,7 +6,7 @@ interface MockUpSettingsWizardLayoutPropsInterface {
 
 export function MockUpSettingsWizardLayout({
   children,
-}: MockUpSettingsWizardLayoutPropsInterface) {
+}: MockUpSettingsWizardLayoutPropsInterface): React.JSX.Element {
   return (
     <Fragment>
       <div className="p-mobile-padding mt-2 lg:mt-0 lg:h-full lg:p-laptop-padding">

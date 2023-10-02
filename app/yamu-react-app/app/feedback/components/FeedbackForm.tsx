@@ -9,7 +9,7 @@ import { FeedbackCreator } from "@feedback-creator";
 import { Textarea, useTextarea } from "@/components/form/Textarea";
 import { Button, useButton } from "@/components/form/Button";
 
-export function FeedbackForm() {
+export function FeedbackForm(): React.JSX.Element {
   const feedbackTextareaUI = useTextarea({});
 
   const createFeedbackButtonUI = useButton({

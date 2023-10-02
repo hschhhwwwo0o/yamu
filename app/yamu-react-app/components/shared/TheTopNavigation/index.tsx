@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, ReactNode } from "react";
+import React, { Fragment } from "react";
 
 /** Components */
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Logo } from "../Logo";
 import { usePathname } from "next/navigation";
 import { useIsOpenMobileNavigation } from "./hooks/useIsOpenMobileNavigation";
 
-export function TheTopNavigation(): ReactNode {
+export function TheTopNavigation(): React.JSX.Element {
   const { toggleMobileNavigation, isOpenMobileNavigation } =
     useIsOpenMobileNavigation();
 

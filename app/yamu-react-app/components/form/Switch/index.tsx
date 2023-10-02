@@ -29,10 +29,10 @@ function Switch({
   title = undefined,
   label = undefined,
   onNewValueSet = () => undefined,
-}: SwitchPropsInterface) {
+}: SwitchPropsInterface): React.JSX.Element {
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  useEffect(function setDefaultValueEffect(): void {
+  useEffect(function _setDefaultValueEffect(): void {
     setIsActive(value);
   }, []);
 

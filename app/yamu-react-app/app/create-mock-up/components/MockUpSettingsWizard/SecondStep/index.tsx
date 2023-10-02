@@ -12,7 +12,7 @@ import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-export function _CreateMockUpSecondStepWizard() {
+export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
   const mockUpGenerator = CMSS?.modules.mockUpGenerator;
   const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
 

@@ -1,9 +1,9 @@
-import React, { Fragment, ReactNode } from "react";
+import React, { Fragment } from "react";
 
 /** Components */
 import Link from "next/link";
 
-export function Logo(): ReactNode {
+export function Logo(): React.JSX.Element {
   return (
     <Fragment>
       <Link href={"/"} className="">

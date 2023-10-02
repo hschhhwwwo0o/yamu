@@ -16,7 +16,7 @@ import { Switch } from "@/components/form/Switch";
 import { Select, SelectOption } from "@/components/form/Select";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-export function _CreateMockUpThirdStepWizard() {
+export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
   const settingsList =
     CMSS.modules.mockUpGenerator?.mockUp.device.getSettingsList();
 

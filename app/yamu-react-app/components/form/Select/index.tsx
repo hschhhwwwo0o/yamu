@@ -39,12 +39,12 @@ function Select({
   onSelect = () => undefined,
   isDisabled = false,
   className = "",
-}: SelectPropsInterface) {
-  const [innerValue, setInnerValue] = useState<SelectOption>();
+}: SelectPropsInterface): React.JSX.Element {
+  const [innerValue, setInnerValue] = useState<SelectOption>(undefined);
 
   function onChange(event: React.ChangeEvent<HTMLSelectElement>): void {
     const _option: SelectOption = options.find(
-      function findSelectedOption(_option) {
+      function _findSelectedOption(_option) {
         return _option?.value === event.target.value;
       },
     );
@@ -53,7 +53,7 @@ function Select({
     onSelect(_option);
   }
 
-  useEffect(function setDefaultValue(): void {
+  useEffect(function _setDefaultValue(): void {
     if (defaultValue) {
       setValue(defaultValue);
       setInnerValue(defaultValue);

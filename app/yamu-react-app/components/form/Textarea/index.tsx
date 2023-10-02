@@ -24,7 +24,7 @@ function Textarea({
   setValue = () => undefined,
   isAutofocus = false,
   isDisabled = false,
-}: TextareaPropsInterface) {
+}: TextareaPropsInterface): React.JSX.Element {
   function _onChange(event: React.ChangeEvent<HTMLTextAreaElement>): void {
     setValue(event.target.value);
   }

@@ -12,7 +12,7 @@ import { Button, useButton } from "@/components/form/Button";
 import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-export function _CreateMockUpFirstStepWizard() {
+export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
   const mockUpGenerator = CMSS?.modules.mockUpGenerator;
   const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
 

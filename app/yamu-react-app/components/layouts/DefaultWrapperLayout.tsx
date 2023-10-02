@@ -6,7 +6,7 @@ interface DefaultWrapperLayoutPropsInterface {
 
 export function DefaultWrapperLayout({
   children,
-}: DefaultWrapperLayoutPropsInterface) {
+}: DefaultWrapperLayoutPropsInterface): React.JSX.Element {
   return (
     <Fragment>
       <div className="w-screen flex flex-row justify-center pt-2">

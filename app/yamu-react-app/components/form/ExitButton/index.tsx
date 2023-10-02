@@ -18,7 +18,7 @@ function ExitButton({
   onClick,
   className = "",
   navigatePath = "",
-}: ExitButtonPropsInterface) {
+}: ExitButtonPropsInterface): React.JSX.Element {
   const { push } = useRouter();
 
   function _onClick(): void {

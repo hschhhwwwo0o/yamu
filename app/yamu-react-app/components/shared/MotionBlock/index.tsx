@@ -12,7 +12,7 @@ interface MotionBlockInterfaceProps {
 export function MotionBlock({
   delay = 0,
   children,
-}: MotionBlockInterfaceProps) {
+}: MotionBlockInterfaceProps): React.JSX.Element {
   return (
     <Fragment>
       <motion.span

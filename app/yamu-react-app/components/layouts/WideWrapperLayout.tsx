@@ -6,7 +6,7 @@ interface WideWrapperLayoutPropsInterface {
 
 export function WideWrapperLayout({
   children,
-}: WideWrapperLayoutPropsInterface) {
+}: WideWrapperLayoutPropsInterface): React.JSX.Element {
   return (
     <Fragment>
       <div className="w-screen flex flex-row justify-center items-center h-full">

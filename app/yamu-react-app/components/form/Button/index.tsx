@@ -31,7 +31,7 @@ function Button({
   loadingText = undefined,
   disabledText = undefined,
   className = "",
-}: ButtonInterface) {
+}: ButtonInterface): React.JSX.Element {
   const { push } = useRouter();
 
   function _onClick(): void {
@@ -61,7 +61,7 @@ function Button({
     return {};
   }
 
-  function setTitle() {
+  function setTitle(): string | undefined {
     if (status === "basic") {
       return children;
     }

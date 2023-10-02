@@ -12,7 +12,7 @@ import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { LinkCustom } from "@/components/text/Link";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-export function _CreateMockUpFourthStepWizard() {
+export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
   const downloadButtonUI = useButton({
     loadingText: "Downloading...",
     disabledText: "Successfully downloaded",

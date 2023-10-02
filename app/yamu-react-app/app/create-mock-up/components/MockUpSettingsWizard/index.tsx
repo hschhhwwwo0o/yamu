@@ -11,7 +11,7 @@ import { CreateMockUpThirdStepWizard } from "./ThirdStep";
 import { CreateMockUpFourthStepWizard } from "./FourthStep";
 
 /** @requirement QA/MOCK-UP/CREATE-STEPS */
-function _MockUpSettingsWizard() {
+function _MockUpSettingsWizard(): React.JSX.Element {
   const wizardActiveStep = CMSS?.wizardActiveStep;
 
   return (

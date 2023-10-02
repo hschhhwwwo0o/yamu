@@ -42,7 +42,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): React.JSX.Element {
   return (
     <html lang="en" className="bg-[#FDFDFD] dark:bg-black">
       <body className={inter.className}>

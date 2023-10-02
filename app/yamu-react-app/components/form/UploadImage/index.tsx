@@ -23,7 +23,7 @@ export function UploadImage({
   value = "",
   setValue = () => undefined,
   onChange = () => undefined,
-}: UploadImagePropsInterface) {
+}: UploadImagePropsInterface): React.JSX.Element {
   function _onChange(event: React.ChangeEvent<HTMLInputElement>): void {
     if (event?.target?.files?.length) {
       const imageUrl = URL.createObjectURL(event?.target?.files[0]);

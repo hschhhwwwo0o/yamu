@@ -36,12 +36,27 @@ Example:
 ```js
 const mockUpGenerator = new MockUpGenerator();
 
+// @requirement UF/DEVICES-LIBRARY/GET
 const devicesLibrary = await mockUpGenerator.getDevicesLibrary();
 const devicesLibrary = await mockUpGenerator.getDevicesLibrary({
   type: "phone",
 });
 
+// @requirement UF/MOCK-UP/DEVICE-SELECT
 await mockUpGenerator.selectDevice("iPhone 13");
+
+// @requirement UF/MOCK-UP/INSERT-DESIGN
 mockUpGenerator.insertImage(base64);
+
+// @requirement UF/MOCK-UP/CLEAR
 mockUpGenerator.clearMockUp();
+
+// @requirement UF/MOCK-UP/SETTINGS-UP
+const settingsList = mockUpGenerator?.mockUp.device.getSettingsList();
+mockUpGenerator?.mockUp.device.changeSettings({
+  theme: "dark",
+});
+
+// Get renderData object
+const renderData = mockUpGenerator?.mockUp.renderData;
 ```

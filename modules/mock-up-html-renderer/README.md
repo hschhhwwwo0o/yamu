@@ -19,6 +19,7 @@ const mockUpHTMLRenderer = new MockUpHTMLRenderer("domContainerId", {
   heightInaccuracy: 0,
 });
 
+// @requirement UF/MOCK-UP/RENDER
 mockUpHTMLRenderer.render({
   frameWidth: number,
   frameHeight: number,
@@ -32,5 +33,7 @@ mockUpHTMLRenderer.render({
   },
   borderRadius: number,
 });
-mockUpHTMLRenderer.download("webp", 1);
+
+// @requirement UF/MOCK-UP/DOWNLOAD
+mockUpHTMLRenderer.download("png", 1);
 ```

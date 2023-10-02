@@ -15,5 +15,6 @@ Example:
 ```js
 const feedbackCreator = new FeedbackCreator();
 
+// @requirement UF/FEEDBACK/CREATE
 feedbackCreator.createFeedback("Some text");
 ```

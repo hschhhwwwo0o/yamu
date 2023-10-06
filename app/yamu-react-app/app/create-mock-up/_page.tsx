@@ -2,8 +2,9 @@
 
 import React, { useLayoutEffect, useMemo } from "react";
 
-/** Connect to store */
-import { CreateMockUpScreenStore as CMSS } from "./_store";
+/** Controllers */
+import { MockUpController } from "./_mock-up-controller";
+import { MockUpWizardController } from "./_wizard-state-controller";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -16,13 +17,13 @@ import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
 
 export default function Page(): React.JSX.Element {
   useMemo(function _initializeModules(): void {
-    CMSS.initializeMockUpGenerator();
-    CMSS.initializeMockUpHTMLRenderer("mock-up-container");
+    MockUpController.initializeMockUpGenerator();
+    MockUpController.initializeMockUpHTMLRenderer("mock-up-container");
   }, []);
 
   useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose(): void {
-      CMSS.toDefaultWizardStep();
+      MockUpWizardController.toDefaultStep();
     };
   }, []);
 

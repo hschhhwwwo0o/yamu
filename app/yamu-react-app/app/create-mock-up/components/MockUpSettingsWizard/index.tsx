@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Connect to store */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../_store";
+import { MockUpWizardController } from "../../_wizard-state-controller";
 
 /** Components */
 import { CreateMockUpFirstStepWizard } from "./FirstStep";
@@ -10,9 +10,13 @@ import { CreateMockUpSecondStepWizard } from "./SecondStep";
 import { CreateMockUpThirdStepWizard } from "./ThirdStep";
 import { CreateMockUpFourthStepWizard } from "./FourthStep";
 
-/** @requirement QA/MOCK-UP/CREATE-STEPS */
+/**
+ * Separation of the mock-up creation process
+ *
+ * @requirement QA/MOCK-UP/CREATE-STEPS
+ */
 function _MockUpSettingsWizard(): React.JSX.Element {
-  const wizardActiveStep = CMSS?.wizardActiveStep;
+  const wizardActiveStep = MockUpWizardController.activeStep;
 
   return (
     <Fragment>

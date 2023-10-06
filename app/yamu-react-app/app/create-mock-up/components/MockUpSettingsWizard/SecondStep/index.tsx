@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 
-/** Connect to store */
+/** Controllers */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../../_store";
+import { MockUpController } from "@/app/create-mock-up/_mock-up-controller";
+import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -13,25 +14,9 @@ import { UploadImage, useUploadImage } from "@/components/form/UploadImage";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
-  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
-
   const insertedImageUploadImageUI = useUploadImage({
-    onChange(value = "") {
-      /**
-       * Insert image in mock-up and rerender
-       *
-       * @requirement UF/MOCK-UP/RENDER
-       * @requirement UF/MOCK-UP/INSERT-DESIGN
-       */
-      (async function _insertImageAndReRender(): Promise<void> {
-        try {
-          const _mockUpData = await mockUpGenerator?.insertImage(value);
-          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
-        } catch (error) {
-          console.error(error);
-        }
-      })();
+    onChange(imageUrl = "") {
+      MockUpController.insertImage(imageUrl);
     },
   });
 
@@ -39,7 +24,7 @@ export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
     disabledText: "Select the image to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
-      CMSS.nextWizardStep();
+      MockUpWizardController.nextStep();
     },
   });
 

@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 
-/** Connect to store */
+/** Controllers */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../../_store";
+import { MockUpController } from "@/app/create-mock-up/_mock-up-controller";
+import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -13,61 +14,24 @@ import { ExitButton, useExitButton } from "@/components/form/ExitButton";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
-  const mockUpGenerator = CMSS?.modules.mockUpGenerator;
-  const mockUpHTMLRenderer = CMSS?.modules.mockUpHTMLRenderer;
-
   const deviceTypeSelectUI = useSelect({
-    options: [
-      { label: "Phone", value: "phone" },
-      { label: "Watch", value: "watch" },
-      { label: "Tablet", value: "tablet" },
-    ],
+    options: MockUpController.getDevicesTypesAsOptions(),
     onSelect() {
       /**
        * Clearing the `device model` when changing the `device type`
-       * @requirement UF/MOCK-UP/RENDER
        */
-      (async function _clearingDeviceAndRender() {
-        try {
-          deviceSelectUI.utils.clear();
-          const _mockUpData = await mockUpGenerator?.selectDevice();
-          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
-        } catch (error) {
-          console.error(error);
-        }
-      })();
+      deviceSelectUI.utils.clear();
+      MockUpController.selectDevice();
     },
   });
 
   const deviceSelectUI = useSelect({
-    options: mockUpGenerator
-      ?.getDevicesLibrary({
-        type: deviceTypeSelectUI.props.value?.value,
-      })
-      .map(function _formatToOption(_device) {
-        return {
-          label: _device.name,
-          value: _device.name,
-        };
-      }),
+    options: MockUpController.getDevicesLibraryAsOptions(
+      deviceTypeSelectUI.props.value?.value,
+    ),
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
-      /**
-       * Select device and render
-       *
-       * @requirement UF/MOCK-UP/DEVICE-SELECT
-       * @requirement UF/MOCK-UP/RENDER
-       */
-      (async function _selectDeviceAndRender() {
-        try {
-          const _mockUpData = await mockUpGenerator?.selectDevice(
-            _option?.label,
-          );
-          await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
-        } catch (error) {
-          console.error(error);
-        }
-      })();
+      MockUpController.selectDevice(_option?.label);
     },
   });
 
@@ -75,7 +39,7 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
     disabledText: "Select the device to continue",
     isDisabled: deviceSelectUI.props.value === undefined,
     onClick() {
-      CMSS.nextWizardStep();
+      MockUpWizardController.nextStep();
     },
   });
 

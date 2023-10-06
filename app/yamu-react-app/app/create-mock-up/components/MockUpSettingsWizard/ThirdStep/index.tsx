@@ -1,11 +1,9 @@
 import React, { Fragment } from "react";
 
-/** Connect to store */
+/** Controllers */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../../_store";
-
-/** Hooks */
-import { useThemeSelectUI } from "./hooks/useThemeSelectUI";
+import { MockUpController } from "@/app/create-mock-up/_mock-up-controller";
+import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -17,65 +15,11 @@ import { Select, SelectOption } from "@/components/form/Select";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
-  const settingsList =
-    CMSS.modules.mockUpGenerator?.mockUp.device.getSettingsList();
-
-  const { themeSelectUI } = useThemeSelectUI();
-
-  /**
-   * Change settings with type `switch`
-   *
-   * @requirement UF/MOCK-UP/SETTINGS-UP
-   * @requirement UF/MOCK-UP/RENDER
-   */
-  function _changeSwitchSettingHandler(
-    settingKey: string,
-    newValue: boolean,
-  ): void {
-    try {
-      CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
-        [settingKey]: newValue,
-      });
-      CMSS.modules.mockUpHTMLRenderer?.render(
-        CMSS.modules.mockUpGenerator?.mockUp.renderData,
-      );
-
-      /** @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE */
-      if (settingKey === "isSystemBar") {
-        themeSelectUI.setActive(newValue);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  /**
-   * Change settings with type `variants`
-   *
-   * @requirement UF/MOCK-UP/RENDER
-   * @requirement UF/MOCK-UP/SETTINGS-UP
-   */
-  function _changeSelectSettingHandler(
-    settingKey: string,
-    newValue: SelectOption,
-  ): void {
-    try {
-      CMSS.modules.mockUpGenerator?.mockUp.device.changeSettings({
-        isSystemBar:
-          CMSS.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
-        [settingKey]: newValue?.value,
-      });
-      CMSS.modules.mockUpHTMLRenderer?.render(
-        CMSS.modules.mockUpGenerator?.mockUp.renderData,
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  const settingsList = MockUpController.getSettingsList();
 
   const thirdStepNextButtonUI = useButton({
     onClick() {
-      CMSS.nextWizardStep();
+      MockUpWizardController.nextStep();
     },
   });
 
@@ -100,7 +44,10 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                   <Switch
                     title={setting.label}
                     onNewValueSet={function (newValue: boolean) {
-                      _changeSwitchSettingHandler(setting.key, newValue);
+                      MockUpController.changeSwitchSettingHandler(
+                        setting.key,
+                        newValue,
+                      );
                     }}
                   />
                 )}
@@ -109,7 +56,7 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                     {setting.key === "theme" && (
                       <Select
                         className="pt-4"
-                        isDisabled={themeSelectUI.isDisabledThemeSelect(
+                        isDisabled={MockUpController.data.isDisabledThemeSelect(
                           setting.key,
                         )}
                         placeholder={setting.label}
@@ -124,7 +71,10 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                           ) || []
                         }
                         onSelect={function (newValue: SelectOption) {
-                          _changeSelectSettingHandler(setting.key, newValue);
+                          MockUpController.changeSelectSettingHandler(
+                            setting.key,
+                            newValue,
+                          );
                         }}
                       />
                     )}

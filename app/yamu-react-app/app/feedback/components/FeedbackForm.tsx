@@ -3,7 +3,7 @@
 import React, { Fragment } from "react";
 
 /** Modules */
-import { FeedbackCreator } from "@feedback-creator";
+import { FeedbackCreatorController } from "../_feedback-creator-controller";
 
 /** Components */
 import { Textarea, useTextarea } from "@/components/form/Textarea";
@@ -15,11 +15,6 @@ export function FeedbackForm(): React.JSX.Element {
   const createFeedbackButtonUI = useButton({
     loadingText: "Creating feedback...",
     isDisabled: feedbackTextareaUI.props.value.length < 5,
-
-    /**
-     * Sending feedback
-     * @requirement UF/FEEDBACK/CREATE
-     */
     onClick: async function _createFeedback(): Promise<void> {
       try {
         {
@@ -27,8 +22,7 @@ export function FeedbackForm(): React.JSX.Element {
           feedbackTextareaUI.utils.disableInput();
         }
         {
-          const _feedbackCreatorModule = new FeedbackCreator();
-          await _feedbackCreatorModule.createFeedback(
+          FeedbackCreatorController.sendFeedback(
             feedbackTextareaUI.props.value,
           );
         }

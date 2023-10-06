@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-/** Connect to store */
+/** Controllers */
 import { observer } from "mobx-react-lite";
-import { CreateMockUpScreenStore as CMSS } from "../../../_store";
+import { MockUpController } from "@/app/create-mock-up/_mock-up-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -22,7 +22,7 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
      */
     onClick() {
       try {
-        CMSS.modules.mockUpHTMLRenderer?.download("png");
+        MockUpController.modules.mockUpHTMLRenderer?.download("png");
         downloadButtonUI.utils.disable();
       } catch (error) {
         console.error(error);

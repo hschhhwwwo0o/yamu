@@ -21,7 +21,7 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
        * Clearing the `device model` when changing the `device type`
        */
       deviceSelectUI.utils.clear();
-      MockUpController.selectDevice();
+      MockUpController.clear();
     },
   });
 

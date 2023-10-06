@@ -89,6 +89,17 @@ class _MockUpController {
   }
 
   /**
+   * Clear device and render
+   *
+   * @requirement UF/MOCK-UP/CLEAR
+   * @requirement UF/MOCK-UP/RENDER
+   */
+  public async clear() {
+    const _mockUpData = this.modules.mockUpGenerator?.clearMockUp();
+    await this.modules.mockUpHTMLRenderer?.render(_mockUpData?.renderData);
+  }
+
+  /**
    * Insert image in mock-up and rerender
    *
    * @requirement UF/MOCK-UP/RENDER

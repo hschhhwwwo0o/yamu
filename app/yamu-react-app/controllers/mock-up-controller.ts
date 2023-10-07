@@ -2,9 +2,6 @@
 import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
 import { MockUpGenerator } from "@module/mock-up-generator";
 
-/** Types */
-import { SelectOption } from "@/components/form/Select";
-
 class _MockUpController {
   public modules: {
     mockUpGenerator: MockUpGenerator | undefined;
@@ -129,7 +126,7 @@ class _MockUpController {
    */
   public changeSelectSettingHandler(
     settingKey: string,
-    newValue: SelectOption,
+    newValue: { label: string; value: string } | undefined,
   ): void {
     try {
       this.modules.mockUpGenerator?.mockUp.device.changeSettings({

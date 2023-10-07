@@ -36,7 +36,7 @@ class _MockUpController {
 
   public data = {
     isSystemBarSettingActive: false,
-    isDisabledThemeSelect(settingKey: string) {
+    isDisabledThemeSelect(settingKey: string): boolean | undefined {
       if (settingKey === "theme") {
         return !this.isSystemBarSettingActive;
       } else {
@@ -77,7 +77,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/DEVICE-SELECT
    * @requirement UF/MOCK-UP/RENDER
    */
-  public async selectDevice(deviceName?: string) {
+  public async selectDevice(deviceName?: string): Promise<void> {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.selectDevice(
         deviceName,
@@ -94,7 +94,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/CLEAR
    * @requirement UF/MOCK-UP/RENDER
    */
-  public async clear() {
+  public async clear(): Promise<void> {
     const _mockUpData = this.modules.mockUpGenerator?.clearMockUp();
     await this.modules.mockUpHTMLRenderer?.render(_mockUpData?.renderData);
   }
@@ -105,7 +105,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/RENDER
    * @requirement UF/MOCK-UP/INSERT-DESIGN
    */
-  public async insertImage(image?: string) {
+  public async insertImage(image?: string): Promise<void> {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.insertImage(
         image,

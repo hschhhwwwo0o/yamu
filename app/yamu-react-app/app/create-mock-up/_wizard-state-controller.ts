@@ -12,12 +12,14 @@ class _MockUpWizardController {
 
   public activeStep = 1;
 
-  public nextStep() {
+  public nextStep(): number {
     this.activeStep = this.activeStep + 1;
+    return this.activeStep;
   }
 
-  public toDefaultStep() {
+  public toDefaultStep(): number {
     this.activeStep = 1;
+    return this.activeStep;
   }
 }
 

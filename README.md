@@ -10,6 +10,29 @@ https://yamu.vercel.app
 <br />
 <br />
 
+## Table of contents
+
+- Development
+  - Development of software requirements
+  - Design development
+  - Module development
+  - Application development
+  - Installation and start dev server
+- Deployment
+- Dictionary of Terms
+- Software requirements
+  - Quality Attributes
+  - Functional requirements
+  - Use cases
+- Remarks
+- Literature
+- Useful links
+
+<br />
+<br />
+<br />
+<br />
+
 ## Development.
 
 Tracking of tasks was done using GitHub Projects (👎).
@@ -114,7 +137,12 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
-### Deployment.
+<br />
+<br />
+<br />
+<br />
+
+## Deployment.
 
 Deployment requires:
 

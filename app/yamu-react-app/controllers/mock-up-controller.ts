@@ -17,7 +17,7 @@ class _MockUpController {
     return _mockUpGenerator;
   }
 
-  public initializeMockUpHTMLRenderer(containerId: string): MockUpHTMLRenderer {
+  public initializeMockUpHTMLRenderer(containerId = ""): MockUpHTMLRenderer {
     const _mockUpHTMLRenderer = new MockUpHTMLRenderer(containerId, {
       heightInaccuracy: 70,
     });
@@ -38,7 +38,7 @@ class _MockUpController {
    *
    * @requirement UF/DEVICES-LIBRARY/GET
    */
-  public getDevicesLibraryAsOptions(type?: string) {
+  public getDevicesLibraryAsOptions(type = "") {
     return this.modules.mockUpGenerator
       ?.getDevicesLibrary({
         type,
@@ -57,7 +57,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/DEVICE-SELECT
    * @requirement UF/MOCK-UP/RENDER
    */
-  public async selectDevice(deviceName?: string): Promise<void> {
+  public async selectDevice(deviceName = ""): Promise<void> {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.selectDevice(
         deviceName,
@@ -85,7 +85,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/RENDER
    * @requirement UF/MOCK-UP/INSERT-DESIGN
    */
-  public async insertImage(image?: string): Promise<void> {
+  public async insertImage(image = ""): Promise<void> {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.insertImage(
         image,
@@ -111,10 +111,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/SETTINGS-UP
    * @requirement UF/MOCK-UP/RENDER
    */
-  public changeSwitchSettingHandler(
-    settingKey: string,
-    newValue: boolean,
-  ): void {
+  public changeSwitchSettingHandler(settingKey = "", newValue = false): void {
     try {
       this.modules.mockUpGenerator?.mockUp.device.changeSettings({
         [settingKey]: newValue,
@@ -134,8 +131,8 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/SETTINGS-UP
    */
   public changeSelectSettingHandler(
-    settingKey: string,
-    newValue: { label: string; value: string } | undefined,
+    settingKey = "",
+    newValue = { label: "", value: "" },
   ): void {
     try {
       if (

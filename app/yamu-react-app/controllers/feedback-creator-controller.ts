@@ -7,7 +7,7 @@ class _FeedbackCreatorController {
    *
    * @requirement UF/FEEDBACK/CREATE
    */
-  public async sendFeedback(text: string) {
+  public async sendFeedback(text = "") {
     const _feedbackCreatorModule = new FeedbackCreator();
     await _feedbackCreatorModule.createFeedback(text);
   }

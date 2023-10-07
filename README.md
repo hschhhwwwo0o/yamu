@@ -5,6 +5,10 @@ The application is designed for creating mock-ups. Create product mock-ups with 
 
 https://yamu.vercel.app
 
+Example of use:
+
+<img src="./md/Screen-Recording-2023-10-07-at-11.25.42.gif" />
+
 <a href="https://github.com/hschhhwwwo0o/yamu/discussions">Recommendations, questions, opinions, feedback</a>
 
 <br />

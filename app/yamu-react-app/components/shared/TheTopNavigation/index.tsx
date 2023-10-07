@@ -26,6 +26,8 @@ export function TheTopNavigation(): React.JSX.Element {
             {
               /** Burger menu */
               <button
+                aria-label="Menu"
+                title="Menu"
                 onClick={toggleMobileNavigation}
                 className="w-8 h-8 flex items-center"
               >

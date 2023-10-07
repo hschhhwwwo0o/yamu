@@ -41,43 +41,38 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
             return (
               <Fragment key={index}>
                 {setting.type === "switch" && (
-                  <Switch
-                    title={setting.label}
-                    onNewValueSet={function (newValue: boolean) {
-                      MockUpController.changeSwitchSettingHandler(
-                        setting.key,
-                        newValue,
-                      );
-                    }}
-                  />
+                  <Fragment>
+                    <Switch
+                      title={setting.label}
+                      onNewValueSet={function (newValue: boolean) {
+                        MockUpController.changeSwitchSettingHandler(
+                          setting.key,
+                          newValue,
+                        );
+                      }}
+                    />
+                  </Fragment>
                 )}
                 {setting.type === "variants" && (
                   <Fragment>
-                    {setting.key === "theme" && (
-                      <Select
-                        className="pt-4"
-                        isDisabled={MockUpController.data.isDisabledThemeSelect(
+                    <Select
+                      className="pt-4"
+                      placeholder={setting.label}
+                      options={setting.variants?.map(
+                        function _formatToOptions(_variant) {
+                          return {
+                            label: _variant,
+                            value: _variant,
+                          };
+                        },
+                      )}
+                      onSelect={function (newValue: SelectOption) {
+                        MockUpController.changeSelectSettingHandler(
                           setting.key,
-                        )}
-                        placeholder={setting.label}
-                        options={
-                          setting.variants?.map(
-                            function _formatToOptions(_variant) {
-                              return {
-                                label: _variant,
-                                value: _variant,
-                              };
-                            },
-                          ) || []
-                        }
-                        onSelect={function (newValue: SelectOption) {
-                          MockUpController.changeSelectSettingHandler(
-                            setting.key,
-                            newValue,
-                          );
-                        }}
-                      />
-                    )}
+                          newValue,
+                        );
+                      }}
+                    />
                   </Fragment>
                 )}
               </Fragment>

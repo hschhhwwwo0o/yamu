@@ -21,7 +21,7 @@ interface SelectPropsInterface {
   defaultValue?: SelectOption;
   placeholder?: string;
   label?: string;
-  options: SelectOption[];
+  options?: SelectOption[];
   value?: SelectOption;
   setValue?: Dispatch<SetStateAction<SelectOption>>;
   onSelect?: (_option: SelectOption) => void;

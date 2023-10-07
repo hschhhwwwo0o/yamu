@@ -1,5 +1,3 @@
-import { makeAutoObservable } from "mobx";
-
 /** Modules */
 import { MockUpHTMLRenderer } from "@module/mock-up-html-renderer";
 import { MockUpGenerator } from "@module/mock-up-generator";
@@ -8,10 +6,6 @@ import { MockUpGenerator } from "@module/mock-up-generator";
 import { SelectOption } from "@/components/form/Select";
 
 class _MockUpController {
-  constructor() {
-    makeAutoObservable(this);
-  }
-
   public modules: {
     mockUpGenerator: MockUpGenerator | undefined;
     mockUpHTMLRenderer: MockUpHTMLRenderer | undefined;
@@ -33,17 +27,6 @@ class _MockUpController {
     this.modules.mockUpHTMLRenderer = _mockUpHTMLRenderer;
     return _mockUpHTMLRenderer;
   }
-
-  public data = {
-    isSystemBarSettingActive: false,
-    isDisabledThemeSelect(settingKey: string): boolean | undefined {
-      if (settingKey === "theme") {
-        return !this.isSystemBarSettingActive;
-      } else {
-        return undefined;
-      }
-    },
-  };
 
   public getDevicesTypesAsOptions() {
     return [
@@ -133,11 +116,6 @@ class _MockUpController {
       this.modules.mockUpHTMLRenderer?.render(
         this.modules.mockUpGenerator?.mockUp.renderData,
       );
-
-      /** @requirement UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE */
-      if (settingKey === "isSystemBar") {
-        this.data.isSystemBarSettingActive = newValue;
-      }
     } catch (error) {
       console.error(error);
     }

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-/** Connect to store */
+/** Controllers */
 import { observer } from "mobx-react-lite";
 import { MockUpWizardController } from "../../_wizard-state-controller";
 

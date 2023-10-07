@@ -8,6 +8,8 @@ Model-View-Controller metaphor and its application structuring paradigm for thin
 
 <ins>_«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope_</ins>
 
+⚠️ When changing the UI rendering framework (Vue, React, Svelte, etc.) do not delete the controllers folder - controllers are framework independent
+
 ## Styling
 
 Styling is done with <a href="https://tailwindcss.com">TailwindCSS</a>

@@ -89,8 +89,6 @@ Model-View-Controller metaphor and its application structuring paradigm for thin
 
 <ins>_«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope_</ins>
 
-_The architecture of the application is based on MVC, where modules are responsible for the model, mobx is responsible for the controllers, and react is responsible for the view_
-
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md</ins>
 
 ### Installation and start dev server.

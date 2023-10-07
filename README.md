@@ -117,6 +117,7 @@ npm run dev
 
 <br />
 <br />
+<br />
 
 ## Dictionary of Terms.
 
@@ -207,6 +208,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Acting person | User                                                                                    |
 | Description   | The user enters their feedback in the text box and submits it by clicking on the button |
 
+<br />
 <br />
 <br />
 

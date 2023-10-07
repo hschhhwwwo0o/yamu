@@ -114,6 +114,34 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
+### Deployment
+
+Deployment requires
+
+1. Install all dependencies
+2. Compile the application
+3. Run infinite loop / specify out folder
+
+To implement step 1, execute the command:
+
+```sh
+bash instruments/project_installer.bash
+```
+
+To implement step 2, execute the command:
+
+```sh
+npm run build
+```
+
+To implement step 3 with the start of an endless loop, execute the command:
+
+```sh
+npm run start
+```
+
+To implement step 3 by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
+
 <br />
 <br />
 <br />

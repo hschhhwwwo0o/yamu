@@ -244,7 +244,7 @@ export class HTMLRenderer {
     const _windowInnerHeight =
       window.innerHeight - this._options.heightInaccuracy;
 
-    if (window.innerHeight < 580) {
+    if (window.innerHeight < 620) {
       return _windowInnerWidth - 155;
     }
 

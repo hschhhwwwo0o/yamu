@@ -115,6 +115,9 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
+<br />
+<br />
+
 ## Dictionary of Terms.
 
 «A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»
@@ -203,6 +206,9 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | :------------ | :-------------------------------------------------------------------------------------- |
 | Acting person | User                                                                                    |
 | Description   | The user enters their feedback in the text box and submits it by clicking on the button |
+
+<br />
+<br />
 
 ## Remarks.
 

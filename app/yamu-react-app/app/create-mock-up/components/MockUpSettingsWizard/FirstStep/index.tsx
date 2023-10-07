@@ -18,7 +18,10 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
     options: MockUpController.getDevicesTypesAsOptions(),
     onSelect() {
       /**
-       * Clearing the `device model` when changing the `device type`
+       * Clear device and render
+       *
+       * @requirement UF/MOCK-UP/CLEAR
+       * @requirement UF/MOCK-UP/RENDER
        */
       deviceSelectUI.utils.clear();
       MockUpController.clear();
@@ -31,6 +34,12 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
     ),
     isDisabled: deviceTypeSelectUI.props.value === undefined,
     onSelect(_option) {
+      /**
+       * Select device and render
+       *
+       * @requirement UF/MOCK-UP/DEVICE-SELECT
+       * @requirement UF/MOCK-UP/RENDER
+       */
       MockUpController.selectDevice(_option?.label);
     },
   });

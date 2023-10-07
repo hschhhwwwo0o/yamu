@@ -18,11 +18,12 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
     disabledText: "Successfully downloaded",
     /**
      * Download final image
+     *
      * @requirement UF/MOCK-UP/DOWNLOAD
      */
     onClick() {
       try {
-        MockUpController.modules.mockUpHTMLRenderer?.download("png");
+        MockUpController.downloadFinalImage();
         downloadButtonUI.utils.disable();
       } catch (error) {
         console.error(error);

@@ -153,6 +153,15 @@ class _MockUpController {
   }
 
   /**
+   * Download final image
+   *
+   * @requirement UF/MOCK-UP/DOWNLOAD
+   */
+  public downloadFinalImage() {
+    this.modules.mockUpHTMLRenderer?.download("png");
+  }
+
+  /**
    * Get settings list
    *
    * @requirement UF/MOCK-UP/SETTINGS-UP

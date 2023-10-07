@@ -97,6 +97,15 @@ class _MockUpController {
   }
 
   /**
+   * Get settings list
+   *
+   * @requirement UF/MOCK-UP/SETTINGS-UP
+   */
+  public getSettingsList() {
+    return this.modules.mockUpGenerator?.mockUp.device.getSettingsList();
+  }
+
+  /**
    * Change settings with type `switch`
    *
    * @requirement UF/MOCK-UP/SETTINGS-UP
@@ -159,15 +168,6 @@ class _MockUpController {
    */
   public downloadFinalImage() {
     this.modules.mockUpHTMLRenderer?.download("png");
-  }
-
-  /**
-   * Get settings list
-   *
-   * @requirement UF/MOCK-UP/SETTINGS-UP
-   */
-  public getSettingsList() {
-    return this.modules.mockUpGenerator?.mockUp.device.getSettingsList();
   }
 }
 

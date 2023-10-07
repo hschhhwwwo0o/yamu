@@ -142,7 +142,7 @@ To implement by specifying the output folder, specify the path: `./app/yamu-reac
 
 Exaple on Vercel:
 
-![Example](./md/DeployCommandsExample.png)
+![Example](./md/DeployCommandsExample2.png)
 
 <br />
 <br />

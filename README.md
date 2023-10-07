@@ -114,9 +114,9 @@ Start the dev server using the command in the root of the project:
 npm run dev
 ```
 
-### Deployment
+### Deployment.
 
-Deployment requires
+Deployment requires:
 
 1. Install all dependencies
 

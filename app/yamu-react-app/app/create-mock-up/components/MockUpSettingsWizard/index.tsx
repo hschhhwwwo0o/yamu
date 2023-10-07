@@ -5,10 +5,10 @@ import { observer } from "mobx-react-lite";
 import { MockUpWizardController } from "../../_wizard-state-controller";
 
 /** Components */
-import { CreateMockUpFirstStepWizard } from "./FirstStep";
-import { CreateMockUpSecondStepWizard } from "./SecondStep";
-import { CreateMockUpThirdStepWizard } from "./ThirdStep";
-import { CreateMockUpFourthStepWizard } from "./FourthStep";
+import { CreateMockUpFirstStepWizard } from "./1Step";
+import { CreateMockUpSecondStepWizard } from "./2Step";
+import { CreateMockUpThirdStepWizard } from "./3Step";
+import { CreateMockUpFourthStepWizard } from "./4Step";
 
 /**
  * Separation of the mock-up creation process

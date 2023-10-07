@@ -252,7 +252,7 @@ The development process was strongly influenced by the books:
 - «Envisioning Information» Edward R. Tufte;
 - «A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope;
 
-## Links
+## Useful links.
 
 - <a href="https://nextjs.org/docs/app/building-your-application/deploying/static-exports">Static export deployment on Vercel</a>
 - <a href="https://nextjs.org/docs/pages/building-your-application/deploying#nextjs-build-api">Build app on Vercel</a>

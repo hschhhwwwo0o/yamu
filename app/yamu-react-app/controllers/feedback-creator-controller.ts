@@ -1,13 +1,7 @@
-import { makeAutoObservable } from "mobx";
-
 /** Modules */
 import { FeedbackCreator } from "@feedback-creator";
 
 class _FeedbackCreatorController {
-  constructor() {
-    makeAutoObservable(this);
-  }
-
   /**
    * Sending feedback
    *

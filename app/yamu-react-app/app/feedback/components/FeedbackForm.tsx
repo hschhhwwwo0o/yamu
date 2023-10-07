@@ -15,6 +15,12 @@ export function FeedbackForm(): React.JSX.Element {
   const createFeedbackButtonUI = useButton({
     loadingText: "Creating feedback...",
     isDisabled: feedbackTextareaUI.props.value.length < 5,
+
+    /**
+     * Sending feedback
+     *
+     * @requirement UF/FEEDBACK/CREATE
+     */
     onClick: async function _createFeedback(): Promise<void> {
       try {
         {

@@ -44,12 +44,19 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                   <Fragment>
                     <Switch
                       title={setting.label}
-                      onNewValueSet={function (newValue: boolean) {
-                        MockUpController.changeSwitchSettingHandler(
-                          setting.key,
-                          newValue,
-                        );
-                      }}
+                      onNewValueSet={
+                        /**
+                         * Change settings
+                         *
+                         * @requirement UF/MOCK-UP/SETTINGS-UP
+                         */
+                        function (newValue: boolean) {
+                          MockUpController.changeSwitchSettingHandler(
+                            setting.key,
+                            newValue,
+                          );
+                        }
+                      }
                     />
                   </Fragment>
                 )}
@@ -66,12 +73,19 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                           };
                         },
                       )}
-                      onSelect={function (newValue: SelectOption) {
-                        MockUpController.changeSelectSettingHandler(
-                          setting.key,
-                          newValue,
-                        );
-                      }}
+                      onSelect={
+                        /**
+                         * Change settings
+                         *
+                         * @requirement UF/MOCK-UP/SETTINGS-UP
+                         */
+                        function (newValue: SelectOption) {
+                          MockUpController.changeSelectSettingHandler(
+                            setting.key,
+                            newValue,
+                          );
+                        }
+                      }
                     />
                   </Fragment>
                 )}

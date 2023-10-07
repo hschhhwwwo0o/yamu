@@ -15,13 +15,13 @@ import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
   const insertedImageUploadImageUI = useUploadImage({
+    /**
+     * Insert image in mock-up and rerender
+     *
+     * @requirement UF/MOCK-UP/RENDER
+     * @requirement UF/MOCK-UP/INSERT-DESIGN
+     */
     onChange(imageUrl = "") {
-      /**
-       * Insert image in mock-up and rerender
-       *
-       * @requirement UF/MOCK-UP/RENDER
-       * @requirement UF/MOCK-UP/INSERT-DESIGN
-       */
       MockUpController.insertImage(imageUrl);
     },
   });

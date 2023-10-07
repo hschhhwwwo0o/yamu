@@ -16,13 +16,14 @@ import { MotionBlock } from "@/components/shared/MotionBlock";
 export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
   const deviceTypeSelectUI = useSelect({
     options: MockUpController.getDevicesTypesAsOptions(),
+
+    /**
+     * Clear device and render
+     *
+     * @requirement UF/MOCK-UP/CLEAR
+     * @requirement UF/MOCK-UP/RENDER
+     */
     onSelect() {
-      /**
-       * Clear device and render
-       *
-       * @requirement UF/MOCK-UP/CLEAR
-       * @requirement UF/MOCK-UP/RENDER
-       */
       deviceSelectUI.utils.clear();
       MockUpController.clear();
     },
@@ -33,13 +34,14 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
       deviceTypeSelectUI.props.value?.value,
     ),
     isDisabled: deviceTypeSelectUI.props.value === undefined,
+
+    /**
+     * Select device and render
+     *
+     * @requirement UF/MOCK-UP/DEVICE-SELECT
+     * @requirement UF/MOCK-UP/RENDER
+     */
     onSelect(_option) {
-      /**
-       * Select device and render
-       *
-       * @requirement UF/MOCK-UP/DEVICE-SELECT
-       * @requirement UF/MOCK-UP/RENDER
-       */
       MockUpController.selectDevice(_option?.label);
     },
   });

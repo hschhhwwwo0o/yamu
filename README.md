@@ -7,7 +7,7 @@ https://yamu.vercel.app
 
 Example of use:
 
-<img src="./md/Screen-Recording-2023-10-07-at-11.25.42.gif" />
+![](./md/Screen%20Recording%202023-10-07%20at%2011.25.42-3.mov)
 
 <a href="https://github.com/hschhhwwwo0o/yamu/discussions">Recommendations, questions, opinions, feedback</a>
 

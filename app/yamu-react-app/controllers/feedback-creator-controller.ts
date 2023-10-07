@@ -1,5 +1,5 @@
 /** Modules */
-import { FeedbackCreator } from "@feedback-creator";
+import { FeedbackCreator } from "@module/feedback-creator";
 
 class _FeedbackCreatorController {
   /**

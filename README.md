@@ -140,6 +140,10 @@ npm run start
 
 To implement by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
 
+Exaple on Vercel:
+
+![Example](./md/DeployCommandsExample.png)
+
 <br />
 <br />
 <br />

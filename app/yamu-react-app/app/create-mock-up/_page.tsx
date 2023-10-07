@@ -3,7 +3,7 @@
 import React, { useLayoutEffect, useMemo } from "react";
 
 /** Controllers */
-import { MockUpController } from "./_mock-up-controller";
+import { MockUpController } from "@/controllers/mock-up-controller";
 import { MockUpWizardController } from "./_wizard-state-controller";
 
 /** Layouts */

@@ -10,6 +10,12 @@ Model-View-Controller metaphor and its application structuring paradigm for thin
 
 _The architecture of the application is based on MVC, where modules are responsible for the model, mobx is responsible for the controllers, and react is responsible for the view_
 
+## MobX
+
+The controllers are implemented using MobX. Controllers encapsulate the logic of how the view interacts with the model; View only needs to call a controller method; View doesn't think about business logic. Note that for MobX you need to wrap components with `observer`
+
+<ins>_It is very likely that when moving to another UI rendering framework (Vue, Svelte and so on) MobX will have to be replaced by_</ins>
+
 ## Styling
 
 Styling is done with <a href="https://tailwindcss.com">TailwindCSS</a>

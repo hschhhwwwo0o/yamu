@@ -2,8 +2,8 @@
 
 import React, { Fragment } from "react";
 
-/** Modules */
-import { FeedbackCreatorController } from "../_feedback-creator-controller";
+/** Controllers */
+import { FeedbackCreatorController } from "@/controllers/feedback-creator-controller";
 
 /** Components */
 import { Textarea, useTextarea } from "@/components/form/Textarea";

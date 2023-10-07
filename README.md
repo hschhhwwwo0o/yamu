@@ -12,21 +12,21 @@ https://yamu.vercel.app
 
 ## Table of contents
 
-- Development
-  - Development of software requirements
-  - Design development
-  - Module development
-  - Application development
-  - Installation and start dev server
-- Deployment
-- Dictionary of Terms
-- Software requirements
-  - Quality Attributes
-  - Functional requirements
-  - Use cases
-- Remarks
-- Literature
-- Useful links
+- <a href="https://github.com/hschhhwwwo0o/yamu#development">Development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#1--development-of-software-requirements">Development of software requirements</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#2--design-development">Design development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#3-%EF%B8%8F-module-development">Module development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#4-%EF%B8%8F-application-development">Application development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#installation-and-start-dev-server">Installation and start dev server</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#deployment">Deployment</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#dictionary-of-terms">Dictionary of Terms</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#software-requirements">Software requirements</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#quality-attributes">Quality Attributes</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#functional-requirements">Functional requirements</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#use-cases">Use cases</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#remarks">Remarks</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#literature">Literature</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#useful-links">Useful links</a>
 
 <br />
 <br />

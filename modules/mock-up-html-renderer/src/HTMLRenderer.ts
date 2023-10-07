@@ -20,8 +20,6 @@ export class HTMLRenderer {
    * @requirement UF/MOCK-UP/RENDER
    */
   public render(renderData: RenderData): void {
-    this._clearDOMContainer();
-
     if (renderData.frameWidth === 0 && renderData.frameHeight === 0) {
       console.warn(
         "No rendering has been done. `renderData` is specified incorrectly",
@@ -63,9 +61,11 @@ export class HTMLRenderer {
     };
 
     if (_frameImage.complete) {
+      this._clearDOMContainer();
       _render();
     }
     _frameImage.onload = () => {
+      this._clearDOMContainer();
       _render();
     };
   }

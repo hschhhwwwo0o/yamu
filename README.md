@@ -231,9 +231,9 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices |  ✅  |
 | WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     |  ❌  |
 | Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       |  ❌  |
-| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     |  ❌  |
+| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     |  ✅  |
 | Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     |  ❌  |
-| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     |  ❌  |
+| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     |  ✅  |
 
 ### Functional requirements.
 

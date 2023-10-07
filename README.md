@@ -229,7 +229,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                |  ✅  |
 | Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      |  ❌  |
 | Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices |  ✅  |
-| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     |  ❌  |
+| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     |  ✅  |
 | Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       |  ❌  |
 | High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     |  ✅  |
 | Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     |  ❌  |

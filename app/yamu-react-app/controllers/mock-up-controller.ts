@@ -129,11 +129,21 @@ class _MockUpController {
     newValue: { label: string; value: string } | undefined,
   ): void {
     try {
-      this.modules.mockUpGenerator?.mockUp.device.changeSettings({
-        isSystemBar:
-          this.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
-        [settingKey]: newValue?.value,
-      });
+      if (
+        this.modules.mockUpGenerator?.mockUp.device.type === "phone" ||
+        this.modules.mockUpGenerator?.mockUp.device.type === "tablet"
+      ) {
+        this.modules.mockUpGenerator?.mockUp.device.changeSettings({
+          isSystemBar:
+            this.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
+          [settingKey]: newValue?.value,
+        });
+      }
+      if (this.modules.mockUpGenerator?.mockUp.device.type === "watch") {
+        this.modules.mockUpGenerator?.mockUp.device.changeSettings({
+          [settingKey]: newValue?.value,
+        });
+      }
       this.modules.mockUpHTMLRenderer?.render(
         this.modules.mockUpGenerator?.mockUp.renderData,
       );

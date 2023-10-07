@@ -1,6 +1,6 @@
 {
   "name": "mock-up-html-renderer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image",
   "main": "src/index.ts",
   "scripts": {

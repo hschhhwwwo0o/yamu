@@ -1,6 +1,6 @@
 {
   "name": "mock-up-generator",
-  "version": "2.0.0",
+  "version": "2.5.0",
   "description": "The module is intended for mock-up state management. Includes device selection, image insertion, device settings",
   "main": "src/index.ts",
   "scripts": {

@@ -11,8 +11,11 @@ import { usePathname } from "next/navigation";
 import { useIsOpenMobileNavigation } from "./hooks/useIsOpenMobileNavigation";
 
 export function TheTopNavigation(): React.JSX.Element {
-  const { toggleMobileNavigation, isOpenMobileNavigation } =
-    useIsOpenMobileNavigation();
+  const {
+    toggleMobileNavigation,
+    isOpenMobileNavigation,
+    closeMobileNavigation,
+  } = useIsOpenMobileNavigation();
 
   const path = usePathname();
 
@@ -151,12 +154,14 @@ export function TheTopNavigation(): React.JSX.Element {
           className="bg-black z-50 transition-all duration-300 w-screen fixed flex flex-col items-center left-0 top-min-top-navbar-height h-min-screen-without-top-navbar-height pt-8"
         >
           <Link
+            onClick={closeMobileNavigation}
             href="/create-mock-up"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5  px-8"
           >
             Create mock-up
           </Link>
           <Link
+            onClick={closeMobileNavigation}
             target="_blank"
             href="https://github.com/hschhhwwwo0o/yamu"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
@@ -164,24 +169,28 @@ export function TheTopNavigation(): React.JSX.Element {
             GitHub
           </Link>
           <Link
+            onClick={closeMobileNavigation}
             href="/about"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             About
           </Link>
           <Link
+            onClick={closeMobileNavigation}
             href="/development"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             Development
           </Link>
           <Link
+            onClick={closeMobileNavigation}
             href="/license"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >
             License
           </Link>
           <Link
+            onClick={closeMobileNavigation}
             href="/feedback"
             className="text-white hover:opacity-70 transition-opacity duration-200 py-5 px-8"
           >

@@ -8,8 +8,13 @@ export function useIsOpenMobileNavigation() {
     setIsOpenMobileNavigation(!isOpenMobileNavigation);
   }
 
+  function closeMobileNavigation() {
+    setIsOpenMobileNavigation(false);
+  }
+
   return {
     isOpenMobileNavigation,
     toggleMobileNavigation,
+    closeMobileNavigation,
   };
 }

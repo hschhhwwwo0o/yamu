@@ -29,18 +29,10 @@ A unique identifier is created for each requirement. At the stage of code writin
 
 ```ts
 /**
- * Select device and render
- *
- * @requirement UF/MOCK-UP/DEVICE-SELECT
- * @requirement UF/MOCK-UP/RENDER
+ * @requirement REQUIREMENT/ID
  */
-async function selectDevice(deviceName?: string): Promise<void> {
-  try {
-    const _mockUpData = await mockUpGenerator?.selectDevice(deviceName);
-    await mockUpHTMLRenderer?.render(_mockUpData?.renderData);
-  } catch (error) {
-    console.error(error);
-  }
+async function sameName(): Promise<void> {
+  ...
 }
 ```
 

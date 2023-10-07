@@ -223,17 +223,17 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 <ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-| Attribute                                  | ID                       | Description / Why it's necessary                                                |
-| :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ |
-| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  |
-| UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                |
-| Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      |
-| Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices |
-| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     |
-| Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       |
-| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     |
-| Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     |
-| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     |
+| Attribute                                  | ID                       | Description / Why it's necessary                                                | Done |
+| :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | ---- |
+| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  | ✅   |
+| UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                | ✅   |
+| Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      | ❌   |
+| Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices | ✅   |
+| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     | ❌   |
+| Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       | ❌   |
+| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     | ❌   |
+| Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     | ❌   |
+| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     | ❌   |
 
 ### Functional requirements.
 
@@ -241,20 +241,20 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 <ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
 
-| Functional requirement                   | ID                                 | Responsible module     |
-| :--------------------------------------- | :--------------------------------- | :--------------------- |
-| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |
-| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |
+| Functional requirement                   | ID                                 | Responsible module     | Done |
+| :--------------------------------------- | :--------------------------------- | :--------------------- | ---- |
+| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      | ✅   |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer | ✅   |
+| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer | ✅   |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     | ✅   |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     | ✅   |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     | ✅   |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     | ✅   |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     | ✅   |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     | ✅   |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     | ✅   |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     | ✅   |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     | ✅   |
 
 ### Use cases.
 

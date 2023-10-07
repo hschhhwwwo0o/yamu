@@ -9,7 +9,7 @@ export function MockUpPreviewSceneLayout({
 }: MockUpPreviewSceneLayoutPropsInterface): React.JSX.Element {
   return (
     <Fragment>
-      <div className="bg-[url(/textures/light-block-texture.png)] dark:bg-[url(/textures/dark-block-texture.png)] w-full min-h-[80vh] lg:min-h-full lg:h-full border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-solid border-light-default-border dark:border-dark-default-border flex items-center justify-center">
+      <div className="bg-[url(/textures/light-block-texture.png)] dark:bg-[url(/textures/dark-block-texture.png)] w-full min-h-[760px] lg:min-h-full lg:h-full border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-solid border-light-default-border dark:border-dark-default-border flex items-center justify-center">
         {children}
       </div>
     </Fragment>

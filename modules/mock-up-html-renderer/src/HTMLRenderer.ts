@@ -240,6 +240,8 @@ export class HTMLRenderer {
 
   private _calculateLayoutWidth(renderData: RenderData) {
     const _windowInnerWidth = window.innerWidth;
+    const _windowInnerHeight =
+      window.innerHeight - this._options.heightInaccuracy;
 
     if (window.innerHeight < 400) {
       return _windowInnerWidth - 155;
@@ -248,11 +250,20 @@ export class HTMLRenderer {
     if (_windowInnerWidth < renderData.frameWidth) {
       return _windowInnerWidth - 60;
     }
+    if (
+      _windowInnerHeight < renderData.frameHeight &&
+      _windowInnerWidth > renderData.frameWidth &&
+      _windowInnerWidth > 500
+    ) {
+      return renderData.frameWidth - 100;
+    }
 
     return renderData.frameWidth;
   }
   private _calculateLayoutHeight(renderData: RenderData) {
     const _windowInnerWidth = window.innerWidth;
+    const _windowInnerHeight =
+      window.innerHeight - this._options.heightInaccuracy;
 
     if (window.innerHeight < 400) {
       const _coof = renderData.frameHeight / renderData.frameWidth;
@@ -262,6 +273,15 @@ export class HTMLRenderer {
     }
 
     if (_windowInnerWidth < renderData.frameWidth) {
+      const _coof = renderData.frameHeight / renderData.frameWidth;
+      const _newWidth = this._calculateLayoutWidth(renderData);
+      const _newHeight = _newWidth * _coof;
+      return _newHeight;
+    }
+    if (
+      _windowInnerHeight < renderData.frameHeight &&
+      _windowInnerWidth > renderData.frameWidth
+    ) {
       const _coof = renderData.frameHeight / renderData.frameWidth;
       const _newWidth = this._calculateLayoutWidth(renderData);
       const _newHeight = _newWidth * _coof;

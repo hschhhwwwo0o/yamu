@@ -265,7 +265,7 @@ export class HTMLRenderer {
     const _windowInnerHeight =
       window.innerHeight - this._options.heightInaccuracy;
 
-    if (window.innerHeight < 580) {
+    if (window.innerHeight < 620) {
       const _coof = renderData.frameHeight / renderData.frameWidth;
       const _newWidth = this._calculateLayoutWidth(renderData);
       const _newHeight = _newWidth * _coof;

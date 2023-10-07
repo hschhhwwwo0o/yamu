@@ -57,7 +57,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/DEVICE-SELECT
    * @requirement UF/MOCK-UP/RENDER
    */
-  public async selectDevice(deviceName = ""): Promise<void> {
+  public async selectDevice(deviceName = "") {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.selectDevice(
         deviceName,
@@ -74,7 +74,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/CLEAR
    * @requirement UF/MOCK-UP/RENDER
    */
-  public async clear(): Promise<void> {
+  public async clear() {
     const _mockUpData = this.modules.mockUpGenerator?.clearMockUp();
     await this.modules.mockUpHTMLRenderer?.render(_mockUpData?.renderData);
   }
@@ -85,7 +85,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/RENDER
    * @requirement UF/MOCK-UP/INSERT-DESIGN
    */
-  public async insertImage(image = ""): Promise<void> {
+  public async insertImage(image = "") {
     try {
       const _mockUpData = await this.modules.mockUpGenerator?.insertImage(
         image,
@@ -111,7 +111,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/SETTINGS-UP
    * @requirement UF/MOCK-UP/RENDER
    */
-  public changeSwitchSettingHandler(settingKey = "", newValue = false): void {
+  public changeSwitchSettingHandler(settingKey = "", newValue = false) {
     try {
       this.modules.mockUpGenerator?.mockUp.device.changeSettings({
         [settingKey]: newValue,
@@ -133,7 +133,7 @@ class _MockUpController {
   public changeSelectSettingHandler(
     settingKey = "",
     newValue = { label: "", value: "" },
-  ): void {
+  ) {
     try {
       if (
         this.modules.mockUpGenerator?.mockUp.device.type === "phone" ||

@@ -25,7 +25,6 @@ export class HTMLRenderer {
         "No rendering has been done. `renderData` is specified incorrectly",
         renderData,
       );
-      return;
     }
 
     console.log("Rendering...", renderData);

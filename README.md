@@ -176,6 +176,11 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Open Graph              | Micro markup for SEO.                                                                                                 |
 | Lighthouse              | Automated tool for measuring the quality of web pages.                                                                |
 
+<br />
+<br />
+<br />
+<br />
+
 ## Software requirements.
 
 «Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»

@@ -16,9 +16,9 @@ https://yamu.vercel.app
 
 - <a href="https://github.com/hschhhwwwo0o/yamu#development">Development</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#1--development-of-software-requirements">Development of software requirements</a>
-  - <a href="https://github.com/hschhhwwwo0o/yamu#2--design-development">Design development</a>
-  - <a href="https://github.com/hschhhwwwo0o/yamu#3-%EF%B8%8F-module-development">Module development</a>
-  - <a href="https://github.com/hschhhwwwo0o/yamu#4-%EF%B8%8F-application-development">Application development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#2-design-development">Design development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#3-module-development">Module development</a>
+  - <a href="https://github.com/hschhhwwwo0o/yamu#4-application-development">Application development</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#installation-and-start-dev-server">Installation and start dev server</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#deployment">Deployment</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#dictionary-of-terms">Dictionary of Terms</a>

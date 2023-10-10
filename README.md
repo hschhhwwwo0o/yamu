@@ -37,7 +37,7 @@ https://yamu.vercel.app
 
 ## Development.
 
-Tracking of tasks was done using GitHub Projects (👎).
+Tracking of tasks was done using GitHub Projects.
 
 The development of the project was divided into several stages:
 
@@ -77,7 +77,7 @@ The project is separated into modules and application; modules are responsible f
 
 The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 
-If you're using macOS or Linux (I really hope you're not a Windows user¹ 👎), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
+If you're using macOS or Linux (I really hope you're not a Windows user¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
 bash ./instruments/module_creator.bash
@@ -125,13 +125,13 @@ To install the repository, paste this command into your terminal:
 git clone https://github.com/hschhhwwwo0o/yamu.git
 ```
 
-If you are a macOS or Linux user, (I REALLY HOPE YOU'RE NOT A WINDOWS USER¹ 👎) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
+If you are a macOS or Linux user, (I REALLY HOPE YOU'RE NOT A WINDOWS USER¹) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
 bash instruments/project_installer.bash
 ```
 
-_If the install script gives an error (OR IF YOU ARE A WINDOWS USER¹ 👎), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
+_If the install script gives an error (OR IF YOU ARE A WINDOWS USER¹), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
 
 Start the dev server using the command in the root of the project:
 

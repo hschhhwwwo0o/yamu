@@ -46,7 +46,7 @@ The development of the project was divided into several stages:
 3. Module development
 4. Application development
 
-### 1. 📝 Development of software requirements.
+### 1. Development of software requirements.
 
 Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled.
 
@@ -65,13 +65,13 @@ In the book «Software Requirements Engineering» by Carl Wiegers and Jay Beatty
 
 ![Example](./md/RequirmentsIDsPreview4.png)
 
-### 2. 🎨 Design development.
+### 2. Design development.
 
 The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
 
 ![Example](./md/FigmaPreview5.png)
 
-### 3. ⚙️ Module development.
+### 3. Module development.
 
 The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. _Each module performs only one task and should not interact with other modules in any way_.
 
@@ -105,7 +105,7 @@ If something went wrong, you can compile the modules yourself. To compile a modu
 npm run compile
 ```
 
-### 4. 🛠️ Application development.
+### 4. Application development.
 
 «When building interactive applications, as with other programs, modularity of components has enormous benefits. Isolating functional units from each other as much as possible makes it easier for the application designer to understand and modify each particular unit, without having to know everything about the other units.
 

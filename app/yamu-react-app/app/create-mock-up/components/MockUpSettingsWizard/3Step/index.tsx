@@ -15,6 +15,11 @@ import { Select, SelectOption } from "@/components/form/Select";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
 export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
+  /**
+   * Get settings list
+   *
+   * @requirement UF/DEVICE/GET-SETTINGS
+   */
   const settingsList = MockUpController.getSettingsList();
 
   const thirdStepNextButtonUI = useButton({

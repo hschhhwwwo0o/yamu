@@ -100,6 +100,7 @@ class _MockUpController {
    * Get settings list
    *
    * @requirement UF/MOCK-UP/SETTINGS-UP
+   * @requirement UF/DEVICE/GET-SETTINGS
    */
   public getSettingsList() {
     return this.modules.mockUpGenerator?.mockUp.device.getSettingsList();

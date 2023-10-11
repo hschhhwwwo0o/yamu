@@ -69,6 +69,8 @@ class PhoneDevice extends Device {
   /**
    * Get settings device list item
    *
+   * @requirement UF/DEVICE/GET-SETTINGS
+   *
    * @returns Settings list item
    */
   public getSettingsList(): SettingListItem[] {

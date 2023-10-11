@@ -252,6 +252,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |  ✅  |
 | Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |  ✅  |
 | <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |  ✅  |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator     |  ✅  |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |  ✅  |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |  ✅  |
 | BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |  ✅  |

@@ -19,6 +19,7 @@ The module implements the requirements:
 | Reset the mockup                         | UF/MOCK-UP/CLEAR                   |
 | Mockup initialization                    | UF/MOCK-UP/INIT                    |
 | <br /> Setting up a mockup               | <br /> UF/MOCK-UP/SETTINGS-UP      |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             |
 | Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE |
 | Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      |
 | BW color correction mockup               | UF/MOCK-UP/OPTION-BW-STYLE         |

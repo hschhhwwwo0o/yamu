@@ -107,19 +107,19 @@ npm run compile
 
 ### 4. Application development.
 
-_«When building interactive applications, as with other programs, modularity of components has enormous benefits. Isolating functional units from each other as much as possible makes it easier for the application designer to understand and modify each particular unit, without having to know everything about the other units._
+&emsp; _«When building interactive applications, as with other programs, modularity of components has enormous benefits. Isolating functional units from each other as much as possible makes it easier for the application designer to understand and modify each particular unit, without having to know everything about the other units._
 
-_Model-View-Controller metaphor and its application structuring paradigm for thinking about (and implementing) interactive application components was developed. Models are those components of the system application that actually do the work (simulation of the application domain). They are kept quite distinct from views, which display aspects of the models. Controllers are used to send messages to the model, and provide the interface between the model with its associated views»_
+&emsp; _Model-View-Controller metaphor and its application structuring paradigm for thinking about (and implementing) interactive application components was developed. Models are those components of the system application that actually do the work (simulation of the application domain). They are kept quite distinct from views, which display aspects of the models. Controllers are used to send messages to the model, and provide the interface between the model with its associated views»_
 
-<ins>«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope</ins>
+&emsp;&emsp;<ins>«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope</ins>
 
 An architecture is developed where modules play the role of MVC models. Controllers use module methods; one controller can be linked to several modules; controller serves as a link between modules and view; controllers are not linked to the framework and are just classes, so they can be reused with any other framework to render the view. View calls controller methods and knows nothing about business logic.
 
 The structure of the project is a modular monolith.
 
-_«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
+&emsp;_«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
 
-<ins>«From monoliths to microservices» by Sam Newman</ins>
+&emsp;&emsp;<ins>«From monoliths to microservices» by Sam Newman</ins>
 
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md</ins>
 
@@ -189,11 +189,9 @@ Exaple on Vercel:
 
 ## Dictionary of Terms.
 
-_«A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»_
+&emsp;_«A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»_
 
-<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
-
-<br />
+&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 
@@ -223,15 +221,15 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 ## Software requirements.
 
-_«Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»_
+&emsp;_«Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»_
 
-<ins>Ian Sommerville, Pete Sawyer, 1997</ins>
+&emsp;&emsp;<ins>Ian Sommerville, Pete Sawyer, 1997</ins>
 
 ### Quality Attributes.
 
-_«Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality.»_
+&emsp;_«Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality.»_
 
-<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | Attribute                                  | ID                       | Description / Why it's necessary                                                | Done |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | :--: |
@@ -247,9 +245,9 @@ _«Quality attributes describe the characteristics observed during software exec
 
 ### Functional requirements.
 
-_«Functional requirements can be written in terms of what the system does or what the user does.»_
+&emsp;_«Functional requirements can be written in terms of what the system does or what the user does.»_
 
-<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | Functional requirement                   | ID                                 | Responsible module     | Done |
 | :--------------------------------------- | :--------------------------------- | :--------------------- | :--: |
@@ -269,9 +267,9 @@ _«Functional requirements can be written in terms of what the system does or wh
 
 ### Use cases.
 
-_«A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information.»_
+&emsp;_«A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information.»_
 
-<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                      |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------- |

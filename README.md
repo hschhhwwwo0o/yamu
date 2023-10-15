@@ -117,6 +117,8 @@ An architecture is developed where modules play the role of MVC models. Controll
 
 The structure of the project is a modular monolith.
 
+![Example](./md/MVC.png)
+
 > _«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
 >
 > <ins>«From monoliths to microservices» by Sam Newman</ins>

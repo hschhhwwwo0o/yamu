@@ -113,15 +113,23 @@ Model-View-Controller metaphor and its application structuring paradigm for thin
 
 <ins>_«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope_</ins>
 
+<br />
+
 An architecture is developed where modules play the role of MVC models. Controllers use module methods; one controller can be linked to several modules; controller serves as a link between modules and view; controllers are not linked to the framework and are just classes, so they can be reused with any other framework to render the view. View calls controller methods and knows nothing about business logic.
 
 The structure of the project is a modular monolith.
+
+<br />
 
 «The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»
 
 <ins>_«From monoliths to microservices» by Sam Newman_</ins>
 
+<br />
+
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md</ins>
+
+<br />
 
 ### Installation and start dev server.
 
@@ -190,6 +198,8 @@ Exaple on Vercel:
 «A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»
 
 <ins>_«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty_</ins>
+
+<br />
 
 The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 

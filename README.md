@@ -1,7 +1,7 @@
 ![GitHub Light Cover](./md/GitHubCover.light3.png#gh-light-mode-only)
 ![GitHub Dark Cover](./md/GitHubCover.dark3.png#gh-dark-mode-only)
 
-The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.
+&emsp;The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.
 
 https://yamu.vercel.app
 
@@ -37,9 +37,9 @@ https://yamu.vercel.app
 
 ## Development.
 
-Tracking of tasks was done using GitHub Projects.
+&emsp;Tracking of tasks was done using GitHub Projects.
 
-The development of the project was divided into several stages:
+&emsp;The development of the project was divided into several stages:
 
 1. Development of software requirements
 2. Design development
@@ -48,9 +48,9 @@ The development of the project was divided into several stages:
 
 ### 1. Development of software requirements.
 
-Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled.
+&emsp;Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled.
 
-A unique identifier is created for each requirement. At the stage of code writing, the identifier of the implemented requirement is noted in the comment, which makes it easier to find the implementation of a particular requirement in the code base. For example:
+&emsp;A unique identifier is created for each requirement. At the stage of code writing, the identifier of the implemented requirement is noted in the comment, which makes it easier to find the implementation of a particular requirement in the code base. For example:
 
 ```ts
 /**
@@ -61,29 +61,29 @@ async function sameName(): Promise<void> {
 }
 ```
 
-In the book «Software Requirements Engineering» by Carl Wiegers and Jay Beatty, this approach is called _requirement tracking_. To find anything related to a particular requirement use the codebase search (⇧⌘F in VSC on macOS) and enter the requirement ID. For example:
+&emsp;In the book «Software Requirements Engineering» by Carl Wiegers and Jay Beatty, this approach is called _requirement tracking_. To find anything related to a particular requirement use the codebase search (⇧⌘F in VSC on macOS) and enter the requirement ID. For example:
 
 ![Example](./md/RequirmentsIDsPreview4.png)
 
 ### 2. Design development.
 
-The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
+&emsp;The design of the application was developed in Figma/Photoshop. The design was developed in accordance with the previously developed software requirements.
 
 ![Example](./md/FigmaPreview5.png)
 
 ### 3. Module development.
 
-The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. _Each module performs only one task and should not interact with other modules in any way_.
+&emsp;The project is separated into modules and application; modules are responsible for implementing the business logic; application is responsible for rendering the UI and executing the business logic through the modules. Thus, the application (in this case, the NextJS framework) is responsible only for displaying the UI, while the modules contain all the business logic. _Each module performs only one task and should not interact with other modules in any way_.
 
-The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
+&emsp;The purpose of this separation is to separate business logic from fickle and windy frameworks and libraries that have nothing to do with business logic. The modules are designed in such a way that they can be used independently of the framework; this makes it very easy to migrate from ReactJS to VueJS, for example.
 
-If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
+&emsp;If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
 bash ./instruments/module_creator.bash
 ```
 
-At the moment there are 3 modules implemented in the project:
+&emsp;At the moment there are 3 modules implemented in the project:
 
 | Module name            | Meaning of the module                                                                                                    |
 | :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
@@ -93,13 +93,13 @@ At the moment there are 3 modules implemented in the project:
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 
-To change the logic of module operation and check the result of its work in the application, you need to recompile the module. This can be done using the build_modules script; execute this command in the root of the project:
+&emsp;To change the logic of module operation and check the result of its work in the application, you need to recompile the module. This can be done using the build_modules script; execute this command in the root of the project:
 
 ```sh
 npm run build-modules
 ```
 
-If something went wrong, you can compile the modules yourself. To compile a module yourself, go to the module folder and execute the compile command:
+&emsp;If something went wrong, you can compile the modules yourself. To compile a module yourself, go to the module folder and execute the compile command:
 
 ```sh
 npm run compile
@@ -111,15 +111,15 @@ npm run compile
 
 &emsp; _Model-View-Controller metaphor and its application structuring paradigm for thinking about (and implementing) interactive application components was developed. Models are those components of the system application that actually do the work (simulation of the application domain). They are kept quite distinct from views, which display aspects of the models. Controllers are used to send messages to the model, and provide the interface between the model with its associated views»_
 
-&emsp;&emsp;<ins>«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope</ins>
+&emsp;<ins>«A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope</ins>
 
-An architecture is developed where modules play the role of MVC models. Controllers use module methods; one controller can be linked to several modules; controller serves as a link between modules and view; controllers are not linked to the framework and are just classes, so they can be reused with any other framework to render the view. View calls controller methods and knows nothing about business logic.
+&emsp;An architecture is developed where modules play the role of MVC models. Controllers use module methods; one controller can be linked to several modules; controller serves as a link between modules and view; controllers are not linked to the framework and are just classes, so they can be reused with any other framework to render the view. View calls controller methods and knows nothing about business logic.
 
 The structure of the project is a modular monolith.
 
 &emsp;_«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
 
-&emsp;&emsp;<ins>«From monoliths to microservices» by Sam Newman</ins>
+<ins>«From monoliths to microservices» by Sam Newman</ins>
 
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md</ins>
 
@@ -127,21 +127,21 @@ The structure of the project is a modular monolith.
 
 ### Installation and start dev server.
 
-To install the repository, paste this command into your terminal:
+&emsp;To install the repository, paste this command into your terminal:
 
 ```sh
 git clone https://github.com/hschhhwwwo0o/yamu.git
 ```
 
-If you are a macOS or Linux user, (Doesn't work on Windows¹) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
+&emsp;If you are a macOS or Linux user, (Doesn't work on Windows¹) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
 bash instruments/project_installer.bash
 ```
 
-_If the install script gives an error (Doesn't work on Windows¹), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
+&emsp;_If the install script gives an error (Doesn't work on Windows¹), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
 
-Start the dev server using the command in the root of the project:
+&emsp;Start the dev server using the command in the root of the project:
 
 ```sh
 npm run dev
@@ -154,7 +154,7 @@ npm run dev
 
 ## Deployment.
 
-Deployment requires:
+&emsp;Deployment requires:
 
 1. Install all dependencies
 
@@ -170,15 +170,15 @@ npm run build
 
 3. Run infinite loop / specify out folder
 
-To implement with the start of an endless loop, execute the command:
+&emsp;To implement with the start of an endless loop, execute the command:
 
 ```sh
 npm run start
 ```
 
-To implement by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
+&emsp;To implement by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
 
-Exaple on Vercel:
+&emsp;Exaple on Vercel:
 
 ![Example](./md/DeployCommandsExample2.png)
 
@@ -191,9 +191,9 @@ Exaple on Vercel:
 
 &emsp;_«A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»_
 
-&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
-The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
+&emsp;The term dictionary is intended to ensure that the same terms are used throughout the code base. For example, to eliminate the use of synonym words.
 
 | Term                    | Meaning                                                                                                               |
 | :---------------------- | :-------------------------------------------------------------------------------------------------------------------- |
@@ -223,13 +223,13 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 &emsp;_«Requirements are a specification of what needs to be implemented. They describe the behavior of the system, the properties of the system or its attributes. They can serve as constraints in the system development process.»_
 
-&emsp;&emsp;<ins>Ian Sommerville, Pete Sawyer, 1997</ins>
+<ins>Ian Sommerville, Pete Sawyer, 1997</ins>
 
 ### Quality Attributes.
 
 &emsp;_«Quality attributes describe the characteristics observed during software execution. They strongly influence the perception of the system by users and the opinion that users have about its quality.»_
 
-&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | Attribute                                  | ID                       | Description / Why it's necessary                                                | Done |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | :--: |
@@ -247,7 +247,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 &emsp;_«Functional requirements can be written in terms of what the system does or what the user does.»_
 
-&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | Functional requirement                   | ID                                 | Responsible module     | Done |
 | :--------------------------------------- | :--------------------------------- | :--------------------- | :--: |
@@ -269,7 +269,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 &emsp;_«A use case describes how to use an automated system. It determines what the user should enter, what should be output in response, and what actions should be performed to obtain the output information.»_
 
-&emsp;&emsp;<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
+<ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
 | ID                | UC/CREATE-MOCK-UP                                                                                                      |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------- |
@@ -293,7 +293,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 ## Literature.
 
-The development process was strongly influenced by the books:
+&emsp;The development process was strongly influenced by the books:
 
 - «Development of software requirements» Carl Vigers, Jay Beatty;
 - «Clean Architecture» Robert Martin;

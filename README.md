@@ -299,6 +299,7 @@ The development process was strongly influenced by the books:
 - «Clean Architecture» Robert Martin;
 - «Envisioning Information» Edward R. Tufte;
 - «A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope;
+- «From monoliths to microservices» Sam Newman
 
 ## Useful links.
 

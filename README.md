@@ -233,7 +233,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 
 | Attribute                                  | ID                       | Description / Why it's necessary                                                | Done  |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | :---: |
-| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  | - [x] |
+| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  |  [x]  |
 | UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                | - [x] |
 | Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      | - [ ] |
 | Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices | - [x] |

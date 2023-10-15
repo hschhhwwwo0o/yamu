@@ -119,7 +119,7 @@ The structure of the project is a modular monolith.
 
 > _«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
 >
-> <p style="text-align: right"><ins>«From monoliths to microservices» by Sam Newman</ins></p>
+> <ins>«From monoliths to microservices» by Sam Newman</ins>
 
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md</ins>
 
@@ -231,17 +231,17 @@ The term dictionary is intended to ensure that the same terms are used throughou
 >
 > <ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
-| Attribute                                  | ID                       | Description / Why it's necessary                                                | Done |
-| :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | :--: |
-| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  |  ✅  |
-| UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                |  ✅  |
-| Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      |  ❌  |
-| Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices |  ✅  |
-| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     |  ✅  |
-| Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       |  ❌  |
-| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     |  ✅  |
-| Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     |  ❌  |
-| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     |  ✅  |
+| Attribute                                  | ID                       | Description / Why it's necessary                                                | Done  |
+| :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------ | :---: |
+| Separation of the mock-up creation process | QA/MOCK-UP/CREATE-STEPS  | Separation the process into steps is necessary for a better UX                  | - [x] |
+| UI is based on HIG                         | QA/UI/HIG                | HIG is essential for a better UX                                                | - [x] |
+| Localization                               | QA/LOCALIZATION          | Localization is necessary because the product can be used by foreign users      | - [ ] |
+| Interface adaptation                       | QA/UX/ADAPTIVE-INTERFACE | An adapative interface is needed to better display the app on different devices | - [x] |
+| WCAG compliance                            | QA/UX/WCAG               | WCAG is needed for a better UX for people with disabilities                     | - [x] |
+| Error output                               | QA/UX/ERRORS-LOG         | Necessary for a better UX                                                       | - [ ] |
+| High Lighthouse testing results            | QA/SEO/LIGHTHOUSE        | Necessary to improve search engine rankings                                     | - [x] |
+| Open Graph support                         | QA/SEO/OPEN-GRAPH        | Necessary to improve search engine rankings                                     | - [ ] |
+| Description of standard meta tags          | QA/SEO/META              | Necessary to improve search engine rankings                                     | - [x] |
 
 ### Functional requirements.
 
@@ -249,21 +249,21 @@ The term dictionary is intended to ensure that the same terms are used throughou
 >
 > <ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
-| Functional requirement                   | ID                                 | Responsible module     | Done |
-| :--------------------------------------- | :--------------------------------- | :--------------------- | :--: |
-| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |  ✅  |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |  ✅  |
-| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer |  ✅  |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |  ✅  |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |  ✅  |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |  ✅  |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |  ✅  |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |  ✅  |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |  ✅  |
-| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator     |  ✅  |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |  ✅  |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |  ✅  |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |  ✅  |
+| Functional requirement                   | ID                                 | Responsible module     | Done  |
+| :--------------------------------------- | :--------------------------------- | :--------------------- | :---: |
+| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      | - [x] |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer | - [x] |
+| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer | - [x] |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     | - [x] |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     | - [x] |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     | - [x] |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     | - [x] |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     | - [x] |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     | - [x] |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator     | - [x] |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     | - [x] |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     | - [x] |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     | - [x] |
 
 ### Use cases.
 

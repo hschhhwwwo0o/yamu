@@ -52,8 +52,13 @@ mockUpGenerator.insertImage(base64);
 // @requirement UF/MOCK-UP/CLEAR
 mockUpGenerator.clearMockUp();
 
-// @requirement UF/MOCK-UP/SETTINGS-UP
+// @requirement UF/DEVICE/GET-SETTINGS
 const settingsList = mockUpGenerator?.mockUp.device.getSettingsList();
+
+/**
+ * @requirement UF/MOCK-UP/SETTINGS-UP
+ * @requirement UF/DEVICE/OPTION-THEME-TOGGLE
+ */
 mockUpGenerator?.mockUp.device.changeSettings({
   theme: "dark",
 });

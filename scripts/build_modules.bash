@@ -10,7 +10,7 @@
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
 
-      cd ./modules/mock-up-html-renderer && npm run compile
+      cd ./modules/mock-up-canvas-image-generator && npm run compile
       cd ../../
 
       cd ./modules/feedback-creator && npm run compile
@@ -28,7 +28,7 @@
   echo "Select the module to compile: "
   echo "  1) All"
   echo "  2) @mock-up-generator"
-  echo "  3) @mock-up-html-renderer"
+  echo "  3) @mock-up-canvas-image-generator"
   echo "  4) @feedback-creator"
   echo "  5) Quit"
 
@@ -38,7 +38,7 @@
       cd ./modules/mock-up-generator && npm run compile
       cd ../../
 
-      cd ./modules/mock-up-html-renderer && npm run compile
+      cd ./modules/mock-up-canvas-image-generator && npm run compile
       cd ../../
 
       cd ./modules/feedback-creator && npm run compile
@@ -53,10 +53,10 @@
       echo "✅ @mock-up-generator module successfully compiled."
     ;;
     3) 
-      cd ./modules/mock-up-html-renderer && npm run compile
+      cd ./modules/mock-up-canvas-image-generator && npm run compile
       cd ../../
       
-      echo "✅ @mock-up-html-renderer module successfully compiled."
+      echo "✅ @mock-up-canvas-image-generator module successfully compiled."
     ;;
     4) 
       cd ./modules/feedback-creator && npm run compile

@@ -10,7 +10,7 @@
   cd ./modules/mock-up-generator && npm run lint
   cd ../../
 
-  cd ./modules/mock-up-html-renderer && npm run lint
+  cd ./modules/mock-up-canvas-image-generator && npm run lint
   cd ../../
 
   cd ./modules/feedback-creator && npm run lint

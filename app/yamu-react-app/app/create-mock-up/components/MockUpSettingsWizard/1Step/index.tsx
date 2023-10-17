@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 /** Controllers */
 import { observer } from "mobx-react-lite";
 import { MockUpController } from "@/controllers/mock-up-controller";
-import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
+import { MockUpWizardViewController } from "@/app/create-mock-up/_wizard-state-view-controller";
+import { MockUpImageViewController } from "@/app/create-mock-up/_mock-up-image-state-view-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -26,6 +27,7 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
     onSelect() {
       deviceSelectUI.utils.clear();
       MockUpController.clear();
+      MockUpImageViewController.setImage(undefined);
     },
   });
 
@@ -39,10 +41,12 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
      * Select device and render
      *
      * @requirement UF/MOCK-UP/DEVICE-SELECT
+     * @requirement UF/MOCK-UP/IMAGE-GENERATE
      * @requirement UF/MOCK-UP/RENDER
      */
-    onSelect(_option) {
-      MockUpController.selectDevice(_option?.label);
+    async onSelect(_option) {
+      const dataURL = await MockUpController.selectDevice(_option?.label);
+      MockUpImageViewController.setImage(dataURL);
     },
   });
 
@@ -50,7 +54,7 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
     disabledText: "Select the device to continue",
     isDisabled: deviceSelectUI.props.value === undefined,
     onClick() {
-      MockUpWizardController.nextStep();
+      MockUpWizardViewController.nextStep();
     },
   });
 

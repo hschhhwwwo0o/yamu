@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Controllers */
 import { observer } from "mobx-react-lite";
-import { MockUpWizardController } from "../../_wizard-state-controller";
+import { MockUpWizardViewController } from "../../_wizard-state-view-controller";
 
 /** Components */
 import { CreateMockUpFirstStepWizard } from "./1Step";
@@ -16,7 +16,7 @@ import { CreateMockUpFourthStepWizard } from "./4Step";
  * @requirement QA/MOCK-UP/CREATE-STEPS
  */
 function _MockUpSettingsWizard(): React.JSX.Element {
-  const wizardActiveStep = MockUpWizardController.activeStep;
+  const wizardActiveStep = MockUpWizardViewController.activeStep;
 
   return (
     <Fragment>

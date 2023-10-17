@@ -1,88 +1,101 @@
-import { Options, RenderData } from "./types.js";
+import { RenderData } from "./types.js";
 
-export class HTMLRenderer {
-  private _containerId: string;
-  private _options: Options;
-
-  constructor(
-    containerId: string = "",
-    options: Options = {
-      heightInaccuracy: 0,
-    },
-  ) {
-    this._containerId = containerId;
-    this._options = options;
-  }
-
+export class CanvasImageGenerator {
   /**
-   * Render mock-up
+   * Generate image of mock-up
    *
-   * @requirement UF/MOCK-UP/RENDER
+   * @requirement UF/MOCK-UP/IMAGE-GENERATE
    */
-  public render(renderData: RenderData): void {
+  public async imageGenerate(renderData: RenderData) {
+    /**
+     * Display a warning when potentially incorrect renderData is entered
+     */
     if (renderData.frameWidth === 0 && renderData.frameHeight === 0) {
       console.warn(
-        "No rendering has been done. `renderData` is specified incorrectly",
+        "No image generate has been done. `renderData` is specified incorrectly",
         renderData,
       );
     }
 
-    console.log("Rendering...", renderData);
+    /**
+     * Object renderData logging
+     */
+    console.log("Generate image...", renderData);
 
+    /**
+     * Canvas creation; note that canvas creation may depend on the
+     * platform on which the script is running: browser/node.
+     */
     const _canvas = this._createCanvasDOMElement(renderData);
 
-    if (renderData.isBW === true) {
-      _canvas.style.cssText = "filter: grayscale(100%);";
-    } else {
-      _canvas.style.cssText = "filter: grayscale(0%);";
-    }
-
+    /**
+     * Getting the canvas context
+     */
     const _context = _canvas.getContext("2d");
+    if (!_context) throw "Context error";
 
-    const _frameImage = this._createFrameImage(renderData);
-
-    const _render = () => {
-      if (!_context) throw "Context error";
-      const _imageIsEmpty = !renderData.insertedImage;
-      if (_imageIsEmpty) {
-        this._renderEmptyScreen(_context, renderData);
-        this._renderFrame(_context, _frameImage, renderData);
-        this._appendCanvasInDOM(_canvas);
-      }
-      if (!_imageIsEmpty) {
-        const screenImage = this._createScreenImage(renderData);
-        screenImage.onload = () => {
-          this._renderScreen(_context, screenImage, renderData);
-          this._renderFrame(_context, _frameImage, renderData);
-          this._appendCanvasInDOM(_canvas);
-        };
-      }
-    };
-
-    if (_frameImage.complete) {
-      this._clearDOMContainer();
-      _render();
+    /**
+     * Creating and loading a Frame Image
+     */
+    const _frameImage = await this._createFrameImage(renderData);
+    if (renderData.frameImage) {
+      /** Loads the image */
+      await _frameImage.decode();
     }
-    _frameImage.onload = () => {
-      this._clearDOMContainer();
-      _render();
-    };
+
+    /**
+     * Creating and loading a screen (inserted image) Image
+     */
+    const _screenImage = await this._createScreenImage(renderData);
+    if (renderData.insertedImage) {
+      /** Loads the image */
+      await _screenImage.decode();
+    }
+
+    /** If both images are ready to be used */
+    if (_frameImage.complete === true && _screenImage.complete === true) {
+      /** Rendering an empty mock-up (Only frame) */
+      if (!renderData.insertedImage) {
+        this._addEmptyScreenOnCanvas(_context, renderData);
+        this._addDeviceFrameOnCanvas(_context, _frameImage, renderData);
+      }
+      /** Rendering of the finished mock-up (Frame + screen) */
+      if (renderData.insertedImage) {
+        this._addScreenImageOnCanvas(_context, _screenImage, renderData);
+        this._addDeviceFrameOnCanvas(_context, _frameImage, renderData);
+      }
+
+      /**
+       * Applying BW filter; the filter is applied
+       * at the very end to cover all layers of the canvas
+       */
+      if (renderData.isBW === true) {
+        this._makeCanvasImageBW(_context);
+      }
+
+      /**
+       * Getting base64 image string
+       */
+      const _dataURL = await _canvas?.toDataURL("image/png", 1);
+      return _dataURL;
+    }
   }
 
-  private _clearDOMContainer() {
-    /** @exception Incorrect containerId */
-    if (!this._containerId) {
-      throw "Incorrect containerId";
+  /**
+   * Canvas creation; note that canvas creation may depend on the
+   * platform on which the script is running: browser/node.
+   */
+  private _createCanvasDOMElement(renderData: RenderData) {
+    const _canvas = document.createElement("canvas");
+    {
+      _canvas.id = "mock-up-canvas";
+      _canvas.width = this._calculateLayoutWidth(renderData);
+      _canvas.height = this._calculateLayoutHeight(renderData);
     }
-
-    const _container = document.querySelector(`#${this._containerId}`);
-
-    if (_container) {
-      _container.innerHTML = "";
-    }
+    return _canvas;
   }
 
-  private _renderEmptyScreen(
+  private _addEmptyScreenOnCanvas(
     context: CanvasRenderingContext2D,
     renderData: RenderData,
   ) {
@@ -117,7 +130,24 @@ export class HTMLRenderer {
     return;
   }
 
-  private _renderScreen(
+  private _makeCanvasImageBW(_context: CanvasRenderingContext2D) {
+    const _imgData = _context.getImageData(
+      0,
+      0,
+      _context.canvas.width,
+      _context.canvas.height,
+    );
+    const _pixels = _imgData.data;
+    for (let i = 0; i < _pixels.length; i += 4) {
+      const _lightness = (_pixels[i] + _pixels[i + 1] + _pixels[i + 2]) / 3;
+      _pixels[i] = _lightness;
+      _pixels[i + 1] = _lightness;
+      _pixels[i + 2] = _lightness;
+    }
+    _context.putImageData(_imgData, 0, 0);
+  }
+
+  private _addScreenImageOnCanvas(
     context: CanvasRenderingContext2D,
     insertedImage: HTMLImageElement,
     renderData: RenderData,
@@ -188,7 +218,7 @@ export class HTMLRenderer {
     return;
   }
 
-  private _createScreenImage(renderData: RenderData) {
+  private async _createScreenImage(renderData: RenderData) {
     const _screenImage: HTMLImageElement = new Image();
     _screenImage.setAttribute("crossorigin", "anonymous");
     {
@@ -199,7 +229,7 @@ export class HTMLRenderer {
     return _screenImage;
   }
 
-  private _createFrameImage(renderData: RenderData) {
+  private async _createFrameImage(renderData: RenderData) {
     const _frameImage = new Image();
     {
       _frameImage.width = this._calculateLayoutWidth(renderData);
@@ -209,7 +239,7 @@ export class HTMLRenderer {
     return _frameImage;
   }
 
-  private _renderFrame(
+  private _addDeviceFrameOnCanvas(
     context: CanvasRenderingContext2D,
     frameImage: HTMLImageElement,
     renderData: RenderData,
@@ -222,72 +252,10 @@ export class HTMLRenderer {
     }
   }
 
-  private _createCanvasDOMElement(renderData: RenderData) {
-    const _canvas = document.createElement("canvas");
-    {
-      _canvas.id = "mock-up-canvas";
-      _canvas.width = this._calculateLayoutWidth(renderData);
-      _canvas.height = this._calculateLayoutHeight(renderData);
-    }
-    return _canvas;
-  }
-
-  private _appendCanvasInDOM(canvas: HTMLCanvasElement) {
-    this._clearDOMContainer();
-    const _container = document.querySelector(`#${this._containerId}`);
-    _container?.appendChild(canvas);
-  }
-
   private _calculateLayoutWidth(renderData: RenderData) {
-    const _windowInnerWidth = window.innerWidth;
-    const _windowInnerHeight =
-      window.innerHeight - this._options.heightInaccuracy;
-
-    if (window.innerHeight < 400) {
-      return _windowInnerWidth - 155;
-    }
-
-    if (_windowInnerWidth < renderData.frameWidth) {
-      return _windowInnerWidth - 60;
-    }
-    if (
-      _windowInnerHeight < renderData.frameHeight &&
-      _windowInnerWidth > renderData.frameWidth &&
-      _windowInnerWidth > 500
-    ) {
-      return renderData.frameWidth - 100;
-    }
-
     return renderData.frameWidth;
   }
   private _calculateLayoutHeight(renderData: RenderData) {
-    const _windowInnerWidth = window.innerWidth;
-    const _windowInnerHeight =
-      window.innerHeight - this._options.heightInaccuracy;
-
-    if (window.innerHeight < 400) {
-      const _coof = renderData.frameHeight / renderData.frameWidth;
-      const _newWidth = this._calculateLayoutWidth(renderData);
-      const _newHeight = _newWidth * _coof;
-      return _newHeight;
-    }
-
-    if (_windowInnerWidth < renderData.frameWidth) {
-      const _coof = renderData.frameHeight / renderData.frameWidth;
-      const _newWidth = this._calculateLayoutWidth(renderData);
-      const _newHeight = _newWidth * _coof;
-      return _newHeight;
-    }
-    if (
-      _windowInnerHeight < renderData.frameHeight &&
-      _windowInnerWidth > renderData.frameWidth
-    ) {
-      const _coof = renderData.frameHeight / renderData.frameWidth;
-      const _newWidth = this._calculateLayoutWidth(renderData);
-      const _newHeight = _newWidth * _coof;
-      return _newHeight;
-    }
-
     return renderData.frameHeight;
   }
 }

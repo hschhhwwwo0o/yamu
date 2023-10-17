@@ -1,7 +1,7 @@
 {
-  "name": "mock-up-html-renderer",
-  "version": "2.0.0",
-  "description": "A module designed to display a mock-up on an HTML page. Includes rendering and downloading the final image",
+  "name": "mock-up-canvas-image-generator",
+  "version": "3.0.0",
+  "description": "The module is designed to generate an image based on the renderData object",
   "main": "src/index.ts",
   "scripts": {
     "compile": "tsc",

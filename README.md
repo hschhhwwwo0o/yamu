@@ -251,21 +251,22 @@ The term dictionary is intended to ensure that the same terms are used throughou
 >
 > <ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
-| Functional requirement                   | ID                                 | Responsible module     | Done |
-| :--------------------------------------- | :--------------------------------- | :--------------------- | :--: |
-| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |  ✅  |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |  ✅  |
-| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer |  ✅  |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |  ✅  |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |  ✅  |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |  ✅  |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |  ✅  |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |  ✅  |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |  ✅  |
-| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator     |  ✅  |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |  ✅  |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |  ✅  |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |  ✅  |
+| Functional requirement                   | ID                                 | Responsible element             | Done |
+| :--------------------------------------- | :--------------------------------- | :------------------------------ | :--: |
+| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator               |  ✅  |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | -                               |  ❌  |
+| Mock-up image generate                   | UF/MOCK-UP/IMAGE-GENERATE          | @mock-up-canvas-image-generator |  ✅  |
+| Render mock-up                           | UF/MOCK-UP/RENDER                  | @app                            |  ✅  |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator              |  ✅  |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator              |  ✅  |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator              |  ✅  |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator              |  ✅  |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator              |  ✅  |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator              |  ✅  |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator              |  ✅  |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator              |  ✅  |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator              |  ✅  |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator              |  ✅  |
 
 ### Use cases.
 

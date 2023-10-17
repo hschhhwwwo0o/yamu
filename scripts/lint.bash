@@ -15,6 +15,9 @@
 
   cd ./modules/feedback-creator && npm run lint
   cd ../../
+
+  cd ./modules/html-image-downloader && npm run lint
+  cd ../../
 }
 
 # Lint app

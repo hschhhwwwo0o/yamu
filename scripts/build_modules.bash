@@ -16,6 +16,9 @@
       cd ./modules/feedback-creator && npm run compile
       cd ../../
 
+      cd ./modules/html-image-downloader && npm run compile
+      cd ../../
+
       echo "All modules have been successfully compiled ✅ 🌿 "
       exit 0
     ;;
@@ -30,7 +33,8 @@
   echo "  2) @mock-up-generator"
   echo "  3) @mock-up-canvas-image-generator"
   echo "  4) @feedback-creator"
-  echo "  5) Quit"
+  echo "  5) @html-image-downloader"
+  echo "  6) Quit"
 
   read n
   case $n in
@@ -42,6 +46,9 @@
       cd ../../
 
       cd ./modules/feedback-creator && npm run compile
+      cd ../../
+
+      cd ./modules/html-image-downloader && npm run compile
       cd ../../
 
       echo "✅ All modules have been successfully compiled"
@@ -65,6 +72,12 @@
       echo "✅ @feedback-creator module successfully compiled."
     ;;
     5) 
+      cd ./modules/html-image-downloader && npm run compile
+      cd ../../
+      
+      echo "✅ @html-image-downloader module successfully compiled."
+    ;;
+    6) 
       exit 0
     ;;
     *) echo "Invalid option.";;

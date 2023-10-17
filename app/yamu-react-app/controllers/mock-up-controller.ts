@@ -1,6 +1,7 @@
 /** Modules */
 import { MockUpCanvasImageGenerator } from "@module/mock-up-canvas-image-generator";
 import { MockUpGenerator } from "@module/mock-up-generator";
+import { HTMLImageDownloader } from "@module/html-image-downloader";
 
 class _MockUpController {
   public modules: {
@@ -197,8 +198,8 @@ class _MockUpController {
    *
    * @requirement UF/MOCK-UP/DOWNLOAD
    */
-  public downloadFinalImage() {
-    /** */
+  public downloadFinalImage(imageHref: string) {
+    new HTMLImageDownloader().download(imageHref);
   }
 }
 

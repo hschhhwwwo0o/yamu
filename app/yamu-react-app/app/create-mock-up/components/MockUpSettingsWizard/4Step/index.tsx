@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 /** Controllers */
 import { observer } from "mobx-react-lite";
 import { MockUpController } from "@/controllers/mock-up-controller";
+import { MockUpImageViewController } from "@/app/create-mock-up/_mock-up-image-state-view-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -18,12 +19,13 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
     disabledText: "Successfully downloaded",
     /**
      * Download final image
-     *
      * @requirement UF/MOCK-UP/DOWNLOAD
      */
     onClick() {
       try {
-        MockUpController.downloadFinalImage();
+        MockUpController.downloadFinalImage(
+          MockUpImageViewController.image || "",
+        );
         downloadButtonUI.utils.disable();
       } catch (error) {
         console.error(error);

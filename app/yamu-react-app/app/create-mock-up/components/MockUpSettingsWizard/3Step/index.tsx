@@ -18,7 +18,6 @@ import { MotionBlock } from "@/components/shared/MotionBlock";
 export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
   /**
    * Get settings list
-   *
    * @requirement UF/DEVICE/GET-SETTINGS
    */
   const settingsList = MockUpController.getSettingsList();
@@ -53,7 +52,6 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                       onNewValueSet={
                         /**
                          * Change settings
-                         *
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
                         async function (newValue: boolean) {
@@ -84,7 +82,6 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                       onSelect={
                         /**
                          * Change settings
-                         *
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
                         async function (newValue: SelectOption) {

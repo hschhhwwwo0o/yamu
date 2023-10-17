@@ -254,7 +254,7 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Functional requirement                   | ID                                 | Responsible element             | Done |
 | :--------------------------------------- | :--------------------------------- | :------------------------------ | :--: |
 | Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator               |  ✅  |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | -                               |  ❌  |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @html-image-downloader          |  ✅  |
 | Mock-up image generate                   | UF/MOCK-UP/IMAGE-GENERATE          | @mock-up-canvas-image-generator |  ✅  |
 | Render mock-up                           | UF/MOCK-UP/RENDER                  | @app                            |  ✅  |
 | Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator              |  ✅  |

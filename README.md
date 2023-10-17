@@ -80,7 +80,7 @@ The purpose of this separation is to separate business logic from fickle and win
 If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
-bash ./instruments/module_creator.bash
+bash ./cli/module_creator.bash
 ```
 
 At the moment there are 4 modules implemented in the project:
@@ -139,7 +139,7 @@ git clone https://github.com/hschhhwwwo0o/yamu.git
 If you are a macOS or Linux user, (Doesn't work on Windows¹) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
-bash instruments/project_installer.bash
+bash cli/project_installer.bash
 ```
 
 _If the install script gives an error (Doesn't work on Windows¹), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
@@ -162,7 +162,7 @@ Deployment requires:
 1. Install all dependencies
 
 ```sh
-bash instruments/project_installer.bash
+bash cli/project_installer.bash
 ```
 
 2. Compile the application

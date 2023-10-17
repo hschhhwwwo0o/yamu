@@ -20,12 +20,12 @@ https://yamu.vercel.app
   - <a href="https://github.com/hschhhwwwo0o/yamu#3-module-development">Module development</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#4-application-development">Application development</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#installation-and-start-dev-server">Installation and start dev server</a>
-- <a href="https://github.com/hschhhwwwo0o/yamu#deployment">Deployment</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#dictionary-of-terms">Dictionary of Terms</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#software-requirements">Software requirements</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#quality-attributes">Quality Attributes</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#functional-requirements">Functional requirements</a>
   - <a href="https://github.com/hschhhwwwo0o/yamu#use-cases">Use cases</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#deployment">Deployment</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#remarks">Remarks</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#literature">Literature</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#useful-links">Useful links</a>
@@ -155,41 +155,6 @@ npm run dev
 <br />
 <br />
 
-## Deployment.
-
-Deployment requires:
-
-1. Install all dependencies
-
-```sh
-bash cli/project_installer.bash
-```
-
-2. Compile the application
-
-```sh
-npm run build
-```
-
-3. Run infinite loop / specify out folder
-
-To implement with the start of an endless loop, execute the command:
-
-```sh
-npm run start
-```
-
-To implement by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
-
-Exaple on Vercel:
-
-![Example](./md/DeployCommandsExample2.png)
-
-<br />
-<br />
-<br />
-<br />
-
 ## Dictionary of Terms.
 
 > _«A dictionary of terms defines all the specialized terms that the reader needs to know in order to properly understand the software requirements specification»_
@@ -285,6 +250,41 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | :------------ | :-------------------------------------------------------------------------------------- |
 | Acting person | User                                                                                    |
 | Description   | The user enters their feedback in the text box and submits it by clicking on the button |
+
+<br />
+<br />
+<br />
+<br />
+
+## Deployment.
+
+Deployment requires:
+
+1. Install all dependencies
+
+```sh
+bash cli/project_installer.bash
+```
+
+2. Compile the application
+
+```sh
+npm run build
+```
+
+3. Run infinite loop / specify out folder
+
+To implement with the start of an endless loop, execute the command:
+
+```sh
+npm run start
+```
+
+To implement by specifying the output folder, specify the path: `./app/yamu-react-app/out`.
+
+Exaple on Vercel:
+
+![Example](./md/DeployCommandsExample2.png)
 
 <br />
 <br />

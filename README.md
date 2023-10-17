@@ -83,13 +83,14 @@ If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool
 bash ./instruments/module_creator.bash
 ```
 
-At the moment there are 3 modules implemented in the project:
+At the moment there are 4 modules implemented in the project:
 
-| Module name            | Meaning of the module                                                                                                    |
-| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
-| @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
-| @feedback-creator      | The module is intended for sending feedback by the user.                                                                 |
+| Module name                     | Meaning of the module                                                                                             |
+| :------------------------------ | :---------------------------------------------------------------------------------------------------------------- |
+| @mock-up-canvas-image-generator | The module is designed to generate an image based on the renderData object                                        |
+| @mock-up-generator              | The module is intended for mock-up state management. Includes device selection, image insertion, device settings. |
+| @feedback-creator               | The module is intended for sending feedback by the user.                                                          |
+| @html-image-downloader          | The module is designed for downloading images.                                                                    |
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 

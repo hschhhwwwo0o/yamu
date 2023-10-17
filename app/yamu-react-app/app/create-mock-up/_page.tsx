@@ -14,6 +14,7 @@ import { MockUpPreviewSceneLayout } from "./layouts/PreviewScene";
 
 /** Components */
 import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
+import { MockUpPreview } from "./components/MockUpPreview";
 
 export default function Page(): React.JSX.Element {
   useMemo(function _initializeModules(): void {
@@ -32,7 +33,9 @@ export default function Page(): React.JSX.Element {
         <CreateMockUpScreenLayout>
           {
             /** Mock-up preview scene (Left side) */
-            <MockUpPreviewSceneLayout />
+            <MockUpPreviewSceneLayout>
+              <MockUpPreview />
+            </MockUpPreviewSceneLayout>
           }
           {
             /** Mock-up settings wizard (Right side) */

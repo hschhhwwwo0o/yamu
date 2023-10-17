@@ -48,7 +48,7 @@ The development of the project was divided into several stages:
 
 ### 1. Development of software requirements.
 
-Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled.
+Before starting to develop the code base, the requirements to the software product were thought over. Functional and user requirements, quality attributes were formulated; a data dictionary and a dictionary of terms were compiled. Read more about the requirements for vital software in the chapter <a href="https://github.com/hschhhwwwo0o/yamu#software-requirements">Software requirements</a>
 
 A unique identifier is created for each requirement. At the stage of code writing, the identifier of the implemented requirement is noted in the comment, which makes it easier to find the implementation of a particular requirement in the code base. For example:
 

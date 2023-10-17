@@ -4,9 +4,12 @@ export class HTMLImageDownloader {
       console.warn("Download image error; image href is undefined");
       return;
     }
-    const a = document.createElement("a");
-    a.href = imageHref;
-    a.download = "Image.png";
-    a.click();
+    const imageName = `${new Date().getTime()}`;
+    {
+      const HTMLAnchorElement = document.createElement("a");
+      HTMLAnchorElement.href = imageHref;
+      HTMLAnchorElement.download = `${imageName}.png`;
+      HTMLAnchorElement.click();
+    }
   }
 }

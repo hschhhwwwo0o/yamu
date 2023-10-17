@@ -22,8 +22,9 @@
     "paths": {
       "@/*": ["./*"],
       "@module/mock-up-generator": ["../../modules/mock-up-generator/dist/index.js"],
-      "@module/mock-up-html-renderer": ["../../modules/mock-up-html-renderer/dist/index.js"],
-      "@module/feedback-creator": ["../../modules/feedback-creator/dist/index.js"]
+      "@module/mock-up-canvas-image-generator": ["../../modules/mock-up-canvas-image-generator/dist/index.js"],
+      "@module/feedback-creator": ["../../modules/feedback-creator/dist/index.js"],
+      "@module/html-image-downloader": ["../../modules/html-image-downloader/dist/index.js"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

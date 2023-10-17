@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 /** Controllers */
 import { observer } from "mobx-react-lite";
 import { MockUpController } from "@/controllers/mock-up-controller";
-import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
+import { MockUpWizardViewController } from "@/app/create-mock-up/_wizard-state-view-controller";
+import { MockUpImageViewController } from "@/app/create-mock-up/_mock-up-image-state-view-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -18,11 +19,13 @@ export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
     /**
      * Insert image in mock-up and rerender
      *
-     * @requirement UF/MOCK-UP/RENDER
+     * @requirement UF/MOCK-UP/IMAGE-GENERATE
      * @requirement UF/MOCK-UP/INSERT-DESIGN
+     * @requirement UF/MOCK-UP/RENDER
      */
-    onChange(imageUrl = "") {
-      MockUpController.insertImage(imageUrl);
+    async onChange(imageUrl = "") {
+      const dataURL = await MockUpController.insertImage(imageUrl);
+      MockUpImageViewController.setImage(dataURL);
     },
   });
 
@@ -30,7 +33,7 @@ export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
     disabledText: "Select the image to continue",
     isDisabled: !insertedImageUploadImageUI.props.value,
     onClick() {
-      MockUpWizardController.nextStep();
+      MockUpWizardViewController.nextStep();
     },
   });
 

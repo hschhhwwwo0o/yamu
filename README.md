@@ -80,16 +80,17 @@ The purpose of this separation is to separate business logic from fickle and win
 If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
-bash ./instruments/module_creator.bash
+bash ./cli/module_creator.bash
 ```
 
-At the moment there are 3 modules implemented in the project:
+At the moment there are 4 modules implemented in the project:
 
-| Module name            | Meaning of the module                                                                                                    |
-| :--------------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| @mock-up-html-renderer | A module designed to display a mock-up on an HTML page using canvas. Includes rendering and downloading the final image. |
-| @mock-up-generator     | The module is intended for mock-up state management. Includes device selection, image insertion, device settings.        |
-| @feedback-creator      | The module is intended for sending feedback by the user.                                                                 |
+| Module name                     | Meaning of the module                                                                                             |
+| :------------------------------ | :---------------------------------------------------------------------------------------------------------------- |
+| @mock-up-canvas-image-generator | The module is designed to generate an image based on the renderData object                                        |
+| @mock-up-generator              | The module is intended for mock-up state management. Includes device selection, image insertion, device settings. |
+| @feedback-creator               | The module is intended for sending feedback by the user.                                                          |
+| @html-image-downloader          | The module is designed for downloading images.                                                                    |
 
 <ins>Detailed descriptions of the modules and examples of their use are provided in the modules' documentation.</ins>
 
@@ -117,7 +118,7 @@ An architecture is developed where modules play the role of MVC models. Controll
 
 The structure of the project is a modular monolith.
 
-![Example](./md/MVC4.png)
+![Example](./md/MVC5.png)
 
 > _«The modular monolith is a variation as a subset of the single-process monolith: a single process consists of separate modules, each of which can be worked on independently, but all of which must still be combined»_
 >
@@ -138,7 +139,7 @@ git clone https://github.com/hschhhwwwo0o/yamu.git
 If you are a macOS or Linux user, (Doesn't work on Windows¹) the project installation is done in 1 line of code in the terminal; to install application and module dependencies, copy this command and run it in the project root:
 
 ```sh
-bash instruments/project_installer.bash
+bash cli/project_installer.bash
 ```
 
 _If the install script gives an error (Doesn't work on Windows¹), you must install the module dependencies yourself, compile the modules, install the application dependencies, and install husky to install it._
@@ -161,7 +162,7 @@ Deployment requires:
 1. Install all dependencies
 
 ```sh
-bash instruments/project_installer.bash
+bash cli/project_installer.bash
 ```
 
 2. Compile the application
@@ -251,21 +252,22 @@ The term dictionary is intended to ensure that the same terms are used throughou
 >
 > <ins>«Development of software requirements», Third Edition. Carl Vigers, Jay Beatty</ins>
 
-| Functional requirement                   | ID                                 | Responsible module     | Done |
-| :--------------------------------------- | :--------------------------------- | :--------------------- | :--: |
-| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator      |  ✅  |
-| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @mock-up-html-renderer |  ✅  |
-| Mock-up display                          | UF/MOCK-UP/RENDER                  | @mock-up-html-renderer |  ✅  |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator     |  ✅  |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator     |  ✅  |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator     |  ✅  |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator     |  ✅  |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator     |  ✅  |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator     |  ✅  |
-| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator     |  ✅  |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator     |  ✅  |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator     |  ✅  |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator     |  ✅  |
+| Functional requirement                   | ID                                 | Responsible element             | Done |
+| :--------------------------------------- | :--------------------------------- | :------------------------------ | :--: |
+| Sending feedback                         | UF/FEEDBACK/CREATE                 | @feedback-creator               |  ✅  |
+| Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @html-image-downloader          |  ✅  |
+| Mock-up image generate                   | UF/MOCK-UP/IMAGE-GENERATE          | @mock-up-canvas-image-generator |  ✅  |
+| Render mock-up                           | UF/MOCK-UP/RENDER                  | @app                            |  ✅  |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator              |  ✅  |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator              |  ✅  |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator              |  ✅  |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator              |  ✅  |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator              |  ✅  |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator              |  ✅  |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator              |  ✅  |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator              |  ✅  |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator              |  ✅  |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator              |  ✅  |
 
 ### Use cases.
 

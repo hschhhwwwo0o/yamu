@@ -5,7 +5,7 @@ import { makeAutoObservable } from "mobx";
  *
  * @requirement QA/MOCK-UP/CREATE-STEPS
  */
-class _MockUpWizardController {
+class _MockUpWizardViewController {
   constructor() {
     makeAutoObservable(this);
   }
@@ -23,6 +23,6 @@ class _MockUpWizardController {
   }
 }
 
-const MockUpWizardController = new _MockUpWizardController();
+const MockUpWizardViewController = new _MockUpWizardViewController();
 
-export { MockUpWizardController };
+export { MockUpWizardViewController };

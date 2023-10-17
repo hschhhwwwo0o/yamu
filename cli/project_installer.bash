@@ -25,15 +25,15 @@
   echo "Error installing application dependencies ❌"
 }
 
-# @mock-up-html-renderer dependencies install
+# @mock-up-canvas-image-generator dependencies install
 {
-  cd ../../ && cd ./modules/mock-up-html-renderer
+  cd ../../ && cd ./modules/mock-up-canvas-image-generator
   npm install
 
   echo ""
-  echo "✅ @mock-up-html-renderer dependencies successfully installed"
+  echo "✅ @mock-up-canvas-image-generator dependencies successfully installed"
 } || {
-  echo "Dependency installation error @mock-up-html-renderer ❌"
+  echo "Dependency installation error @mock-up-canvas-image-generator ❌"
 }
 
 # @mock-up-generator dependencies install
@@ -56,6 +56,17 @@
   echo "✅ @feedback-creator dependencies successfully installed"
 } || {
   echo "Dependency installation error @feedback-creator ❌"
+}
+
+# @html-image-downloader dependencies install
+{
+  cd ../../ && cd ./modules/html-image-downloader
+  npm install
+  
+  echo ""
+  echo "✅ @html-image-downloader dependencies successfully installed"
+} || {
+  echo "Dependency installation error @html-image-downloader ❌"
 }
 
 # Compile all modules

@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 /** Controllers */
 import { observer } from "mobx-react-lite";
 import { MockUpController } from "@/controllers/mock-up-controller";
-import { MockUpWizardController } from "@/app/create-mock-up/_wizard-state-controller";
+import { MockUpWizardViewController } from "@/app/create-mock-up/_wizard-state-view-controller";
+import { MockUpImageViewController } from "@/app/create-mock-up/_mock-up-image-state-view-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";
@@ -17,14 +18,13 @@ import { MotionBlock } from "@/components/shared/MotionBlock";
 export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
   /**
    * Get settings list
-   *
    * @requirement UF/DEVICE/GET-SETTINGS
    */
   const settingsList = MockUpController.getSettingsList();
 
   const thirdStepNextButtonUI = useButton({
     onClick() {
-      MockUpWizardController.nextStep();
+      MockUpWizardViewController.nextStep();
     },
   });
 
@@ -52,14 +52,15 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                       onNewValueSet={
                         /**
                          * Change settings
-                         *
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
-                        function (newValue: boolean) {
-                          MockUpController.changeSwitchSettingHandler(
-                            setting.key,
-                            newValue,
-                          );
+                        async function (newValue: boolean) {
+                          const dataURL =
+                            await MockUpController.changeSwitchSettingHandler(
+                              setting.key,
+                              newValue,
+                            );
+                          MockUpImageViewController.setImage(dataURL);
                         }
                       }
                     />
@@ -81,14 +82,15 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                       onSelect={
                         /**
                          * Change settings
-                         *
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
-                        function (newValue: SelectOption) {
-                          MockUpController.changeSelectSettingHandler(
-                            setting.key,
-                            newValue,
-                          );
+                        async function (newValue: SelectOption) {
+                          const dataURL =
+                            await MockUpController.changeSelectSettingHandler(
+                              setting.key,
+                              newValue,
+                            );
+                          MockUpImageViewController.setImage(dataURL);
                         }
                       }
                     />

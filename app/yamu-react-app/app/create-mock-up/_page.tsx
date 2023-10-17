@@ -4,7 +4,7 @@ import React, { useLayoutEffect, useMemo } from "react";
 
 /** Controllers */
 import { MockUpController } from "@/controllers/mock-up-controller";
-import { MockUpWizardController } from "./_wizard-state-controller";
+import { MockUpWizardViewController } from "./_wizard-state-view-controller";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -17,13 +17,12 @@ import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
 
 export default function Page(): React.JSX.Element {
   useMemo(function _initializeModules(): void {
-    MockUpController.initializeMockUpGenerator();
-    MockUpController.initializeMockUpHTMLRenderer("mock-up-container");
+    MockUpController.init();
   }, []);
 
   useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose(): void {
-      MockUpWizardController.toDefaultStep();
+      MockUpWizardViewController.toDefaultStep();
     };
   }, []);
 
@@ -33,9 +32,7 @@ export default function Page(): React.JSX.Element {
         <CreateMockUpScreenLayout>
           {
             /** Mock-up preview scene (Left side) */
-            <MockUpPreviewSceneLayout>
-              <div id="mock-up-container" />
-            </MockUpPreviewSceneLayout>
+            <MockUpPreviewSceneLayout />
           }
           {
             /** Mock-up settings wizard (Right side) */

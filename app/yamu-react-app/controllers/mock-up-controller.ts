@@ -7,26 +7,35 @@ class _MockUpController {
   public modules: {
     mockUpGenerator: MockUpGenerator | undefined;
     mockUpCanvasImageGenerator: MockUpCanvasImageGenerator | undefined;
+    htmlImageDownloader: HTMLImageDownloader | undefined;
   } = {
     mockUpGenerator: undefined,
     mockUpCanvasImageGenerator: undefined,
+    htmlImageDownloader: undefined,
   };
 
   public init(): void {
-    this.initializeMockUpGenerator();
-    this.initializeMockUpCanvasImageGenerator();
+    this._initializeMockUpGenerator();
+    this._initializeMockUpCanvasImageGenerator();
+    this._initializeHTMLImageDownloader();
   }
 
-  private initializeMockUpGenerator(): MockUpGenerator {
+  private _initializeMockUpGenerator(): MockUpGenerator {
     const _mockUpGenerator = new MockUpGenerator();
     this.modules.mockUpGenerator = _mockUpGenerator;
     return _mockUpGenerator;
   }
 
-  private initializeMockUpCanvasImageGenerator(): MockUpCanvasImageGenerator {
+  private _initializeMockUpCanvasImageGenerator(): MockUpCanvasImageGenerator {
     const _mockUpCanvasImageGenerator = new MockUpCanvasImageGenerator();
     this.modules.mockUpCanvasImageGenerator = _mockUpCanvasImageGenerator;
     return _mockUpCanvasImageGenerator;
+  }
+
+  private _initializeHTMLImageDownloader(): HTMLImageDownloader {
+    const _htmlImageDownloader = new HTMLImageDownloader();
+    this.modules.htmlImageDownloader = _htmlImageDownloader;
+    return _htmlImageDownloader;
   }
 
   public getDevicesTypesAsOptions() {
@@ -199,7 +208,7 @@ class _MockUpController {
    * @requirement UF/MOCK-UP/DOWNLOAD
    */
   public downloadFinalImage(imageHref: string) {
-    new HTMLImageDownloader().download(imageHref);
+    this.modules.htmlImageDownloader?.download(imageHref);
   }
 }
 

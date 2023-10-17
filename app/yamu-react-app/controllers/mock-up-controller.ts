@@ -73,16 +73,15 @@ class _MockUpController {
   public async selectDevice(deviceName = "") {
     try {
       /** Selecting a device and getting a new mock-up state */
-      const _mockUpData = await this.modules.mockUpStateGenerator?.selectDevice(
-        deviceName,
-      );
+      const _mockUpState =
+        await this.modules.mockUpStateGenerator?.selectDevice(deviceName);
 
       /** Generating a mock-up image */
-      const dataURL =
+      const _mockUpBase64Image =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
-          _mockUpData?.renderData,
+          _mockUpState?.renderData,
         );
-      return dataURL;
+      return _mockUpBase64Image;
     } catch (error) {
       console.error(error);
     }
@@ -96,14 +95,14 @@ class _MockUpController {
    */
   public async clear() {
     /** Clearing a mock-up and getting a new mock-up state */
-    const _mockUpData = this.modules.mockUpStateGenerator?.clearMockUp();
+    const _mockUpState = this.modules.mockUpStateGenerator?.clearMockUp();
 
     /** Generating a mock-up image */
-    const dataURL =
+    const _mockUpBase64Image =
       await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
-        _mockUpData?.renderData,
+        _mockUpState?.renderData,
       );
-    return dataURL;
+    return _mockUpBase64Image;
   }
 
   /**
@@ -115,15 +114,15 @@ class _MockUpController {
   public async insertImage(image = "") {
     try {
       /** Inserting a image and getting a new mock-up state */
-      const _mockUpData = await this.modules.mockUpStateGenerator?.insertImage(
+      const _mockUpState = await this.modules.mockUpStateGenerator?.insertImage(
         image,
       );
       /** Generating a mock-up image */
-      const dataURL =
+      const _mockUpBase64Image =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
-          _mockUpData?.renderData,
+          _mockUpState?.renderData,
         );
-      return dataURL;
+      return _mockUpBase64Image;
     } catch (error) {
       console.error(error);
     }
@@ -152,11 +151,11 @@ class _MockUpController {
         [settingKey]: newValue,
       });
       /** Generating a mock-up image */
-      const dataURL =
+      const _mockUpBase64Image =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
           this.modules.mockUpStateGenerator?.mockUp.renderData,
         );
-      return dataURL;
+      return _mockUpBase64Image;
     } catch (error) {
       console.error(error);
     }
@@ -193,11 +192,11 @@ class _MockUpController {
         }
       }
       /** Generating a mock-up image */
-      const dataURL =
+      const _mockUpBase64Image =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
           this.modules.mockUpStateGenerator?.mockUp.renderData,
         );
-      return dataURL;
+      return _mockUpBase64Image;
     } catch (error) {
       console.error(error);
     }
@@ -208,7 +207,7 @@ class _MockUpController {
    *
    * @requirement UF/MOCK-UP/DOWNLOAD
    */
-  public downloadFinalImage(imageHref: string) {
+  public downloadFinalImage(imageHref = "") {
     this.modules.htmlImageDownloader?.download(imageHref);
   }
 }

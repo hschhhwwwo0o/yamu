@@ -8,7 +8,7 @@ import { H1 } from "@/components/text/H1";
 import { Text } from "@/components/text/Text";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-import { metadata } from "./metadata";
+import { metadata } from "./_metadata";
 export { metadata };
 
 export default function LicenseScreen(): React.JSX.Element {

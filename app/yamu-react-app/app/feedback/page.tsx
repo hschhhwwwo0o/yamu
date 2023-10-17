@@ -9,7 +9,7 @@ import { LinkCustom } from "@/components/text/Link";
 import { FeedbackForm } from "./components/FeedbackForm";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
-import { metadata } from "./metadata";
+import { metadata } from "./_metadata";
 export { metadata };
 
 export default function FeedbackScreen(): React.JSX.Element {

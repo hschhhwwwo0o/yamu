@@ -86,7 +86,7 @@ bash ./cli/module_creator.bash
 At the moment there are 4 modules implemented in the project:
 
 | Module name                     | Meaning of the module                                                                                             | Implements the subject area? |
-| :------------------------------ | :---------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| :------------------------------ | :---------------------------------------------------------------------------------------------------------------- | :--------------------------- |
 | @mock-up-canvas-image-generator | The module is designed to generate an image based on the renderData object                                        | +                            |
 | @mock-up-generator              | The module is intended for mock-up state management. Includes device selection, image insertion, device settings. | +                            |
 | @feedback-creator               | The module is intended for sending feedback by the user.                                                          | +                            |

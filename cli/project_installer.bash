@@ -36,15 +36,15 @@
   echo "Dependency installation error @mock-up-canvas-image-generator ❌"
 }
 
-# @mock-up-generator dependencies install
+# @mock-up-state-generator dependencies install
 {
-  cd ../../ && cd ./modules/mock-up-generator
+  cd ../../ && cd ./modules/mock-up-state-generator
   npm install
   
   echo ""
-  echo "✅ @mock-up-generator dependencies successfully installed"
+  echo "✅ @mock-up-state-generator dependencies successfully installed"
 } || {
-  echo "Dependency installation error @mock-up-generator ❌"
+  echo "Dependency installation error @mock-up-state-generator ❌"
 }
 
 # @feedback-creator dependencies install

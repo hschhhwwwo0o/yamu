@@ -7,7 +7,7 @@
 
 # Lint modules
 {
-  cd ./modules/mock-up-generator && npm run lint
+  cd ./modules/mock-up-state-generator && npm run lint
   cd ../../
 
   cd ./modules/mock-up-canvas-image-generator && npm run lint

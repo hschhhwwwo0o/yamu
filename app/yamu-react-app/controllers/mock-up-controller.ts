@@ -1,15 +1,15 @@
 /** Modules */
 import { MockUpCanvasImageGenerator } from "@module/mock-up-canvas-image-generator";
-import { MockUpGenerator } from "@module/mock-up-generator";
+import { MockUpStateGenerator } from "@module/mock-up-state-generator";
 import { HTMLImageDownloader } from "@module/html-image-downloader";
 
 class _MockUpController {
   public modules: {
-    mockUpGenerator: MockUpGenerator | undefined;
+    mockUpStateGenerator: MockUpStateGenerator | undefined;
     mockUpCanvasImageGenerator: MockUpCanvasImageGenerator | undefined;
     htmlImageDownloader: HTMLImageDownloader | undefined;
   } = {
-    mockUpGenerator: undefined,
+    mockUpStateGenerator: undefined,
     mockUpCanvasImageGenerator: undefined,
     htmlImageDownloader: undefined,
   };
@@ -20,10 +20,10 @@ class _MockUpController {
     this._initializeHTMLImageDownloader();
   }
 
-  private _initializeMockUpGenerator(): MockUpGenerator {
-    const _mockUpGenerator = new MockUpGenerator();
-    this.modules.mockUpGenerator = _mockUpGenerator;
-    return _mockUpGenerator;
+  private _initializeMockUpGenerator(): MockUpStateGenerator {
+    const _mockUpStateGenerator = new MockUpStateGenerator();
+    this.modules.mockUpStateGenerator = _mockUpStateGenerator;
+    return _mockUpStateGenerator;
   }
 
   private _initializeMockUpCanvasImageGenerator(): MockUpCanvasImageGenerator {
@@ -52,7 +52,7 @@ class _MockUpController {
    * @requirement UF/DEVICES-LIBRARY/GET
    */
   public getDevicesLibraryAsOptions(type = "") {
-    return this.modules.mockUpGenerator
+    return this.modules.mockUpStateGenerator
       ?.getDevicesLibrary({
         type,
       })
@@ -73,7 +73,7 @@ class _MockUpController {
   public async selectDevice(deviceName = "") {
     try {
       /** Selecting a device and getting a new mock-up state */
-      const _mockUpData = await this.modules.mockUpGenerator?.selectDevice(
+      const _mockUpData = await this.modules.mockUpStateGenerator?.selectDevice(
         deviceName,
       );
 
@@ -96,7 +96,7 @@ class _MockUpController {
    */
   public async clear() {
     /** Clearing a mock-up and getting a new mock-up state */
-    const _mockUpData = this.modules.mockUpGenerator?.clearMockUp();
+    const _mockUpData = this.modules.mockUpStateGenerator?.clearMockUp();
 
     /** Generating a mock-up image */
     const dataURL =
@@ -115,7 +115,7 @@ class _MockUpController {
   public async insertImage(image = "") {
     try {
       /** Inserting a image and getting a new mock-up state */
-      const _mockUpData = await this.modules.mockUpGenerator?.insertImage(
+      const _mockUpData = await this.modules.mockUpStateGenerator?.insertImage(
         image,
       );
       /** Generating a mock-up image */
@@ -136,7 +136,7 @@ class _MockUpController {
    * @requirement UF/DEVICE/GET-SETTINGS
    */
   public getSettingsList() {
-    return this.modules.mockUpGenerator?.mockUp.device.getSettingsList();
+    return this.modules.mockUpStateGenerator?.mockUp.device.getSettingsList();
   }
 
   /**
@@ -148,13 +148,13 @@ class _MockUpController {
   public async changeSwitchSettingHandler(settingKey = "", newValue = false) {
     try {
       /** Setting change. Changes the state of the mocap */
-      this.modules.mockUpGenerator?.mockUp.device.changeSettings({
+      this.modules.mockUpStateGenerator?.mockUp.device.changeSettings({
         [settingKey]: newValue,
       });
       /** Generating a mock-up image */
       const dataURL =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
-          this.modules.mockUpGenerator?.mockUp.renderData,
+          this.modules.mockUpStateGenerator?.mockUp.renderData,
         );
       return dataURL;
     } catch (error) {
@@ -176,17 +176,18 @@ class _MockUpController {
       /** Setting change. Changes the state of the mocap */
       {
         if (
-          this.modules.mockUpGenerator?.mockUp.device.type === "phone" ||
-          this.modules.mockUpGenerator?.mockUp.device.type === "tablet"
+          this.modules.mockUpStateGenerator?.mockUp.device.type === "phone" ||
+          this.modules.mockUpStateGenerator?.mockUp.device.type === "tablet"
         ) {
-          this.modules.mockUpGenerator?.mockUp.device.changeSettings({
+          this.modules.mockUpStateGenerator?.mockUp.device.changeSettings({
             isSystemBar:
-              this.modules.mockUpGenerator.mockUp.device.settings.isSystemBar,
+              this.modules.mockUpStateGenerator.mockUp.device.settings
+                .isSystemBar,
             [settingKey]: newValue?.value,
           });
         }
-        if (this.modules.mockUpGenerator?.mockUp.device.type === "watch") {
-          this.modules.mockUpGenerator?.mockUp.device.changeSettings({
+        if (this.modules.mockUpStateGenerator?.mockUp.device.type === "watch") {
+          this.modules.mockUpStateGenerator?.mockUp.device.changeSettings({
             [settingKey]: newValue?.value,
           });
         }
@@ -194,7 +195,7 @@ class _MockUpController {
       /** Generating a mock-up image */
       const dataURL =
         await this.modules.mockUpCanvasImageGenerator?.imageGenerate(
-          this.modules.mockUpGenerator?.mockUp.renderData,
+          this.modules.mockUpStateGenerator?.mockUp.renderData,
         );
       return dataURL;
     } catch (error) {

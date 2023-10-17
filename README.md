@@ -88,7 +88,7 @@ At the moment there are 4 modules implemented in the project:
 | Module name                     | Meaning of the module                                                                                             | Implements the subject area? |
 | :------------------------------ | :---------------------------------------------------------------------------------------------------------------- | :--------------------------- |
 | @mock-up-canvas-image-generator | The module is designed to generate an image based on the renderData object                                        | +                            |
-| @mock-up-generator              | The module is intended for mock-up state management. Includes device selection, image insertion, device settings. | +                            |
+| @mock-up-state-generator        | The module is intended for mock-up state management. Includes device selection, image insertion, device settings. | +                            |
 | @feedback-creator               | The module is intended for sending feedback by the user.                                                          | +                            |
 | @html-image-downloader          | The module is designed for downloading images.                                                                    | -                            |
 
@@ -223,16 +223,16 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Downloading a mock-up                    | UF/MOCK-UP/DOWNLOAD                | @html-image-downloader          |  ✅  |
 | Mock-up image generate                   | UF/MOCK-UP/IMAGE-GENERATE          | @mock-up-canvas-image-generator |  ✅  |
 | Render mock-up                           | UF/MOCK-UP/RENDER                  | @app                            |  ✅  |
-| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-generator              |  ✅  |
-| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-generator              |  ✅  |
-| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-generator              |  ✅  |
-| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-generator              |  ✅  |
-| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-generator              |  ✅  |
-| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-generator              |  ✅  |
-| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-generator              |  ✅  |
-| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-generator              |  ✅  |
-| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-generator              |  ✅  |
-| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-generator              |  ✅  |
+| Getting affordable devices               | UF/DEVICES-LIBRARY/GET             | @mock-up-state-generator        |  ✅  |
+| Choosing a device                        | UF/MOCK-UP/DEVICE-SELECT           | @mock-up-state-generator        |  ✅  |
+| Adding an design inside a mock-up        | UF/MOCK-UP/INSERT-DESIGN           | @mock-up-state-generator        |  ✅  |
+| Reset the mock-up                        | UF/MOCK-UP/CLEAR                   | @mock-up-state-generator        |  ✅  |
+| Mock-up initialization                   | UF/MOCK-UP/INIT                    | @mock-up-state-generator        |  ✅  |
+| <br /> Setting up a mock-up              | <br /> UF/MOCK-UP/SETTINGS-UP      | @mock-up-state-generator        |  ✅  |
+| Getting available settings               | UF/DEVICE/GET-SETTINGS             | @mock-up-state-generator        |  ✅  |
+| Switching the device's system bar        | UF/DEVICE/OPTION-SYSTEM-BAR-TOGGLE | @mock-up-state-generator        |  ✅  |
+| Switching the theme of the device system | UF/DEVICE/OPTION-THEME-TOGGLE      | @mock-up-state-generator        |  ✅  |
+| BW color correction mock-up              | UF/MOCK-UP/OPTION-BW-STYLE         | @mock-up-state-generator        |  ✅  |
 
 ### Use cases.
 

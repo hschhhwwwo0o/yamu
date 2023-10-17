@@ -7,7 +7,7 @@ class _MockUpImageViewController {
 
   public image: string | undefined = "";
 
-  public setImage(imageLink?: string) {
+  public setImage(imageLink?: string): void {
     runInAction(() => {
       this.image = imageLink;
     });

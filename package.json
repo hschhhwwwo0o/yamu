@@ -4,10 +4,10 @@
   "description": "The application is designed for creating mock-ups. Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
   "scripts": {
     "dev": "cd ./app/yamu-react-app && npm run dev",
-    "build": "bash ./scripts/build_app.bash",
+    "build": "bash ./cli/scripts/build_app.bash",
     "start": "cd ./app/yamu-react-app && npm run start",
-    "build-modules": "bash ./scripts/build_modules.bash",
-    "lint": "bash ./scripts/lint.bash",
+    "build-modules": "bash ./cli/scripts/build_modules.bash",
+    "lint": "bash ./cli/scripts/lint.bash",
     "prepare": "husky install"
   },
   "type": "module",

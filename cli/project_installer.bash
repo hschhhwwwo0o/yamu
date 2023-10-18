@@ -73,7 +73,7 @@
 {
   cd ../../
   npm install
-  bash ./scripts/build_modules.bash --all
+  bash ./cli/scripts/build_modules.bash --all
 } || {
   echo "Error compiling modules ❌"
 }

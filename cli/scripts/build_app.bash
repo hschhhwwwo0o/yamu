@@ -9,7 +9,7 @@
 {
   echo ""
   echo "⚡️ Building of app..."
-  bash ./scripts/build_modules.bash --all 
+  bash ./cli/scripts/build_modules.bash --all 
 }
 
 # Next.js application build

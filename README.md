@@ -246,10 +246,17 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Description       | The user selects the device for which he would like to make a mock-up. Configures the mock-up with subsequent download |
 | Output conditions | **UC/CREATE-MOCK-UP/POST-1.** The system asks for feedback                                                             |
 
-| ID            | UC/CREATE-MOCK-UP/POST-1                                                                |
-| :------------ | :-------------------------------------------------------------------------------------- |
-| Acting person | User                                                                                    |
-| Description   | The user enters their feedback in the text box and submits it by clicking on the button |
+| ID                | UC/CREATE-MOCK-UP/POST-1                                                                |
+| :---------------- | :-------------------------------------------------------------------------------------- |
+| Acting person     | User                                                                                    |
+| Description       | The user enters their feedback in the text box and submits it by clicking on the button |
+| Output conditions | **UC/FEEDBACK/POST-1** The system notifies the user when feedback is sent               |
+
+| ID                | UC/FEEDBACK                                                                   |
+| :---------------- | :---------------------------------------------------------------------------- |
+| Acting person     | User                                                                          |
+| Description       | A user enters and send his/her feedback about the service into the text field |
+| Output conditions | **UC/FEEDBACK/POST-1** The system notifies the user when feedback is sent     |
 
 <br />
 <br />

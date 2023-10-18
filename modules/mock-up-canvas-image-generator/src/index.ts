@@ -10,7 +10,7 @@ class MockUpCanvasImageGenerator {
   }
 
   /**
-   * Render mock-up
+   * Image generate
    *
    * @requirement UF/MOCK-UP/IMAGE-GENERATE
    */

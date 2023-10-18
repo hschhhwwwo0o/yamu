@@ -80,7 +80,7 @@ The purpose of this separation is to separate business logic from fickle and win
 If you're using macOS or Linux (Doesn't work on Windows¹), you can use the tool to quickly create and configure a new module; run this command in the root of the project:
 
 ```sh
-bash ./cli/module_creator.bash
+bash cli/module_creator.bash
 ```
 
 At the moment there are 4 modules implemented in the project:

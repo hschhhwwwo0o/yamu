@@ -258,6 +258,11 @@ The term dictionary is intended to ensure that the same terms are used throughou
 | Description       | A user enters and send his/her feedback about the service into the text field |
 | Output conditions | **UC/FEEDBACK/POST-1** The system notifies the user when feedback is sent     |
 
+| ID            | UC/FEEDBACK/POST-1                                 |
+| :------------ | :------------------------------------------------- |
+| Acting person | System                                             |
+| Description   | The system notifies the user when feedback is sent |
+
 <br />
 <br />
 <br />

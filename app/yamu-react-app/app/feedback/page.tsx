@@ -12,6 +12,9 @@ import { MotionBlock } from "@/components/shared/MotionBlock";
 import { metadata } from "./_metadata";
 export { metadata };
 
+/**
+ * @usecase UC/FEEDBACK
+ */
 export default function FeedbackScreen(): React.JSX.Element {
   return (
     <main>

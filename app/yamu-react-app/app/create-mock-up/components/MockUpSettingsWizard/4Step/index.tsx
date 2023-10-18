@@ -40,7 +40,7 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
   return (
     <Fragment>
       <MotionBlock delay={0.1}>
-        <Label>Four step</Label>
+        <Label>Fourth step</Label>
       </MotionBlock>
       <MotionBlock delay={0.2}>
         <H2>Download result</H2>
@@ -54,13 +54,16 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
           Download
         </Button>
       </MotionBlock>
-      {downloadButtonUI.props.status === "disabled" && (
-        <MotionBlock delay={0.2}>
-          <LinkCustom className="mt-4" withLabel href="/feedback">
-            Give feedback on the service performance
-          </LinkCustom>
-        </MotionBlock>
-      )}
+      {
+        /** @usecase UC/CREATE-MOCK-UP/POST-1 */
+        downloadButtonUI.props.status === "disabled" && (
+          <MotionBlock delay={0.2}>
+            <LinkCustom className="mt-4" withLabel href="/feedback">
+              Give feedback on the service performance
+            </LinkCustom>
+          </MotionBlock>
+        )
+      }
       <MotionBlock delay={0.4}>
         <ExitButton {...exitButtonUI.props} className="mt-4">
           Exit

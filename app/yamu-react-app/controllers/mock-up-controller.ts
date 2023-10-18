@@ -48,7 +48,6 @@ class _MockUpController {
 
   /**
    * Getting affordable devices as options array
-   *
    * @requirement UF/DEVICES-LIBRARY/GET
    */
   public getDevicesLibraryAsOptions(type = "") {
@@ -204,7 +203,6 @@ class _MockUpController {
 
   /**
    * Download final image
-   *
    * @requirement UF/MOCK-UP/DOWNLOAD
    */
   public downloadFinalImage(imageHref = "") {

@@ -25,4 +25,6 @@ export const metadata: Metadata = {
     modifiedTime: "19.10.2023",
     authors: "@hschhhwwwo0o",
   },
+  applicationName: "YAMU",
+  robots: "index, follow",
 };

@@ -21,4 +21,6 @@ export const metadata: Metadata = {
     siteName: "YAMU",
     locale: "ENG",
   },
+  applicationName: "YAMU",
+  robots: "noindex, nofollow",
 };

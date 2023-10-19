@@ -1,6 +1,4 @@
 class FeedbackCreator {
-  constructor() {}
-
   /**
    * Sending feedback
    * @requirement UF/FEEDBACK/CREATE

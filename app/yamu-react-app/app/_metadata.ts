@@ -16,6 +16,6 @@ export const metadata: Metadata = {
     description:
       "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
     type: "website",
-    images: ["/og/OpenGraphCover.png"],
+    images: ["/meta/open-graph/OpenGraphCover.png"],
   },
 };

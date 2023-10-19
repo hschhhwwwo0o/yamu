@@ -23,4 +23,6 @@ export const metadata: Metadata = {
   },
   applicationName: "YAMU",
   robots: "index, follow",
+  abstract: "Mock-up online generator",
+  keywords: "yamu, about",
 };

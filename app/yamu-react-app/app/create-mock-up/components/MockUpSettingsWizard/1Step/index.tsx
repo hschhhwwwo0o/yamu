@@ -45,8 +45,10 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
      * @requirement UF/MOCK-UP/RENDER
      */
     async onSelect(_option) {
-      const dataURL = await MockUpController.selectDevice(_option?.label);
-      MockUpImageViewController.setImage(dataURL);
+      const imageBase64String = await MockUpController.selectDevice(
+        _option?.label,
+      );
+      MockUpImageViewController.setImage(imageBase64String);
     },
   });
 

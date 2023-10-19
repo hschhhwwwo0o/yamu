@@ -12,7 +12,6 @@ import { CreateMockUpFourthStepWizard } from "./4Step";
 
 /**
  * Separation of the mock-up creation process
- *
  * @requirement QA/MOCK-UP/CREATE-STEPS
  */
 function _MockUpSettingsWizard(): React.JSX.Element {

@@ -24,8 +24,8 @@ export function _CreateMockUpSecondStepWizard(): React.JSX.Element {
      * @requirement UF/MOCK-UP/RENDER
      */
     async onChange(imageUrl = "") {
-      const dataURL = await MockUpController.insertImage(imageUrl);
-      MockUpImageViewController.setImage(dataURL);
+      const imageBase64String = await MockUpController.insertImage(imageUrl);
+      MockUpImageViewController.setImage(imageBase64String);
     },
   });
 

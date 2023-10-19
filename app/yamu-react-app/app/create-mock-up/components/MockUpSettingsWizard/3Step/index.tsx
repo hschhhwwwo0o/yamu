@@ -55,12 +55,12 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
                         async function (newValue: boolean) {
-                          const dataURL =
+                          const imageBase64String =
                             await MockUpController.changeSwitchSettingHandler(
                               setting.key,
                               newValue,
                             );
-                          MockUpImageViewController.setImage(dataURL);
+                          MockUpImageViewController.setImage(imageBase64String);
                         }
                       }
                     />
@@ -85,12 +85,12 @@ export function _CreateMockUpThirdStepWizard(): React.JSX.Element {
                          * @requirement UF/MOCK-UP/SETTINGS-UP
                          */
                         async function (newValue: SelectOption) {
-                          const dataURL =
+                          const imageBase64String =
                             await MockUpController.changeSelectSettingHandler(
                               setting.key,
                               newValue,
                             );
-                          MockUpImageViewController.setImage(dataURL);
+                          MockUpImageViewController.setImage(imageBase64String);
                         }
                       }
                     />

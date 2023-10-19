@@ -77,18 +77,26 @@ class MockUpStateGenerator {
     /** Clear inserted image */
     this.mockUp.insertedImage = undefined;
 
-    const _devicesLibrary = await this.getDevicesLibrary();
-    const _deviceLibraryItem: DeviceLibraryItem | undefined =
-      _devicesLibrary.find(function _findDeviceByName(_deviceLibraryItem) {
-        return _deviceLibraryItem.name === deviceName;
-      });
+    /**
+     * Find selected device in device library
+     */
+    let _selectedDevice: DeviceLibraryItem | undefined = undefined;
+    {
+      const _devicesLibrary = await this.getDevicesLibrary();
+      const _deviceLibraryItem: DeviceLibraryItem | undefined =
+        _devicesLibrary.find(function _findDeviceByName(_deviceLibraryItem) {
+          return _deviceLibraryItem.name === deviceName;
+        });
+      _selectedDevice = _deviceLibraryItem;
+    }
 
-    if (_deviceLibraryItem === undefined) {
+    if (_selectedDevice === undefined) {
       console.warn("Device is not selected");
       return;
     }
 
-    switch (_deviceLibraryItem?.type) {
+    /** Process selected device */
+    switch (_selectedDevice?.type) {
       case "phone":
         this.mockUp.device = await new PhoneDevice(deviceName, () => {
           this.mockUp.renderData = this._generateRenderData();

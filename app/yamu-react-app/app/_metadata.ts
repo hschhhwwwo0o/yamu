@@ -25,4 +25,11 @@ export const metadata: Metadata = {
   robots: "index, follow",
   abstract: "Mock-up online generator",
   keywords: "yamu, about",
+  twitter: {
+    images: ["/meta/open-graph/OpenGraphCover.png"],
+    title: "YAMU",
+    card: "summary_large_image",
+    description:
+      "Create product mock-ups with the online mock-up generator. Simply select a mock-up, upload your design and download a watermark-free image.",
+  },
 };

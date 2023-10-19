@@ -134,5 +134,5 @@ table {
 
 html {
   -webkit-text-size-adjust: none;
-  touch-action: none;
+  touch-action: auto;
 }

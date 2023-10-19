@@ -30,8 +30,10 @@ class MockUpCanvasImageGenerator {
       isBW: false,
     },
   ) {
-    const dataURL = await this._canvasImageGenerator?.imageGenerate(renderData);
-    return dataURL;
+    const imageBase64String = await this._canvasImageGenerator?.imageGenerate(
+      renderData,
+    );
+    return imageBase64String;
   }
 }
 

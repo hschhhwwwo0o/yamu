@@ -3,7 +3,6 @@ import { RenderData } from "./types.js";
 export class CanvasImageGenerator {
   /**
    * Generate image of mock-up
-   *
    * @requirement UF/MOCK-UP/IMAGE-GENERATE
    */
   public async imageGenerate(renderData: RenderData) {
@@ -76,12 +75,14 @@ export class CanvasImageGenerator {
       /**
        * Getting base64 image string
        */
-      const _dataURL = await _canvas?.toDataURL("image/png", 1);
-      return _dataURL;
+      const imageBase64String = await _canvas?.toDataURL("image/png", 1);
+      return imageBase64String;
     }
   }
 
   /**
+   * Warning!
+   *
    * Canvas creation; note that canvas creation may depend on the
    * platform on which the script is running: browser/node.
    */

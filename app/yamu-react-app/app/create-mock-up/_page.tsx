@@ -5,6 +5,7 @@ import React, { useLayoutEffect, useMemo } from "react";
 /** Controllers */
 import { MockUpController } from "@/controllers/mock-up-controller";
 import { MockUpWizardViewController } from "./_wizard-state-view-controller";
+import { MockUpImageViewController } from "./_mock-up-image-state-view-controller";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -22,9 +23,12 @@ export default function Page(): React.JSX.Element {
   }, []);
 
   useLayoutEffect(function _onPageCloseEffect() {
-    return function _onPageClose(): void {
-      MockUpWizardViewController.toDefaultStep();
-      MockUpController.clear();
+    return function _onPageClose() {
+      (async function _asyncPageClose() {
+        MockUpWizardViewController.toDefaultStep();
+        const imageBase64String = await MockUpController.clear();
+        MockUpImageViewController.setImage(imageBase64String);
+      })();
     };
   }, []);
 

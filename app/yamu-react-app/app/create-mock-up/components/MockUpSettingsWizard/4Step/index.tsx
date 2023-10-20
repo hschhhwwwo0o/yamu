@@ -35,9 +35,6 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
 
   const exitButtonUI = useExitButton({
     navigatePath: "/",
-    onClick() {
-      MockUpController.clear();
-    },
   });
 
   return (

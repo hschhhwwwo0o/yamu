@@ -24,6 +24,7 @@ export default function Page(): React.JSX.Element {
   useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose(): void {
       MockUpWizardViewController.toDefaultStep();
+      MockUpController.clear();
     };
   }, []);
 

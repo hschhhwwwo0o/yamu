@@ -24,11 +24,9 @@ export default function Page(): React.JSX.Element {
 
   useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose() {
-      (async function _asyncPageClose() {
-        MockUpWizardViewController.toDefaultStep();
-        const imageBase64String = await MockUpController.clear();
-        MockUpImageViewController.setImage(imageBase64String);
-      })();
+      MockUpWizardViewController.toDefaultStep();
+      MockUpController.clear();
+      MockUpImageViewController.setImage(undefined);
     };
   }, []);
 

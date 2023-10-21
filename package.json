@@ -22,8 +22,5 @@
   "devDependencies": {
     "husky": "^8.0.3"
   },
-  "dependencies": {
-    "mobx": "^6.10.2",
-    "mobx-react-lite": "^4.0.4"
-  }
+  "dependencies": {}
 }

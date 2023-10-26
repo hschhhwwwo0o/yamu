@@ -3,7 +3,7 @@
 import React, { Fragment } from "react";
 
 /** Controllers */
-import { FeedbackCreatorController } from "@/controllers/feedback-creator-controller";
+import { FeedbackCreatorController } from "../controllers/feedback-creator-controller";
 
 /** Components */
 import { Textarea, useTextarea } from "@/components/form/Textarea";
@@ -18,7 +18,6 @@ export function FeedbackForm(): React.JSX.Element {
 
     /**
      * Sending feedback
-     *
      * @requirement UF/FEEDBACK/CREATE
      */
     onClick: async function _createFeedback(): Promise<void> {
@@ -28,7 +27,7 @@ export function FeedbackForm(): React.JSX.Element {
           feedbackTextareaUI.utils.disableInput();
         }
         {
-          FeedbackCreatorController.sendFeedback(
+          await FeedbackCreatorController.sendFeedback(
             feedbackTextareaUI.props.value,
           );
         }
@@ -46,22 +45,22 @@ export function FeedbackForm(): React.JSX.Element {
 
   return (
     <Fragment>
-      <span className="block">
-        <Textarea
-          {...feedbackTextareaUI.props}
-          isAutofocus
-          title="Enter your feedback:"
-          placeholder="Enter your feedback about the service. The minimum number of characters is 5."
-        />
-        <span className="block mt-3">
+      <div>
+        <div className="block">
+          <Textarea
+            {...feedbackTextareaUI.props}
+            isAutofocus
+            title="Enter your feedback:"
+            placeholder="Enter your feedback about the service. The minimum number of characters is 5."
+          />
           <Button
             {...createFeedbackButtonUI.props}
             label="By submitting feedback you will help make the product better."
           >
             Create feedback
           </Button>
-        </span>
-      </span>
+        </div>
+      </div>
     </Fragment>
   );
 }

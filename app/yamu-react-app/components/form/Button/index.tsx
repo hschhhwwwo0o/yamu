@@ -75,7 +75,7 @@ function Button({
 
   return (
     <Fragment>
-      <span title={setTitle()} className={`block ${className}`}>
+      <span title={setTitle()} className={`block mt-2 ${className}`}>
         <span
           style={styleButtonByStatus()}
           className="block w-full md:max-w-[400px] transition-all duration-300"

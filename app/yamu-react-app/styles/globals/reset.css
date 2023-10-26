@@ -131,8 +131,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-html {
-  -webkit-text-size-adjust: none;
-  touch-action: auto;
-}

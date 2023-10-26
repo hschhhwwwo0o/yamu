@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 /** Controllers */
 import { observer } from "mobx-react-lite";
-import { MockUpWizardViewController } from "../../_wizard-state-view-controller";
+import { MockUpWizardViewController } from "../../controllers/_wizard-state-view-controller";
 
 /** Components */
 import { CreateMockUpFirstStepWizard } from "./1Step";

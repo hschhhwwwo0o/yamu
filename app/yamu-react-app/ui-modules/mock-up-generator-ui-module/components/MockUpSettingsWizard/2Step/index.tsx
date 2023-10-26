@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 
 /** Controllers */
 import { observer } from "mobx-react-lite";
-import { MockUpController } from "@/controllers/mock-up-controller";
-import { MockUpWizardViewController } from "@/app/create-mock-up/_wizard-state-view-controller";
-import { MockUpImageViewController } from "@/app/create-mock-up/_mock-up-image-state-view-controller";
+import { MockUpController } from "../../../controllers/mock-up-controller";
+import { MockUpWizardViewController } from "../../../controllers/_wizard-state-view-controller";
+import { MockUpImageViewController } from "../../../controllers/_mock-up-image-state-view-controller";
 
 /** Components */
 import { H2 } from "@/components/text/H2";

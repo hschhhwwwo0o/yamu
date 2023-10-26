@@ -1,12 +1,14 @@
 import React from "react";
 
+/** UI Modules */
+import { FeedbackUIModule } from "@/ui-modules/feedback-ui-module";
+
 /** Layouts */
 import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";
 
 /** Components */
 import { H1 } from "@/components/text/H1";
 import { LinkCustom } from "@/components/text/Link";
-import { FeedbackForm } from "./components/FeedbackForm";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
 import { metadata } from "./_metadata";
@@ -27,7 +29,7 @@ export default function FeedbackScreen(): React.JSX.Element {
           </MotionBlock>
           <MotionBlock delay={0.2}>
             <span className="block mt-6">
-              <FeedbackForm />
+              <FeedbackUIModule.view.FeedbackForm />
             </span>
           </MotionBlock>
           <div className="mt-6">

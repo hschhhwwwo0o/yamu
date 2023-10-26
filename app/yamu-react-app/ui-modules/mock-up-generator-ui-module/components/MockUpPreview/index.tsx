@@ -9,13 +9,14 @@ export const MockUpPreview = observer(function MockUpPreview() {
   return (
     <Fragment>
       {MockUpImageViewController.image && (
-        <div>
-          <img
-            className="h-full w-full object-contain"
-            src={MockUpImageViewController.image}
-            alt="Mock-up"
-          />
-        </div>
+        <img
+          style={{
+            objectFit: "contain",
+          }}
+          className="h-full w-full object-contain"
+          src={MockUpImageViewController.image}
+          alt="Mock-up"
+        />
       )}
     </Fragment>
   );

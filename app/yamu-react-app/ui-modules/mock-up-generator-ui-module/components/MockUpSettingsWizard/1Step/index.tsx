@@ -106,6 +106,7 @@ export function _CreateMockUpFirstStepWizard(): React.JSX.Element {
   );
 }
 
+/** Connect to store */
 const CreateMockUpFirstStepWizard = observer(_CreateMockUpFirstStepWizard);
 
 export { CreateMockUpFirstStepWizard };

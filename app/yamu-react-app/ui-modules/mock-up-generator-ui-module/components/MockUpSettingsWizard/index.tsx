@@ -27,4 +27,5 @@ function _MockUpSettingsWizard(): React.JSX.Element {
   );
 }
 
+/** Connect to store */
 export const MockUpSettingsWizard = observer(_MockUpSettingsWizard);

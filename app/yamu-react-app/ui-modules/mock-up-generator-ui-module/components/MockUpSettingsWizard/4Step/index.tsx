@@ -73,6 +73,7 @@ export function _CreateMockUpFourthStepWizard(): React.JSX.Element {
   );
 }
 
+/** Connect to store */
 export const CreateMockUpFourthStepWizard = observer(
   _CreateMockUpFourthStepWizard,
 );

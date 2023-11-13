@@ -320,5 +320,5 @@ The development process was strongly influenced by the books:
 
 ## Useful links.
 
-- <a href="https://nextjs.org/docs/app/building-your-application/deploying/static-exports">Static export deployment on Vercel.</a>
-- <a href="https://nextjs.org/docs/pages/building-your-application/deploying#nextjs-build-api">Build app on Vercel.</a>
+- <a target="_blank" href="https://nextjs.org/docs/app/building-your-application/deploying/static-exports">Static export deployment on Vercel.</a>
+- <a target="_blank" href="https://nextjs.org/docs/pages/building-your-application/deploying#nextjs-build-api">Build app on Vercel.</a>

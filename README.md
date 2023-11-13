@@ -1,7 +1,7 @@
 ![GitHub Light Cover](./md/GitHubCover.light3.png#gh-light-mode-only)
 ![GitHub Dark Cover](./md/GitHubCover.dark3.png#gh-dark-mode-only)
 
-![MockUp](<./md/Macbook%20Air%20(2022).png>)
+![MockUp](./md/Macbook.png)
 
 <br />
 <br />

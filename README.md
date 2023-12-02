@@ -33,7 +33,7 @@ https://yamu.vercel.app
 - <a href="https://github.com/hschhhwwwo0o/yamu#deployment">Deployment</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#remarks">Remarks</a>
 - <a href="https://github.com/hschhhwwwo0o/yamu#literature">Literature</a>
-- <a href="https://github.com/hschhhwwwo0o/yamu#useful-links">Useful links</a>
+- <a href="https://github.com/hschhhwwwo0o/yamu#useful-documentation">Useful documentation</a>
 
 <br />
 <br />
@@ -323,7 +323,7 @@ The development process was strongly influenced by the books:
 - «A Description of the Model-View-Controller User Interface Paradigm in the Smalltalk-80 System» Glenn E. Krasner and Stephen T. Pope;
 - «From monoliths to microservices» Sam Newman
 
-## Useful links.
+## Useful documentation.
 
 - <a target="_blank" href="https://nextjs.org/docs/app/building-your-application/deploying/static-exports">Static export deployment on Vercel.</a>
 - <a target="_blank" href="https://nextjs.org/docs/pages/building-your-application/deploying#nextjs-build-api">Build app on Vercel.</a>

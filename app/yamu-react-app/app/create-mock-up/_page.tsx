@@ -3,7 +3,7 @@
 import React, { useLayoutEffect, useMemo } from "react";
 
 /** UI Modules */
-import { MockUpGeneratorUIModule } from "@/ui-modules/mock-up-generator-ui-module";
+import { MockUpGeneratorUIModule } from "@/modules-compositions/mock-up-generator-ui-module";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";

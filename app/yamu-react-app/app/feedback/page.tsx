@@ -1,7 +1,7 @@
 import React from "react";
 
 /** UI Modules */
-import { FeedbackUIModule } from "@/ui-modules/feedback-ui-module";
+import { FeedbackUIModule } from "@/modules-compositions/feedback-ui-module";
 
 /** Layouts */
 import { DefaultWrapperLayout } from "@/components/layouts/DefaultWrapperLayout";

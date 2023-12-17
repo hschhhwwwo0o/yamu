@@ -129,15 +129,15 @@ The structure of the project is a modular monolith.
 >
 > <ins>«From monoliths to microservices» by Sam Newman</ins>
 
-#### 4.1 Controllers & Modules compositions
+#### Controllers & Modules compositions
 
 Controllers combine the necessary modules to solve business problems and export ready-made methods to solve business problems.
 
-Compositions modules are modules consisting of UI and business logic linked by a single business task.
+Compositions modules are modules consisting of UI and controllers linked by a single business task.
 
 UI and business logic are placed in a single module for convenient work on a specific business task and do not have any dependencies with other business tasks. Composition module exports external business task methods and UI components with ready business logic for rendering in the application
 
-A similar move can be observed in the book "From Monolith to Microservices" by Sam Newman, but this approach was called there as "ui modules"
+A similar move can be observed in the book «From Monolith to Microservices» by Sam Newman, but this approach was called there as «ui modules»
 
 <ins>You can read more about this paragraph here /app/yamu-react-app/README.md.</ins>
 

@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+# A script for installing the project. 
+# The script installs husky and dependencies required for modules.
+
 # Husky install
 {
   rm -rf .husky

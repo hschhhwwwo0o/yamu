@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+# A script designed for building an application for the subsequent launch of a deployment. 
+# The script starts linking, builds modules, builds the application.
+
 # Linting
 {
   npm run lint

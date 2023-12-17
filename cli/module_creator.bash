@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# A script to create a module. Initializes module with eslint and prittier formatter.
+
 {
   echo ""
   echo 'The "module-creator" developer tool has been launched. The tool is designed for quick creation and customization of modules.'

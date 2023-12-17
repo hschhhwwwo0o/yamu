@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# The script runs linting of the application and modules.
+
 {
   echo ""
   echo "⚡️ Linting..."

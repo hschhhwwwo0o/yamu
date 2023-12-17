@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# The script compiles modules.
+
 # Handling the --all parameter
 {
   case $1 in

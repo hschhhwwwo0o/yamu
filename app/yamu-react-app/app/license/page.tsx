@@ -8,6 +8,7 @@ import { H1 } from "@/components/text/H1";
 import { Text } from "@/components/text/Text";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
+/** Page metadata */
 import { metadata } from "./_metadata";
 export { metadata };
 

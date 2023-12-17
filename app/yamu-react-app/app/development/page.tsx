@@ -10,6 +10,7 @@ import { H2 } from "@/components/text/H2";
 import { LinkCustom } from "@/components/text/Link";
 import { MotionBlock } from "@/components/shared/MotionBlock";
 
+/** Page metadata */
 import { metadata } from "./_metadata";
 export { metadata };
 

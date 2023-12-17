@@ -15,6 +15,7 @@ const inter: NextFont = Inter({
   subsets: ["latin", "cyrillic"],
 });
 
+/** Initial metadata */
 import { metadata } from "./_metadata";
 export { metadata };
 

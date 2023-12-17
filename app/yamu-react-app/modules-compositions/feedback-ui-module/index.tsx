@@ -1,9 +1,9 @@
 import { FeedbackForm } from "./components/FeedbackForm";
 
-const FeedbackUIModule = {
+const FeedbackModuleComposition = {
   view: {
     FeedbackForm,
   },
 };
 
-export { FeedbackUIModule };
+export { FeedbackModuleComposition };

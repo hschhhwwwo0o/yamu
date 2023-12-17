@@ -2,8 +2,8 @@
 
 import React, { useLayoutEffect, useMemo } from "react";
 
-/** UI Modules */
-import { MockUpGeneratorUIModule } from "@/modules-compositions/mock-up-generator-ui-module";
+/** Modules compositions */
+import { MockUpGeneratorModuleComposition } from "@/modules-compositions/mock-up-generator-ui-module";
 
 /** Layouts */
 import { WideWrapperLayout } from "@/components/layouts/WideWrapperLayout";
@@ -13,12 +13,12 @@ import { MockUpPreviewSceneLayout } from "./layouts/PreviewScene";
 
 export default function Page(): React.JSX.Element {
   useMemo(function _initializeModules(): void {
-    MockUpGeneratorUIModule.utils.init();
+    MockUpGeneratorModuleComposition.utils.init();
   }, []);
 
   useLayoutEffect(function _onPageCloseEffect() {
     return function _onPageClose() {
-      MockUpGeneratorUIModule.utils.clear();
+      MockUpGeneratorModuleComposition.utils.clear();
     };
   }, []);
 
@@ -29,13 +29,13 @@ export default function Page(): React.JSX.Element {
           {
             /** Mock-up preview scene (Left side) */
             <MockUpPreviewSceneLayout>
-              <MockUpGeneratorUIModule.view.MockUpPreview />
+              <MockUpGeneratorModuleComposition.view.MockUpPreview />
             </MockUpPreviewSceneLayout>
           }
           {
             /** Mock-up settings wizard (Right side) */
             <MockUpSettingsWizardLayout>
-              <MockUpGeneratorUIModule.view.MockUpSettingsWizard />
+              <MockUpGeneratorModuleComposition.view.MockUpSettingsWizard />
             </MockUpSettingsWizardLayout>
           }
         </CreateMockUpScreenLayout>

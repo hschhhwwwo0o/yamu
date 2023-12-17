@@ -6,7 +6,7 @@ import { MockUpSettingsWizard } from "./components/MockUpSettingsWizard";
 import { _init } from "./utils/init";
 import { _clear } from "./utils/clear";
 
-const MockUpGeneratorUIModule = {
+const MockUpGeneratorModuleComposition = {
   view: {
     MockUpPreview,
     MockUpSettingsWizard,
@@ -17,4 +17,4 @@ const MockUpGeneratorUIModule = {
   },
 };
 
-export { MockUpGeneratorUIModule };
+export { MockUpGeneratorModuleComposition };

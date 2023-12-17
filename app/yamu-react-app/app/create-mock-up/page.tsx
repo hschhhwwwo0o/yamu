@@ -2,6 +2,7 @@ import React from "react";
 
 import Page from "./_page";
 
+/** Page metadata */
 import { metadata } from "./_metadata";
 export { metadata };
 

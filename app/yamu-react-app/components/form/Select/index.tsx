@@ -71,7 +71,7 @@ function Select({
 
   return (
     <Fragment>
-      <span className={`block ${className}`}>
+      <span className={`block pt-2 ${className}`}>
         <span
           style={{
             opacity: isDisabled === true ? "40%" : "100%",

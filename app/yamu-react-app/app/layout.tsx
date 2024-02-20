@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </head>
       <body className={inter.className}>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8Q2KN4R"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+height="0" width="0" style={{ display: "hidden" }}></iframe></noscript>
         <div>
           <TheTopNavigation />
           <Fragment>{children}</Fragment>
